@@ -1,0 +1,15 @@
+# Core Bot Engine
+twikit
+tweepy
+python-dotenv
+requests
+Pillow
+
+# Gemini API Official SDK
+google-genai
+pydantic
+fake-headers
+
+# Anti-bot bypass
+pycryptodome
+js2py
