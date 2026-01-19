@@ -473,7 +473,7 @@
     {
       "id": 51,
       "type": "philosophy",
-      "content": "Trading is the only profession where people expect to succeed without keeping records.\n\nImagine a business that doesn't track:\n• What products sell\n• When customers buy\n• Which marketing works\n\nThat's trading without a journal.",
+      "content": "It’s wild how people think they can succeed at trading without keeping any records. You’d never run a shop without tracking what’s selling or when folks buy, so why do it with your capital? Use a journal. 📈",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -501,7 +501,7 @@
     {
       "id": 54,
       "type": "process",
-      "content": "My weekly review takes 20 minutes:\n\n1. Pull up the week's trades (2 min)\n2. Sort by P&L (1 min)\n3. Review top 3 winners - what worked? (5 min)\n4. Review top 3 losers - what failed? (5 min)\n5. Write 1 lesson for next week (5 min)\n6. Set 1 goal (2 min)\n\nDone.",
+      "content": "I've got my weekly review down to a 20-minute routine. After pulling my trades and sorting by P&L, I spend a few minutes on my top wins and losses to see what worked. I finish by writing a lesson and a goal for next week. Simple as that.",
       "image": "images/weekly-review.png",
       "image_alt": "Filtered view of trades for a weekly review",
       "posted": false,
@@ -512,7 +512,7 @@
     {
       "id": 55,
       "type": "feature",
-      "content": "Your trading notes shouldn't live in 5 different apps.\n\nLynxTrades brings it all together:\n• Trade log\n• Notes & analysis\n• Screenshots & charts\n• Performance data\n\nOne place. Zero friction.\n\nlynxtrades.com",
+      "content": "Stop jumping between five different apps just to check your trading notes. It's way easier when your logs, analysis, and charts all live in one spot. I use lynxtrades.com to keep things organized without the usual headache.",
       "image": "images/notes.png",
       "image_alt": "LynxTrades integrated notes system",
       "posted": false,
@@ -560,7 +560,7 @@
     {
       "id": 60,
       "type": "feature",
-      "content": "Track the full picture.\n\nLynxTrades execution tracking:\n→ Entry 1: 100 shares @ $45.20\n→ Entry 2: 50 shares @ $44.80\n→ Exit 1: 100 shares @ $46.50\n→ Exit 2: 50 shares @ $47.00\n\nReal P&L. Real averages. Real analysis.\n\nlynxtrades.com",
+      "content": "I'm finally seeing the full picture of my trades. Scaling into positions at 45.20 and 44.80 then selling higher used to be a mess to track, but now I've got real averages and P&L data thanks to lynxtrades.com.",
       "image": "images/tradeform-executions.png",
       "image_alt": "LynxTrades execution tracking",
       "posted": false,
@@ -589,7 +589,7 @@
     {
       "id": 63,
       "type": "tip",
-      "content": "Screenshot tip:\n\nTake 2 screenshots per trade:\n1. Entry - show your reasoning\n2. Exit - show what happened\n\nFuture you will learn more from these than any course.\n\nLynxTrades supports unlimited screenshots per trade.",
+      "content": "You'll learn way more from your own screenshots than any course since it's so helpful to see your initial logic alongside the final result. I use LynxTrades because they don't limit how many shots you can save per trade.",
       "image": "images/chart-screenshot-example.png",
       "image_alt": "Example trade with chart screenshots",
       "posted": false,
@@ -609,7 +609,7 @@
     {
       "id": 65,
       "type": "feature",
-      "content": "Don't lose your trading insights.\n\nLynxTrades Notes:\n• Rich text formatting\n• Image attachments\n• Link to any trade\n• Full search across all notes\n• Export anytime\n\nYour best ideas, always accessible.\n\nlynxtrades.com",
+      "content": "I used to hate losing my best trading insights, but lynxtrades.com changed the game. I keep my notes and images right alongside my trade links in one searchable spot, and I can export it all whenever I want.",
       "image": "images/notes.png",
       "image_alt": "LynxTrades notes feature",
       "posted": false,
@@ -685,7 +685,7 @@
     {
       "id": 72,
       "type": "insight",
-      "content": "Every profitable trader I know:\n\n✓ Tracks their trades\n✓ Reviews weekly\n✓ Knows their stats cold\n✓ Has written rules\n\nEvery struggling trader I know:\n\n✗ Wings it\n✗ Relies on memory\n✗ Guesses at what works\n✗ No written plan\n\nCorrelation? I think not.",
+      "content": "It’s wild how the pros treat this like a real business with written rules and tracked stats, while the guys struggling are almost always winging it and relying on memory. Winning isn't a fluke, it’s just better habits.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -704,7 +704,7 @@
     {
       "id": 74,
       "type": "process",
-      "content": "After every losing trade, I write:\n\n1. What was my plan?\n2. Did I follow it?\n3. If yes: Bad luck or bad plan?\n4. If no: Why did I deviate?\n5. What would I do differently?\n\nThis takes 2 minutes.\n\nIt saves thousands.",
+      "content": "I've started spending two minutes reviewing my plan after every loss to see if I actually stuck to it. I need to know if it was just bad luck or if I need to change my strategy. It’s a small habit that's saved me thousands.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -714,7 +714,7 @@
     {
       "id": 75,
       "type": "feature",
-      "content": "Build your trading knowledge base.\n\nEvery note you write in LynxTrades:\n→ Searchable forever\n→ Linked to actual trades\n→ Includes your screenshots\n→ Exportable anytime\n\nYour trading insights compound over time.\n\nlynxtrades.com",
+      "content": "Your trading insights don't really compound if you're losing notes in messy folders. I use lynxtrades.com to link screenshots to my trades so they're searchable forever. It makes looking back at your progress way easier.",
       "image": "images/notes.png",
       "image_alt": "LynxTrades searchable notes",
       "posted": false,
@@ -725,7 +725,7 @@
     {
       "id": 76,
       "type": "value",
-      "content": "What would you pay for a personalized trading coach who:\n\n• Knows every trade you've ever taken\n• Remembers your exact win rate by setup\n• Tracks your emotional patterns\n• Never forgets anything\n\nThat's your journal. And it's free.\n\nlynxtrades.com",
+      "content": "I honestly think a trading journal is the only coach you’ll ever need. It tracks your win rate and emotional patterns without charging a dime, and it never forgets a single trade. You don’t need a guru when you have lynxtrades.com to keep you on track.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -735,7 +735,7 @@
     {
       "id": 77,
       "type": "psychology",
-      "content": "The trading sins I track:\n\n1. Revenge trading\n2. FOMO entries\n3. Oversizing\n4. Moving stops\n5. Not taking profits\n\nEach one has a tag in my journal.\n\nAt month end, I see exactly which sins cost me money.\n\nData > discipline.",
+      "content": "I've been tagging my journal whenever I revenge trade, move a stop, or let FOMO take over. Seeing the cost at month end is a huge reality check. It's much easier to improve once you've actually got the data.",
       "image": "images/emotions.png",
       "image_alt": "LynxTrades emotion tracking",
       "posted": false,
@@ -755,7 +755,7 @@
     {
       "id": 79,
       "type": "story",
-      "content": "When I started LynxTrades, I had one goal:\n\nBuild the journal I wished existed.\n\nNo artificial limits.\nNo paywall for basic features.\nNo complexity for complexity's sake.\n\nJust a clean tool that helps traders improve.\n\nThat's still the goal.\n\nlynxtrades.com",
+      "content": "When I started lynxtrades.com, I just wanted a trading journal that didn't hide basics behind a paywall or make things so complex. I wanted a clean tool that helps me improve without any artificial limits, and that's still the goal today.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -973,7 +973,7 @@
     {
       "id": 103,
       "type": "humor",
-      "content": "Trading plan:\n1. Wait for setup\n2. Execute setup\n\nMy brain:\n1. Buy because green candle big\n2. Panic",
+      "content": "I try to wait for a clean setup and follow the plan, but then a massive green candle shows up and I lose all logic. I end up chasing the move and panicking when it doesn't work out. It's crazy how fast a strategy evaporates when you're actually trading.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1496,7 +1496,7 @@
     {
       "id": 161,
       "type": "feature",
-      "content": "Prop firm traders:\n\nWe track your challenge progress in real-time.\n→ Profit target %\n→ Drawdown usage\n→ Trading days completed\n\nNo more mental math. Just focus on trading.\n\nlynxtrades.com",
+      "content": "I hate doing mental math while I'm trading. We track your profit goals and drawdown in real-time at lynxtrades.com so you don't have to worry about your trading days or any of that extra stress.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2073,7 +2073,7 @@
     {
       "id": 225,
       "type": "psychology",
-      "content": "You can't control the market.\n\nYou can control:\n- Your size\n- Your stop\n- Your reaction\n\nFocus there.",
+      "content": "The market's gonna do whatever it wants no matter how much you stare at the screen. You can't control the price, so just focus on your position sizing and where you'll get out. How you react to the stress is the only thing that really counts.",
       "image": null,
       "posted": false,
       "posted_at": null,
