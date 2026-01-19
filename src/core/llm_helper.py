@@ -23,7 +23,7 @@ class LLMHelper:
         self.model_name = settings.get("twitter_automation", {}) \
                                   .get("action_config", {}) \
                                   .get("llm_settings_for_reply", {}) \
-                                  .get("model_name_override", "gemini-3.0-flash-preview")
+                                  .get("model_name_override", "gemini-3-flash-preview")
         
         # System instructions - defined here but NOT passed to model init
         self.system_instruction_text = """

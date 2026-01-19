@@ -21,7 +21,7 @@ load_dotenv()
 # Configure Gemini
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 # User specified model
-model = genai.GenerativeModel("gemini-3.0-flash-preview")
+model = genai.GenerativeModel("gemini-3-flash-preview")
 
 POSTS_FILE = Path("data/posts.json")
 BACKUP_FILE = Path("data/posts_backup.json")
