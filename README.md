@@ -6,7 +6,7 @@ A robust, hybrid Twitter/X automation bot designed for reliable high-performance
 - **Hybrid Architecture**:
     - **Posting**: Uses Official X API (v2) for 100% reliability.
     - **Engagement**: Uses `twikit` to search and read tweets (bypassing expensive API tiers).
-- **AI-Powered**: Uses **Google Gemini 2.0 Flash** for intelligent reply generation and persona management.
+- **AI-Powered**: Uses **Google Gemini 3.0 Flash Preview** for intelligent reply generation and persona management.
 - **Scheduled Posting**: Automatically posts queued content from `data/posts.json`.
 - **Engagement Mode**: Intelligently searches for relevant keywords (e.g., "trading journal") and replies with helpful, context-aware advice promoting LynxTrades.
 - **Persistence**: Tracks posted tweets and engagement history to avoid duplicates.

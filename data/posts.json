@@ -446,12 +446,13 @@
     {
       "id": 49,
       "type": "feature",
-      "content": "Scaling into a position?\n\nMost journals make you log it as separate trades.\n\nLynxTrades lets you add multiple executions to ONE trade:\n→ Track each entry price\n→ See your true average\n→ Calculate accurate P&L\n\nBecause real trading isn't one entry, one exit.\n\nlynxtrades.com",
+      "content": "Scaling into positions? Track multiple executions in one trade. lynxtrades.com",
       "image": "images/tradeform-executions.png",
       "image_alt": "LynxTrades multiple executions feature",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-01-19T07:29:45.199617+00:00",
+      "tweet_id": "2013151884367073659",
+      "original_content": "Scaling into a position?\n\nMost journals make you log it as separate trades.\n\nLynxTrades lets you add multiple executions to ONE trade:\n→ Track each entry price\n→ See your true average\n→ Calculate accurate P&L\n\nBecause real trading isn't one entry, one exit.\n\nlynxtrades.com"
     },
     {
       "id": 50,
@@ -476,7 +477,8 @@
       "image": null,
       "posted": false,
       "posted_at": null,
-      "tweet_id": null
+      "tweet_id": null,
+      "original_content": "Trading is the only profession where people expect to succeed without keeping records.\n\nImagine a business that doesn't track:\n• What products sell\n• When customers buy\n• Which marketing works\n\nThat's trading without a journal."
     },
     {
       "id": 52,
@@ -504,7 +506,8 @@
       "image_alt": "Filtered view of trades for a weekly review",
       "posted": false,
       "posted_at": null,
-      "tweet_id": null
+      "tweet_id": null,
+      "original_content": "My weekly review takes 20 minutes:\n\n1. Pull up the week's trades (2 min)\n2. Sort by P&L (1 min)\n3. Review top 3 winners - what worked? (5 min)\n4. Review top 3 losers - what failed? (5 min)\n5. Write 1 lesson for next week (5 min)\n6. Set 1 goal (2 min)\n\nDone."
     },
     {
       "id": 55,
@@ -514,7 +517,8 @@
       "image_alt": "LynxTrades integrated notes system",
       "posted": false,
       "posted_at": null,
-      "tweet_id": null
+      "tweet_id": null,
+      "original_content": "Your trading notes shouldn't live in 5 different apps.\n\nLynxTrades brings it all together:\n• Trade log\n• Notes & analysis\n• Screenshots & charts\n• Performance data\n\nOne place. Zero friction.\n\nlynxtrades.com"
     },
     {
       "id": 56,
@@ -561,7 +565,8 @@
       "image_alt": "LynxTrades execution tracking",
       "posted": false,
       "posted_at": null,
-      "tweet_id": null
+      "tweet_id": null,
+      "original_content": "Track the full picture.\n\nLynxTrades execution tracking:\n→ Entry 1: 100 shares @ $45.20\n→ Entry 2: 50 shares @ $44.80\n→ Exit 1: 100 shares @ $46.50\n→ Exit 2: 50 shares @ $47.00\n\nReal P&L. Real averages. Real analysis.\n\nlynxtrades.com"
     },
     {
       "id": 61,
@@ -589,7 +594,8 @@
       "image_alt": "Example trade with chart screenshots",
       "posted": false,
       "posted_at": null,
-      "tweet_id": null
+      "tweet_id": null,
+      "original_content": "Screenshot tip:\n\nTake 2 screenshots per trade:\n1. Entry - show your reasoning\n2. Exit - show what happened\n\nFuture you will learn more from these than any course.\n\nLynxTrades supports unlimited screenshots per trade."
     },
     {
       "id": 64,
@@ -608,7 +614,8 @@
       "image_alt": "LynxTrades notes feature",
       "posted": false,
       "posted_at": null,
-      "tweet_id": null
+      "tweet_id": null,
+      "original_content": "Don't lose your trading insights.\n\nLynxTrades Notes:\n• Rich text formatting\n• Image attachments\n• Link to any trade\n• Full search across all notes\n• Export anytime\n\nYour best ideas, always accessible.\n\nlynxtrades.com"
     },
     {
       "id": 66,
@@ -627,7 +634,8 @@
       "image_alt": "LynxTrades analytics dashboard",
       "posted": false,
       "posted_at": null,
-      "tweet_id": null
+      "tweet_id": null,
+      "original_content": "The 4 metrics that predict future performance:\n\n1. Win rate by setup (not overall)\n2. Average winner vs average loser\n3. Profit factor by time of day\n4. Rule compliance percentage\n\nIf you're not tracking all 4, you're guessing.\n\nlynxtrades.com"
     },
     {
       "id": 68,
@@ -681,7 +689,8 @@
       "image": null,
       "posted": false,
       "posted_at": null,
-      "tweet_id": null
+      "tweet_id": null,
+      "original_content": "Every profitable trader I know:\n\n✓ Tracks their trades\n✓ Reviews weekly\n✓ Knows their stats cold\n✓ Has written rules\n\nEvery struggling trader I know:\n\n✗ Wings it\n✗ Relies on memory\n✗ Guesses at what works\n✗ No written plan\n\nCorrelation? I think not."
     },
     {
       "id": 73,
@@ -699,7 +708,8 @@
       "image": null,
       "posted": false,
       "posted_at": null,
-      "tweet_id": null
+      "tweet_id": null,
+      "original_content": "After every losing trade, I write:\n\n1. What was my plan?\n2. Did I follow it?\n3. If yes: Bad luck or bad plan?\n4. If no: Why did I deviate?\n5. What would I do differently?\n\nThis takes 2 minutes.\n\nIt saves thousands."
     },
     {
       "id": 75,
@@ -709,7 +719,8 @@
       "image_alt": "LynxTrades searchable notes",
       "posted": false,
       "posted_at": null,
-      "tweet_id": null
+      "tweet_id": null,
+      "original_content": "Build your trading knowledge base.\n\nEvery note you write in LynxTrades:\n→ Searchable forever\n→ Linked to actual trades\n→ Includes your screenshots\n→ Exportable anytime\n\nYour trading insights compound over time.\n\nlynxtrades.com"
     },
     {
       "id": 76,
@@ -718,7 +729,8 @@
       "image": null,
       "posted": false,
       "posted_at": null,
-      "tweet_id": null
+      "tweet_id": null,
+      "original_content": "What would you pay for a personalized trading coach who:\n\n• Knows every trade you've ever taken\n• Remembers your exact win rate by setup\n• Tracks your emotional patterns\n• Never forgets anything\n\nThat's your journal. And it's free.\n\nlynxtrades.com"
     },
     {
       "id": 77,
@@ -728,7 +740,8 @@
       "image_alt": "LynxTrades emotion tracking",
       "posted": false,
       "posted_at": null,
-      "tweet_id": null
+      "tweet_id": null,
+      "original_content": "The trading sins I track:\n\n1. Revenge trading\n2. FOMO entries\n3. Oversizing\n4. Moving stops\n5. Not taking profits\n\nEach one has a tag in my journal.\n\nAt month end, I see exactly which sins cost me money.\n\nData > discipline."
     },
     {
       "id": 78,
@@ -746,7 +759,8 @@
       "image": null,
       "posted": false,
       "posted_at": null,
-      "tweet_id": null
+      "tweet_id": null,
+      "original_content": "When I started LynxTrades, I had one goal:\n\nBuild the journal I wished existed.\n\nNo artificial limits.\nNo paywall for basic features.\nNo complexity for complexity's sake.\n\nJust a clean tool that helps traders improve.\n\nThat's still the goal.\n\nlynxtrades.com"
     },
     {
       "id": 80,
@@ -963,7 +977,8 @@
       "image": null,
       "posted": false,
       "posted_at": null,
-      "tweet_id": null
+      "tweet_id": null,
+      "original_content": "Trading plan:\n1. Wait for setup\n2. Execute setup\n\nMy brain:\n1. Buy because green candle big\n2. Panic"
     },
     {
       "id": 104,
@@ -1485,7 +1500,8 @@
       "image": null,
       "posted": false,
       "posted_at": null,
-      "tweet_id": null
+      "tweet_id": null,
+      "original_content": "Prop firm traders:\n\nWe track your challenge progress in real-time.\n→ Profit target %\n→ Drawdown usage\n→ Trading days completed\n\nNo more mental math. Just focus on trading.\n\nlynxtrades.com"
     },
     {
       "id": 162,
@@ -2061,7 +2077,8 @@
       "image": null,
       "posted": false,
       "posted_at": null,
-      "tweet_id": null
+      "tweet_id": null,
+      "original_content": "You can't control the market.\n\nYou can control:\n- Your size\n- Your stop\n- Your reaction\n\nFocus there."
     },
     {
       "id": 226,
