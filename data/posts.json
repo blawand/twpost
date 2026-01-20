@@ -466,9 +466,9 @@
         "30+"
       ],
       "poll_duration_minutes": 1440,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-01-20T13:28:21.613000+00:00",
+      "tweet_id": "manually_recovered"
     },
     {
       "id": 51,

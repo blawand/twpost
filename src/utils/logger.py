@@ -110,7 +110,7 @@ if __name__ == '__main__':
     # Create mock config directory if it doesn't exist
     mock_config_dir.mkdir(parents=True, exist_ok=True)
 
-    # Create a dummy settings.json for testing
+    # Create a dummy settings dict for testing
     # This will enable console and file logging with size-based rotation.
     test_settings = {
         "logging": {
@@ -134,16 +134,13 @@ if __name__ == '__main__':
             }
         }
     }
-    with mock_settings_file.open('w') as f:
-        json.dump(test_settings, f, indent=4)
 
-    print(f"Mock 'settings.json' created at: {mock_settings_file}")
     print(f"Test logs will be written to: {mock_logs_dir / 'test_app.log'}")
 
-    # Initialize ConfigLoader (it will pick up the mock_settings_file if run from project root)
-    # Or, if ConfigLoader is more sophisticated, ensure it loads this specific file.
-    # For this test, we assume ConfigLoader's default behavior finds config/settings.json.
+    # Initialize ConfigLoader
     test_config_loader = ConfigLoader() 
+    # Inject test settings directly since file loading is removed
+    test_config_loader.settings = test_settings 
     
     # Setup the root logger using the test configuration
     setup_logger(config_loader=test_config_loader) # Configures root logger

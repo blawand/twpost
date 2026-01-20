@@ -15,8 +15,6 @@ A robust, hybrid Twitter/X automation bot designed for reliable high-performance
 ```text
 twitter-bot/
 ├── config/              # Configuration files
-│   ├── settings.json    # AI models, delays, and bot settings
-│   └── accounts.json    # (Optional) Multi-account setup
 ├── data/                # Data storage
 │   ├── posts.json       # Scheduled tweets DB
 │   ├── cookies.json     # Twikit authentication (Sensitive - Git Ignored)
