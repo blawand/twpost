@@ -36,7 +36,7 @@ class TweepyClientManager:
             consumer_secret=api_secret,
             access_token=access_token,
             access_token_secret=access_token_secret,
-            wait_on_rate_limit=True
+            wait_on_rate_limit=False
         )
         
         # Create v1.1 API for media uploads (not available in v2)

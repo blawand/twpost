@@ -97,14 +97,23 @@ class EngagementManager:
                 
                 try:
                     # Use Official Twitter API (Tweepy) if available - bypasses Error 226
+                    success = False
+                    
+                    # 1. Try Official API (Tweepy) first
                     if self.tweepy_client:
-                        self.tweepy_client.create_tweet(
-                            text=reply_text,
-                            in_reply_to_tweet_id=str(tweet.id)
-                        )
-                        logger.info(f"✅ Replied to @{handle} (via Official API)")
-                    else:
-                        # Fallback to Twikit (may trigger 226)
+                        try:
+                            self.tweepy_client.create_tweet(
+                                text=reply_text,
+                                in_reply_to_tweet_id=str(tweet.id)
+                            )
+                            logger.info(f"✅ Replied to @{handle} (via Official API)")
+                            success = True
+                        except Exception as e:
+                            logger.warning(f"⚠️ Official API failed (Rate Limit?): {e}")
+                            logger.info("🔄 Falling back to Twikit...")
+
+                    # 2. Fallback to Twikit if Official API failed or wasn't available
+                    if not success:
                         await self.client.create_tweet(
                             text=reply_text,
                             reply_to=tweet.id
