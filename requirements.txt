@@ -9,7 +9,3 @@ Pillow
 google-genai
 pydantic
 fake-headers
-
-# Anti-bot bypass
-pycryptodome
-js2py

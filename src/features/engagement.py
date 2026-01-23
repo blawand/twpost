@@ -88,6 +88,13 @@ class EngagementManager:
                 
                 logger.info(f"Found tweet by @{handle}: {text[:50]}...")
                 
+                logger.info(f"Found tweet by @{handle}: {text[:50]}...")
+                
+                # ⏳ Add Human-like Delay (5-15 seconds)
+                delay = random.uniform(5, 15)
+                logger.info(f"⏳ Waiting {delay:.1f}s to mimic human reading speed...")
+                await asyncio.sleep(delay)
+
                 reply_text = await self.llm.generate_reply(text, handle)
                 
                 if not reply_text:

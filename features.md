@@ -160,6 +160,14 @@ LynxTrades supports 6 different asset types, each with specialized fields:
 - **Trade Duplication**: Clone existing trades for quick entry
 - **Advanced Filters**: Filter by any field (see Filtering section)
 
+### AI-Powered CSV Import (Pro)
+Import trades from any broker with intelligent parsing:
+
+- **Smart Broker Detection**: Automatically identifies your broker's export format
+- **AI Trade Extraction**: Uses AI to parse and map columns to trade fields
+- **Duplicate Detection**: Warns about potential duplicate trades before import
+- **Multi-Format Support**: Works with various broker export formats
+
 ---
 
 ## 📉 Trade Price Chart with Real Market Data
@@ -664,6 +672,7 @@ Tabbed panel showing contextual information:
 ### Pro Tier ($8/month)
 - Everything in Free, plus:
 - Unlimited trading accounts
+- AI-powered CSV import
 - 1 GB storage (20x more)
 - High-res uploads (10MB limit per file)
 - More screenshots per trade
@@ -814,3 +823,5 @@ Interactive tour with 5 guided steps:
 12. **Execution Tracking**: Support for scaling in/out with individual execution logging and visualization
 
 13. **Setup Validation**: Setups validate timeframe and market type against actual trade data with visual feedback
+
+14. **AI-Powered Import**: Upload CSV exports from any broker and AI automatically maps and imports your trades
