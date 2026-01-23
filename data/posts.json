@@ -485,9 +485,9 @@
       "type": "social_proof",
       "content": "User feedback that hit different:\n\n\"I always thought I was bad at trading. Turns out I'm actually good at ONE setup and terrible at everything else. Cut the bad setups, account is green now.\"\n\nThis is what tracking does.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-01-23T05:52:17.858688+00:00",
+      "tweet_id": "2014576904594952683"
     },
     {
       "id": 53,
