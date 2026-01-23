@@ -96,7 +96,10 @@ class LLMHelper:
             )
             
             if response and response.text:
-                return response.text.strip()
+                # Post-process: Strip markdown artifacts that LLM sometimes adds despite instructions
+                clean_text = response.text.strip()
+                clean_text = clean_text.replace('*', '').replace('_', '')
+                return clean_text
             return None
             
         except Exception as e:
