@@ -53,7 +53,7 @@ jobs:
           if [ -f data/engagement_tracker.json ]; then
             git add data/engagement_tracker.json
             git diff --staged --quiet || git commit -m "Update engagement tracker [skip ci]"
-            git pull --rebase --autostash origin main || true
+            git pull --rebase --autostash origin master || true
             git push || true
           else
              echo "⚠️ data/engagement_tracker.json not found, skipping commit."

@@ -475,9 +475,9 @@
       "type": "philosophy",
       "content": "It’s wild how people think they can succeed at trading without keeping any records. You’d never run a shop without tracking what’s selling or when folks buy, so why do it with your capital? Use a journal. 📈",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null,
+      "posted": true,
+      "posted_at": "2026-01-23T03:53:49.455000+00:00",
+      "tweet_id": "2014547089800245373",
       "original_content": "Trading is the only profession where people expect to succeed without keeping records.\n\nImagine a business that doesn't track:\n• What products sell\n• When customers buy\n• Which marketing works\n\nThat's trading without a journal."
     },
     {
