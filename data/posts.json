@@ -504,9 +504,9 @@
       "content": "I've got my weekly review down to a 20-minute routine. After pulling my trades and sorting by P&L, I spend a few minutes on my top wins and losses to see what worked. I finish by writing a lesson and a goal for next week. Simple as that.",
       "image": "images/weekly-review.png",
       "image_alt": "Filtered view of trades for a weekly review",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null,
+      "posted": true,
+      "posted_at": "2026-01-24T03:48:25.339042+00:00",
+      "tweet_id": "2014908117377503465",
       "original_content": "My weekly review takes 20 minutes:\n\n1. Pull up the week's trades (2 min)\n2. Sort by P&L (1 min)\n3. Review top 3 winners - what worked? (5 min)\n4. Review top 3 losers - what failed? (5 min)\n5. Write 1 lesson for next week (5 min)\n6. Set 1 goal (2 min)\n\nDone."
     },
     {
