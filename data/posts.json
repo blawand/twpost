@@ -515,9 +515,9 @@
       "content": "Stop jumping between five different apps just to check your trading notes. It's way easier when your logs, analysis, and charts all live in one spot. I use lynxtrades.com to keep things organized without the usual headache.",
       "image": "images/notes.png",
       "image_alt": "LynxTrades integrated notes system",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null,
+      "posted": true,
+      "posted_at": "2026-01-24T13:09:00.073810+00:00",
+      "tweet_id": "2015049192016900395",
       "original_content": "Your trading notes shouldn't live in 5 different apps.\n\nLynxTrades brings it all together:\n• Trade log\n• Notes & analysis\n• Screenshots & charts\n• Performance data\n\nOne place. Zero friction.\n\nlynxtrades.com"
     },
     {
