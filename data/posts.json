@@ -563,9 +563,9 @@
       "content": "I'm finally seeing the full picture of my trades. Scaling into positions at 45.20 and 44.80 then selling higher used to be a mess to track, but now I've got real averages and P&L data thanks to lynxtrades.com.",
       "image": "images/tradeform-executions.png",
       "image_alt": "LynxTrades execution tracking",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null,
+      "posted": true,
+      "posted_at": "2026-01-26T04:08:22.142053+00:00",
+      "tweet_id": "2015637913120407815",
       "original_content": "Track the full picture.\n\nLynxTrades execution tracking:\n→ Entry 1: 100 shares @ $45.20\n→ Entry 2: 50 shares @ $44.80\n→ Exit 1: 100 shares @ $46.50\n→ Exit 2: 50 shares @ $47.00\n\nReal P&L. Real averages. Real analysis.\n\nlynxtrades.com"
     },
     {
