@@ -592,9 +592,9 @@
       "content": "You'll learn way more from your own screenshots than any course since it's so helpful to see your initial logic alongside the final result. I use LynxTrades because they don't limit how many shots you can save per trade.",
       "image": "images/chart-screenshot-example.png",
       "image_alt": "Example trade with chart screenshots",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null,
+      "posted": true,
+      "posted_at": "2026-01-27T03:57:58.934192+00:00",
+      "tweet_id": "2015997686735069331",
       "original_content": "Screenshot tip:\n\nTake 2 screenshots per trade:\n1. Entry - show your reasoning\n2. Exit - show what happened\n\nFuture you will learn more from these than any course.\n\nLynxTrades supports unlimited screenshots per trade."
     },
     {
