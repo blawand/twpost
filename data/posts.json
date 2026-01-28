@@ -668,9 +668,9 @@
         "Reviewing the data"
       ],
       "poll_duration_minutes": 1440,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-01-28T16:31:08.784153+00:00",
+      "tweet_id": "2016549615533773061"
     },
     {
       "id": 71,
