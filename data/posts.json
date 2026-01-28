@@ -642,9 +642,9 @@
       "type": "relatable",
       "content": "Me before journaling:\n\"I think I'm doing okay\"\n\nMe after 100 logged trades:\n\"I'm bleeding money on afternoon trades, my FOMO entries are disasters, and I'm only profitable on breakouts\"\n\nData hits different.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-01-28T03:55:47.656620+00:00",
+      "tweet_id": "2016359524848795748"
     },
     {
       "id": 69,
