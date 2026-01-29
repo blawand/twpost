@@ -697,9 +697,9 @@
       "type": "humor",
       "content": "Trader: \"I don't need a journal, I remember all my trades\"\n\nAlso trader: \"Wait, why did I buy this? When did I buy this? How much did I pay?\"\n\n📝 Just journal.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-01-29T16:38:46.954723+00:00",
+      "tweet_id": "2016913924914844034"
     },
     {
       "id": 74,
