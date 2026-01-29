@@ -706,9 +706,9 @@
       "type": "process",
       "content": "I've started spending two minutes reviewing my plan after every loss to see if I actually stuck to it. I need to know if it was just bad luck or if I need to change my strategy. It’s a small habit that's saved me thousands.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null,
+      "posted": true,
+      "posted_at": "2026-01-29T19:54:33.849933+00:00",
+      "tweet_id": "2016963195106140476",
       "original_content": "After every losing trade, I write:\n\n1. What was my plan?\n2. Did I follow it?\n3. If yes: Bad luck or bad plan?\n4. If no: Why did I deviate?\n5. What would I do differently?\n\nThis takes 2 minutes.\n\nIt saves thousands."
     },
     {
