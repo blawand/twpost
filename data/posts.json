@@ -738,9 +738,9 @@
       "content": "I've been tagging my journal whenever I revenge trade, move a stop, or let FOMO take over. Seeing the cost at month end is a huge reality check. It's much easier to improve once you've actually got the data.",
       "image": "images/emotions.png",
       "image_alt": "LynxTrades emotion tracking",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null,
+      "posted": true,
+      "posted_at": "2026-01-30T13:36:16.140749+00:00",
+      "tweet_id": "2017230381351645656",
       "original_content": "The trading sins I track:\n\n1. Revenge trading\n2. FOMO entries\n3. Oversizing\n4. Moving stops\n5. Not taking profits\n\nEach one has a tag in my journal.\n\nAt month end, I see exactly which sins cost me money.\n\nData > discipline."
     },
     {
