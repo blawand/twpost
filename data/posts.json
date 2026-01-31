@@ -777,9 +777,9 @@
       "type": "lifestyle",
       "content": "Coffee first. Charts second. Execution third.\n\nDon't mix up the order.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-01-31T13:24:02.533288+00:00",
+      "tweet_id": "2017589692762366215"
     },
     {
       "id": 82,
