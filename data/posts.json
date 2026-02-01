@@ -804,9 +804,9 @@
       "type": "engagement",
       "content": "What's the best trading book you've ever read?\n\n'Trading in the Zone' is the standard answer, but looking for hidden gems.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-01T13:26:00.209343+00:00",
+      "tweet_id": "2017952574222008508"
     },
     {
       "id": 85,
