@@ -813,9 +813,9 @@
       "type": "humor",
       "content": "Me: \"I'm going to hold for the big move.\"\n\nMarket: *Ticks against me by 2 cents*\n\nMe: \"Close it! Close it all!\"",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-01T16:24:31.661631+00:00",
+      "tweet_id": "2017997501333373048"
     },
     {
       "id": 86,
