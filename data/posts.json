@@ -849,9 +849,9 @@
       "type": "lifestyle",
       "content": "Saturday mornings are for review.\n\nLook at the week's data. clear the head. reset for Monday.\n\nIt's the most important session of the week.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-02T23:27:39.473339+00:00",
+      "tweet_id": "2018466373404340277"
     },
     {
       "id": 90,
