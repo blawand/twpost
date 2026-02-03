@@ -876,9 +876,9 @@
       "type": "humor",
       "content": "My strategy is 50% technical analysis, 40% risk management, and 10% pure anxiety.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-03T16:46:36.523310+00:00",
+      "tweet_id": "2018727833959285134"
     },
     {
       "id": 93,
