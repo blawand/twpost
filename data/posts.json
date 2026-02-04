@@ -921,9 +921,9 @@
       "type": "engagement",
       "content": "Poll: Do you trade news events or sit them out?",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-04T20:00:21.502985+00:00",
+      "tweet_id": "2019138980499865953"
     },
     {
       "id": 98,
