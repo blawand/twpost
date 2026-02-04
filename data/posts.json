@@ -903,9 +903,9 @@
       "type": "insight",
       "content": "Volume doesn't lie. Price can fake you out, but volume tells you who is actually participating.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-04T13:43:14.335725+00:00",
+      "tweet_id": "2019044075262132609"
     },
     {
       "id": 96,
