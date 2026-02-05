@@ -939,9 +939,9 @@
       "type": "pain_point",
       "content": "\"I'll remember why I took this trade.\"\n\nNo you won't. You'll forget by lunch.\n\nWrite it down.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-05T13:46:09.401884+00:00",
+      "tweet_id": "2019407197378166931"
     },
     {
       "id": 100,
