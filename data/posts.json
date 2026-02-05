@@ -948,9 +948,9 @@
       "type": "feature",
       "content": "Import your history.\n\nDon't start from zero. Export from your broker, import to LynxTrades.\n\nSee your lifetime stats in about 30 seconds.\n\nlynxtrades.com",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-05T16:41:29.360251+00:00",
+      "tweet_id": "2019451321183604958"
     },
     {
       "id": 101,
