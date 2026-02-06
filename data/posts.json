@@ -994,9 +994,9 @@
       "type": "insight",
       "content": "The best trades usually work immediately.\n\nIf you have to stare at it and pray for 20 minutes, it's probably a loser.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-06T16:39:09.309362+00:00",
+      "tweet_id": "2019813121733386423"
     },
     {
       "id": 106,
