@@ -1030,9 +1030,9 @@
       "type": "engagement",
       "content": "Who is trading the open today and who is waiting for the dust to settle?",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-07T13:26:13.152898+00:00",
+      "tweet_id": "2020126955761172918"
     },
     {
       "id": 110,
