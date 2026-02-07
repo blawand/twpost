@@ -1048,9 +1048,9 @@
       "type": "feature",
       "content": "Mistake tracking.\n\nTag trades with \"FOMO\", \"Revenge\", \"Fat Finger\".\n\nSee how much being an idiot actually costs you.\n\nlynxtrades.com",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-07T19:47:34.458052+00:00",
+      "tweet_id": "2020222926654697525"
     },
     {
       "id": 112,
