@@ -1084,9 +1084,9 @@
       "type": "feature",
       "content": "Interactive charts on every trade log.\n\nLynxTrades pulls the actual market data so you can see where you entered vs. where the market went.\n\nVisual learners need visual tools.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-08T19:48:25.755894+00:00",
+      "tweet_id": "2020585529868255361"
     },
     {
       "id": 116,
