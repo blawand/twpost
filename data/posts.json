@@ -1111,9 +1111,9 @@
       "type": "social_proof",
       "content": "\"I used to pay $40/month for a journal that did less than this free one.\"\n\nMusic to my ears.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-09T23:35:38.563180+00:00",
+      "tweet_id": "2021005097937797555"
     },
     {
       "id": 119,
