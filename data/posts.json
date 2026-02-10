@@ -1156,9 +1156,9 @@
       "type": "humor",
       "content": "Buying the dip works great until it keeps dipping.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-10T23:37:12.613375+00:00",
+      "tweet_id": "2021367880294531221"
     },
     {
       "id": 124,
