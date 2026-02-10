@@ -1129,9 +1129,9 @@
       "type": "feature",
       "content": "Journaling shouldn't be a chore.\n\nDrag, drop, tag, done.\n\nWe optimized the UI for speed because we know you want to be done with the day.\n\nlynxtrades.com",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-10T14:01:04.170068+00:00",
+      "tweet_id": "2021222889538846765"
     },
     {
       "id": 121,
