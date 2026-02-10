@@ -1147,9 +1147,9 @@
       "type": "lifestyle",
       "content": "Gym. Sleep. Nutrition.\n\nYou can't trade at peak performance with a trash lifestyle.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-10T20:09:26.110176+00:00",
+      "tweet_id": "2021315592050049106"
     },
     {
       "id": 123,
