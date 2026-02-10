@@ -1120,9 +1120,9 @@
       "type": "insight",
       "content": "A boring trade is usually a good trade.\n\nExcitement belongs in casinos.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-10T04:41:59.230088+00:00",
+      "tweet_id": "2021082192080928917"
     },
     {
       "id": 120,
