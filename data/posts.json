@@ -1183,9 +1183,9 @@
       "type": "psychology",
       "content": "Accept the risk before you click the button.\n\nIf the loss happens, you already agreed to it.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-11T20:03:55.363490+00:00",
+      "tweet_id": "2021676592586424634"
     },
     {
       "id": 127,
