@@ -9,6 +9,7 @@ LynxTrades is a comprehensive trading journal application designed for serious t
 ## 🏦 Account Management
 
 ### Multi-Account Support
+
 - **Account Types**: Cash, Margin, IRA/Retirement, and Paper Trading accounts
 - **Account Categories**: Retail accounts and Prop Firm accounts
 - **Currency Support**: Multi-currency accounts (USD, EUR, GBP, JPY, CAD, AUD, CHF, etc.) with automatic symbol display throughout the app
@@ -18,9 +19,11 @@ LynxTrades is a comprehensive trading journal application designed for serious t
 - **Account Status**: Active, Inactive, or Closed status management
 
 ### Prop Firm Integration
+
 One of LynxTrades' most unique features is comprehensive prop firm account support:
 
 #### Pre-built Prop Firm Presets
+
 - **FTMO (Normal & Aggressive)**: 2-phase challenge with 10%/5% targets
 - **The5ers (High Stakes & Bootcamp)**: 2 and 3-phase options
 - **TopStep**: 1-phase with trailing drawdown and consistency rules
@@ -30,6 +33,7 @@ One of LynxTrades' most unique features is comprehensive prop firm account suppo
 - **Custom/Other**: Fully customizable for any prop firm
 
 #### Prop Firm Configuration Options
+
 - **Phase Tracking**: Evaluation Phase 1, 2, 3, Funded, or Failed status
 - **Account Sizes**: Predefined sizes from $5,000 to $500,000
 - **Profit Targets**: Absolute value and percentage targets per phase
@@ -51,11 +55,13 @@ One of LynxTrades' most unique features is comprehensive prop firm account suppo
   - Scaling target and multiplier
 
 #### Prop Firm Tracking
+
 - Phase start and end dates
 - Account reset events with reason tracking
 - Reset reasons: Phase complete, Daily DD failure, Max DD failure, Time limit, Rule violation, New challenge, Manual reset
 
 #### Live Prop Firm Dashboard Status
+
 - Real-time profit target progress with percentage tracking
 - Live drawdown monitoring (current usage vs limit)
 - Trading days counter toward minimum requirement
@@ -68,14 +74,17 @@ One of LynxTrades' most unique features is comprehensive prop firm account suppo
 ## 📊 Trade Logging
 
 ### Supported Asset Classes
+
 LynxTrades supports 6 different asset types, each with specialized fields:
 
 #### 1. Stock Trades
+
 - Symbol, side (long/short), entry/exit prices
 - Quantity, commission, and fees
 - Stop loss and take profit levels
 
 #### 2. Options Trades
+
 - **Multi-Leg Support**: Trade single legs or complex multi-leg strategies
 - **Strategy Presets**: 10+ pre-built strategy templates:
   - Vertical Spreads (Debit/Credit)
@@ -90,20 +99,24 @@ LynxTrades supports 6 different asset types, each with specialized fields:
 - Underlying price at entry/exit
 
 #### 3. Futures Trades
+
 - Contracts traded
 - Point value (e.g., $50 for ES)
 - Tick value and tick size
 - Expiration date
 
 #### 4. Forex Trades
+
 - Lot size tracking
 - Unit-based quantity
 
 #### 5. Crypto Trades
+
 - Fractional quantity support
 - High precision pricing
 
 #### 6. Commodity Trades
+
 - **Spot Metals**: Gold (XAU/USD), Silver (XAG/USD), Platinum, etc.
 - Unit-based quantity tracking
 - Twelve Data API integration for price data
@@ -113,12 +126,14 @@ LynxTrades supports 6 different asset types, each with specialized fields:
 ### Trade Entry Features
 
 #### Multiple Executions (Scaling In/Out)
+
 - Track individual executions within a single trade
 - Each execution records: type (entry/exit), date, price, quantity, commission
 - Supports complex scaling strategies
 - All executions visualized on the price chart
 
 #### Trade Metadata
+
 - **Setups**: Link trades to predefined trading setups (multiple allowed)
 - **Tags**: Custom tagging system for categorization
 - **Mistakes**: Track trading mistakes associated with each trade
@@ -131,6 +146,7 @@ LynxTrades supports 6 different asset types, each with specialized fields:
 - **Screenshots**: Attach chart images to trades (subscription-limited)
 
 #### Risk Management Fields
+
 - Stop Loss price
 - Take Profit price
 - Risk/Reward Ratio (calculated)
@@ -139,10 +155,12 @@ LynxTrades supports 6 different asset types, each with specialized fields:
 - Pre-trade Checklist completion tracking
 
 #### Trade Status Tracking
+
 - Open or Closed status
 - Archive capability for old trades
 
 #### Smart Automation & Customization
+
 - **Smart Symbol Autofill**: Automatically populates trade details (contracts, strike, side) from your last trade on that symbol. Smartly detects and skips expired dates.
 - **Auto SL/TP Calculation**: Automatically calculates Stop Loss and Take Profit levels based on your preferences:
   - **Global Defaults**: Set standard % or $ risk per asset class.
@@ -152,6 +170,7 @@ LynxTrades supports 6 different asset types, each with specialized fields:
   - **Instant Sync**: Settings toggles update instantly across the application.
 
 ### Trade Display & Navigation
+
 - **Trade Table**: Full-featured data table with sorting and pagination
 - **Trade Cards**: Visual card view for quick scanning
 - **Column Visibility**: Customize which columns appear in the table
@@ -161,6 +180,7 @@ LynxTrades supports 6 different asset types, each with specialized fields:
 - **Advanced Filters**: Filter by any field (see Filtering section)
 
 ### AI-Powered CSV Import (Pro)
+
 Import trades from any broker with intelligent parsing:
 
 - **Smart Broker Detection**: Automatically identifies your broker's export format
@@ -173,6 +193,7 @@ Import trades from any broker with intelligent parsing:
 ## 📉 Trade Price Chart with Real Market Data
 
 ### Real Market Data Integration
+
 Each trade displays an **interactive candlestick chart with real market data**:
 
 - **Alpaca API**: Fetches real OHLCV data for US stocks and options (underlying)
@@ -180,6 +201,7 @@ Each trade displays an **interactive candlestick chart with real market data**:
 - **Futures**: Automatic ETF alternative suggestions (e.g., ES → SPY)
 
 ### Intelligent Timeframe Auto-Selection
+
 The chart automatically selects the optimal timeframe based on trade duration:
 
 - **8 Timeframe Options**: 1m, 5m, 15m, 30m, 1H, 4H, 1D, 1W
@@ -188,6 +210,7 @@ The chart automatically selects the optimal timeframe based on trade duration:
 - **User Override**: Manual timeframe selection available
 
 ### Trade Execution Visualization
+
 - **Entry Markers**: Blue arrows showing exact entry price and quantity
 - **Exit Markers**: Purple arrows showing exact exit price and quantity
 - **Multi-Execution Support**: All scaling entries/exits shown for scaled positions
@@ -195,6 +218,7 @@ The chart automatically selects the optimal timeframe based on trade duration:
 - **Take Profit Line**: Green dotted horizontal line at take profit price
 
 ### Chart Features
+
 - **Volume Overlay**: Color-coded volume bars (green for up candles, red for down)
 - **Zoom & Pan**: Mouse wheel zoom, drag to pan
 - **Auto-Fit**: Chart auto-centers on trade entry/exit with smart padding
@@ -204,12 +228,14 @@ The chart automatically selects the optimal timeframe based on trade duration:
 - **Responsive Sizing**: ResizeObserver-based auto-fit
 
 ### Smart Pre/Post Buffer Calculation
+
 - Calculates appropriate context before entry and after exit
 - For intraday trades: ensures no missing overnight gaps
 - For multi-day trades: shows proportional context
 - Minimum 120 candles always displayed for context
 
 ### Simulated Trade Replay
+
 Re-live your trades with an interactive playback experience:
 
 - **Candle-by-Candle Replay**: Watch the market unfold one candle at a time
@@ -222,13 +248,29 @@ Re-live your trades with an interactive playback experience:
 - **Dynamic Markers**: Entry/exit markers appear as the replay reaches those timestamps
 - **Simulated Feed Label**: Clear indicator that replay uses simulated intra-candle data
 - **Seamless Transition**: One-click switch between static chart and replay mode
+- **Dynamic Speed**: Control replay speed from 0.1x to 10x
+
+### Running P&L Analysis (Pro)
+
+Unlock advanced intra-trade insights and live tracking:
+
+- **Global Live P&L**: Monitor the aggregated unrealized profit/loss of all open trades in real-time directly from the trades dashboard.
+- **Intra-Day Tracking**: Detailed real-time P&L fluctuations for active positions fueled by live market data.
+- **MAE (Maximum Adverse Excursion)**: The largest intra-trade loss before the trade was closed. Measures your "max pain" tolerance.
+- **MFE (Maximum Favorable Excursion)**: The largest intra-trade profit before the trade was closed.
+- **Efficiency Metrics**:
+  - **Captured MFE**: Percentage of the maximum potential profit that was realized at exit.
+  - **Avoided MAE**: Percentage of the max potential loss avoided by exiting early.
+- **P&L Visualizer**: Interactive chart showing the P&L path of the trade from entry to exit.
 
 ---
 
 ## 📔 Journaling System
 
 ### Note Types (Folders)
+
 Pre-defined folder structure:
+
 - **Pre-Trade**: Plan your trades before entry
 - **Post-Trade**: Reflect on completed trades
 - **Daily Journal**: End-of-day reflections
@@ -236,9 +278,11 @@ Pre-defined folder structure:
 Users can create custom folders with personalized colors.
 
 ### Note Templates
+
 Built-in templates for common journal types:
 
 #### Pre-Trade Plan Template
+
 - Trade Thesis section
 - Entry Plan (price, size, reason)
 - Exit Plan (target, stop, trailing)
@@ -247,6 +291,7 @@ Built-in templates for common journal types:
 - Pre-Trade Checklist
 
 #### Post-Trade Review Template
+
 - Trade Summary
 - What Went Right
 - What Went Wrong
@@ -255,12 +300,14 @@ Built-in templates for common journal types:
 - Improvements for next time
 
 #### Daily Journal Template
+
 - Pre-Market Notes (sentiment, levels, ideas)
 - Trading Session log
 - Post-Market Review (P&L, observations)
 - Lessons Learned
 
 ### Note Features
+
 - **Rich Text Editor**: Full-featured editor with:
   - Text styles (bold, italic, underline, strikethrough)
   - Headings (H1-H3)
@@ -281,6 +328,7 @@ Built-in templates for common journal types:
 ## 📈 Analytics & Performance
 
 ### Core Trading Metrics
+
 - Net P&L and Gross P&L
 - Win Rate percentage
 - Profit Factor (gross profit / gross loss)
@@ -295,6 +343,7 @@ Built-in templates for common journal types:
 - Total commissions paid
 
 ### Risk Metrics
+
 - Maximum Drawdown ($ and %)
 - **Sharpe Ratio**: Risk-adjusted return
 - **Sortino Ratio**: Downside risk-adjusted return
@@ -303,6 +352,7 @@ Built-in templates for common journal types:
 - Return on Capital
 
 ### Time-Based Analysis
+
 - **Hourly Performance**: P&L by hour of day (0-23)
 - **Day of Week Performance**: Performance by weekday
 - **Monthly Performance**: Month-over-month tracking
@@ -311,6 +361,7 @@ Built-in templates for common journal types:
 ### Analytics Components (17+ specialized views)
 
 #### Performance Analysis
+
 - **Performance Metrics**: Core performance dashboard with all key metrics
 - **Equity Curve**: Visual equity growth over time with drawdown overlay
 - **Drawdown Chart**: Dedicated drawdown visualization
@@ -318,10 +369,12 @@ Built-in templates for common journal types:
 - **Monthly Performance Chart**: Month-by-month bar chart
 
 #### Symbol & Market Analysis
+
 - **Symbol Analysis**: Performance breakdown by ticker
 - **Top Performers**: Best and worst performing symbols on dashboard
 
 #### Strategy Analysis
+
 - **Setup Analysis**: Win rate and P&L by trading setup with detailed breakdowns
 - **Asset Analysis**: Multi-asset performance breakdown
   - Supports Stocks, Options, Futures, Forex, Crypto, Commodities
@@ -331,26 +384,113 @@ Built-in templates for common journal types:
   - Top Ticker performance per asset class
 
 #### Behavioral Analysis
+
 - **Emotion Analysis**: Performance correlated with emotional states
 - **Mistake Analysis**: Impact of mistakes on P&L with frequency tracking
 - **Rule Compliance Analysis**: How rule violations affect performance
 
 #### Time Analysis
+
 - **Time Analysis**: Hourly, daily, monthly performance breakdowns
 - **Trading Insights**: Pattern recognition and suggestions
 
 #### Journal Analysis
+
 - **Journal Insights**: Correlate journaling habits with performance
 
 #### Goals & Comparisons
+
 - **Goals Tracking**: Set and track trading goals
 - **Comparison Tools**: Compare performance between periods
 
 #### Reports
+
+- **Reports**: Generate comprehensive trading reports
 - **Reports**: Generate comprehensive trading reports
 - **Report Document**: Full exportable report with charts and metrics
 
+### Advanced Analytics (Pro)
+
+Institutional-grade statistical analysis tools designed to find your edge and plug leaks:
+
+#### 1. Best Times Heatmap
+
+Visualize your most profitable trading windows with high granularity.
+
+- **Configurable Intervals**: Analyze performance at 5m, 15m, 30m, or 1h resolution.
+- **Metric Toggling**: Switch between Net P&L and Win Rate distributions.
+- **Golden Hour Detection**: Identify your "Golden Hours" and "Loss Zones" by day of week and time of day.
+- **Actionable Insight**: Stop trading during your historically unprofitable times to instantly boost expectancy.
+
+#### 2. Trade Efficiency Analysis
+
+Analyze your entry and exit execution using MAE (Maximum Adverse Excursion) and MFE (Maximum Favorable Excursion).
+
+- **Scatter Plot**: Visualizes every trade's "pain vs gain".
+- **Harvest Rate**: What % of the move did you capture?
+- **Leave-on-Table**: How much profit did you miss by exiting too early?
+- **Pain Tolerance**: Are you sitting through excessive drawdowns for small gains?
+
+#### 3. Return Distribution
+
+Analyze the shape of your P&L curve to detect hidden risks.
+
+- **Skewness**: Positive skew means small losses and large wins (healthy). Negative skew means small wins and catastrophic losses (risky).
+- **Kurtosis**: Detects "fat tails" — extreme outlier events that could wipe you out.
+- **Psychology Red Zone**: Warns if your distribution indicates emotional trading (e.g., revenge trading).
+
+#### 4. Kelly Criterion & Risk
+
+Mathematical optimization for position sizing.
+
+- **Kelly Fraction**: The theoretically optimal position size to maximize geometric growth.
+- **Edge Quality**: Is your strategy actually profitable per trade?
+- **Sizing Recommendation**: Specific advice on whether to size up or down based on your win rate and reward-to-risk.
+
+#### 5. Capital Preservation
+
+Focus on survival metrics.
+
+- **Survival Buffer**: How many consecutive losses can you survive before ruin?
+- **Drawdown Probabilities**: The statistical likelihood of hitting a 10%, 20%, or 50% drawdown.
+- **Streak Analysis**: Probability of encountering a losing streak of X trades.
+
+#### 6. Benchmark Alpha
+
+Compare your active trading performance against passive investing.
+
+- **Alpha**: Your "excess return" above the market (SPY).
+- **Beta**: Correlation with the overall market.
+- **Information Ratio**: Measure of skill/reliability relative to risk taken.
+- **Treynor Ratio**: Return per unit of market risk.
+
+### Simulation Studio (Pro)
+
+Project future performance based on historical data using advanced modeling:
+
+#### Monte Carlo Simulation
+
+Run randomized simulations of your future equity curve based on your actual trade statistics.
+
+- **Highly Configurable**: Run up to 10,000 simulations over horizons of up to 500 future trades.
+- **Risk of Ruin Thresholds**: Set custom drawdown limits (25% to 90%) to calculate the exact probability of hitting catastrophic levels.
+- **Growth Modeling**: Toggle between **Fixed P&L** or **Compounding Growth** (position size scaling).
+- **Outlier Stress Test**: Run "worst-case" scenarios by excluding the top 5% of winning trades to ensure your edge is robust.
+- **Percentile Bands**: Visualize the "Cone of Uncertainty" with 5th, 25th, 75th, and 95th percentile paths.
+
+#### What-If Analysis (Sandbox)
+
+Interactive strategy lab to test hypothetical changes to your system.
+
+- **Adjust Variables**: Tweak Win Rate, Avg Win, Avg Loss, Position Size, and Fees.
+- **Instant Feedback**: See how changes impact your simulated equity curve in real-time.
+- **Scenario Testing**:
+  - "What if I cut my losers 10% sooner?"
+  - "What if my win rate drops to 40%?"
+  - "What if I miss 1 out of every 5 trades?"
+
 ### Customizable Analytics Dashboard
+
 - **Layout Engine**: Configurable widget layout system with drag-and-drop reordering
 - **Widget System**: Add/remove analytics widgets
 - **Analytics Customizer**: Configure which metrics to display
@@ -361,12 +501,14 @@ Built-in templates for common journal types:
 ## 📅 Calendar Views
 
 ### Multiple View Modes
+
 - **Year Heatmap**: GitHub-style heatmap showing daily P&L intensity
 - **Month View**: Traditional monthly calendar with trade summaries
 - **Week View**: Weekly overview of trading activity
 - **Day View**: Detailed view of individual trading day with all trades
 
 ### Calendar Features
+
 - Color-coded cells based on P&L (green for profits, red for losses)
 - Trade count per day
 - Quick navigation between periods
@@ -390,6 +532,7 @@ Built-in templates for common journal types:
 9. **Custom Rules**: Personal reminders/guidelines (not auto-tracked)
 
 ### Rule Configuration
+
 - Name and description
 - Color coding (15 color options)
 - Value with unit (currency, percent, count, ratio)
@@ -398,12 +541,14 @@ Built-in templates for common journal types:
 - Auto-tracking for structured rule types
 
 ### Risk Profile Management
+
 - Account size tracking
 - Risk per trade percentage
 - Maximum daily loss setting
 - Pre-trade checklist items (customizable list)
 
 ### Position Sizing Calculator
+
 - Calculate position size based on:
   - Account size
   - Entry price
@@ -417,6 +562,7 @@ Built-in templates for common journal types:
 ## 🎯 Trading Setups
 
 ### Setup Definition
+
 - **Name** and **Description**
 - **Entry Conditions**: Customizable list of criteria for trade entry
 - **Exit Conditions**: Customizable list of criteria for trade exit
@@ -425,13 +571,16 @@ Built-in templates for common journal types:
 - **Color**: Visual identification (8 colors)
 
 ### Setup Tracking
+
 - Automatically calculated win rate from linked trades
 - Average profit per trade
 - Total trade count using this setup
 - Performance metrics over time
 
 ### Setup Validation on Trade Detail
+
 When viewing a trade linked to a setup:
+
 - **Timeframe Matching**: Green chip if trade duration matches setup timeframe, amber warning if mismatch
 - **Market Matching**: Highlights which market types match the trade's asset class
 - **Entry/Exit Condition Checklists**: Toggle checkboxes for each condition (persisted)
@@ -441,6 +590,7 @@ When viewing a trade linked to a setup:
 ## ❌ Mistake Tracking
 
 ### Mistake Categories (9 types)
+
 1. **Entry Mistake**: Wrong entry timing or type
 2. **Exit Mistake**: Poor exit decision
 3. **Position Sizing**: Incorrect size for trade
@@ -452,12 +602,14 @@ When viewing a trade linked to a setup:
 9. **Other**: Miscellaneous
 
 ### Mistake Severity Levels
+
 - **Low** (Blue): Minor impact
 - **Medium** (Amber): Noticeable impact
 - **High** (Orange): Significant impact
 - **Critical** (Red): Major trading error
 
 ### Mistake Features
+
 - Impact estimation in dollars
 - Frequency tracking (occurrence count)
 - Prevention tips (user-defined list, displayed on trade detail)
@@ -470,6 +622,7 @@ When viewing a trade linked to a setup:
 ## 🏷️ Tagging System
 
 ### Tag Configuration
+
 - Custom name
 - Description (optional)
 - Color selection (15 colors):
@@ -479,6 +632,7 @@ When viewing a trade linked to a setup:
 - Usage count tracking
 
 ### Tag Applications
+
 - Apply to trades for categorization
 - Filter trades by tag
 - Analyze performance by tag
@@ -489,6 +643,7 @@ When viewing a trade linked to a setup:
 ## 🔍 Global Search & Filtering
 
 ### Global Search Categories
+
 - **Navigation**: Search pages/sections
 - **Actions**: Quick commands with keyboard shortcuts
 - **Trades**: Search trade history
@@ -499,7 +654,9 @@ When viewing a trade linked to a setup:
 - **Notes**: Search journal entries
 
 ### Trade Search
+
 Full-text search across **10+ trade fields**:
+
 - Symbol
 - Side (long/short)
 - Entry & Exit Price
@@ -512,6 +669,7 @@ Full-text search across **10+ trade fields**:
 - Emotion
 
 ### Advanced Trade Filtering
+
 - **Asset Type**: Stocks, Options, Futures, Forex, Crypto, Commodity
 - **Side**: Long, Short, Call, Put
 - **Status**: Open, Closed
@@ -523,6 +681,7 @@ Full-text search across **10+ trade fields**:
 - One-click filter clearing
 
 ### Saved Filter Presets
+
 - **Save Current Filters**: Name and save any filter combination
 - **Load Saved Filters**: One-click to apply saved presets
 - **Set Default**: Mark a filter as default (auto-loads)
@@ -535,6 +694,7 @@ Full-text search across **10+ trade fields**:
 ## 📊 Charts & Visualization
 
 ### Chart Types (14 specialized charts)
+
 1. **Area Chart**: Filled line charts for trends
 2. **Bar Chart**: Comparative bar visualizations
 3. **Line Chart**: Simple line plots
@@ -551,6 +711,7 @@ Full-text search across **10+ trade fields**:
 14. **Base Chart**: Configurable base component
 
 ### Chart Features
+
 - Responsive design with ResizeObserver
 - Interactive tooltips
 - Legend customization
@@ -564,19 +725,23 @@ Full-text search across **10+ trade fields**:
 ## 🎨 Customization & Settings
 
 ### Appearance Settings
+
 - **Theme**: Light, Dark, or System preference
 
 ### User Preferences
+
 - Default account selection
 - Currency preference
 - Timezone configuration
 - Date format selection
 
 ### Dashboard Customization
+
 - Add/remove dashboard widgets
 - Layout persistence per user
 
 ### Keyboard Shortcuts
+
 - Enable/disable global shortcuts
 - Vim mode for rich text editors
 - Quick action hotkeys
@@ -586,6 +751,7 @@ Full-text search across **10+ trade fields**:
 ## 💾 Data Management
 
 ### Export Capabilities
+
 - **CSV Trade Export**: Full trade data export with:
   - Core trade details (date, time, symbol, type, side)
   - Entry/exit data
@@ -596,6 +762,7 @@ Full-text search across **10+ trade fields**:
   - Emotions and confidence levels
 
 ### Data Actions
+
 - Account deletion with cascading data cleanup
 - Delete all trades for a user with media cleanup
 
@@ -604,14 +771,17 @@ Full-text search across **10+ trade fields**:
 ## Trade Detail View
 
 ### Trade Info Panel
+
 Tabbed panel showing contextual information:
 
 #### Risk Rule Checklist Tab
+
 - Displays user-defined checklist items
 - Shows which items were checked before the trade
 - Green checkmarks for completed items
 
 #### Setups Tab
+
 - Shows linked setup name with color chip
 - **Timeframe Validation**: Green chip if trade duration matches, amber warning if mismatch
 - **Market Validation**: Highlights matching asset classes
@@ -619,12 +789,14 @@ Tabbed panel showing contextual information:
 - Exit conditions with completion status
 
 #### Mistakes Tab
+
 - Shows linked mistake name with color chip
 - Severity badge (Low/Medium/High/Critical)
 - Description text
 - **Prevention Tips**: Displayed as bullet list for learning
 
 ### Trade Stats Grid
+
 - Entry/Exit prices
 - P&L (gross and net)
 - Holding time
@@ -632,26 +804,29 @@ Tabbed panel showing contextual information:
 - Commission and fees
 
 ### Trade Journal Section
+
 - Linked notes display
 - Trade notes field
-
 
 ---
 
 ## 🔐 Authentication & Security
 
 ### Auth Methods
+
 - Email/Password registration
 - Google Sign-In integration
 - Password reset via email
 - Email verification
 
 ### Security Features
+
 - Firebase Authentication
 - Re-authentication for sensitive actions (account deletion, password change)
 - Secure password requirements
 
 ### User Profile
+
 - Display name customization
 - Avatar/profile photo
 - Account creation date tracking
@@ -662,23 +837,29 @@ Tabbed panel showing contextual information:
 ## 💳 Subscription Tiers
 
 ### Free Tier ($0 forever)
+
 - Unlimited trade entries & journaling
-- Full analytics suite access
+- Standard performance analytics dashboard
 - Unlimited strategy playbooks (setups)
 - Up to 2 trading accounts
 - 50 MB storage
 - Reports tool & data export
 
-### Pro Tier ($8/month)
-- Everything in Free, plus:
-- Unlimited trading accounts
-- AI-powered CSV import
-- 1 GB storage (20x more)
-- High-res uploads (10MB limit per file)
-- More screenshots per trade
-- Priority support
+### Pro Tier ($15/month or $13/month billed annually)
+
+Unlock the full power of LynxTrades with institutional-grade tools:
+
+- **Broker Integration & Auto-Import**: Connect your brokerage accounts (TD Ameritrade, Interactive Brokers, Alpaca, Webull, and 15+ more via SnapTrade) to automatically sync trades. Auto-sync runs 4x daily during market hours. Max 2 broker connections.
+- **Simulation Studio**: Monte Carlo modeling, Risk of Ruin, and interactive What-If scenario testing.
+- **Advanced Analytics**: Best Times Heatmaps (5m to 1h), Efficiency Analysis (MAE/MFE), Return Skewness, and Alpha Benchmarking.
+- **Running P&L Analysis**: Global "Live P&L" dashboard stat and deep dive into every trade with intra-day price tracking and excursion metrics.
+- **AI-Powered CSV Import**: Automated trade entry from any broker export using intelligent parsing.
+- **Unlimited Trading Accounts**: Track retail and prop firm accounts without limits.
+- **Increased Storage**: 1 GB storage (20x more) for high-resolution screenshots and videos.
+- **Priority Support**: Direct line for faster assistance and feature requests.
 
 ### Subscription Features
+
 - Plan management
 - Billing period tracking
 - Storage usage monitoring (bytes)
@@ -690,12 +871,15 @@ Tabbed panel showing contextual information:
 ## 🚀 Onboarding Experience
 
 ### Onboarding Flow
+
 1. **Welcome**: Introduction to LynxTrades
 2. **Account Setup**: Create first trading account (retail or prop firm)
 3. **Complete**: Ready to start trading
 
 ### Product Tour
+
 Interactive tour with 5 guided steps:
+
 1. Sidebar navigation introduction
 2. Dashboard overview explanation
 3. Add trade functionality
@@ -703,6 +887,7 @@ Interactive tour with 5 guided steps:
 5. Risk management tools
 
 ### Tour Features
+
 - Highlight targets with CSS selectors
 - Configurable positions (top, bottom, left, right, center)
 - Optional interaction blocking
@@ -710,6 +895,7 @@ Interactive tour with 5 guided steps:
 - Skip capability
 
 ### First-Time User Experience
+
 - Default collections seeded on first login:
   - Sample setup (generic trading strategy)
   - Sample risk rule (max daily trades)
@@ -721,6 +907,7 @@ Interactive tour with 5 guided steps:
 ## 📱 Dashboard
 
 ### Dashboard Widgets (13 components)
+
 1. **Overview Cards**: Key metrics (P&L, Win Rate, Profit Factor, Trade Count) with trend indicators
 2. **Prop Firm Status Header**: Challenge progress for prop firm accounts (profit target %, drawdown %, trading days)
 3. **Quick Stats**: Fast performance summary
@@ -733,6 +920,7 @@ Interactive tour with 5 guided steps:
 10. **Risk Overview**: Risk rule compliance status
 
 ### Dashboard Features
+
 - **Drag & Drop Layout**: Reorder widgets with drag handles
 - **Customizable Widgets**: Show/hide widgets via settings
 - **Collapsible Containers**: Minimize widgets to save space
@@ -745,6 +933,7 @@ Interactive tour with 5 guided steps:
 ## 📝 Landing Page
 
 ### Marketing Components
+
 - **Hero Section**: Animated entrance with interactive dashboard mockup
 - **Features Section**: Comprehensive feature showcase
 - **Pricing**: Tier comparison table
@@ -752,6 +941,7 @@ Interactive tour with 5 guided steps:
 - **CTA**: Call-to-action sections
 
 ### Design Features
+
 - Framer Motion animations
 - Magnetic button effects
 - Responsive design
@@ -763,6 +953,7 @@ Interactive tour with 5 guided steps:
 ## 🔧 Technical Architecture
 
 ### Frontend Stack
+
 - React with TypeScript
 - Vite for build tooling
 - Tailwind CSS for styling
@@ -774,6 +965,7 @@ Interactive tour with 5 guided steps:
 - Zod for validation
 
 ### Backend & Infrastructure
+
 - Firebase Authentication
 - Firestore Database
 - Firebase Storage
@@ -781,11 +973,13 @@ Interactive tour with 5 guided steps:
 - Vercel deployment
 
 ### External APIs
+
 - **Alpaca Markets API**: US stock and options price data
 - **Twelve Data API**: Forex and cryptocurrency price data
 - **Stripe**: Subscription billing
 
 ### Code Organization
+
 - Feature-based module structure (`src/features/`)
 - Shared component library (`src/components/`)
 - Type-safe API layer (`src/api/`)
