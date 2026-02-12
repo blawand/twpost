@@ -459,7 +459,12 @@
       "type": "poll",
       "content": "How many trades do you take per week on average?",
       "image": null,
-      "poll_options": ["1-5", "6-15", "16-30", "30+"],
+      "poll_options": [
+        "1-5",
+        "6-15",
+        "16-30",
+        "30+"
+      ],
       "poll_duration_minutes": 1440,
       "posted": true,
       "posted_at": "2026-01-20T13:28:21.613000+00:00",
@@ -1196,9 +1201,9 @@
       "type": "pain_point",
       "content": "Paying a subscription for a trading journal is like paying a subscription for a calculator.\n\nIt should just be a tool you own (or use for free).\n\nlynxtrades.com",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-12T13:50:26.359470+00:00",
+      "tweet_id": "2021944990012781030"
     },
     {
       "id": 129,
