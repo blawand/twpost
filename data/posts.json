@@ -1228,9 +1228,9 @@
       "type": "humor",
       "content": "I have a love/hate relationship with the 1-minute chart.\n\nMostly hate.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-12T23:27:56.995877+00:00",
+      "tweet_id": "2022090325532295395"
     },
     {
       "id": 132,
