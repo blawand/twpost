@@ -10,6 +10,7 @@ This directory contains the persistent state and configuration for the bot.
 
 ### 2. Engagement Persistence
 - **`engagement_tracker.json`**: Stores IDs of tweets we have already replied to. Prevents spamming the same user twice. This file IS tracked by git.
+  - Used by both engagement lanes (`journal_intent` + `broad_trending`).
 
 ### 3. Security (Critical)
 - **`cookies.json`**: Stores the session cookies for the Twikit client (used for engagement reading).

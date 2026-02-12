@@ -82,11 +82,34 @@ class LLMHelper:
             logger.error(f"❌ Failed to initialize AI: {e}")
             raise
 
-    async def generate_reply(self, tweet_text: str, user_handle: str) -> str:
+    def _lane_instruction(self, lane_name: str) -> str:
+        if lane_name == "broad_trending":
+            return """
+            LANE GOAL (broad_trending):
+            - This tweet was selected from broader economics/business/trading conversations.
+            - Prefer quick, punchy takes that can fit the tone of popular threads.
+            - Humor is allowed if natural, but avoid cringe or forced jokes. Talk like Gen Z.
+            """
+
+        return """
+        LANE GOAL (journal_intent):
+        - This tweet likely relates to trading journals, discipline, risk, or psychology pain points.
+        - Be practical and specific to their issue.
+        - If relevant, mention LynxTrades subtly as a natural fix.
+        """
+
+    async def generate_reply(self, tweet_text: str, user_handle: str, lane_name: str = "journal_intent") -> str:
         """Generates a reply based on the helpful trader persona."""
         
-        # Merge system instruction into the prompt manually
-        full_prompt = f"{self.system_instruction_text}\n\nInput Context:\nTweet from @{user_handle}: \"{tweet_text}\"\n\nTask: Write a single reply."
+        lane_instruction = self._lane_instruction(lane_name)
+        full_prompt = (
+            f"{self.system_instruction_text}\n\n"
+            f"{lane_instruction}\n\n"
+            f"Input Context:\n"
+            f"Lane: {lane_name}\n"
+            f"Tweet from @{user_handle}: \"{tweet_text}\"\n\n"
+            "Task: Write a single reply."
+        )
         
         try:
             # Direct generation
