@@ -1,8 +1,6 @@
 
 import logging
 import os
-import json
-import asyncio
 from pathlib import Path
 from twikit import Client
 from typing import Optional
@@ -15,10 +13,6 @@ class TwikitClientManager:
     def __init__(self, cookies_path: str = "data/cookies.json"):
         self.cookies_path = Path(cookies_path)
         self.client: Optional[Client] = None
-        self.user_data = None
-        self.user_agent = os.getenv("TWITTER_USER_AGENT", 
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-            "(KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36")
 
     async def initialize_client(self) -> Client:
         """Initialize and authenticate the client."""

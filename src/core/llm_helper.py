@@ -12,24 +12,16 @@ logger = logging.getLogger(__name__)
 
 
 class LLMHelper:
-    """Handles AI interactions using the xAI Grok Responses API."""
+    """Handles AI interactions using the xAI Grok Responses API — tuned for authenticity + creativity."""
 
+    # Expanded bans — catches most fabricated personal stories
     BANNED_PHRASE_SNIPPETS = (
-        "totally agree",
-        "100%",
-        "couldn't agree more",
-        "absolutely",
-        "spot on",
-        "insightful",
-        "great point",
-        "that's why journaling",
-        "this is key",
-        "game changer",
-        "great post",
-        "love this",
-        "love the",
-        "if you're looking for",
-        "lynxtrades handles",
+        "totally agree", "100%", "couldn't agree more", "absolutely", "spot on",
+        "insightful", "great point", "that's why journaling", "this is key",
+        "game changer", "great post", "love this", "love the",
+        "if you're looking for", "lynxtrades handles",
+        "been there", "last week", "once i", "i blew", "i wiped", "i logged",
+        "my account", "saved .*r", "blew .*eval", "finished next day",
     )
 
     def __init__(self, settings):
@@ -43,67 +35,83 @@ class LLMHelper:
                                   .get("action_config", {}) \
                                   .get("llm_settings_for_reply", {}) \
                                   .get("model_name_override", "grok-4-1-fast-reasoning")
+
         self.api_base_url = os.getenv("XAI_API_BASE_URL", "https://api.x.ai/v1").rstrip("/")
         self.request_timeout_seconds = max(10, self._read_int_env("XAI_TIMEOUT_SECONDS", 180))
         self.disable_env_proxy = self._read_bool_env("XAI_DISABLE_ENV_PROXY", False)
+
         self.max_reply_chars = max(120, self._read_int_env("ENGAGEMENT_REPLY_MAX_CHARS", 180))
-        self.reply_option_count = min(8, max(3, self._read_int_env("ENGAGEMENT_REPLY_OPTION_COUNT", 6)))
+        self.reply_option_count = max(1, self._read_int_env("ENGAGEMENT_REPLY_OPTION_COUNT", 1))
 
         self.system_instruction_text = """
-        You write replies for @lynxtradesapp on X.
+You are the official voice of @lynxtradesapp — a trading journal app used by thousands of retail traders.
 
-        Objective priority:
-        1) sound human and conversational
-        2) earn a reaction (reply, like, profile visit)
-        3) mention LynxTrades only when clearly relevant
+CRITICAL AUTHENTICITY RULE (never break this):
+- You run a journal app. You observe patterns across many users.
+- You do NOT have a personal trading account with specific stories to share.
+- NEVER invent personal trading anecdotes. No "I borrowed 5k", "blew 3 evals", "last week I logged", "my account", "I wiped", "saved 2R", "once I chased", etc.
+- Use "I" only for general opinions ("I see this constantly") or light reactions. Never for fabricated trade history.
 
-        Voice:
-        - casual trader voice, internet native, lightly gen z, not cringe
-        - short and direct, no corporate support tone
-        - lowercase is allowed; forced slang is not
-        - plain text only, no markdown, no hashtags, no links
+Voice & vibe:
+- Casual, internet-native trader tone. Lightly Gen-Z, opinionated, never cringe.
+- Short, punchy, slightly sarcastic when natural.
+- Lowercase starters, fragments, dashes, ellipsis… are all good.
 
-        Style rules:
-        - 1 to 2 short sentences
-        - max 180 characters
-        - reference one specific detail from the source tweet
-        - add one fresh thought (opinion, lesson, contrarian point, or quick question)
-        - avoid generic empathy openers
+Safe examples of the exact energy we want:
+  • "forced setups on day one of an eval? classic self-sabotage"
+  • "powell blaming tariffs again lmao services data still the real killer"
+  • "real-time journaling catches the impulse before it costs you"
+  • "small caps ripping while nasdaq dumps — rotation season"
+  • "most traders preach risk management then size up on the leaderboard anyway"
 
-        Brand policy:
-        - do not force LynxTrades mentions
-        - mention only when the source tweet is about journaling, risk rules, discipline, or analytics workflow
-        - never use hard CTA language
+Priority (in order):
+1. Sound like a real human who runs a trading journal app
+2. Get a reaction (like, reply, quote, profile visit)
+3. Only mention @lynxtradesapp when the tweet is directly about journaling, risk rules, discipline, psychology, or analytics workflow — and only if it flows naturally.
 
-        Hard bans:
-        - totally agree, 100%, couldn't agree more, absolutely, spot on, insightful, great point
-        - that's why journaling, this is key, game changer, great post, love this, love the
-        - if you're looking for, LynxTrades handles
-        """
+Style rules:
+- Max 180 characters
+- Reference ONE specific detail from the source tweet
+- Add ONE fresh thought (observation, contrarian jab, sarcastic roast, general insight, or rare question)
+- Vary style every time — no repetitive formulas
+- Preferred: observation, sarcasm, contrarian, roast, insight, twist
 
+Anti-patterns (never do these):
+- Any first-person past-tense trading story with specifics
+- "been there… now i …"
+- Starting with "how do you / what's your"
+- Always ending with a question
+- Repeating journaling advice
+
+Hard bans (exact or close matches):
+totally agree, 100%, couldn't agree more, absolutely, spot on, insightful, great point,
+that's why journaling, this is key, game changer, great post, love this, love the,
+if you're looking for, lynxtrades handles, been there, last week, once i, i blew,
+i wiped, i logged, my account, saved .*r, blew .*eval, finished next day
+
+Brand policy:
+- Mention @lynxtradesapp ONLY when the tweet is literally about journaling, risk management, discipline or analytics.
+- Never force it. Never use CTA language.
+"""
+
+        # Load features.md (unchanged)
         try:
             project_root = Path(__file__).resolve().parent.parent.parent
             features_path = project_root / "features.md"
             features_context = ""
 
             if features_path.exists():
-                try:
-                    with open(features_path, "r", encoding="utf-8") as f:
-                        features_context = f.read()
-                    logger.info("Loaded features.md context.")
-                except Exception as e:
-                    logger.warning("Could not read features.md: %s", e)
+                with open(features_path, "r", encoding="utf-8") as f:
+                    features_context = f.read()
+                logger.info("Loaded features.md context.")
             else:
                 logger.warning("features.md not found at %s", features_path)
 
             if features_context:
                 self.system_instruction_text += f"\n\nCONTEXT - LYNXTRADES FEATURES:\n{features_context}\n"
 
-            logger.info(
-                "AI initialized with Grok model=%s base_url=%s",
-                self.model_name,
-                self.api_base_url,
-            )
+            logger.info("AI initialized with Grok model=%s base_url=%s options=%d", 
+                        self.model_name, self.api_base_url, self.reply_option_count)
         except Exception as e:
             logger.error("Failed to initialize AI: %s", e)
             raise
@@ -135,34 +143,32 @@ class LLMHelper:
     def _lane_instruction(self, lane_name: str) -> str:
         if lane_name == "broad_trending":
             return """
-            Lane goal: broad_trending
-            - Source is from broader market and business conversations.
-            - Prioritize punchy takes and debate-friendly phrasing.
-            - Contrarian or sharp question angles are preferred when natural.
+            Lane: broad_trending
+            - Punchy, sarcastic, contrarian, or roast-style observations.
+            - Keep it short and debate-friendly.
             """
-
         return """
-        Lane goal: journal_intent
-        - Source is likely about journaling, discipline, risk, or trading psychology.
-        - Prioritize practical insight from lived trading experience.
-        - Mention LynxTrades only if it naturally resolves the exact pain point.
-        """
+            Lane: journal_intent
+            - Share observed patterns from traders who use journaling tools.
+            - General insights and real-talk only. No personal stories.
+            """
 
     def _build_generation_prompt(self, tweet_text: str, user_handle: str, lane_name: str) -> str:
         lane_instruction = self._lane_instruction(lane_name)
         return (
             f"{lane_instruction}\n\n"
-            "Source tweet context:\n"
+            "Source tweet:\n"
             f"Lane: {lane_name}\n"
-            f"Tweet from @{user_handle}: \"{tweet_text}\"\n\n"
-            f"Generate {self.reply_option_count} reply candidates.\n"
-            "Output JSON only (no markdown/code fences) with this exact schema:\n"
+            f"@{user_handle}: \"{tweet_text}\"\n\n"
+            "Generate exactly 1 reply option.\n"
+            "Be creative but 100% authentic — no invented personal trading stories.\n\n"
+            "Output ONLY valid JSON with this exact schema (no markdown):\n"
             "{\n"
             "  \"options\": [\n"
             "    {\n"
             "      \"reply\": \"...\",\n"
-            "      \"angle\": \"agree_extend|contrarian|pain_mirror|lesson|question\",\n"
-            "      \"brand_mention\": true,\n"
+            "      \"angle\": \"observation|contrarian|sarcasm|roast|insight|twist|question\",\n"
+            "      \"brand_mention\": true/false,\n"
             "      \"hook_strength_1to5\": 4,\n"
             "      \"human_sounding_1to5\": 4,\n"
             "      \"specificity_1to5\": 4,\n"
@@ -194,22 +200,6 @@ class LLMHelper:
         clean = clean.replace("*", "").replace("_", "")
         clean = re.sub(r"\s+", " ", clean).strip()
         return clean
-
-    def _is_reply_usable(self, reply: str) -> bool:
-        if not reply:
-            return False
-        if len(reply) > self.max_reply_chars:
-            return False
-        lower = reply.lower()
-        if any(phrase in lower for phrase in self.BANNED_PHRASE_SNIPPETS):
-            return False
-        if "http://" in lower or "https://" in lower or "t.co/" in lower:
-            return False
-        if "#" in reply:
-            return False
-        if lower.startswith("hello ") or lower.startswith("hey "):
-            return False
-        return True
 
     def _extract_payload(self, response_text: str) -> Optional[Dict[str, Any]]:
         cleaned = self._strip_code_fences(response_text)
@@ -330,31 +320,64 @@ class LLMHelper:
             logger.error("Grok request failed: %s", e)
             return None
 
+    def _is_reply_usable(self, reply: str) -> bool:
+        if not reply:
+            return False
+        if len(reply) > self.max_reply_chars or len(reply) < 15:
+            return False
+        lower = reply.lower()
+        if any(phrase in lower for phrase in self.BANNED_PHRASE_SNIPPETS):
+            return False
+
+        # Extra regex check for fabricated personal stories
+        if re.search(r'(i|my|me) (blew|wiped|lost|chased|logged|saved|entered|finished|did).*?(account|eval|trade|setup|last week|once)', lower):
+            return False
+        if re.search(r'(blew|wiped|lost) .*?(account|eval|trade|setup)', lower):
+            return False
+
+        if "http" in lower or "t.co" in lower or "#" in reply:
+            return False
+        return True
+
     def _pick_best_reply(self, options: List[Dict[str, Any]], best_index: Optional[int]) -> Optional[str]:
         if not options:
             return None
 
         top_reply = None
         top_score = -10_000.0
+
         for idx, option in enumerate(options):
             reply = option["reply"]
+            angle = option["angle"]
+            lower = reply.lower()
+
             score = (
-                (option["hook_strength_1to5"] * 2.1)
-                + (option["human_sounding_1to5"] * 2.6)
-                + (option["specificity_1to5"] * 1.7)
-                + (option["conversational_pull_1to5"] * 1.8)
+                option["hook_strength_1to5"] * 1.8 +
+                option["human_sounding_1to5"] * 3.2 +      # even stronger human bias
+                option["specificity_1to5"] * 1.6 +
+                option["conversational_pull_1to5"] * 2.1
             )
 
-            if option["angle"] == "question":
-                score += 0.25
-            if "?" in reply:
-                score += 0.2
+            # Creativity & naturalness bonuses
+            if angle in ("contrarian", "sarcasm", "roast"):
+                score += 1.1
+            if angle == "question":
+                score -= 0.3          # questions are now a penalty
+            if 40 <= len(reply) <= 140:
+                score += 0.5
+            if reply[0].islower() or "..." in reply or "–" in reply or "—" in reply:
+                score += 0.45
+
+            # Strong penalty for any fabricated-story language
+            if re.search(r'(i|my|me) (blew|wiped|lost|chased|logged|saved|entered|finished|did).*?(account|eval|trade|setup|last week|once)', lower) or \
+               re.search(r'(blew|wiped|lost) .*?(account|eval|trade|setup)', lower):
+                score -= 3.0
+
             if option["brand_mention"]:
-                score -= 0.35
-            if 60 <= len(reply) <= self.max_reply_chars:
-                score += 0.25
+                score -= 0.4
+
             if best_index is not None and idx == best_index:
-                score += 0.35
+                score += 0.45
 
             if score > top_score:
                 top_score = score
@@ -363,8 +386,6 @@ class LLMHelper:
         return top_reply
 
     async def generate_reply(self, tweet_text: str, user_handle: str, lane_name: str = "journal_intent") -> str:
-        """Generates reply options and auto-picks the best one."""
-
         prompt = self._build_generation_prompt(
             tweet_text=tweet_text,
             user_handle=user_handle,
@@ -377,13 +398,12 @@ class LLMHelper:
 
             options, best_index = self._parse_options(response_text)
             selected = self._pick_best_reply(options, best_index)
+
             if selected:
                 return selected
 
             fallback = self._sanitize_reply(response_text)
-            if self._is_reply_usable(fallback):
-                return fallback
-            return None
+            return fallback if self._is_reply_usable(fallback) else None
         except Exception as e:
             logger.error("Grok generation failed: %s", e)
             return None

@@ -3,8 +3,3 @@ twikit
 tweepy
 python-dotenv
 requests
-Pillow
-
-# Utility dependencies
-pydantic
-fake-headers

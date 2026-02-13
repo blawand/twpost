@@ -18,15 +18,15 @@ A robust, hybrid Twitter/X automation bot designed for reliable high-performance
 
 ```text
 twitter-bot/
-├── config/              # Configuration files
 ├── data/                # Data storage
 │   ├── posts.json       # Scheduled tweets DB
 │   ├── cookies.json     # Twikit authentication (Sensitive - Git Ignored)
 │   ├── posted_tracker.json  # History of posted IDs (Public - Git Tracked)
 │   └── engagement_tracker.json # History of replies (Public - Git Tracked)
 ├── scripts/
-│   ├── setup_cookies.py # Helper to extract browser cookies
-│   └── export_cookies.py # Export cookies for GitHub Secrets
+│   ├── check_limits.py   # Check post length constraints
+│   ├── export_cookies.py # Export cookies for GitHub Secrets
+│   └── post_now.py       # Manual posting helper
 ├── src/                 # Source code
 │   ├── main.py          # Entry point
 │   ├── core/            # Auth managers (Tweepy & Twikit)
@@ -64,8 +64,9 @@ Create a `.env` file (copy from `.env.example`) and fill in your keys:
 
 For engagement features, the bot needs to "log in" as a user. The most reliable method is to inject your browser cookies.
 
-1. Run `python scripts/setup_cookies.py` to manually input cookies from your browser.
-2. OR populate `data/cookies.json` directly.
+1. Populate `data/cookies.json` directly from your browser session cookies.
+2. OR set `TWITTER_COOKIES` in your environment / GitHub secrets.
+3. Optional: run `python scripts/export_cookies.py` to print the current local cookie JSON for secrets setup.
 
 ## Usage
 
@@ -99,7 +100,7 @@ Optional tuning via environment variables:
 - `ENGAGEMENT_TREND_CATEGORIES` (default `trending,news`): trend categories to pull from (`trending`, `for-you`, `news`, `sports`, `entertainment`).
 - `ENGAGEMENT_TRENDS_COUNT` (default `20`): number of trends fetched per category.
 - `ENGAGEMENT_TREND_QUERIES` (default `6`): max relevant trend topics kept per run.
-- `ENGAGEMENT_REPLY_OPTION_COUNT` (default `6`): number of candidate replies generated before auto-picking.
+- `ENGAGEMENT_REPLY_OPTION_COUNT` (default `1`): number of candidate replies generated before auto-picking.
 - `ENGAGEMENT_REPLY_MAX_CHARS` (default `180`): hard cap for generated reply length.
 - `XAI_TIMEOUT_SECONDS` (default `180`): HTTP timeout for each Grok request.
 - `XAI_API_BASE_URL` (default `https://api.x.ai/v1`): override xAI endpoint (useful for regional routing/proxies).
@@ -113,4 +114,5 @@ The repository is configured for GitHub Actions.
    - `TWITTER_COOKIES` (Run `python scripts/export_cookies.py` to get the value)
    - `X_API_KEY`... (All X credentials)
    - `XAI_API_KEY`
+   - Engagement workflow is configured with `ENGAGEMENT_REPLY_OPTION_COUNT=1` for single-output replies.
 2. **Persistence**: The workflow is configured to commit `data/posted_tracker.json` and `engagement_tracker.json` back to the repo, so your bot remembers what it has done.

@@ -34,7 +34,8 @@ jobs:
           # Cookies for session persistence & anti-bot bypass (CRITICAL)
           TWITTER_COOKIES: ${{ secrets.TWITTER_COOKIES }}
           
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+          ENGAGEMENT_REPLY_OPTION_COUNT: "1"
           
           # Official X API Credentials (for posting - bypasses 226)
           X_API_KEY: ${{ secrets.X_API_KEY }}

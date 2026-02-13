@@ -36,3 +36,6 @@ Thumbs.db
 # Logs
 *.log
 logs/
+
+# Local test artifacts
+test
