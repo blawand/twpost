@@ -1255,9 +1255,9 @@
       "type": "feature",
       "content": "Your trading data should be yours. Period.\n\nExport everything:\n→ Full trade history as CSV\n→ Performance reports\n→ Analytics data\n→ Journal entries\n\nNo hostage situations.\nNo \"upgrade to download.\"\nNo lock-in tricks.\n\nIf a tool won't let you leave with your own data, it was never your tool. It was a trap.",
       "image": "images/export.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-13T23:29:29.978637+00:00",
+      "tweet_id": "2022453103048413475"
     },
     {
       "id": 135,
