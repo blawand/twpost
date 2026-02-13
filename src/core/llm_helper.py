@@ -45,6 +45,7 @@ class LLMHelper:
                                   .get("model_name_override", "grok-4-1-fast-reasoning")
         self.api_base_url = os.getenv("XAI_API_BASE_URL", "https://api.x.ai/v1").rstrip("/")
         self.request_timeout_seconds = max(10, self._read_int_env("XAI_TIMEOUT_SECONDS", 180))
+        self.disable_env_proxy = self._read_bool_env("XAI_DISABLE_ENV_PROXY", False)
         self.max_reply_chars = max(120, self._read_int_env("ENGAGEMENT_REPLY_MAX_CHARS", 180))
         self.reply_option_count = min(8, max(3, self._read_int_env("ENGAGEMENT_REPLY_OPTION_COUNT", 6)))
 
@@ -117,6 +118,19 @@ class LLMHelper:
         except ValueError:
             logger.warning("Invalid %s='%s'. Using default=%s.", name, value, default)
             return default
+
+    @staticmethod
+    def _read_bool_env(name: str, default: bool) -> bool:
+        value = os.getenv(name)
+        if value is None:
+            return default
+        normalized = value.strip().lower()
+        if normalized in {"1", "true", "yes", "y", "on"}:
+            return True
+        if normalized in {"0", "false", "no", "n", "off"}:
+            return False
+        logger.warning("Invalid %s='%s'. Using default=%s.", name, value, default)
+        return default
 
     def _lane_instruction(self, lane_name: str) -> str:
         if lane_name == "broad_trending":
@@ -291,12 +305,14 @@ class LLMHelper:
         }
 
         try:
-            response = requests.post(
-                url,
-                headers=headers,
-                json=payload,
-                timeout=self.request_timeout_seconds,
-            )
+            with requests.Session() as session:
+                session.trust_env = not self.disable_env_proxy
+                response = session.post(
+                    url,
+                    headers=headers,
+                    json=payload,
+                    timeout=self.request_timeout_seconds,
+                )
             response.raise_for_status()
             data = response.json()
             text = self._extract_text_from_response_payload(data)

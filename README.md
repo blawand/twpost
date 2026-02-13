@@ -103,6 +103,7 @@ Optional tuning via environment variables:
 - `ENGAGEMENT_REPLY_MAX_CHARS` (default `180`): hard cap for generated reply length.
 - `XAI_TIMEOUT_SECONDS` (default `180`): HTTP timeout for each Grok request.
 - `XAI_API_BASE_URL` (default `https://api.x.ai/v1`): override xAI endpoint (useful for regional routing/proxies).
+- `XAI_DISABLE_ENV_PROXY` (default `false`): when `true`, ignores `HTTP_PROXY`/`HTTPS_PROXY` vars for Grok calls.
 
 ## Deployment (GitHub Actions)
 

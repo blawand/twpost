@@ -1194,7 +1194,7 @@
     {
       "id": 128,
       "type": "pain_point",
-      "content": "Paying a subscription for a trading journal is like paying a subscription for a calculator.\n\nIt should just be a tool you own (or use for free).\n\nlynxtrades.com",
+      "content": "Paying $30/month to see your own trading data is insane.\n\nYou already paid the market for those lessons. Why pay again to review them?",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1203,7 +1203,7 @@
     {
       "id": 129,
       "type": "motivation",
-      "content": "The market will be there tomorrow.\n\nIf today isn't your day, pack it up. Preserve mental capital.",
+      "content": "The market will be there tomorrow.\n\nIf today isn't your day, pack it up.\n\nPreserve your mental capital.\nPreserve your confidence.\nPreserve your ability to come back strong.\n\nThe best traders know when to sit out.\n\nSitting on the sidelines IS a trading decision.\nAnd sometimes it's the most profitable one you'll make all week.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1212,8 +1212,8 @@
     {
       "id": 130,
       "type": "feature",
-      "content": "Tag your setups.\n\n\"Bull Flag\" vs \"Reversal\" vs \"Breakout\".\n\nFilter your P&L by tag.\n\nStop trading the setups that lose money.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Tag your setups. Filter your P&L by tag.\n\n\"Bull Flag\" → +$4,200\n\"Reversal\" → -$1,800\n\"Breakout\" → +$6,500\n\"Gap Fill\" → +$2,100\n\"VWAP Bounce\" → -$900\n\nStop trading the setups that lose money.\n\nYour data already knows which ones work.\nYour job is to listen to it.",
+      "image": "images/setup-comparison.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1230,7 +1230,7 @@
     {
       "id": 132,
       "type": "insight",
-      "content": "Size down when you're slumping.\nSize normal when you're winning.\n\nNever size up to \"make it back.\"",
+      "content": "Size down when you're slumping.\nSize normal when you're winning.\nNever size up to \"make it back.\"\n\nThe math doesn't care about your feelings.\nThe drawdown doesn't care about your ego.\n\nSurvival first. Recovery second. Growth third.\n\nIn that order. Always.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1238,8 +1238,8 @@
     },
     {
       "id": 133,
-      "type": "lifestyle",
-      "content": "There is no \"secret indicator.\"\n\nStop looking. Start managing risk.",
+      "type": "insight",
+      "content": "There is no secret indicator.\n\nStop looking. Start managing risk.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1248,8 +1248,8 @@
     {
       "id": 134,
       "type": "feature",
-      "content": "Secure & Private.\n\nWe use Firebase Auth and security rules. Your data is yours.\n\nExport it whenever you want. We don't hold it hostage.",
-      "image": null,
+      "content": "Your trading data should be yours. Period.\n\nExport everything:\n→ Full trade history as CSV\n→ Performance reports\n→ Analytics data\n→ Journal entries\n\nNo hostage situations.\nNo \"upgrade to download.\"\nNo lock-in tricks.\n\nIf a tool won't let you leave with your own data, it was never your tool. It was a trap.",
+      "image": "images/export.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1266,7 +1266,7 @@
     {
       "id": 136,
       "type": "tip",
-      "content": "Don't move your stop to breakeven just because you're scared.\n\nMove it because the market structure changed.",
+      "content": "Don't move your stop to breakeven because you're scared.\n\nMove it because the market structure changed.\n\nOne is fear. The other is strategy.\n\nFear-based breakeven moves:\n→ Get you stopped out on noise\n→ Kill otherwise good trades\n→ Turn winners into scratch trades\n\nStructure-based moves:\n→ Protect real gains\n→ Respect the chart\n→ Let winners breathe",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1275,7 +1275,7 @@
     {
       "id": 137,
       "type": "engagement",
-      "content": "If you could tell your Year 1 trading self one thing, what would it be?",
+      "content": "If you could tell your Year 1 trading self one thing, what would it be?\n\nMine: \"Stop trying to catch every move. You're not missing out, you're burning out.\"",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1284,8 +1284,8 @@
     {
       "id": 138,
       "type": "feature",
-      "content": "Multiple accounts supported.\n\nDay trading account. IRA. Swing account. Prop firm.\n\nView them separately or combined.\n\nOne dashboard.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Day trading account. IRA. Swing account. Prop firm.\n\nFour accounts. Four different strategies. Four different risk profiles.\n\nView them separately for focused analysis.\nView them combined for the full picture.\n\nBecause switching between 4 spreadsheets isn't a \"system.\"\n\nOne dashboard. Every account. Total clarity.",
+      "image": "images/dashboard.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1293,7 +1293,7 @@
     {
       "id": 139,
       "type": "humor",
-      "content": "Trading is 10% buy/sell and 90% waiting.",
+      "content": "Trading is 10% analysis and 90% staring at a candle wondering if it's going to do what you think it's going to do.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1302,7 +1302,7 @@
     {
       "id": 140,
       "type": "insight",
-      "content": "You can be right on direction and wrong on timing.\n\nThat's still a loss. Respect the timing.",
+      "content": "You can be right on direction and wrong on timing.\n\nThat's still a loss.\n\nRespect the timing.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1311,8 +1311,8 @@
     {
       "id": 141,
       "type": "pain_point",
-      "content": "Why are trading journals so ugly?\n\nWe built LynxTrades because we wanted something that looked like modern software, not Windows 95.",
-      "image": null,
+      "content": "Why do most trading journals look like they were built in 2005?\n\nTraders deserve modern software. Clean UI. Fast logging. Analytics that actually help.\n\nNot a spreadsheet someone put a login screen on.",
+      "image": "images/product-shot.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1320,7 +1320,7 @@
     {
       "id": 142,
       "type": "psychology",
-      "content": "Overtrading is the silent account killer.\n\nCommission and bad spreads eat you alive.\n\nLess is more.",
+      "content": "Overtrading is the silent account killer.\n\nYou don't feel it happening. Each trade feels justified.\n\n\"This one's different.\"\n\"One more and I'll stop.\"\n\"I'm on a roll, why not?\"\n\nThen you check your commissions at month-end.\nThen you count 47 trades in a week.\nThen you wonder where the money went.\n\nLess is more. Always.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1329,7 +1329,7 @@
     {
       "id": 143,
       "type": "tip",
-      "content": "Use the weekend to build your watchlist.\n\nMonday morning is for execution, not searching.",
+      "content": "Build your watchlist on the weekend.\n\nMonday morning is for execution, not searching.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1338,8 +1338,8 @@
     {
       "id": 144,
       "type": "feature",
-      "content": "Auto-timeframe selection.\n\nIf your trade lasted 3 hours, LynxTrades shows you the 5m chart.\nIf it lasted 3 days, we show you the 1H.\n\nSmart context automatically.",
-      "image": null,
+      "content": "Auto-timeframe selection that actually makes sense.\n\nTrade lasted 3 hours? → 5-minute chart\nTrade lasted 1 day? → 15-minute chart\nTrade lasted 3 days? → 1-hour chart\nTrade lasted 2 weeks? → Daily chart\n\nContext matters.\nScrolling through irrelevant candles doesn't.\n\nSee exactly what the price action looked like during YOUR trade.",
+      "image": "images/trade_chart.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1347,7 +1347,7 @@
     {
       "id": 145,
       "type": "lifestyle",
-      "content": "Some days you're the hammer, some days you're the nail.\n\nJust make sure you survive the nail days.",
+      "content": "Some days you're the hammer. Some days you're the nail.\n\nJust make sure you survive the nail days.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1356,7 +1356,7 @@
     {
       "id": 146,
       "type": "value",
-      "content": "We're not trying to be a social network.\n\nNo leaderboards. No copy trading.\n\nJust a private place for you to get better at trading.\n\nlynxtrades.com",
+      "content": "No leaderboards. No copy trading. No social features.\n\nJust a private place for you to get better at trading.\n\nSometimes the best product is the one that doesn't try to be everything.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1365,7 +1365,7 @@
     {
       "id": 147,
       "type": "insight",
-      "content": "The market doesn't owe you a living.",
+      "content": "The market doesn't owe you a living.\n\nThe sooner you accept that, the sooner you stop making desperate trades.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1374,7 +1374,7 @@
     {
       "id": 148,
       "type": "humor",
-      "content": "I need a \"Are you sure this isn't FOMO?\" popup before every trade.",
+      "content": "I need a popup before every trade that says:\n\n\"Are you sure this isn't FOMO?\"\n\nWith a 30-second cooldown timer.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1383,8 +1383,8 @@
     {
       "id": 149,
       "type": "feature",
-      "content": "Notes support rich text, code blocks, and images.\n\nPaste your trading plan. Paste the news catalyst.\n\nKeep everything in context.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Notes that actually work for traders:\n\n→ Rich text formatting\n→ Image embedding\n→ Link notes directly to trades\n→ Organize by folders\n→ Full-text search\n\nPaste your trading plan.\nPaste the news catalyst.\nPaste the chart screenshot.\n\nKeep everything in context.\n\nBecause 3 months from now, you won't remember why you took that trade. Your notes will.",
+      "image": "images/notes.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1392,7 +1392,7 @@
     {
       "id": 150,
       "type": "engagement",
-      "content": "Long or Short bias for the rest of the month?\n\n👇",
+      "content": "What's your bias for the rest of the month?\n\nLong, short, or sitting on hands?\n\n(Sitting on hands is a valid answer.)",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1410,7 +1410,7 @@
     {
       "id": 152,
       "type": "psychology",
-      "content": "You are not your P&L.\n\nDon't let a bad day ruin your mood outside of trading.",
+      "content": "You are not your P&L.\n\nA red day doesn't make you a bad trader. A green day doesn't make you a good one.\n\nProcess is the only honest scorecard.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1419,8 +1419,8 @@
     {
       "id": 153,
       "type": "feature",
-      "content": "Calendar Heatmap.\n\nSee your consistency at a glance.\n\nGreen squares are addictive. Build the streak.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Your calendar should tell the story of your trading year at a glance.\n\nGreen days. Red days. Streaks. Slumps.\n\nPatterns you'd never see in a spreadsheet:\n→ Your best month was October\n→ Mondays are consistently red\n→ You go on tilt after 3+ green days\n→ December is always flat\n\nOne look. Months of data. Instant clarity.\n\nThe calendar doesn't lie.",
+      "image": "images/calendar_year.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1428,7 +1428,7 @@
     {
       "id": 154,
       "type": "insight",
-      "content": "Risk management is the only thing you can control.\n\nOutcome is up to the market.",
+      "content": "Risk management is the only thing you can control.\n\nOutcome is up to the market. Process is up to you.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1446,8 +1446,8 @@
     {
       "id": 156,
       "type": "pain_point",
-      "content": "Stop trading blindly.\n\nIf you don't know your stats, you're gambling.\n\nTurn the gambling into a business.\n\nlynxtrades.com",
-      "image": null,
+      "content": "If you don't know your stats, you're not trading. You're gambling with extra steps.\n\nKnow your numbers:\n→ Win rate\n→ Profit factor\n→ Average R-multiple\n→ Max drawdown\n→ Expectancy per trade\n→ Best/worst performing setup\n\nKnow them cold.\nReview them weekly.\n\nOr the market will teach them to you the hard way.",
+      "image": "images/analytics_stats.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1464,7 +1464,7 @@
     {
       "id": 158,
       "type": "tip",
-      "content": "Focus on the process, not the profit.\n\nGood process eventually leads to profit. Bad process with profit is just luck.",
+      "content": "Focus on the process, not the profit.\n\nGood process eventually leads to profit.\nBad process with profit is just luck on a timer.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1473,8 +1473,8 @@
     {
       "id": 159,
       "type": "feature",
-      "content": "Unlimited screenshots.\n\nBecause sometimes you need 5 charts to explain why you took that trade.\n\nWe don't cap your storage on the free plan.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Unlimited screenshots on every trade.\n\nBecause sometimes you need 5 charts to explain why you took that entry:\n→ The daily chart for context\n→ The hourly for structure\n→ The 5-min for the entry\n→ The news headline\n→ The Level 2 at the moment of fill\n\nNo storage caps. No \"upgrade for more uploads.\"\n\nJust document everything.",
+      "image": "images/tradedetail.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1482,7 +1482,7 @@
     {
       "id": 160,
       "type": "motivation",
-      "content": "Every master trader was once a beginner who refused to quit.\n\nKeep going.",
+      "content": "Every consistently profitable trader was once a beginner who refused to quit.\n\nThe difference between them and the ones who washed out?\n\nThey tracked what went wrong.\nThey stopped repeating it.\nThey turned every loss into a data point.\nThey turned every data point into a lesson.\n\nThe journal isn't optional. It's the reason they survived long enough to get good.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1491,8 +1491,8 @@
     {
       "id": 161,
       "type": "feature",
-      "content": "I hate doing mental math while I'm trading. We track your profit goals and drawdown in real-time at lynxtrades.com so you don't have to worry about your trading days or any of that extra stress.",
-      "image": null,
+      "content": "Tracking your profit goals and drawdown in real-time.\n\nNo more mental math while managing risk.\nNo more \"wait, how much am I down today?\"\nNo more guessing if you've hit your daily limit.\n\nOne less thing to stress about during the session.\n\nJust focus on the chart. The dashboard handles the rest.",
+      "image": "images/analytics_performance.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null,
@@ -1501,7 +1501,7 @@
     {
       "id": 162,
       "type": "insight",
-      "content": "The fastest way to fail a prop firm challenge:\n\nTrying to hit the profit target in one week.\n\nSlow and steady. Respect the drawdown.",
+      "content": "The fastest way to fail a prop firm challenge:\n\nTrying to hit the profit target in one week.\n\nSlow and steady. Respect the drawdown. You have time.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1510,7 +1510,7 @@
     {
       "id": 163,
       "type": "tip",
-      "content": "Before every trade, ask yourself:\n\n\"If this goes wrong, can I take another trade tomorrow?\"\n\nIf no, size down.",
+      "content": "Before every trade:\n\n\"If this goes wrong, can I take another trade tomorrow?\"\n\nIf the answer is no, you already know what to do.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1519,8 +1519,8 @@
     {
       "id": 164,
       "type": "feature",
-      "content": "Trade replay is live.\n\nWatch your trades unfold candle by candle.\n\nSee exactly what you were looking at when you made that decision.\n\nHindsight with context.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Trade replay lets you watch your trades unfold candle by candle.\n\nSee exactly what the chart looked like when you made that decision.\n\nAdjustable speed. Pause. Rewind.\n\nWatch it at 2x speed for quick review.\nWatch it at 0.5x speed when you want to study the entry.\n\nHindsight is easy.\nHindsight with real-time context? That's how you actually learn.\n\nEvery trade becomes a case study.",
+      "image": "images/replay-poster.jpg",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1528,7 +1528,7 @@
     {
       "id": 165,
       "type": "psychology",
-      "content": "The market doesn't know you exist.\n\nIt's not out to get you. It's not rewarding you.\n\nIt just moves.\n\nTake the emotion out.",
+      "content": "The market doesn't know you exist.\n\nIt's not out to get you. It's not rewarding you.\n\nIt just moves.\n\nOnce you internalize this, trading gets a lot simpler.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1537,7 +1537,7 @@
     {
       "id": 166,
       "type": "humor",
-      "content": "Prop firm challenge day 1: \"I'll be conservative.\"\n\nProp firm challenge day 14: \"I NEED 3% TODAY.\"",
+      "content": "Prop firm challenge day 1: \"I'll be conservative.\"\n\nProp firm challenge day 14: \"I NEED 3% TODAY OR I'M DONE.\"\n\nDay 15: Reset.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1546,8 +1546,8 @@
     {
       "id": 167,
       "type": "feature",
-      "content": "Multi-currency accounts.\n\nTrade in USD, EUR, GBP, JPY, whatever.\n\nLynxTrades displays everything in your account's currency.\n\nNo manual conversions.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Trade in USD, EUR, GBP, JPY — whatever your account uses.\n\nEverything displays in your account's currency automatically. No manual conversions. No calculator app open on the side.",
+      "image": "images/multi-asset.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1555,7 +1555,7 @@
     {
       "id": 168,
       "type": "insight",
-      "content": "Your worst trading days usually come after your best.\n\nOverconfidence is sneaky like that.",
+      "content": "Your worst trading days usually come right after your best.\n\nOverconfidence is sneaky like that.\n\nBig green Monday → \"I'm unstoppable\"\nTuesday → Sizes up, trades more, ignores the plan\nWednesday → Gives back Monday's gains plus some\n\nThe data will show you this pattern. Every time.\nBut only if you track the emotion alongside the P&L.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1564,7 +1564,7 @@
     {
       "id": 169,
       "type": "engagement",
-      "content": "Prop firm traders: How many attempts before you got funded?\n\nNo shame. The path matters more than the timeline.",
+      "content": "Prop firm traders — how many attempts before you got funded?\n\nNo shame. The path matters more than the timeline.\n\n(If you're still on attempt 1, that counts too.)",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1573,7 +1573,7 @@
     {
       "id": 170,
       "type": "tip",
-      "content": "Stop checking your P&L mid-trade.\n\nIt makes you emotional. It clouds judgment.\n\nWatch the chart, not the number.",
+      "content": "Stop checking your P&L mid-trade.\n\nIt makes you emotional. It clouds judgment. It turns a good setup into a panic exit.\n\nWatch the chart, not the number.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1582,8 +1582,8 @@
     {
       "id": 171,
       "type": "feature",
-      "content": "Trailing drawdown? Static drawdown? EOD trailing?\n\nWe support all of them.\n\nPick your prop firm preset and we handle the math.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Trailing drawdown? Static drawdown? End-of-day trailing?\n\nDifferent prop firms have different rules.\n\nFTMO: different from Topstep.\nTopstep: different from Apex.\nApex: different from The5ers.\n\nSet your firm's preset.\nThe math handles itself.\n\nNo more spreadsheet formulas at 6am.\nNo more \"wait, is this EOD or intraday?\"\n\nJust accurate tracking that matches your firm's rules.",
+      "image": "images/risk-management.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1591,7 +1591,7 @@
     {
       "id": 172,
       "type": "psychology",
-      "content": "Cutting a winner early hurts more than taking a loss.\n\nBecause you know you were right. And you still lost.\n\nThat's the hardest part of trading.",
+      "content": "Cutting a winner early hurts more than taking a loss.\n\nBecause you were right. You read the chart correctly. The setup played out exactly as planned.\n\nAnd you still left money on the table.\n\nThat's the hardest part of trading — letting winners run when every instinct screams \"take the money.\"\n\nYour journal will show you how much you leave behind. It's usually more than you think.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1600,7 +1600,7 @@
     {
       "id": 173,
       "type": "lifestyle",
-      "content": "Trading from a phone is for monitoring.\n\nTrading from a laptop is for execution.\n\nKnow the difference.",
+      "content": "Trading from your phone is for monitoring.\n\nTrading from your desk is for execution.\n\nKnow the difference. Your P&L does.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1609,8 +1609,8 @@
     {
       "id": 174,
       "type": "feature",
-      "content": "Commodities are now supported.\n\nGold. Silver. Oil.\n\nSame journal. Same analytics. Different asset class.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Stocks. Options. Futures. Forex. Crypto. Commodities.\n\nSame journal. Same analytics. Same calendar.\n\nSwitch markets, keep the system.",
+      "image": "images/tradetable.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1618,7 +1618,7 @@
     {
       "id": 175,
       "type": "insight",
-      "content": "The setup doesn't have to be perfect.\n\nIt just has to be good enough with proper risk management.\n\nPerfect setups are rare. Good risk management isn't.",
+      "content": "The setup doesn't have to be perfect.\n\nIt just has to be good enough with proper risk management.\n\nPerfect setups are rare. Disciplined execution isn't.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1627,7 +1627,7 @@
     {
       "id": 176,
       "type": "humor",
-      "content": "\"I'll just check the market real quick.\"\n\n*3 hours later*\n\n\"Why did I take that trade?\"",
+      "content": "\"I'll just check the market real quick.\"\n\n— me, 3 hours ago",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1636,8 +1636,8 @@
     {
       "id": 177,
       "type": "feature",
-      "content": "Replay your trades with simulated candle data.\n\nAdjustable speed. Pause. Rewind.\n\nLearn from every entry and exit.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Replay your trades with real candle data.\n\nAdjustable speed. Pause. Rewind.\n\nWatch the price action unfold exactly as it did:\n→ See the setup develop\n→ See the entry trigger\n→ See the move play out\n→ See where you exited\n→ See what happened after\n\nThen ask yourself: would I take the same entry again?\n\nThat question alone is worth more than any indicator.",
+      "image": "images/trade_chart.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1645,7 +1645,7 @@
     {
       "id": 178,
       "type": "psychology",
-      "content": "The trade you didn't take haunts you more than the trade you lost.\n\nBut missing a trade is infinitely better than forcing one.",
+      "content": "The trade you didn't take will haunt you.\n\nBut missing a trade is infinitely better than forcing one.\n\nFOMO costs more than patience. Every time.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1654,7 +1654,7 @@
     {
       "id": 179,
       "type": "tip",
-      "content": "Set your max loss BEFORE the session starts.\n\nNot after you're already down.\n\nThe decision is easier when you're not emotional.",
+      "content": "Set your max loss BEFORE the session starts.\n\nNot after you're already down.\n\nDecisions made with a clear head are always better than decisions made while bleeding.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1663,8 +1663,8 @@
     {
       "id": 180,
       "type": "feature",
-      "content": "Phase tracking for prop firms.\n\nEvaluation 1. Evaluation 2. Funded.\n\nSee exactly where you are in the journey.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Evaluation Phase 1 → Phase 2 → Funded → Payout.\n\nSee exactly where you are in the prop firm journey.\n\nProgress tracking includes:\n→ Profit target distance\n→ Drawdown buffer remaining\n→ Trading days completed\n→ Rule compliance status\n\nFeel like you're running a business, not guessing.\n\nBecause that's what funded trading is — a business.",
+      "image": "images/analytics_main.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1672,7 +1672,7 @@
     {
       "id": 181,
       "type": "insight",
-      "content": "A 2R winner after 3 losers still puts you ahead.\n\nThat's the math most traders ignore.",
+      "content": "A 2R winner after 3 small losers still puts you ahead.\n\nThat's the math most traders ignore while panic-trading after loss #2.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1681,7 +1681,7 @@
     {
       "id": 182,
       "type": "engagement",
-      "content": "What's your go-to timeframe?\n\n1m warriors and daily swingers, sound off 👇",
+      "content": "What's your go-to timeframe?\n\n1-minute warriors and daily chart swingers — sound off. No judgment.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1690,7 +1690,7 @@
     {
       "id": 183,
       "type": "lifestyle",
-      "content": "The best traders I know have hobbies outside of trading.\n\nThe charts will consume you if you let them.\n\nBalance.",
+      "content": "The best traders I know have hobbies outside of trading.\n\nGolf. Jiu-jitsu. Cooking. Whatever.\n\nThe charts will consume you if you let them. Don't let them.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1699,8 +1699,8 @@
     {
       "id": 184,
       "type": "feature",
-      "content": "Sharpe ratio. Sortino ratio. Calmar ratio.\n\nIf you don't know these, you're not measuring risk properly.\n\nLynxTrades calculates them automatically.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Sharpe ratio. Sortino ratio. Calmar ratio.\nProfit factor. Expectancy. Win rate by setup.\n\nIf you're only tracking win rate, you're missing 90% of the picture.\n\nA 40% win rate with 3:1 R:R is better than 70% win rate with 0.5:1.\n\nThe math doesn't care about how often you win.\nIt cares about how MUCH you win when you're right.\n\nAll calculated automatically from your trade data.",
+      "image": "images/analytics_advanced.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1708,7 +1708,7 @@
     {
       "id": 185,
       "type": "psychology",
-      "content": "You will never feel \"ready\" to take the trade.\n\nThat's what the checklist is for.\n\nTrust the process, not the feeling.",
+      "content": "You will never \"feel ready\" to take the trade.\n\nThat's what the checklist is for.\n\nTrust the process, not the feeling. The feeling lies.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1717,7 +1717,7 @@
     {
       "id": 186,
       "type": "humor",
-      "content": "My trading plan: 📋\n\nMy actual trades: 🎪",
+      "content": "My trading plan: organized, disciplined, rule-based.\n\nMy actual trades: absolute circus.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1726,7 +1726,7 @@
     {
       "id": 187,
       "type": "tip",
-      "content": "Futures traders:\n\nKnow your point value before you size.\n\n$50/point on ES hits different than $5/point on MES.",
+      "content": "Futures traders — know your point value before you size.\n\n$50/point on ES hits very different than $5/point on MES.\n\nRespect the leverage or the leverage will disrespect you.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1735,8 +1735,8 @@
     {
       "id": 188,
       "type": "feature",
-      "content": "Consistency rules tracking.\n\nSome prop firms require your best day to be less than X% of total profit.\n\nWe track that. Automatically.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Some prop firms require your best day to be less than X% of total profit.\n\nConsistency rules.\n\nTracked automatically so you don't get a nasty surprise at payout time.",
+      "image": "images/analytics_report.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1744,7 +1744,7 @@
     {
       "id": 189,
       "type": "insight",
-      "content": "Every blown account has one thing in common:\n\nThe trader knew they shouldn't have taken that trade.\n\nThey took it anyway.",
+      "content": "Every blown account has one thing in common:\n\nThe trader knew they shouldn't have taken that trade.\n\nThey knew the size was too big.\nThey knew it wasn't their setup.\nThey knew they were emotional.\n\nThey took it anyway.\n\nJournaling forces you to confront that pattern before it repeats.\n\nBecause writing \"I ignored my rules\" hits different when you've written it 12 times.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1753,7 +1753,7 @@
     {
       "id": 190,
       "type": "engagement",
-      "content": "Morning session or power hour?\n\nWhere do you make your money?",
+      "content": "Morning session or power hour?\n\nWhere do you actually make your money?\n\n(Check your data before answering — most traders think they know but the numbers say otherwise.)",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1762,7 +1762,7 @@
     {
       "id": 191,
       "type": "lifestyle",
-      "content": "Trading full-time sounds glamorous until you realize you're alone in a room staring at candles for 8 hours.\n\nGet comfortable with yourself.",
+      "content": "Trading full-time sounds glamorous until you realize you're alone in a room staring at candles for 8 hours.\n\nGet comfortable with yourself first. The P&L comes second.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1771,8 +1771,8 @@
     {
       "id": 192,
       "type": "feature",
-      "content": "Trading multiple asset classes?\n\nStocks in the morning. Crypto at night.\n\nLynxTrades handles it all.\n\nOne account. One journal. Total clarity.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Stocks in the morning.\nCrypto at night.\nForex on Sunday.\nFutures during the week.\n\nOne journal.\nOne set of analytics.\nOne calendar view.\nTotal clarity across every market you touch.\n\nNo more separate spreadsheets per asset class.\nNo more \"I think I'm up overall but I'm not sure.\"\n\nEvery trade. Every market. One system.",
+      "image": "images/tradetable.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1780,7 +1780,7 @@
     {
       "id": 193,
       "type": "psychology",
-      "content": "The loss doesn't hurt.\n\nNot following your rules hurts.\n\nA loss with discipline is a win for your process.",
+      "content": "The loss doesn't hurt.\n\nNot following your rules hurts.\n\nA loss with discipline is a win for your process. A win without discipline is a loss waiting to happen.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1789,7 +1789,7 @@
     {
       "id": 194,
       "type": "tip",
-      "content": "If your stop is at a level where \"everyone\" has their stop...\n\nMaybe move it a little further.\n\nOr don't take the trade.",
+      "content": "If your stop is where \"everyone\" has their stop, you're liquidity.\n\nEither move it further or skip the trade entirely.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1798,7 +1798,7 @@
     {
       "id": 195,
       "type": "humor",
-      "content": "Trader math:\n\n+$500: \"I'm basically a professional.\"\n-$100: \"The market is rigged.\"",
+      "content": "Trader math:\n\n+$500: \"I'm basically a professional.\"\n-$100: \"The market is rigged against retail.\"",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1807,8 +1807,8 @@
     {
       "id": 196,
       "type": "feature",
-      "content": "Daily loss limits. Weekly loss limits. Max position size.\n\nSet the rules. We enforce them (in your head, at least).\n\nlynxtrades.com",
-      "image": null,
+      "content": "Risk rules that keep you honest:\n\n→ Daily loss limit: $500\n→ Weekly loss limit: $1,500\n→ Max position size: 100 shares\n→ Max trades per day: 5\n→ Trading hours: 9:30am - 11:00am\n\nSet them once.\nSee exactly when you break them.\n\nBecause discipline is easier when the data is staring back at you.\n\nAnd it will stare. Uncomfortably.",
+      "image": "images/risk-management.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1816,7 +1816,7 @@
     {
       "id": 197,
       "type": "insight",
-      "content": "Paper trading is underrated.\n\nNot for learning strategy.\n\nFor testing yourself under new conditions.",
+      "content": "Paper trading is underrated.\n\nNot for learning strategy — for testing yourself under new conditions.\n\nNew market? Paper trade first.\nNew timeframe? Paper trade first.\nNew sizing method? Paper trade first.\nComing back from a break? Paper trade first.\n\nYour ego will resist this.\nYour account will thank you.\n\nReal money doesn't care about your impatience.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1825,7 +1825,7 @@
     {
       "id": 198,
       "type": "engagement",
-      "content": "Biggest lesson trading has taught you about yourself?\n\nI'll go first: I'm way more impatient than I thought.",
+      "content": "Biggest lesson trading has taught you about yourself?\n\nI'll go first: I'm way more impatient than I ever thought possible.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1834,7 +1834,7 @@
     {
       "id": 199,
       "type": "lifestyle",
-      "content": "Sunday scaries but for traders:\n\n\"Did I learn anything last week or am I about to repeat everything?\"",
+      "content": "Sunday scaries for traders:\n\n\"Did I learn anything last week or am I about to repeat every mistake?\"",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1843,8 +1843,8 @@
     {
       "id": 200,
       "type": "feature",
-      "content": "Real market data on every trade.\n\nWe pull the actual candles from when you traded.\n\nNo imagination required.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Real market data on every trade.\n\nActual candles from when you traded.\nEntry markers at your exact fill price.\nExit markers where you closed.\nHigh/low of the position highlighted.\n\nNo guessing. No memory. No \"I think I entered around here.\"\n\nJust the chart showing exactly what happened.\n\nReview with data, not feelings.",
+      "image": "images/trade_details.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1852,8 +1852,8 @@
     {
       "id": 201,
       "type": "psychology",
-      "content": "Confidence and overconfidence feel exactly the same.\n\nThe difference shows up in your P&L later.",
-      "image": null,
+      "content": "Confidence and overconfidence feel exactly the same in the moment.\n\nThe difference only shows up in your P&L later.\n\nTag your emotional state on every trade:\n→ Calm\n→ Confident\n→ Anxious\n→ Frustrated\n→ Euphoric\n→ Revenge\n\nAfter 100 trades, the pattern becomes undeniable.\n\nYour \"confident\" trades might be your best. Your \"euphoric\" trades are almost certainly your worst.",
+      "image": "images/emotions.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1861,7 +1861,7 @@
     {
       "id": 202,
       "type": "tip",
-      "content": "Forex traders:\n\nSession overlap is where the action is.\n\nKnow when London and NY overlap. That's your edge.",
+      "content": "Forex traders — the London/NY overlap is where the action lives.\n\nKnow your session times. Trade the volatility, not the boredom.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1870,7 +1870,7 @@
     {
       "id": 203,
       "type": "humor",
-      "content": "The candle after I enter: 📉\n\nThe candle after I exit: 📈\n\nEvery. Single. Time.",
+      "content": "The candle after I enter: straight down.\n\nThe candle after I exit: straight to my target.\n\nEvery. Single. Time.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1879,8 +1879,8 @@
     {
       "id": 204,
       "type": "feature",
-      "content": "Pre-trade checklist items.\n\nDefine them once. Check them every trade.\n\nConsistency is just repeated good decisions.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Pre-trade checklists built into every trade entry.\n\nDefine your criteria once:\n✓ Is this my setup?\n✓ Is the R:R at least 2:1?\n✓ Am I within my daily risk limit?\n✓ Am I emotionally neutral?\n✓ Does the higher timeframe agree?\n✓ Is there a catalyst or just a pattern?\n\nCheck them every time.\n\nConsistency isn't talent. It's repeated good decisions enforced by a system.",
+      "image": "images/tradeform.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1897,7 +1897,7 @@
     {
       "id": 206,
       "type": "engagement",
-      "content": "Stocks, options, futures, forex, or crypto?\n\nWhat's your main market?",
+      "content": "Stocks, options, futures, forex, or crypto?\n\nWhat's your main market and why?",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1906,7 +1906,7 @@
     {
       "id": 207,
       "type": "lifestyle",
-      "content": "A walk outside between trades has saved me thousands.\n\nFresh air. Fresh perspective.\n\nStep away from the screen.",
+      "content": "A walk between trades has saved me thousands.\n\nFresh air. Fresh perspective. The chart looks completely different when you're not spiraling.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1915,8 +1915,8 @@
     {
       "id": 208,
       "type": "feature",
-      "content": "Smart autofill.\n\nTraded AAPL last week? We remember the details.\n\nContracts, strike, side—all prefilled.\n\nSpeed matters.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Smart autofill that remembers your last trade on each symbol.\n\nTraded AAPL calls last week? Next time you type AAPL:\n→ Strike: prefilled\n→ Contracts: prefilled\n→ Side: prefilled\n→ Expired dates: auto-skipped\n\nBecause spending 2 minutes filling out forms after every trade is why most people quit journaling.\n\nMake it fast or it won't get done.",
+      "image": "images/notes_link.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1924,7 +1924,7 @@
     {
       "id": 209,
       "type": "psychology",
-      "content": "Discipline isn't about willpower.\n\nIt's about systems.\n\nBuild the system. Let the system do the work.",
+      "content": "Discipline isn't about willpower.\n\nIt's about systems.\n\nBuild the system. Follow the system. Let the system protect you from yourself.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1933,7 +1933,7 @@
     {
       "id": 210,
       "type": "tip",
-      "content": "The best trade is often the one you don't take.\n\nIf you have to convince yourself, it's probably not the setup.",
+      "content": "The best trade is often the one you don't take.\n\nIf you have to convince yourself, it's not the setup.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1942,7 +1942,7 @@
     {
       "id": 211,
       "type": "humor",
-      "content": "Me: \"I'm going to follow my rules today.\"\n\nAlso me at 9:45am: \"This is basically the setup.\"",
+      "content": "Me: \"I'm going to follow my rules today.\"\n\nAlso me at 9:45am: \"This is basically the setup. Close enough.\"",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1951,8 +1951,8 @@
     {
       "id": 212,
       "type": "feature",
-      "content": "Account reset tracking.\n\nFailed a phase? Reset?\n\nLynxTrades tracks the reason and the date.\n\nLearn from every attempt.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Failed a prop firm phase? Reset the account?\n\nTrack it all:\n→ Date of reset\n→ Reason for failure\n→ P&L at time of fail\n→ Rules violated\n→ Emotional state that week\n\nLearn from every attempt.\n\nThe traders who eventually get funded aren't the ones who never fail.\nThey're the ones who stop repeating the same failure.",
+      "image": "images/analytics_monthly.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1960,7 +1960,7 @@
     {
       "id": 213,
       "type": "insight",
-      "content": "The market is always right.\n\nYour opinion doesn't matter.\n\nWhat matters is what price does.",
+      "content": "The market is always right. Your opinion doesn't matter.\n\nWhat matters is what price does next — and how you respond to it.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1969,7 +1969,7 @@
     {
       "id": 214,
       "type": "engagement",
-      "content": "How long before trading \"clicked\" for you?\n\nMonths? Years? Still waiting?\n\nBe honest.",
+      "content": "How long before trading \"clicked\" for you?\n\nMonths? Years? Still waiting?\n\nBe honest — nobody gets this right quickly.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1978,7 +1978,7 @@
     {
       "id": 215,
       "type": "lifestyle",
-      "content": "The market opens at 9:30.\n\nYour preparation should start the night before.",
+      "content": "The market opens at 9:30.\n\nYour preparation should start the night before.\n\nWatchlist. Levels. Game plan. Sleep.\n\nMorning panic is not a strategy.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -1987,8 +1987,8 @@
     {
       "id": 216,
       "type": "feature",
-      "content": "Trading hours rules.\n\nOnly trade 9:30-11:00? Set it.\n\nWe'll track when you break your own rules.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Only trade 9:30-11:00? Set your trading hours as a rule.\n\nThen see exactly:\n→ How often you break the rule\n→ What those out-of-hours trades cost you\n→ Whether your \"just one more trade\" habit is profitable\n\nSpoiler: it's almost never profitable.\n\nMost traders are shocked when they see this number.\nThat shock is the first step to fixing it.",
+      "image": "images/analytics_insights.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1996,7 +1996,7 @@
     {
       "id": 217,
       "type": "psychology",
-      "content": "Boredom trades are the most expensive.\n\nIf you're trading because you're bored, you're donating money.",
+      "content": "Boredom trades are the most expensive trades you'll ever take.\n\nIf you're trading because you're bored, you're donating money to someone who waited for their setup.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2005,7 +2005,7 @@
     {
       "id": 218,
       "type": "tip",
-      "content": "Options have an expiration date.\n\nSo does your thesis.\n\nIf the move doesn't happen, cut it.",
+      "content": "Options have an expiration date.\n\nSo does your thesis.\n\nIf the move doesn't happen in your timeframe, cut it. Don't let theta do it for you.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2014,7 +2014,7 @@
     {
       "id": 219,
       "type": "humor",
-      "content": "Theta gang checking in:\n\nWe sell hope.\n\n(And sometimes panic buy it back.)",
+      "content": "Theta gang checking in.\n\nWe sell hope.\n\n(And sometimes panic buy it back at a loss.)",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2023,8 +2023,8 @@
     {
       "id": 220,
       "type": "feature",
-      "content": "Profit split tracking for funded accounts.\n\n80/20? 90/10? Keep track of what's actually yours.\n\nlynxtrades.com",
-      "image": null,
+      "content": "80/20 split? 90/10? Different split per account?\n\nProfit split tracking for funded accounts so you always know what's actually yours.\n\nBecause \"I think I made money this month\" isn't a business plan.",
+      "image": "images/report_main.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2032,7 +2032,7 @@
     {
       "id": 221,
       "type": "insight",
-      "content": "The market will test every weakness you have.\n\nPatience. Discipline. Ego.\n\nIt finds them all.",
+      "content": "The market will test every weakness you have.\n\nPatience. Discipline. Ego. Greed.\n\nIt finds them all. Your journal shows you which ones it found first.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2041,7 +2041,7 @@
     {
       "id": 222,
       "type": "engagement",
-      "content": "What stopped you from journaling until now?\n\nGenuinely curious. Building based on real blockers.",
+      "content": "What's the #1 thing that stopped you from journaling your trades?\n\nToo slow? Too boring? Forgot? Never found a good tool?\n\nGenuinely want to know.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2050,7 +2050,7 @@
     {
       "id": 223,
       "type": "lifestyle",
-      "content": "The best trading days often feel boring.\n\nYou waited. You executed. You left.\n\nNo drama. Just green.",
+      "content": "The best trading days often feel boring.\n\nYou waited. You executed. You left.\n\nNo drama. No hero plays. Just green.\n\nBoring is profitable.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2058,9 +2058,9 @@
     },
     {
       "id": 224,
-      "type": "insight",
-      "content": "Win rate is a vanity metric.\n\nRisk-adjusted return is sanity.\n\nKnow the difference.\n\nlynxtrades.com",
-      "image": null,
+      "type": "feature",
+      "content": "Win rate is a vanity metric.\n\nYour real edge lives in risk-adjusted returns.\n\nA 40% win rate with 3:1 reward-to-risk crushes a 70% win rate with 0.5:1.\n\nThe metrics that actually matter:\n→ Expectancy per trade\n→ Profit factor\n→ Sharpe ratio\n→ Average R-multiple\n→ Max drawdown duration\n\nAll calculated automatically.\n\nKnow your real edge, not your ego's version of it.",
+      "image": "images/analytics_performance.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2068,7 +2068,7 @@
     {
       "id": 225,
       "type": "psychology",
-      "content": "The market's gonna do whatever it wants no matter how much you stare at the screen. You can't control the price, so just focus on your position sizing and where you'll get out. How you react to the stress is the only thing that really counts.",
+      "content": "You can't control the market.\n\nYou can control your size, your stop, and your reaction.\n\nThat's it. That's the whole game.\n\nEverything else is noise.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2078,7 +2078,7 @@
     {
       "id": 226,
       "type": "tip",
-      "content": "If you're wrong, be wrong small.\n\nIf you're right, be right big.\n\nThat's the whole game.",
+      "content": "If you're wrong, be wrong small.\n\nIf you're right, be right big.\n\nThat's the whole game. Everything else is details.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2087,7 +2087,7 @@
     {
       "id": 227,
       "type": "humor",
-      "content": "\"I'm not revenge trading.\"\n\n- Everyone who is definitely revenge trading",
+      "content": "\"I'm not revenge trading.\"\n\n— everyone who is absolutely, definitely revenge trading",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2096,8 +2096,8 @@
     {
       "id": 228,
       "type": "feature",
-      "content": "Max trades per day. Max trades per week.\n\nOvertrading is the quiet account killer.\n\nSet limits. We'll remind you.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Max trades per day. Max trades per week. Max daily loss.\n\nOvertrading is the quiet account killer.\n\nThe pattern:\n→ Day starts well\n→ You get confident\n→ \"One more trade\"\n→ It goes wrong\n→ \"One more to make it back\"\n→ Day is red\n\nSet the limits. Track when you break them.\nFix the pattern before it becomes a habit.\n\nYour future self will thank you for the guardrails.",
+      "image": "images/insights_main.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2114,7 +2114,7 @@
     {
       "id": 230,
       "type": "engagement",
-      "content": "Best trading wisdom you've ever received?\n\nDrop it. Helping someone today.",
+      "content": "Best piece of trading advice you've ever received?\n\nDrop it below. Someone reading this needs to hear it today.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2123,7 +2123,7 @@
     {
       "id": 231,
       "type": "lifestyle",
-      "content": "Sleep > that overnight position.\n\nSeriously. Close it and rest.",
+      "content": "Sleep > that overnight position.\n\nSeriously. Close it and rest.\n\nA good night's sleep is worth more than whatever that position might do by morning.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2132,8 +2132,8 @@
     {
       "id": 232,
       "type": "feature",
-      "content": "Hourly performance breakdown.\n\nSee exactly which hours make you money.\n\nStop trading the hours that don't.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Hourly performance breakdown.\n\nSee exactly which hours make you money and which hours bleed you dry.\n\n9:30-10:00 → +$3,200\n10:00-11:00 → +$1,800\n11:00-12:00 → -$400\n12:00-1:00 → -$1,100\n1:00-2:00 → -$600\n2:00-3:00 → +$200\n3:00-4:00 → +$900\n\nMost traders have 2-3 profitable hours per day.\n\nFind yours. Trade those. Ignore the rest.",
+      "image": "images/insights_period.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2141,7 +2141,7 @@
     {
       "id": 233,
       "type": "psychology",
-      "content": "The urge to \"get back\" after a loss is your ego talking.\n\nYour ego doesn't know how to trade.\n\nListen to your plan instead.",
+      "content": "The urge to \"get back\" after a loss is your ego talking.\n\nYour ego doesn't know how to trade. It knows how to revenge trade.\n\nListen to your plan instead.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2150,7 +2150,7 @@
     {
       "id": 234,
       "type": "tip",
-      "content": "Scale out, not all out.\n\nLock some profit. Let the rest ride.\n\nYou'll sleep better.",
+      "content": "Scale out, not all out.\n\nLock some profit. Let the rest ride.\n\nYou'll sleep better and still catch the extended moves.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2159,7 +2159,7 @@
     {
       "id": 235,
       "type": "humor",
-      "content": "Portfolio up 2%: \"Time to calculate my yearly returns.\"\n\nPortfolio down 2%: \"This is just one day.\"",
+      "content": "Portfolio up 2%: \"Let me calculate my annual returns.\"\n\nPortfolio down 2%: \"It's just one day. Long-term vision.\"",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2168,8 +2168,8 @@
     {
       "id": 236,
       "type": "feature",
-      "content": "Symbol performance tracking.\n\nSee which tickers you trade best.\n\nStick to your winners.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Symbol performance tracking.\n\nWhich tickers do you actually trade well?\n\nSome traders are great at TSLA and terrible at AMZN. The data shows this clearly — but only if you track it.\n\nStick to your winners.",
+      "image": "images/insights_details.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2177,7 +2177,7 @@
     {
       "id": 237,
       "type": "insight",
-      "content": "The first hour is for professionals.\n\nThe lunch hour is for nothing.\n\nThe last hour is for moves.\n\nKnow your session.",
+      "content": "The first hour is for professionals.\nThe lunch hour is for waiting.\nThe last hour is for power moves.\n\nKnow your session. Trade accordingly.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2186,7 +2186,7 @@
     {
       "id": 238,
       "type": "engagement",
-      "content": "One asset class. Forever. Which one do you pick?",
+      "content": "One asset class. Forever. You can only pick one.\n\nWhat are you choosing and why?",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2195,7 +2195,7 @@
     {
       "id": 239,
       "type": "lifestyle",
-      "content": "The market teaches humility.\n\nIf you're not humble yet, you will be.",
+      "content": "The market teaches humility.\n\nIf you're not humble yet, keep trading. It's coming.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2203,9 +2203,9 @@
     },
     {
       "id": 240,
-      "type": "cta",
-      "content": "Start tracking today.\n\nNot next week. Not \"when things settle down.\"\n\nFree. 2 minutes. lynxtrades.com",
-      "image": null,
+      "type": "feature",
+      "content": "Your dashboard should give you everything at a glance.\n\nTop row: Today's P&L. Win rate. Open positions.\nMiddle: Equity curve. Calendar heatmap.\nBottom: Recent trades. Rule compliance.\n\nNot buried in menus.\nNot hidden behind clicks.\nNot spread across 5 different tabs.\n\nJust the data you need, the moment you open the app.\n\nBecause a dashboard you have to dig through isn't a dashboard. It's a maze.",
+      "image": "images/dashboard.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2213,8 +2213,8 @@
     {
       "id": 241,
       "type": "feature",
-      "content": "Options traders, stop manual tagging.\n\nLynxTrades automatically detects 10+ strategy templates:\n• Vertical Spreads\n• Iron Condors\n• Butterflies\n• Straddles & Strangles\n\nLog the legs. We'll name the strategy.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Options traders — stop manually tagging your strategies.\n\nLog the legs. The journal identifies the structure automatically.\n\n→ Vertical spreads\n→ Iron condors\n→ Iron butterflies\n→ Calendar spreads\n→ Straddles\n→ Strangles\n→ Diagonals\n\n10+ strategy templates detected from your entries.\n\nBecause typing \"iron condor\" 200 times a year is not how you want to spend your trading career.",
+      "image": "images/tradeform-executions.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2222,7 +2222,7 @@
     {
       "id": 242,
       "type": "psychology",
-      "content": "The market doesn't pay you for being smart.\n\nIt pays you for being patient and disciplined.\n\nMost traders are smart. Very few are patient.",
+      "content": "The market doesn't pay you for being smart.\n\nIt pays you for being patient and disciplined.\n\nPlenty of smart traders are broke. Very few patient ones are.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2231,8 +2231,8 @@
     {
       "id": 243,
       "type": "feature",
-      "content": "Running a prop firm challenge? Don't fly blind.\n\nLynxTrades tracking includes:\n• Trailing drawdown monitoring\n• EOD vs. Intraday rules\n• Minimum trading day counters\n• Automated rule violation alerts\n\nProfessional tools for professional funded traders.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Prop firm challenge tracking that actually works:\n\n→ Trailing drawdown monitoring (real-time)\n→ EOD vs. intraday rule support\n→ Minimum trading day counters\n→ Consistency rule tracking\n→ Profit target distance\n→ Rule violation alerts\n\nBecause failing a challenge on a technicality is worse than failing on a bad trade.\n\nAnd it happens more than you think.\n\nKnow your numbers. Always.",
+      "image": "images/report_sub.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2240,7 +2240,7 @@
     {
       "id": 244,
       "type": "humor",
-      "content": "My strategy during backtesting: 📈 🚀 💰\n\nMy strategy with real money: 📉 🔥 🤡",
+      "content": "My strategy during backtesting: flawless.\n\nMy strategy with real money: what strategy?",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2249,7 +2249,7 @@
     {
       "id": 245,
       "type": "tip",
-      "content": "Scale out, not all out.\n\nSelling half at 2R allows you to let the other half run with zero stress.\n\nWinning is about staying in the game long enough for the big moves.",
+      "content": "Scale out at 2R. Let the rest ride at breakeven stop.\n\nYou locked profit. You eliminated risk. You're still in the trade.\n\nThis one adjustment changed my trading more than any indicator ever did.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2258,8 +2258,8 @@
     {
       "id": 246,
       "type": "feature",
-      "content": "Data entry should be fast.\n\nOur 'Smart Symbol Autofill' populates contracts, strike, and side from your last trade on that symbol.\n\nIt even skips expired dates for options.\n\nLess clicking, more trading.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Smart Symbol Autofill remembers your last trade on each ticker.\n\nContracts, strike, side — all populated. Skips expired dates for options.\n\nLogging a trade takes seconds, not minutes. That's why you'll actually do it.",
+      "image": "images/tradeform.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2267,7 +2267,7 @@
     {
       "id": 247,
       "type": "psychology",
-      "content": "Red days are just the cost of doing business.\n\nYou can't have a retail store without paying rent.\n\nYou can't have a trading business without losses.",
+      "content": "Red days are just the cost of doing business.\n\nYou can't run a store without paying rent.\nYou can't trade without taking losses.\n\nThe question isn't \"will I have red days?\" It's \"can I keep them small?\"",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2276,7 +2276,7 @@
     {
       "id": 248,
       "type": "engagement",
-      "content": "Fill in the blank:\n\nMy biggest 'aha!' moment in trading happened when I realized _________.",
+      "content": "Fill in the blank:\n\nMy biggest \"aha\" moment in trading was when I realized _________.\n\n(The best answers always sound obvious in hindsight.)",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2285,8 +2285,8 @@
     {
       "id": 249,
       "type": "feature",
-      "content": "The simulation studio (Pro) lets you stress test your edge:\n\n• Monte Carlo simulations (up to 10k runs)\n• Risk of Ruin probability\n• What-If analysis (tweak win rate/fees)\n\nStop guessing. Start modeling your future equity.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Monte Carlo simulation: stress-test your edge.\n\nTake your actual trade data.\nRun 10,000 random simulations.\nSee the full range of possible outcomes.\n\n→ Best case scenario\n→ Worst case scenario\n→ Expected outcome\n→ 95th percentile drawdown\n→ Probability of hitting your target\n→ Risk of ruin percentage\n\nBecause \"I think my strategy works\" isn't a risk management plan.\n\nProbability is.",
+      "image": "images/montecarlo.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2294,7 +2294,7 @@
     {
       "id": 250,
       "type": "lifestyle",
-      "content": "A healthy body supports a clear mind.\n\nIf you're exhausted and eating trash, don't expect peak decision-making during power hour.",
+      "content": "If you're exhausted and eating trash, don't expect peak decision-making during power hour.\n\nA healthy body supports a clear mind. Trading performance starts away from the screen.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2303,7 +2303,7 @@
     {
       "id": 251,
       "type": "insight",
-      "content": "Small losses are your friends. They keep you from large losses.\n\nThe only dangerous loss is the one you refuse to take.",
+      "content": "Small losses are your friends.\n\nThey keep you from large losses.\n\nThe only dangerous loss is the one you refuse to take.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2312,8 +2312,8 @@
     {
       "id": 252,
       "type": "feature",
-      "content": "Trading should be mobile-friendly.\n\nReview your trades on the gym treadmill or from your couch. Our responsive design ensures full feature access on any device.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Review your trades from anywhere.\n\nOn the treadmill. On the couch. Waiting in line. At the airport.\n\nFull analytics. Full journaling. Full chart views.\nResponsive on any device.\n\nBecause your weekly review shouldn't require being chained to your desk.\n\nSaturday morning, coffee, phone, 15 minutes.\nThat's all a good review takes when the tools work.",
+      "image": "images/weekly-review.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2321,7 +2321,7 @@
     {
       "id": 253,
       "type": "psychology",
-      "content": "Your ego is the only thing standing between you and a small stop loss.\n\n Admit you were wrong and move on.",
+      "content": "Your ego is the only thing standing between you and a clean stop loss.\n\nAdmit you were wrong. Take the loss. Move on.\n\nThe market doesn't care about your feelings. Your account does.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2330,7 +2330,7 @@
     {
       "id": 254,
       "type": "tip",
-      "content": "Look for 2-3 specific setups. Ignore everything else.\n\nTrying to catch every move is the fastest way to blow your capital.",
+      "content": "Pick 2-3 setups. Master them. Ignore everything else.\n\nTrying to catch every move is the fastest way to blow your capital and your confidence.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2339,7 +2339,7 @@
     {
       "id": 255,
       "type": "humor",
-      "content": "When my trade hits my stop loss and then immediately reverses to my target:\n\n'I think the market is personally targeting me.' 🧐",
+      "content": "When my stop loss gets hit and the price immediately reverses to my target:\n\n\"I'm convinced the market can see my orders specifically.\"",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2348,8 +2348,8 @@
     {
       "id": 256,
       "type": "feature",
-      "content": "Detailed strategy insights in LynxTrades:\n\n• Win rate vs average R-multiple per setup\n• Performance breakdown by asset type\n• Market session performance\n\nFind your true edge and scale it.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Strategy-level analytics that reveal your actual edge:\n\n→ Win rate per setup type\n→ Average R-multiple per strategy\n→ Performance by time of day\n→ Performance by day of week\n→ Performance by market session\n→ Average hold time per strategy\n\nFind what works. Scale it.\nFind what doesn't. Cut it.\n\nYour P&L is an average of all your strategies.\nMake sure the bad ones aren't dragging down the good ones.",
+      "image": "images/insights_setup.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2357,8 +2357,8 @@
     {
       "id": 257,
       "type": "story",
-      "content": "The moment I started tracking my emotions was the moment I became consistent.\n\nFear made me sell winners early. Revenge made me oversized on losers.\n\nYou can't fix what you don't measure.",
-      "image": null,
+      "content": "The moment I started tracking my emotions was the moment I became consistent.\n\nFear made me sell winners at 0.5R.\nRevenge made me 3x my size after losses.\nFOMO made me chase entries I'd never planned.\nBoredom made me trade setups that weren't there.\n\nI didn't need a new strategy.\nI needed a mirror.\n\nEmotion tracking gave me that mirror.\n\n6 months later, my equity curve changed. Not because my strategy improved — because I stopped sabotaging it.",
+      "image": "images/emotions.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2366,7 +2366,7 @@
     {
       "id": 258,
       "type": "poll",
-      "content": "What's more important in a strategy?",
+      "content": "What matters most in a trading strategy?",
       "poll_options": [
         "High Win Rate",
         "High Reward/Risk",
@@ -2376,13 +2376,14 @@
       "poll_duration_minutes": 1440,
       "posted": false,
       "posted_at": null,
-      "tweet_id": null
+      "tweet_id": null,
+      "image": null
     },
     {
       "id": 259,
       "type": "feature",
-      "content": "Stop dealing with spreadsheet formatting.\n\nOur AI CSV Importer (Pro) uses intelligent parsing to map your broker data automatically.\n\nWorks with almost any format you can download.\n\nlynxtrades.com",
-      "image": null,
+      "content": "AI-powered CSV import maps your broker data automatically.\n\nNo more fighting with column names and date formats.\n\nJust upload the file. The importer figures out the rest.\n\nWorks with almost any broker export format.",
+      "image": "images/export.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2390,7 +2391,7 @@
     {
       "id": 260,
       "type": "psychology",
-      "content": "Consistency is doing the boring work when you're unmotivated.\n\nReviewing trades on a Saturday isn't 'fun.' It's how you pay the bills on Monday.",
+      "content": "Consistency is doing the boring work when you're unmotivated.\n\nReviewing trades on Saturday isn't fun. It's how you pay the bills on Monday.\n\nThe traders who make it long-term all have one thing in common: they do the work nobody sees.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2399,7 +2400,7 @@
     {
       "id": 261,
       "type": "insight",
-      "content": "The biggest move usually follows a breakout that everyone thought would fail.",
+      "content": "The biggest move usually follows the breakout everyone thought would fail.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2408,8 +2409,8 @@
     {
       "id": 262,
       "type": "feature",
-      "content": "Eight automated risk rules in LynxTrades keep you on path:\n\n• Max Daily Trades\n• Max Daily Loss ($)\n• Trading Hours Restriction\n• Max Symbol Exposure\n\nStay in the game. Manage the downside.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Automated risk rules that keep you honest:\n\n→ Max daily trades: 5\n→ Max daily loss: $500\n→ Trading hours: 9:30am-11:00am only\n→ Max exposure per symbol: 2% of account\n→ Position size limit: 100 shares\n→ No trading after 2 consecutive losses\n\nSet them once. See every violation. Track every breach.\n\nFix the pattern before it costs you an account.\n\nRules without tracking are just suggestions.",
+      "image": "images/risk-management.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2417,7 +2418,7 @@
     {
       "id": 263,
       "type": "lifestyle",
-      "content": "A cluttered desk often leads to a cluttered mind. Clear your workspace before the bell. One screen, focus, execution.",
+      "content": "Clear desk. Clear mind.\n\nClean your workspace before the bell. The clutter on your desk becomes clutter in your decisions.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2426,7 +2427,7 @@
     {
       "id": 264,
       "type": "humor",
-      "content": "Me: 'I'm done for the day, locked in green.'\n\nMarket: *Offers one more high-probability setup*\n\nMe at 4PM: '...Anyway, I'm red now.'",
+      "content": "Me: \"Done for the day. Locked in green.\"\n\nMarket: *Offers one more \"perfect\" setup*\n\nMe at 4pm: \"...Anyway, I'm red now.\"",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2435,8 +2436,8 @@
     {
       "id": 265,
       "type": "feature",
-      "content": "Pro Tier Heatmaps show you exactly where the profit is.\n\nAnalyze performance at 5m to 1h resolution.\n\nDiscover if your 'mid-day itch' is actually burning your account balance.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Performance heatmaps show exactly where the profit lives.\n\nAnalyze your results at 5-minute to 1-hour resolution.\n\nBright green at 9:45am? That's your money zone.\nDeep red at 12:30pm? That's your donation zone.\n\nThat \"mid-day itch\" where you always squeeze in one more trade?\nThe heatmap will show you exactly what it's costing you.\n\nSometimes the most profitable trade is the one you don't take.",
+      "image": "images/analytics_main.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2444,7 +2445,7 @@
     {
       "id": 266,
       "type": "tip",
-      "content": "A trading plan should fit on an index card. If it takes 20 pages to explain, it's too complex to execute under pressure.",
+      "content": "Your trading plan should fit on an index card.\n\nIf it takes 20 pages to explain, it's too complex to execute under pressure.\n\nSimplify until you can follow it when the market is screaming at you.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2453,7 +2454,7 @@
     {
       "id": 267,
       "type": "engagement",
-      "content": "What was the first asset you ever traded? Stock? Crypto? A baseball card? 👇",
+      "content": "What was the first thing you ever traded?\n\nStock? Crypto? Pokemon cards?\n\nEveryone starts somewhere.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2462,8 +2463,8 @@
     {
       "id": 268,
       "type": "feature",
-      "content": "Every trade view comes with built-in strategy checklists.\n\nEnsure you checked all 4 entry requirements before you logged it as a setup. Validate your discipline.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Built-in strategy checklists on every trade entry.\n\nDid you check all 4 entry requirements? Did you validate your setup criteria?\n\nDon't log the trade until you've confirmed you followed your own rules.\n\nAccountability built into the workflow.",
+      "image": "images/playbook.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2471,7 +2472,7 @@
     {
       "id": 269,
       "type": "psychology",
-      "content": "FOMO isn't about the money. It's about wanting to belong to a move that hasn't finished yet.",
+      "content": "FOMO isn't about the money.\n\nIt's about wanting to belong to a move that isn't finished yet.\n\nRecognize the emotion. Let the move go. There's always another one.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2480,8 +2481,8 @@
     {
       "id": 270,
       "type": "feature",
-      "content": "Detailed journaling shouldn't take forever.\n\nUse our Post-Trade Review template in the built-in Notes folder. Standardize your reflections in 60 seconds.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Post-trade notes in 60 seconds.\n\n→ Structured templates\n→ Rich text formatting\n→ Image embedding\n→ Trade linking\n→ Folder organization\n→ Full-text search\n\nLink notes directly to specific trades.\n\n\"I'll remember why I took that trade\" is a lie we've all told ourselves.\n\n3 months from now, your notes will be the only thing standing between you and repeated mistakes.",
+      "image": "images/notes_text.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2489,7 +2490,7 @@
     {
       "id": 271,
       "type": "humor",
-      "content": "'Risk management is key.'\n\nAlso me: *Uses 50x leverage because the candle looks angry*",
+      "content": "\"Risk management is everything.\"\n\nAlso me: *Uses 50x leverage because the candle \"looked angry\"*",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2498,7 +2499,7 @@
     {
       "id": 272,
       "type": "insight",
-      "content": "Trends start slowly, then move all at once. The crowd misses the beginning and pays for the end.",
+      "content": "Trends start slowly, then move all at once.\n\nThe crowd misses the beginning and pays for the end.\n\nDon't be the crowd.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2507,8 +2508,8 @@
     {
       "id": 273,
       "type": "feature",
-      "content": "Efficiency Analysis (Pro):\n\n• Captured MFE: What % of the move did you take?\n• Avoided MAE: How much heat did you endure?\n\nStop exiting winners too soon and holding losers too long.\n\nlynxtrades.com",
-      "image": null,
+      "content": "How much of the move did you actually capture?\n\nEfficiency analysis tracks:\n→ Captured MFE: what % of the max move did you take?\n→ Avoided MAE: how much heat did you endure?\n→ Entry efficiency: how close to the low did you buy?\n→ Exit efficiency: how close to the high did you sell?\n\nMost traders capture less than 40% of their winners.\n\nStop exiting too early. Stop holding losers too long.\nThe data shows you exactly where to improve.",
+      "image": "images/analytics_advanced.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2516,7 +2517,7 @@
     {
       "id": 274,
       "type": "tip",
-      "content": "Keep a physical trading log alongside your digital one. Writing 'I broke my rule' with a pen feels 10x more painful—and more helpful.",
+      "content": "Keep a physical note alongside your digital journal.\n\nWriting \"I broke my rule\" with a pen feels 10x more painful than typing it.\n\nAnd that pain? It's useful.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2525,7 +2526,7 @@
     {
       "id": 275,
       "type": "engagement",
-      "content": "If you had to trade with ONLY one indicator for the rest of your life, what are you choosing? (Price action doesn't count as an indicator! 😉)",
+      "content": "One indicator for the rest of your trading career. What are you picking?\n\n(Price action doesn't count. That's a cop-out answer and you know it.)",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2534,8 +2535,8 @@
     {
       "id": 276,
       "type": "feature",
-      "content": "Broker sync made easy (Pro).\n\nAutomatically pull your data from 15+ brokers 4x daily via SnapTrade. Your journal stays up-to-date even when you're away from the desk.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Broker sync pulls your trades automatically. Multiple times per day.\n\nYour journal stays current even when you forget to log.\n\n15+ brokers supported. Connect once, never think about it again.",
+      "image": "images/command_palette.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2543,7 +2544,7 @@
     {
       "id": 277,
       "type": "psychology",
-      "content": "Trading is 80% waiting. If you find yourself clicking constantly, you're not trading, you're looking for dopamine.",
+      "content": "Trading is 80% waiting.\n\nIf you find yourself clicking constantly, you're not trading.\n\nYou're looking for dopamine. And the market is happy to charge you for it.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2552,7 +2553,7 @@
     {
       "id": 278,
       "type": "insight",
-      "content": "Liquidity hunts are the market's way of resetting. When you feel 'picked off,' you were likely just a casualty of a larger participant needing a fill.",
+      "content": "When you feel \"picked off\" by the market, you were likely just liquidity for a larger participant who needed a fill.\n\nIt's not personal. It's structure. Understanding that changes everything.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2561,8 +2562,8 @@
     {
       "id": 279,
       "type": "feature",
-      "content": "LynxTrades supports multi-leg strategy management. Tracking entry/exit prices per individual leg gives you precision other journals can't match.\n\nProfessional tools, affordable pricing.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Multi-leg strategy tracking with per-leg entry and exit prices.\n\nSee the P&L on each individual leg.\n\nKnow which part of your spread made money and which part didn't.\n\nPrecision that spreadsheets can't match.",
+      "image": "images/trade-detail.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2570,7 +2571,7 @@
     {
       "id": 280,
       "type": "lifestyle",
-      "content": "Stand up once an hour. Your brain and your P&L will both feel the improvement. Don't let yourself get hypnotized by the tape.",
+      "content": "Stand up once an hour. Walk around. Look out a window.\n\nYour brain and your P&L will both improve.\n\nDon't let yourself get hypnotized by the tape.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2579,7 +2580,7 @@
     {
       "id": 281,
       "type": "humor",
-      "content": "'Why are you so quiet?'\n\n'SPY is testing VWAP and I'm stressed about 5 shares.'",
+      "content": "\"Why are you so quiet?\"\n\n\"SPY is testing VWAP and I'm stressed about 5 shares.\"\n\nTraders in public are a different breed.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2588,7 +2589,7 @@
     {
       "id": 282,
       "type": "tip",
-      "content": "Before you take a trade, ask: 'If this trade was the last 1% of my account, would I still take it?' Respect your capital.",
+      "content": "Before every trade, ask yourself:\n\n\"If I'm wrong, what happens to my week?\"\n\nIf the answer scares you, the size is wrong.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2597,8 +2598,8 @@
     {
       "id": 283,
       "type": "feature",
-      "content": "Benchmark your Alpha (Pro).\n\nCompare your returns against the SPY. Are you actually better than a passive index, or just taking more risk for less reward?\n\nData is truth.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Compare your returns against SPY.\n\nAre you actually beating a passive index fund?\nOr just taking way more risk for slightly more reward?\n\nBenchmark comparison calculated automatically:\n→ Your return vs. SPY return\n→ Your volatility vs. SPY volatility\n→ Your Sharpe vs. buy-and-hold Sharpe\n→ Your max drawdown vs. SPY drawdown\n\nData doesn't have feelings.\nThat's why it's useful.",
+      "image": "images/equity-curve.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2606,7 +2607,7 @@
     {
       "id": 284,
       "type": "engagement",
-      "content": "What's your biggest trading goal for the month? 🎯",
+      "content": "What's your biggest trading goal right now?\n\nFunded account? Consistent profitability? Just surviving?\n\nWherever you are, that's valid.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2615,7 +2616,7 @@
     {
       "id": 285,
       "type": "psychology",
-      "content": "Don't let a green day make you think you're invincible. Don't let a red day make you think you're a failure. Stick to the process.",
+      "content": "Green day: don't think you're invincible.\nRed day: don't think you're a failure.\n\nBoth are just data points.\n\nThe only thing that matters is whether you followed the process.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2624,8 +2625,8 @@
     {
       "id": 286,
       "type": "feature",
-      "content": "Position Sizing Calculator in LynxTrades integrates directly with your account size. Stay compliant with your risk profile automatically.\n\nPrecision counts.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Position size calculator integrated with your account balance.\n\nRisk 1% per trade? 2%? Half a percent?\n\nEnter your stop distance.\nGet the exact share count or contract count.\n\nNo more mental math.\nNo more \"close enough\" sizing.\nNo more accidentally risking 5% on one trade because you rounded up.\n\nPrecision in sizing = precision in risk management.",
+      "image": "images/position-calc.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2633,7 +2634,7 @@
     {
       "id": 287,
       "type": "insight",
-      "content": "The simplest indicator of a weak hand? Adding to a losing position in 'hope' for a lower average. Cut the loser and find a better entry.",
+      "content": "Adding to a losing position in \"hope\" of a better average is the clearest sign of a weak hand.\n\nCut the loser. Find a better entry.\n\nThe market doesn't care about your average price.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2642,7 +2643,7 @@
     {
       "id": 288,
       "type": "humor",
-      "content": "'How's your morning going?'\n\n'I am Currently holding 0DTE options during an FOMC speech. I can see sounds.'",
+      "content": "\"How's your morning going?\"\n\n\"I'm holding 0DTE options during an FOMC speech. I can see sounds.\"",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2651,8 +2652,8 @@
     {
       "id": 289,
       "type": "feature",
-      "content": "Our 'Primary Account' feature gives you quick dashboard access to the account that matters most. Whether retail or prop firm, see your stats at a glance.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Primary account view gives you instant access to the stats that matter most.\n\nWhether retail or prop firm, your key metrics are one click away.\n\nP&L. Drawdown. Win rate. Streaks. All at a glance.",
+      "image": "images/dashboard.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2660,7 +2661,7 @@
     {
       "id": 290,
       "type": "tip",
-      "content": "A good rule of thumb: If you're shouting at the monitor, your position size is way too big.",
+      "content": "If you're yelling at the screen, your position size is too big.\n\nYou should be able to watch your stop get hit and feel... nothing.\n\nThat's the right size.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2669,7 +2670,7 @@
     {
       "id": 291,
       "type": "engagement",
-      "content": "Bull market, bear market, or range-bound chop—which do you prefer to trade?",
+      "content": "Bull market, bear market, or choppy range — which do you actually prefer trading?\n\nMost people say they want trends but secretly love the chop.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2678,8 +2679,8 @@
     {
       "id": 292,
       "type": "feature",
-      "content": "Scaling support isn't just a list—it's visual. See your entry and exit markers layered over live candlesticks on every trade log.\n\nInteractive analysis for better execution.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Entry and exit markers layered over live candlestick charts.\n\nOn every single trade:\n→ Entry price: green arrow\n→ Exit price: red arrow\n→ Stop loss level: dashed line\n→ Take profit level: dashed line\n→ Actual price path: highlighted\n\nSee exactly where you got in, where you got out, and what the price did after.\n\nVisual analysis that makes review sessions 10x more productive.",
+      "image": "images/trade_chart.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2687,7 +2688,7 @@
     {
       "id": 293,
       "type": "psychology",
-      "content": "Most of trading isn't what you do in the chair. It's who you are when things go wrong. Your self-talk during a drawdown determines your future as a trader.",
+      "content": "Most of trading isn't what you do in the chair.\n\nIt's who you are when things go wrong.\n\nYour self-talk during a drawdown determines your future as a trader. Fix that first.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2696,7 +2697,7 @@
     {
       "id": 294,
       "type": "insight",
-      "content": "Patterns aren't meant to predict the future. They are meant to tell you where risk is worth taking. High probability, low risk. That's the edge.",
+      "content": "Patterns don't predict the future.\n\nThey tell you where risk is worth taking.\n\nHigh probability + low risk. That's the only edge that lasts.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2705,8 +2706,8 @@
     {
       "id": 295,
       "type": "feature",
-      "content": "Survival Buffer tracking (Pro).\n\nBased on your historical win rate and avg loss, how many consecutive losers could you survive? Survival first, profit second.\n\nlynxtrades.com",
-      "image": null,
+      "content": "How many consecutive losers could you survive?\n\nSurvival buffer analysis calculates this from:\n→ Your historical win rate\n→ Your average loss size\n→ Your current account balance\n→ Your position sizing rules\n\n5 losers in a row? 10? 15?\n\nIf the answer surprises you, your sizing needs work.\n\nBecause losing streaks don't feel random when you're in them.\nBut they are. And you need to survive them.",
+      "image": "images/simulation_stats.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2714,7 +2715,7 @@
     {
       "id": 296,
       "type": "humor",
-      "content": "'My chart is ready for the open.'\n\n*Screen looks like a spilled bowl of rainbow neon spaghetti from all the indicators.*",
+      "content": "\"My chart is clean and ready for the open.\"\n\n*Screen looks like someone spilled a bowl of rainbow spaghetti across 47 indicators.*",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2723,7 +2724,7 @@
     {
       "id": 297,
       "type": "tip",
-      "content": "One asset. One setup. One time window. If you do this for a year, you will beat 95% of traders chasing 'everything everywhere.'",
+      "content": "One asset. One setup. One time window.\n\nDo this for a year and you'll beat 95% of traders who chase everything everywhere.\n\nSpecialization is the most underrated edge in trading.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2732,8 +2733,8 @@
     {
       "id": 298,
       "type": "feature",
-      "content": "Note Folder categorization at LynxTrades:\n\n• Pre-Trade: The Plan\n• Daily Journal: The Feeling\n• Post-Trade: The Reality\n\nCross-link them all to build your internal playbook.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Organize your trading thoughts:\n\n→ Pre-trade folder: The plan\n→ Daily journal folder: The mindset\n→ Post-trade folder: The reality\n→ Weekly review folder: The patterns\n→ Monthly recap folder: The big picture\n\nCross-link them to build your internal playbook over time.\n\nStructured reflection beats random notes in a Google Doc.\n\nEvery. Single. Time.",
+      "image": "images/notes_customizer.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2741,7 +2742,7 @@
     {
       "id": 299,
       "type": "engagement",
-      "content": "Fill in the blank: The best thing about being a trader is ___________.",
+      "content": "Fill in the blank:\n\nThe best thing about being a trader is ___________.\n\n(The worst thing is also an acceptable answer.)",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2750,7 +2751,7 @@
     {
       "id": 300,
       "type": "psychology",
-      "content": "It's better to miss out on profit than to hold on to a loser. The market will always offer another move, but it won't always give back your capital.",
+      "content": "It's better to miss profit than to hold a loser hoping it comes back.\n\nThe market will always offer another setup.\n\nIt won't always give back your capital.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2759,8 +2760,8 @@
     {
       "id": 301,
       "type": "feature",
-      "content": "Running P&L Analysis (Pro):\n\nGet real-time feedback on open positions powered by live Alpaca and Twelve Data price feeds. See exactly when you hit peak profit or 'max pain' intra-day.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Real-time P&L tracking on open positions.\n\nSee your unrealized gains and losses updating live:\n→ Per-position P&L\n→ Aggregated daily P&L\n→ Distance to stop loss\n→ Distance to take profit\n→ Time in trade\n\nKnow exactly where your day stands at any moment.\n\nWithout switching to your broker app.\nWithout doing mental math.\nJust clarity.",
+      "image": "images/analytics_stats.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2768,7 +2769,7 @@
     {
       "id": 302,
       "type": "humor",
-      "content": "'Why are you awake at 3AM?'\n\n'GBP/JPY had a candle that didn't sit right with my spirit.'",
+      "content": "\"Why are you awake at 3am?\"\n\n\"GBP/JPY had a candle that didn't sit right with my soul.\"",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2777,7 +2778,7 @@
     {
       "id": 303,
       "type": "insight",
-      "content": "Wait for 'the move' after 'the move.' The second leg usually has the best volume and the lowest emotion for those entering late.",
+      "content": "Wait for the move after the move.\n\nThe second leg usually has better volume and calmer entries.\n\nLet the first wave take out the stops. Enter on the continuation.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2786,8 +2787,8 @@
     {
       "id": 304,
       "type": "feature",
-      "content": "Analyze Win Rate by Emotion at LynxTrades.\n\nIs your P&L red when you're 'Anxious'? Blue when you're 'Confident'? Data won't solve the emotion, but it will tell you when to walk away.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Win rate by emotion tag.\n\nCalm trades: 64% win rate, +1.8R avg\nConfident trades: 58% win rate, +1.2R avg\nAnxious trades: 38% win rate, -0.4R avg\nRevenge trades: 22% win rate, -1.1R avg\n\nThe data won't fix the emotion.\nBut it will tell you exactly when to walk away.\n\nTrack it. See the pattern. Change the behavior.\n\nYour P&L is a reflection of your emotional management.",
+      "image": "images/emotions.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2795,7 +2796,7 @@
     {
       "id": 305,
       "type": "tip",
-      "content": "Don't 'round up' your account size in your head to make position sizes feel bigger. Trade the numbers in your broker, not your dreams.",
+      "content": "Don't round up your account size to make position sizes feel bigger.\n\nTrade the number in your broker, not the number in your head.\n\nSmall lies about risk become big problems fast.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2804,7 +2805,7 @@
     {
       "id": 306,
       "type": "poll",
-      "content": "What's the best time of day for you?",
+      "content": "When do you trade best?",
       "poll_options": [
         "Morning Open (9:30 - 11:30)",
         "Lunch Mid-day (11:30 - 14:00)",
@@ -2814,13 +2815,14 @@
       "poll_duration_minutes": 1440,
       "posted": false,
       "posted_at": null,
-      "tweet_id": null
+      "tweet_id": null,
+      "image": null
     },
     {
       "id": 307,
       "type": "feature",
-      "content": "Kelly Criterion Sizing (Pro):\n\nGet mathematical advice on whether you should size up or down based on your actual performance data. Leverage math to optimize growth.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Kelly Criterion sizing based on your actual performance data.\n\nShould you size up or down? The math tells you.\n\nNo guessing. No \"it feels like I should trade bigger.\" Just data-driven position sizing.",
+      "image": "images/simulation_sliders.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2828,7 +2830,7 @@
     {
       "id": 308,
       "type": "psychology",
-      "content": "Your biggest losers often follow a 'feeling'—your biggest winners always follow a 'process.' Ignore the gut. Trust the playbook.",
+      "content": "Your biggest losers always follow a \"feeling.\"\nYour biggest winners always follow a process.\n\nIgnore the gut. Trust the playbook.\n\nEvery time you deviate, document why. The pattern will become undeniable.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2837,8 +2839,8 @@
     {
       "id": 309,
       "type": "feature",
-      "content": "Prop firm drawdown management:\n\nTrailing? End of Day? Static? LynxTrades math accounts for individual firm rules. Don't blow an account because of a spreadsheet calculation error.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Prop firm drawdown rules are complex.\n\nTrailing. End of day. Static. Buffer-based.\nInitial balance vs. highest balance.\nIntraday vs. end-of-session.\n\nDifferent firms. Different math.\n\nGet it calculated automatically based on your firm's specific rules.\n\nDon't blow a funded account because of a spreadsheet calculation error.\n\nThat's not a trading loss. That's a math loss. And it's preventable.",
+      "image": "images/simulation_equity.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2846,7 +2848,7 @@
     {
       "id": 310,
       "type": "humor",
-      "content": "'Trading for freedom!'\n\n*Me, 14 hours deep in trade reviews, questioning my existence.*",
+      "content": "\"Trading for freedom!\"\n\n*Me, 14 hours deep in trade reviews, questioning every life decision*",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2855,7 +2857,7 @@
     {
       "id": 311,
       "type": "insight",
-      "content": "Market makers aren't out to 'get' you. They are there to fill orders and manage risk. When you align your logic with their requirements, you find liquidity.",
+      "content": "Market makers aren't hunting your stops.\n\nThey're filling orders and managing inventory.\n\nWhen you understand their job, you start placing entries where they need to fill — not where everyone else is getting stopped.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2864,8 +2866,8 @@
     {
       "id": 312,
       "type": "feature",
-      "content": "LynxTrades supports commodities logging with specific color themes. Gold, Oil, Silver—integrated flawlessly with Twelve Data for high-accuracy charts.\n\nMulti-asset journals for serious portfolios.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Gold. Oil. Silver. Commodities tracking with real market data.\n\nAccurate charts on every single trade.\n\nMulti-asset journaling for traders who don't limit themselves to one market.",
+      "image": "images/trade_journal.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2873,7 +2875,7 @@
     {
       "id": 313,
       "type": "tip",
-      "content": "Journaling is not a review. It is an investment. Every 30 seconds spent today pays a dividend of better decisions 3 months from now.",
+      "content": "Journaling isn't homework. It's compound interest for your trading skill.\n\nEvery 30 seconds spent today pays a dividend of better decisions 3 months from now.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2882,7 +2884,7 @@
     {
       "id": 314,
       "type": "engagement",
-      "content": "Share one thing you're NOT going to do this week in your trading. 👇",
+      "content": "Share one thing you're NOT going to do this week in your trading.\n\nI'll start: I'm not trading the first 5 minutes after open. My data says it costs me money.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2891,8 +2893,8 @@
     {
       "id": 315,
       "type": "feature",
-      "content": "Risk of Ruin Modeling (Pro):\n\nAre you mathematically prone to bankruptcy with your current win rate? Stop flying blind and find out exactly what it takes to protect your principal.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Risk of Ruin modeling.\n\nBased on your actual data:\n→ Current win rate\n→ Average win size\n→ Average loss size\n→ Position sizing rules\n→ Account balance\n\nAre you mathematically prone to blowing up?\n\nSee the probability. See the timeline.\nSee exactly what needs to change.\n\nBecause by the time you \"feel\" the risk, it's already too late.\n\nPrevention > recovery. Always.",
+      "image": "images/simulation_monte.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2900,7 +2902,7 @@
     {
       "id": 316,
       "type": "psychology",
-      "content": "Losses don't get 'paid back.' Money lost is gone. Focus on making fresh money from fresh setups. Leave the past behind.",
+      "content": "Losses don't get \"paid back.\"\n\nMoney lost is gone. It's not coming home.\n\nFocus on making fresh money from fresh setups. The past is an anchor. Drop it.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2909,7 +2911,7 @@
     {
       "id": 317,
       "type": "insight",
-      "content": "True discipline is holding your winner to your target even when the candle looks scary. If you liked the trade at the entry, you should like it on the move.",
+      "content": "True discipline is holding your winner to your target even when the candle looks scary.\n\nIf you liked the setup at entry, trust it on the move.\n\nExit strategy should be decided before the trade, not during.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2918,8 +2920,8 @@
     {
       "id": 318,
       "type": "feature",
-      "content": "Global Live P&L Stat (Pro):\n\nAggregated, real-time unrealized P&L of all open positions directly on your dashboard. Know exactly where your day stands at a single glance.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Aggregated real-time P&L across all your open positions.\n\nOne number on your dashboard.\nThat's where your day stands.\n\nBreak it down by:\n→ Per-position P&L\n→ Per-account P&L\n→ Per-asset-class P&L\n→ Intraday vs. swing positions\n\nNo switching between broker tabs.\nNo mental math.\nNo guessing.\n\nJust clarity. At a glance.",
+      "image": "images/analytics_main.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2927,7 +2929,7 @@
     {
       "id": 319,
       "type": "humor",
-      "content": "'I will take it slow.'\n\n*4 minutes after the open, filled 3 times on NQ at max lot size.*",
+      "content": "\"I'll take it slow today.\"\n\n*4 minutes after the open, 3 fills deep on NQ at max size*\n\n\"Well that escalated quickly.\"",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2936,7 +2938,7 @@
     {
       "id": 320,
       "type": "tip",
-      "content": "If a stock is moving 100% on news, don't worry about being 'right' on the chart. Worry about being 'fast' with your risk. Momentum cares more about exits than entries.",
+      "content": "On momentum plays, entries matter less than exits.\n\nStock up 100% on news? Don't worry about being \"right\" on the chart.\n\nWorry about being fast with your risk. Get in. Set the stop. Manage the position.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2945,8 +2947,8 @@
     {
       "id": 321,
       "type": "feature",
-      "content": "Setup validation at LynxTrades checking timeframe/asset type match.\n\nLinked a breakout setup but traded on a 1-minute chart when the setup is meant for Hourly? Our detail view warns you.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Setup validation catches mismatches before they cost you money.\n\nLinked a breakout setup but traded on a 1-minute chart?\nThe setup was designed for hourly timeframes.\n\nThe system flags it:\n→ Timeframe mismatch warning\n→ Asset type mismatch warning\n→ Session mismatch warning\n\nYou fix it. Or you realize you weren't following your own rules.\n\nEither way, you learn something.",
+      "image": "images/playbook.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2954,7 +2956,7 @@
     {
       "id": 322,
       "type": "engagement",
-      "content": "Coffee ☕️ vs Energy Drinks ⚡️—what fuels your trading session?",
+      "content": "Coffee or energy drinks? What fuels your trading session?\n\n(Water is also a valid answer but we both know that's not what's on your desk at 9:29am.)",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2963,7 +2965,7 @@
     {
       "id": 323,
       "type": "psychology",
-      "content": "Hope is the enemy of trading capital. Discipline is the only friend. When in doubt, out.",
+      "content": "Hope is the enemy of trading capital.\n\nDiscipline is the only friend.\n\nWhen in doubt, get out. The setup will come again. Your capital might not.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2972,8 +2974,8 @@
     {
       "id": 324,
       "type": "feature",
-      "content": "What-If Scenario Sandbox (Pro):\n\n'What if I cut my losers 10% sooner?' 'What if I doubled my profit taking distance?' Test your adjustments on your actual trade data instantly.\n\nlynxtrades.com",
-      "image": null,
+      "content": "What-if scenario sandbox.\n\n\"What if I cut losers 10% sooner?\"\n\"What if I doubled my profit target?\"\n\"What if I skipped all Friday trades?\"\n\"What if I only traded the first hour?\"\n\"What if I removed my 3 worst trades?\"\n\nRun the scenarios on your actual trade data.\nSee the impact instantly.\n\nStop guessing what would improve your P&L.\n\nTest it. The answer might surprise you.",
+      "image": "images/whatif.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -2981,7 +2983,7 @@
     {
       "id": 325,
       "type": "humor",
-      "content": "The only thing more certain than death and taxes is a pullback hitting your trailing stop at the exact local bottom.",
+      "content": "The only thing more certain than death and taxes:\n\nA pullback hitting your trailing stop at the exact local bottom.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2990,7 +2992,7 @@
     {
       "id": 326,
       "type": "insight",
-      "content": "The tape doesn't lie. Watch where the large prints go, not what the news pundits say. Follow the money, leave the narrative.",
+      "content": "Watch where the large prints go, not what the news says.\n\nThe tape doesn't lie. Follow the money. Leave the narrative.\n\nEvery pundit has an opinion. The order flow has the truth.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -2999,8 +3001,8 @@
     {
       "id": 327,
       "type": "feature",
-      "content": "Search any note, mistake, or setup instantly. With 10+ searchable fields, LynxTrades makes it effortless to find your 2024 breakout winners during your 2026 trading sessions.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Search any trade, note, or setup instantly.\n\n10+ searchable fields:\n→ Symbol, setup type, emotion\n→ Date range, P&L range\n→ Side (long/short)\n→ Notes content (full-text)\n→ Tags, timeframe, duration\n\nWant to review all your TSLA breakout trades from Q3?\n\n5-second search. Not a 20-minute scroll.\n\nBecause a journal you can't search is just a diary.",
+      "image": "images/command_palette.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -3008,7 +3010,7 @@
     {
       "id": 328,
       "type": "tip",
-      "content": "Record yourself trading once a week. Hearing your verbal reasoning during a trade reveal will tell you everything you need to know about your mindset.",
+      "content": "Record yourself trading once a week.\n\nHearing your own reasoning out loud will reveal everything about your mindset.\n\n\"I should probably take this... I mean... yeah, let's do it.\"\n\nThat's not conviction. That's FOMO with a microphone.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -3017,7 +3019,7 @@
     {
       "id": 329,
       "type": "poll",
-      "content": "Favorite technical setup?",
+      "content": "What's your favorite technical setup?",
       "poll_options": [
         "Flags/Channels",
         "V-Bottom Reversals",
@@ -3027,13 +3029,14 @@
       "poll_duration_minutes": 1440,
       "posted": false,
       "posted_at": null,
-      "tweet_id": null
+      "tweet_id": null,
+      "image": null
     },
     {
       "id": 330,
       "type": "feature",
-      "content": "Twelve Data Integration handles your 24/7 markets. Crypto and Forex logging has never been more accurate. Interactive candlestick views on every single trade.\n\nlynxtrades.com",
-      "image": null,
+      "content": "24/7 market coverage.\n\nCrypto charting: BTC, ETH, SOL — any pair.\nForex charting: every major and cross pair.\n\nReal-time data integration.\nInteractive candlestick views on every trade.\n\nRegardless of when you took it:\n→ 3am Sunday forex trade? Charted.\n→ 11pm Saturday crypto trade? Charted.\n\nGood analysis shouldn't be limited to NYSE hours.",
+      "image": "images/trade_chart.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -3041,7 +3044,7 @@
     {
       "id": 331,
       "type": "psychology",
-      "content": "Revenge trading is basically paying a stupidity tax on top of a loss. Step back. Breath. Markets stay open.",
+      "content": "Revenge trading is a stupidity tax on top of a loss.\n\nYou already paid the market once. Don't pay it again because your ego is wounded.\n\nStep back. Breathe. The market will be there tomorrow.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -3050,7 +3053,7 @@
     {
       "id": 332,
       "type": "insight",
-      "content": "Shorting a rocket and longing a rock. Don't fight gravity, don't fight thrust. Just ride the wave until the shore.",
+      "content": "Don't short the rocket. Don't long the rock.\n\nFighting the trend is fighting gravity. Ride the wave until it breaks.\n\nThe trend doesn't care about your thesis.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -3059,8 +3062,8 @@
     {
       "id": 333,
       "type": "feature",
-      "content": "Simulation Horizons of 500+ trades (Pro). Build 10,000 path outcomes to visualize the true variance of your trading edge. Probability is power.\n\nlynxtrades.com",
-      "image": null,
+      "content": "10,000 Monte Carlo simulations.\nBased on your actual trade history.\n\nVisualize the full range of possible outcomes:\n→ Median equity path\n→ Best case (top 5%)\n→ Worst case (bottom 5%)\n→ 25th/75th percentile bands\n→ Risk of ruin probability\n→ Expected max drawdown\n\nProbability isn't guessing — it's preparation.\n\nAnd preparation is the only edge that compounds.",
+      "image": "images/simulation_percentile.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -3068,7 +3071,7 @@
     {
       "id": 334,
       "type": "humor",
-      "content": "'Trading for 5 years, still a beginner!'\n\n- Some extremely profitable trader with too much humility.",
+      "content": "\"Trading for 5 years, still a beginner.\"\n\n— some extremely profitable trader who's just annoyingly humble about it",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -3077,7 +3080,7 @@
     {
       "id": 335,
       "type": "tip",
-      "content": "If you missed the first 10% of a move, don't think you 'missed it.' Usually, you just got the signal to start planning the entry. Don't chase the FOMO—watch the pullback.",
+      "content": "You missed the first 10% of the move? You didn't miss it.\n\nYou just got the signal to start planning your entry on the pullback.\n\nThe FOMO entry is expensive. The pullback entry is professional.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -3086,8 +3089,8 @@
     {
       "id": 336,
       "type": "feature",
-      "content": "Alpaca API powers your US stocks/options charts. Every trade shows where you entered vs. real price action. Visual tracking made easy.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Real US stock and options charts on every trade.\n\nPowered by market data APIs.\n\nEvery trade shows:\n→ Your exact entry price\n→ Your exact exit price\n→ Real candlestick data\n→ Volume profile\n→ The move you captured vs. the move you missed\n\nVisual tracking that turns your journal from a logbook into a learning tool.\n\nSee it. Study it. Improve.",
+      "image": "images/trade_details.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -3095,7 +3098,7 @@
     {
       "id": 337,
       "type": "engagement",
-      "content": "What's the hardest rule you had to make for yourself in your trading business? 👇",
+      "content": "What's the hardest trading rule you've ever made for yourself?\n\nMine: No trading after a loss. Period. Walk away for the rest of the session.\n\nSaved my account more times than I can count.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -3104,7 +3107,7 @@
     {
       "id": 338,
       "type": "psychology",
-      "content": "Account balance isn't 'money' until you withdraw it. It's just a numeric indicator of how well you follow your system. Focus on the system, ignore the digit until the weekend.",
+      "content": "Your account balance isn't money until you withdraw it.\n\nIt's a numeric indicator of how well you follow your system.\n\nFocus on the system. Ignore the number during the session.\n\nCheck it once a day. At the end. Not in the middle of a trade.",
       "image": null,
       "posted": false,
       "posted_at": null,
@@ -3113,8 +3116,8 @@
     {
       "id": 339,
       "type": "feature",
-      "content": "Multi-select émotion tracking at LynxTrades. Feel calm AND greedy at once? (we've all been there). Capture the complexity of your trading psychology for better weekly reviews.\n\nlynxtrades.com",
-      "image": null,
+      "content": "Multi-select emotion tracking.\n\nFeel calm AND greedy at the same time?\nConfident but also anxious?\nPatient with a hint of FOMO?\n\nWe've all been there.\n\nCapture the full complexity of your trading psychology.\n\nBecause \"how did you feel?\" with only one dropdown option is never the whole truth.\n\nAnd the whole truth is where the breakthroughs live.",
+      "image": "images/calendar_month.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -3122,8 +3125,8 @@
     {
       "id": 340,
       "type": "cta",
-      "content": "Unlock institutional analytics on a retail budget.\n\nEfficiency tracking, Kelly Sizing, Benchmarks, and Monte Carlo models are all included in our Pro tier.\n\nLevel up. 🚀 lynxtrades.com",
-      "image": null,
+      "content": "Your trading data deserves better than a spreadsheet.\n\nAnalytics that find your edge.\nSimulations that stress-test it.\nJournaling that makes you stick to it.\nCalendar views that reveal your patterns.\nRisk tools that keep you alive.\n\nStop guessing. Start knowing.\n\nYour future P&L is a function of how well you understand your past trades.\n\nThe tools exist. The data is waiting.\nThe only question is whether you'll use them.",
+      "image": "images/product-shot.png",
       "posted": false,
       "posted_at": null,
       "tweet_id": null
