@@ -459,7 +459,12 @@
       "type": "poll",
       "content": "How many trades do you take per week on average?",
       "image": null,
-      "poll_options": ["1-5", "6-15", "16-30", "30+"],
+      "poll_options": [
+        "1-5",
+        "6-15",
+        "16-30",
+        "30+"
+      ],
       "poll_duration_minutes": 1440,
       "posted": true,
       "posted_at": "2026-01-20T13:28:21.613000+00:00",
@@ -1241,9 +1246,9 @@
       "type": "insight",
       "content": "There is no secret indicator.\n\nStop looking. Start managing risk.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-13T20:01:49.242011+00:00",
+      "tweet_id": "2022400839302680784"
     },
     {
       "id": 134,
