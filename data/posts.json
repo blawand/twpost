@@ -1196,24 +1196,24 @@
       "type": "pain_point",
       "content": "Paying $30/month to see your own trading data is insane.\n\nYou already paid the market for those lessons. Why pay again to review them?",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-12T13:50:26.359470+00:00",
+      "tweet_id": "2021944990012781030"
     },
     {
       "id": 129,
       "type": "motivation",
       "content": "The market will be there tomorrow.\n\nIf today isn't your day, pack it up.\n\nPreserve your mental capital.\nPreserve your confidence.\nPreserve your ability to come back strong.\n\nThe best traders know when to sit out.\n\nSitting on the sidelines IS a trading decision.\nAnd sometimes it's the most profitable one you'll make all week.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-12T16:53:41.594434+00:00",
+      "tweet_id": "2021991107463164325"
     },
     {
       "id": 130,
       "type": "feature",
-      "content": "Tag your setups. Filter your P&L by tag.\n\n\"Bull Flag\" → +$4,200\n\"Reversal\" → -$1,800\n\"Breakout\" → +$6,500\n\"Gap Fill\" → +$2,100\n\"VWAP Bounce\" → -$900\n\nStop trading the setups that lose money.\n\nYour data already knows which ones work.\nYour job is to listen to it.",
-      "image": "images/setup-comparison.png",
+      "content": "Tag your setups.\n\n\"Bull Flag\" vs \"Reversal\" vs \"Breakout\".\n\nFilter your P&L by tag.\n\nStop trading the setups that lose money.\n\nlynxtrades.com",
+      "image": null,
       "posted": false,
       "posted_at": null,
       "tweet_id": null
@@ -1223,18 +1223,18 @@
       "type": "humor",
       "content": "I have a love/hate relationship with the 1-minute chart.\n\nMostly hate.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-12T23:27:56.995877+00:00",
+      "tweet_id": "2022090325532295395"
     },
     {
       "id": 132,
       "type": "insight",
       "content": "Size down when you're slumping.\nSize normal when you're winning.\nNever size up to \"make it back.\"\n\nThe math doesn't care about your feelings.\nThe drawdown doesn't care about your ego.\n\nSurvival first. Recovery second. Growth third.\n\nIn that order. Always.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-13T04:32:52.749195+00:00",
+      "tweet_id": "2022167063511322642"
     },
     {
       "id": 133,
