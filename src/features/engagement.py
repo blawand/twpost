@@ -3,6 +3,8 @@ import json
 import logging
 import os
 import random
+from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -38,6 +40,11 @@ class EngagementManager:
         self.reply_delay_max = self._read_float_env("ENGAGEMENT_DELAY_MAX_SECONDS", 15.0)
         self.min_text_length = max(20, self._read_int_env("ENGAGEMENT_MIN_TEXT_LENGTH", 20))
         self.top_candidate_pool = max(1, self._read_int_env("ENGAGEMENT_TOP_POOL", 3))
+        self.require_fresh_tweets = self._read_bool_env("ENGAGEMENT_REQUIRE_FRESH_TWEETS", True)
+        self.max_tweet_age_minutes = max(
+            5,
+            self._read_int_env("ENGAGEMENT_MAX_TWEET_AGE_MINUTES", 180),
+        )
         self.use_live_trends = self._read_bool_env("ENGAGEMENT_USE_TRENDS", True)
         self.trend_count = max(5, self._read_int_env("ENGAGEMENT_TRENDS_COUNT", 20))
         self.max_trend_queries = max(1, self._read_int_env("ENGAGEMENT_TREND_QUERIES", 6))
@@ -210,6 +217,100 @@ class EngagementManager:
                 return EngagementManager._safe_int(value)
         return 0
 
+    @staticmethod
+    def _parse_datetime(value: Any) -> Optional[datetime]:
+        if value is None:
+            return None
+
+        if isinstance(value, datetime):
+            dt = value
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone.utc)
+            return dt.astimezone(timezone.utc)
+
+        if isinstance(value, (int, float)):
+            timestamp = float(value)
+            if timestamp > 1_000_000_000_000:
+                timestamp = timestamp / 1000.0
+            try:
+                return datetime.fromtimestamp(timestamp, tz=timezone.utc)
+            except Exception:
+                return None
+
+        raw = str(value).strip()
+        if not raw:
+            return None
+
+        if raw.isdigit():
+            return EngagementManager._parse_datetime(int(raw))
+
+        normalized = raw.replace("Z", "+00:00")
+        try:
+            dt = datetime.fromisoformat(normalized)
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone.utc)
+            return dt.astimezone(timezone.utc)
+        except ValueError:
+            pass
+
+        try:
+            dt = parsedate_to_datetime(raw)
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone.utc)
+            return dt.astimezone(timezone.utc)
+        except Exception:
+            return None
+
+    def _tweet_created_at(self, tweet: Any) -> Optional[datetime]:
+        field_names = [
+            "created_at_datetime",
+            "created_at",
+            "date",
+            "timestamp",
+            "time",
+        ]
+        for field_name in field_names:
+            dt = self._parse_datetime(getattr(tweet, field_name, None))
+            if dt is not None:
+                return dt
+
+        for attr in ("_data", "data"):
+            raw_payload = getattr(tweet, attr, None)
+            if isinstance(raw_payload, dict):
+                for field_name in field_names:
+                    dt = self._parse_datetime(raw_payload.get(field_name))
+                    if dt is not None:
+                        return dt
+
+        return None
+
+    def _is_fresh_tweet(self, tweet: Any) -> bool:
+        if not self.require_fresh_tweets:
+            return True
+
+        tweet_id = str(getattr(tweet, "id", "")).strip() or "unknown"
+        created_at = self._tweet_created_at(tweet)
+        if created_at is None:
+            logger.debug(
+                "Skipping tweet id=%s because created_at was unavailable and freshness is required.",
+                tweet_id,
+            )
+            return False
+
+        age_minutes = (datetime.now(timezone.utc) - created_at).total_seconds() / 60.0
+        if age_minutes < 0:
+            age_minutes = 0.0
+        if age_minutes > self.max_tweet_age_minutes:
+            logger.debug(
+                "Skipping stale tweet id=%s age=%.1f minutes (max=%s).",
+                tweet_id,
+                age_minutes,
+                self.max_tweet_age_minutes,
+            )
+            return False
+
+        return True
+
     def _pick_lane_order(self) -> List[Dict[str, Any]]:
         weights = [max(0.0, lane["weight"]) for lane in self.lanes]
         if sum(weights) <= 0:
@@ -240,6 +341,9 @@ class EngagementManager:
 
         in_reply_to_status = getattr(tweet, "in_reply_to_status_id", None)
         if in_reply_to_status is not None:
+            return False
+
+        if not self._is_fresh_tweet(tweet):
             return False
 
         if text.count("@") > 3:
@@ -406,6 +510,11 @@ class EngagementManager:
 
     async def run(self):
         logger.info("Starting engagement run.")
+        logger.info(
+            "Freshness filter: enabled=%s max_age_minutes=%s",
+            self.require_fresh_tweets,
+            self.max_tweet_age_minutes,
+        )
         replies_count = 0
 
         try:

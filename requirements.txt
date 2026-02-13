@@ -5,7 +5,6 @@ python-dotenv
 requests
 Pillow
 
-# Gemini API Official SDK
-google-genai
+# Utility dependencies
 pydantic
 fake-headers

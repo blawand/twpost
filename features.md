@@ -18,6 +18,13 @@ LynxTrades is a comprehensive trading journal application designed for serious t
 - **Balance Tracking**: Track initial and current balance with historical entries
 - **Account Status**: Active, Inactive, or Closed status management
 
+### Account Archive & Limits
+
+- **Archive/Restore**: Archive inactive accounts to declutter the UI; restore them anytime
+- **Account Limit Guard**: Free-tier users are limited to a set number of accounts. When the limit is exceeded, a selection modal prompts the user to choose which accounts to keep active
+- **Locked Accounts**: Accounts beyond the free-tier limit are locked. Upgrading to a paid plan automatically unlocks all locked accounts
+- **Archived accounts count toward the free-tier limit** to prevent cycling/swapping
+
 ### Prop Firm Integration
 
 One of LynxTrades' most unique features is comprehensive prop firm account support:
@@ -198,7 +205,7 @@ Each trade displays an **interactive candlestick chart with real market data**:
 
 - **Alpaca API**: Fetches real OHLCV data for US stocks and options (underlying)
 - **Twelve Data API**: Fetches real OHLCV data for Forex and Crypto
-- **Futures**: Automatic ETF alternative suggestions (e.g., ES → SPY)
+- **Futures**: Routed to Twelve Data with automatic symbol normalization for common indices (e.g., USTEC → QQQ, US500 → SPY, US30 → DIA)
 
 ### Intelligent Timeframe Auto-Selection
 
@@ -406,7 +413,6 @@ Built-in templates for common journal types:
 #### Reports
 
 - **Reports**: Generate comprehensive trading reports
-- **Reports**: Generate comprehensive trading reports
 - **Report Document**: Full exportable report with charts and metrics
 
 ### Advanced Analytics (Pro)
@@ -519,7 +525,9 @@ Interactive strategy lab to test hypothetical changes to your system.
 
 ## ⚠️ Risk Management
 
-### Risk Rules (8 Auto-Tracked Types)
+### Risk Rules (User-Defined Reminders)
+
+Risk rules serve as personal trading guidelines and reminders. They are displayed during trade entry for self-accountability but are not auto-enforced at submit time.
 
 1. **Max Daily Trades**: Limit trades per day (e.g., max 3 trades/day)
 2. **Max Weekly Trades**: Limit trades per week
@@ -529,7 +537,7 @@ Interactive strategy lab to test hypothetical changes to your system.
 6. **Trading Hours**: Only trade within specific hours (time range with start/end)
 7. **Max Position Size**: Maximum dollar value per position
 8. **Max Trades Per Symbol**: Limit trades per ticker per day
-9. **Custom Rules**: Personal reminders/guidelines (not auto-tracked)
+9. **Custom Rules**: Personal reminders/guidelines
 
 ### Rule Configuration
 
@@ -538,7 +546,6 @@ Interactive strategy lab to test hypothetical changes to your system.
 - Value with unit (currency, percent, count, ratio)
 - Time range for trading hours rules
 - Active/inactive status
-- Auto-tracking for structured rule types
 
 ### Risk Profile Management
 
@@ -649,8 +656,6 @@ When viewing a trade linked to a setup:
 - **Trades**: Search trade history
 - **Setups**: Find trading setups
 - **Tags**: Search tags
-- **Mistakes**: Find mistake patterns
-- **Accounts**: Account search
 - **Notes**: Search journal entries
 
 ### Trade Search
@@ -679,15 +684,6 @@ Full-text search across **10+ trade fields**:
 - **Tags**: Multi-select tag filter
 - Active filter count indicator
 - One-click filter clearing
-
-### Saved Filter Presets
-
-- **Save Current Filters**: Name and save any filter combination
-- **Load Saved Filters**: One-click to apply saved presets
-- **Set Default**: Mark a filter as default (auto-loads)
-- **Delete Presets**: Remove saved filters
-- **Dropdown Variant**: Compact dropdown for tight spaces
-- **LocalStorage Persistence**: Filters persist across sessions
 
 ---
 
@@ -746,6 +742,13 @@ Full-text search across **10+ trade fields**:
 - Vim mode for rich text editors
 - Quick action hotkeys
 
+### Support Request Center
+
+- Submit support requests directly from Settings
+- Request types: Bug Report, Feature Request, Question, Other
+- Automatically captures device info (browser, screen size, current route) for context
+- Requests saved to Firestore for review
+
 ---
 
 ## 💾 Data Management
@@ -760,10 +763,20 @@ Full-text search across **10+ trade fields**:
   - Linked setups, tags, mistakes (resolved to human-readable names)
   - Options-specific fields (strike, expiration)
   - Emotions and confidence levels
+- **Full JSON Backup**: Complete data export including trades, notes, accounts, setups, mistakes, tags, risk rules, and risk profile in a single versioned JSON file
+
+### JSON Restore / Import
+
+- Import from a previously exported JSON backup file
+- Validates file structure and displays item counts before writing
+- Confirmation dialog before overwriting data
+- Imports in dependency order (setups/mistakes/tags first, then accounts/trades/notes)
 
 ### Data Actions
 
-- Account deletion with cascading data cleanup
+- Account deletion with cascade deletion of all linked trades, notes, and media files
+- Broker connection unlinking on account deletion
+- Automatic primary account reassignment after deletion
 - Delete all trades for a user with media cleanup
 
 ---
@@ -849,7 +862,7 @@ Tabbed panel showing contextual information:
 
 Unlock the full power of LynxTrades with institutional-grade tools:
 
-- **Broker Integration & Auto-Import**: Connect your brokerage accounts (TD Ameritrade, Interactive Brokers, Alpaca, Webull, and 15+ more via SnapTrade) to automatically sync trades. Auto-sync runs 4x daily during market hours. Max 2 broker connections.
+- **Broker Integration & Manual Sync**: Connect your brokerage accounts (TD Ameritrade, Interactive Brokers, Alpaca, Webull, and 15+ more via SnapTrade) and manually sync trades on demand. Max 2 broker connections.
 - **Simulation Studio**: Monte Carlo modeling, Risk of Ruin, and interactive What-If scenario testing.
 - **Advanced Analytics**: Best Times Heatmaps (5m to 1h), Efficiency Analysis (MAE/MFE), Return Skewness, and Alpha Benchmarking.
 - **Running P&L Analysis**: Global "Live P&L" dashboard stat and deep dive into every trade with intra-day price tracking and excursion metrics.
@@ -950,6 +963,16 @@ Interactive tour with 5 guided steps:
 
 ---
 
+## 🛡️ Admin Area
+
+### Admin Dashboard
+
+- Protected route accessible only to whitelisted email addresses
+- Guarded by `AdminRoute` component that checks user email against an allow-list
+- Non-admin users are redirected to the home page
+
+---
+
 ## 🔧 Technical Architecture
 
 ### Frontend Stack
@@ -975,7 +998,8 @@ Interactive tour with 5 guided steps:
 ### External APIs
 
 - **Alpaca Markets API**: US stock and options price data
-- **Twelve Data API**: Forex and cryptocurrency price data
+- **Twelve Data API**: Forex, cryptocurrency, futures, and commodity price data
+- **SnapTrade API**: Brokerage account connections and trade sync (15+ brokers)
 - **Stripe**: Subscription billing
 
 ### Code Organization
@@ -1004,7 +1028,7 @@ Interactive tour with 5 guided steps:
 
 6. **Multi-Asset Support**: True support for Stocks, Options, Futures, Forex, Crypto, and Commodities - not just stocks
 
-7. **Risk-Centric Design**: 8 auto-tracked risk rule types plus pre-trade checklists with real-time compliance monitoring
+7. **Risk-Centric Design**: 8 structured risk rule types as trading reminders plus pre-trade checklists and position sizing calculator
 
 8. **Setup Performance**: Track which strategies actually work with automatic win rate and P&L attribution
 
