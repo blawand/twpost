@@ -1318,9 +1318,9 @@
       "type": "pain_point",
       "content": "Why do most trading journals look like they were built in 2005?\n\nTraders deserve modern software. Clean UI. Fast logging. Analytics that actually help.\n\nNot a spreadsheet someone put a login screen on.",
       "image": "images/product-shot.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-15T16:24:17.125056+00:00",
+      "tweet_id": "2023070868969021605"
     },
     {
       "id": 142,
