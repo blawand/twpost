@@ -1300,9 +1300,9 @@
       "type": "humor",
       "content": "Trading is 10% analysis and 90% staring at a candle wondering if it's going to do what you think it's going to do.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-15T04:34:01.992362+00:00",
+      "tweet_id": "2022892129664606473"
     },
     {
       "id": 140,
