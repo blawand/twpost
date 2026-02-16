@@ -1345,9 +1345,9 @@
       "type": "feature",
       "content": "Auto-timeframe selection that actually makes sense.\n\nTrade lasted 3 hours? → 5-minute chart\nTrade lasted 1 day? → 15-minute chart\nTrade lasted 3 days? → 1-hour chart\nTrade lasted 2 weeks? → Daily chart\n\nContext matters.\nScrolling through irrelevant candles doesn't.\n\nSee exactly what the price action looked like during YOUR trade.",
       "image": "images/trade_chart.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-16T19:54:32.931023+00:00",
+      "tweet_id": "2023486172241252446"
     },
     {
       "id": 145,
