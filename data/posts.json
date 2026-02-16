@@ -1336,9 +1336,9 @@
       "type": "tip",
       "content": "Build your watchlist on the weekend.\n\nMonday morning is for execution, not searching.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-16T16:37:58.112589+00:00",
+      "tweet_id": "2023436701805543629"
     },
     {
       "id": 144,
