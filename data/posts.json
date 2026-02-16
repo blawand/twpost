@@ -1354,9 +1354,9 @@
       "type": "lifestyle",
       "content": "Some days you're the hammer. Some days you're the nail.\n\nJust make sure you survive the nail days.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-16T23:28:00.599654+00:00",
+      "tweet_id": "2023539892056453194"
     },
     {
       "id": 146,
