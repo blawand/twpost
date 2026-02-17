@@ -1381,9 +1381,9 @@
       "type": "humor",
       "content": "I need a popup before every trade that says:\n\n\"Are you sure this isn't FOMO?\"\n\nWith a 30-second cooldown timer.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-17T20:01:03.521056+00:00",
+      "tweet_id": "2023850198993105251"
     },
     {
       "id": 149,
