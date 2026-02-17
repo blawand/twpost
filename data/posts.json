@@ -1390,9 +1390,9 @@
       "type": "feature",
       "content": "Notes that actually work for traders:\n\n→ Rich text formatting\n→ Image embedding\n→ Link notes directly to trades\n→ Organize by folders\n→ Full-text search\n\nPaste your trading plan.\nPaste the news catalyst.\nPaste the chart screenshot.\n\nKeep everything in context.\n\nBecause 3 months from now, you won't remember why you took that trade. Your notes will.",
       "image": "images/notes.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-17T23:27:34.509288+00:00",
+      "tweet_id": "2023902169305399627"
     },
     {
       "id": 150,
