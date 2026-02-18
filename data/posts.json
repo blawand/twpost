@@ -1399,9 +1399,9 @@
       "type": "engagement",
       "content": "What's your bias for the rest of the month?\n\nLong, short, or sitting on hands?\n\n(Sitting on hands is a valid answer.)",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-18T04:33:00.655094+00:00",
+      "tweet_id": "2023979035986977022"
     },
     {
       "id": 151,
