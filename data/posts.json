@@ -1426,9 +1426,9 @@
       "type": "feature",
       "content": "Your calendar should tell the story of your trading year at a glance.\n\nGreen days. Red days. Streaks. Slumps.\n\nPatterns you'd never see in a spreadsheet:\n→ Your best month was October\n→ Mondays are consistently red\n→ You go on tilt after 3+ green days\n→ December is always flat\n\nOne look. Months of data. Instant clarity.\n\nThe calendar doesn't lie.",
       "image": "images/calendar_year.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-18T20:04:42.781086+00:00",
+      "tweet_id": "2024213504673149383"
     },
     {
       "id": 154,
