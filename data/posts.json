@@ -1462,9 +1462,9 @@
       "type": "humor",
       "content": "Market open: \"I have a plan.\"\n\nMarket close: \"What just happened?\"",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-19T16:46:11.956398+00:00",
+      "tweet_id": "2024525936780034211"
     },
     {
       "id": 158,
