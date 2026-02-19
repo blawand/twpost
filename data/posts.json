@@ -1480,9 +1480,9 @@
       "type": "feature",
       "content": "Unlimited screenshots on every trade.\n\nBecause sometimes you need 5 charts to explain why you took that entry:\n→ The daily chart for context\n→ The hourly for structure\n→ The 5-min for the entry\n→ The news headline\n→ The Level 2 at the moment of fill\n\nNo storage caps. No \"upgrade for more uploads.\"\n\nJust document everything.",
       "image": "images/tradedetail.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-19T23:28:46.454576+00:00",
+      "tweet_id": "2024627246313484401"
     },
     {
       "id": 160,
