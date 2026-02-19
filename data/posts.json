@@ -1453,9 +1453,9 @@
       "type": "pain_point",
       "content": "If you don't know your stats, you're not trading. You're gambling with extra steps.\n\nKnow your numbers:\n→ Win rate\n→ Profit factor\n→ Average R-multiple\n→ Max drawdown\n→ Expectancy per trade\n→ Best/worst performing setup\n\nKnow them cold.\nReview them weekly.\n\nOr the market will teach them to you the hard way.",
       "image": "images/analytics_stats.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-19T13:48:16.548854+00:00",
+      "tweet_id": "2024481160248644061"
     },
     {
       "id": 157,
