@@ -100,6 +100,8 @@ Optional tuning via environment variables:
 - `ENGAGEMENT_TREND_CATEGORIES` (default `trending,news`): trend categories to pull from (`trending`, `for-you`, `news`, `sports`, `entertainment`).
 - `ENGAGEMENT_TRENDS_COUNT` (default `20`): number of trends fetched per category.
 - `ENGAGEMENT_TREND_QUERIES` (default `6`): max relevant trend topics kept per run.
+- `ENGAGEMENT_EXCLUDED_HANDLES` (default `grok`): comma-separated handles to never reply to (supports values with or without `@`).
+- `ENGAGEMENT_MIN_ENGAGEMENT_OR_VIEWS` (default `20`): require at least this many total engagements (`likes + replies + reposts + quotes`) or views before engaging.
 - `ENGAGEMENT_REPLY_OPTION_COUNT` (default `1`): number of candidate replies generated before auto-picking.
 - `ENGAGEMENT_REPLY_MAX_CHARS` (default `180`): hard cap for generated reply length.
 - `XAI_TIMEOUT_SECONDS` (default `180`): HTTP timeout for each Grok request.

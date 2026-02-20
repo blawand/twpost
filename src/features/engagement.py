@@ -51,6 +51,13 @@ class EngagementManager:
         self.trend_categories = self._parse_trend_categories(
             os.getenv("ENGAGEMENT_TREND_CATEGORIES", "trending,news")
         )
+        self.min_engagement_or_views = max(
+            0,
+            self._read_int_env("ENGAGEMENT_MIN_ENGAGEMENT_OR_VIEWS", 20),
+        )
+        self.excluded_handles = self._parse_handle_set(
+            os.getenv("ENGAGEMENT_EXCLUDED_HANDLES", "grok")
+        )
 
         self.my_username = os.getenv("TWITTER_HANDLE", "lynxtradesapp").strip().lstrip("@")
         general_lane_weight = self._read_float_env("ENGAGEMENT_GENERAL_WEIGHT", 0.45)
@@ -158,6 +165,15 @@ class EngagementManager:
             return ["trending", "news"]
         return categories
 
+    @staticmethod
+    def _parse_handle_set(raw: str) -> set[str]:
+        handles = set()
+        for item in raw.split(","):
+            handle = item.strip().lower().lstrip("@")
+            if handle:
+                handles.add(handle)
+        return handles
+
     def _load_tracker(self) -> set[str]:
         if os.path.exists(self.tracker_file):
             try:
@@ -216,6 +232,22 @@ class EngagementManager:
             if value is not None:
                 return EngagementManager._safe_int(value)
         return 0
+
+    def _tweet_social_proof(self, tweet: Any) -> Dict[str, int]:
+        like_count = self._tweet_value(tweet, ["favorite_count", "like_count"])
+        retweet_count = self._tweet_value(tweet, ["retweet_count"])
+        reply_count = self._tweet_value(tweet, ["reply_count"])
+        quote_count = self._tweet_value(tweet, ["quote_count"])
+        view_count = self._tweet_value(tweet, ["view_count"])
+        total_engagement = like_count + retweet_count + reply_count + quote_count
+        return {
+            "like_count": like_count,
+            "retweet_count": retweet_count,
+            "reply_count": reply_count,
+            "quote_count": quote_count,
+            "view_count": view_count,
+            "total_engagement": total_engagement,
+        }
 
     @staticmethod
     def _parse_datetime(value: Any) -> Optional[datetime]:
@@ -328,9 +360,13 @@ class EngagementManager:
 
         user = getattr(tweet, "user", None)
         handle = (getattr(user, "screen_name", "") or "").strip()
+        handle_lower = handle.lower()
         if not handle:
             return False
-        if handle.lower() == self.my_username.lower():
+        if handle_lower == self.my_username.lower():
+            return False
+        if handle_lower in self.excluded_handles:
+            logger.debug("Skipping tweet id=%s from excluded handle @%s.", tweet_id, handle)
             return False
 
         text = (getattr(tweet, "text", "") or "").strip()
@@ -346,16 +382,32 @@ class EngagementManager:
         if not self._is_fresh_tweet(tweet):
             return False
 
+        if self.min_engagement_or_views > 0:
+            social_proof = self._tweet_social_proof(tweet)
+            if (
+                max(social_proof["total_engagement"], social_proof["view_count"])
+                < self.min_engagement_or_views
+            ):
+                logger.debug(
+                    "Skipping low-social-proof tweet id=%s engagements=%s views=%s min=%s.",
+                    tweet_id,
+                    social_proof["total_engagement"],
+                    social_proof["view_count"],
+                    self.min_engagement_or_views,
+                )
+                return False
+
         if text.count("@") > 3:
             return False
         return True
 
     def _score_tweet(self, tweet: Any, lane_name: str) -> float:
-        like_count = self._tweet_value(tweet, ["favorite_count", "like_count"])
-        retweet_count = self._tweet_value(tweet, ["retweet_count"])
-        reply_count = self._tweet_value(tweet, ["reply_count"])
-        quote_count = self._tweet_value(tweet, ["quote_count"])
-        view_count = self._tweet_value(tweet, ["view_count"])
+        social_proof = self._tweet_social_proof(tweet)
+        like_count = social_proof["like_count"]
+        retweet_count = social_proof["retweet_count"]
+        reply_count = social_proof["reply_count"]
+        quote_count = social_proof["quote_count"]
+        view_count = social_proof["view_count"]
 
         user = getattr(tweet, "user", None)
         follower_count = self._safe_int(getattr(user, "followers_count", 0)) if user else 0
@@ -533,6 +585,11 @@ class EngagementManager:
             "Freshness filter: enabled=%s max_age_minutes=%s",
             self.require_fresh_tweets,
             self.max_tweet_age_minutes,
+        )
+        logger.info(
+            "Candidate filters: excluded_handles=%s min_engagement_or_views=%s",
+            ",".join(f"@{handle}" for handle in sorted(self.excluded_handles)) or "none",
+            self.min_engagement_or_views,
         )
         replies_count = 0
 
