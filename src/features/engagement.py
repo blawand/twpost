@@ -508,6 +508,25 @@ class EngagementManager:
 
         return success
 
+    async def _like_tweet(self, tweet: Any, handle: str) -> bool:
+        tweet_id = str(tweet.id)
+
+        if self.tweepy_client:
+            try:
+                self.tweepy_client.like(tweet_id=tweet_id)
+                logger.info("Liked tweet from @%s via Official API.", handle)
+                return True
+            except Exception as e:
+                logger.warning("Official API like failed, falling back to Twikit: %s", e)
+
+        try:
+            await self.client.favorite_tweet(tweet_id)
+            logger.info("Liked tweet from @%s via Twikit.", handle)
+            return True
+        except Exception as e:
+            logger.warning("Failed to like tweet id=%s: %s", tweet_id, e)
+            return False
+
     async def run(self):
         logger.info("Starting engagement run.")
         logger.info(
@@ -569,6 +588,12 @@ class EngagementManager:
                 try:
                     success = await self._post_reply(tweet, reply_text, handle)
                     if success:
+                        liked = await self._like_tweet(tweet, handle)
+                        if not liked:
+                            logger.warning(
+                                "Reply sent but like step failed for tweet id=%s.",
+                                tweet.id,
+                            )
                         self.replied_ids.add(str(tweet.id))
                         self._save_tracker()
                         replies_count += 1
