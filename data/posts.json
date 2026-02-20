@@ -1517,9 +1517,9 @@
       "type": "tip",
       "content": "Before every trade:\n\n\"If this goes wrong, can I take another trade tomorrow?\"\n\nIf the answer is no, you already know what to do.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-20T23:27:48.295850+00:00",
+      "tweet_id": "2024989392046027080"
     },
     {
       "id": 164,
