@@ -1553,9 +1553,9 @@
       "type": "feature",
       "content": "Trade in USD, EUR, GBP, JPY — whatever your account uses.\n\nEverything displays in your account's currency automatically. No manual conversions. No calculator app open on the side.",
       "image": "images/multi-asset.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-21T19:47:42.349715+00:00",
+      "tweet_id": "2025296389761368515"
     },
     {
       "id": 168,
