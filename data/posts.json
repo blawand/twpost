@@ -1526,9 +1526,9 @@
       "type": "feature",
       "content": "Trade replay lets you watch your trades unfold candle by candle.\n\nSee exactly what the chart looked like when you made that decision.\n\nAdjustable speed. Pause. Rewind.\n\nWatch it at 2x speed for quick review.\nWatch it at 0.5x speed when you want to study the entry.\n\nHindsight is easy.\nHindsight with real-time context? That's how you actually learn.\n\nEvery trade becomes a case study.",
       "image": "images/replay-poster.jpg",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-21T04:17:33.738629+00:00",
+      "tweet_id": "2025062310948073753"
     },
     {
       "id": 165,
