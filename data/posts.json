@@ -1589,9 +1589,9 @@
       "type": "feature",
       "content": "Trailing drawdown? Static drawdown? End-of-day trailing?\n\nDifferent prop firms have different rules.\n\nFTMO: different from Topstep.\nTopstep: different from Apex.\nApex: different from The5ers.\n\nSet your firm's preset.\nThe math handles itself.\n\nNo more spreadsheet formulas at 6am.\nNo more \"wait, is this EOD or intraday?\"\n\nJust accurate tracking that matches your firm's rules.",
       "image": "images/risk-management.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-22T16:24:16.096924+00:00",
+      "tweet_id": "2025607580836364359"
     },
     {
       "id": 172,
