@@ -1616,9 +1616,9 @@
       "type": "feature",
       "content": "Stocks. Options. Futures. Forex. Crypto. Commodities.\n\nSame journal. Same analytics. Same calendar.\n\nSwitch markets, keep the system.",
       "image": "images/tradetable.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-23T04:36:36.209474+00:00",
+      "tweet_id": "2025791877966905496"
     },
     {
       "id": 175,
