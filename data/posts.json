@@ -1643,9 +1643,9 @@
       "type": "feature",
       "content": "Replay your trades with real candle data.\n\nAdjustable speed. Pause. Rewind.\n\nWatch the price action unfold exactly as it did:\n→ See the setup develop\n→ See the entry trigger\n→ See the move play out\n→ See where you exited\n→ See what happened after\n\nThen ask yourself: would I take the same entry again?\n\nThat question alone is worth more than any indicator.",
       "image": "images/trade_chart.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-23T20:07:04.911536+00:00",
+      "tweet_id": "2026026041119252563"
     },
     {
       "id": 178,
