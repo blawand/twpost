@@ -1634,9 +1634,9 @@
       "type": "humor",
       "content": "\"I'll just check the market real quick.\"\n\n— me, 3 hours ago",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-23T16:51:54.883241+00:00",
+      "tweet_id": "2025976926486110346"
     },
     {
       "id": 177,
