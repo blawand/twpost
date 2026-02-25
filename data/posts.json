@@ -1724,9 +1724,9 @@
       "type": "humor",
       "content": "My trading plan: organized, disciplined, rule-based.\n\nMy actual trades: absolute circus.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-25T19:59:56.768334+00:00",
+      "tweet_id": "2026749021948186983"
     },
     {
       "id": 187,
