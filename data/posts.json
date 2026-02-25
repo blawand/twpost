@@ -1706,9 +1706,9 @@
       "type": "feature",
       "content": "Sharpe ratio. Sortino ratio. Calmar ratio.\nProfit factor. Expectancy. Win rate by setup.\n\nIf you're only tracking win rate, you're missing 90% of the picture.\n\nA 40% win rate with 3:1 R:R is better than 70% win rate with 0.5:1.\n\nThe math doesn't care about how often you win.\nIt cares about how MUCH you win when you're right.\n\nAll calculated automatically from your trade data.",
       "image": "images/analytics_advanced.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-25T13:49:35.632138+00:00",
+      "tweet_id": "2026655817747857552"
     },
     {
       "id": 185,
