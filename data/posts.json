@@ -1733,9 +1733,9 @@
       "type": "tip",
       "content": "Futures traders — know your point value before you size.\n\n$50/point on ES hits very different than $5/point on MES.\n\nRespect the leverage or the leverage will disrespect you.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-26T04:28:16.158394+00:00",
+      "tweet_id": "2026876945607037366"
     },
     {
       "id": 188,
