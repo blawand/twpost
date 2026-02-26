@@ -1742,9 +1742,9 @@
       "type": "feature",
       "content": "Some prop firms require your best day to be less than X% of total profit.\n\nConsistency rules.\n\nTracked automatically so you don't get a nasty surprise at payout time.",
       "image": "images/analytics_report.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-26T13:49:40.071347+00:00",
+      "tweet_id": "2027018224496484440"
     },
     {
       "id": 189,
