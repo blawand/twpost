@@ -1778,9 +1778,9 @@
       "type": "feature",
       "content": "Stocks in the morning.\nCrypto at night.\nForex on Sunday.\nFutures during the week.\n\nOne journal.\nOne set of analytics.\nOne calendar view.\nTotal clarity across every market you touch.\n\nNo more separate spreadsheets per asset class.\nNo more \"I think I'm up overall but I'm not sure.\"\n\nEvery trade. Every market. One system.",
       "image": "images/tradetable.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-27T04:25:10.738921+00:00",
+      "tweet_id": "2027238554904986008"
     },
     {
       "id": 193,
