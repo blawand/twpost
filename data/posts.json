@@ -1805,9 +1805,9 @@
       "type": "humor",
       "content": "Trader math:\n\n+$500: \"I'm basically a professional.\"\n-$100: \"The market is rigged against retail.\"",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-27T23:23:20.434725+00:00",
+      "tweet_id": "2027524983568928881"
     },
     {
       "id": 196,
