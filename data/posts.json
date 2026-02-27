@@ -1796,9 +1796,9 @@
       "type": "tip",
       "content": "If your stop is where \"everyone\" has their stop, you're liquidity.\n\nEither move it further or skip the trade entirely.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-02-27T19:55:53.893653+00:00",
+      "tweet_id": "2027472779008991698"
     },
     {
       "id": 195,
