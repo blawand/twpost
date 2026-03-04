@@ -26,18 +26,13 @@ jobs:
           
       - name: Run Engagement Loop
         env:
-          # Credentials for fallback login
-          TWITTER_USERNAME: ${{ secrets.TWITTER_USERNAME }}
-          TWITTER_PASSWORD: ${{ secrets.TWITTER_PASSWORD }}
-          TWITTER_EMAIL: ${{ secrets.TWITTER_EMAIL }}
-          
-          # Cookies for session persistence & anti-bot bypass (CRITICAL)
-          TWITTER_COOKIES: ${{ secrets.TWITTER_COOKIES }}
-          
           XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
           ENGAGEMENT_REPLY_OPTION_COUNT: "1"
+          ENGAGEMENT_DISABLE_TWIKIT: "true"
+          ENGAGEMENT_PREFER_OFFICIAL_SEARCH: "true"
+          ENGAGEMENT_USE_TRENDS: "false"
           
-          # Official X API Credentials (for posting - bypasses 226)
+          # Official X API credentials (search, replies, likes)
           X_API_KEY: ${{ secrets.X_API_KEY }}
           X_API_SECRET: ${{ secrets.X_API_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}

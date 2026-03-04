@@ -6,6 +6,7 @@ import random
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
+from types import SimpleNamespace
 from typing import Any, Dict, List, Optional
 
 import tweepy
@@ -21,7 +22,7 @@ class EngagementManager:
 
     def __init__(
         self,
-        client: Client,
+        client: Optional[Client],
         config_loader,
         tweepy_client: Optional[tweepy.Client] = None
     ):
@@ -57,6 +58,10 @@ class EngagementManager:
         )
         self.excluded_handles = self._parse_handle_set(
             os.getenv("ENGAGEMENT_EXCLUDED_HANDLES", "grok")
+        )
+        self.prefer_official_search = self._read_bool_env(
+            "ENGAGEMENT_PREFER_OFFICIAL_SEARCH",
+            True,
         )
 
         self.my_username = os.getenv("TWITTER_HANDLE", "lynxtradesapp").strip().lstrip("@")
@@ -444,8 +449,99 @@ class EngagementManager:
             return True
         return False
 
+    @staticmethod
+    def _extract_reply_reference(tweet: Any) -> Optional[str]:
+        references = getattr(tweet, "referenced_tweets", None) or []
+        for reference in references:
+            ref_type = getattr(reference, "type", None)
+            ref_id = getattr(reference, "id", None)
+            if ref_type == "replied_to" and ref_id is not None:
+                return str(ref_id)
+            if isinstance(reference, dict):
+                if reference.get("type") == "replied_to" and reference.get("id") is not None:
+                    return str(reference["id"])
+        return None
+
+    def _adapt_official_tweet(
+        self,
+        tweet: Any,
+        users_by_id: Dict[str, Any],
+    ) -> Optional[Any]:
+        tweet_id = str(getattr(tweet, "id", "") or "").strip()
+        if not tweet_id:
+            return None
+
+        author_id = str(getattr(tweet, "author_id", "") or "").strip()
+        author = users_by_id.get(author_id)
+        username = (getattr(author, "username", "") or "").strip() if author else ""
+        if not username:
+            return None
+
+        user_metrics = getattr(author, "public_metrics", None) or {}
+        tweet_metrics = getattr(tweet, "public_metrics", None) or {}
+
+        return SimpleNamespace(
+            id=tweet_id,
+            text=(getattr(tweet, "text", "") or "").strip(),
+            created_at=getattr(tweet, "created_at", None),
+            in_reply_to_status_id=self._extract_reply_reference(tweet),
+            like_count=self._safe_int(tweet_metrics.get("like_count")),
+            retweet_count=self._safe_int(tweet_metrics.get("retweet_count")),
+            reply_count=self._safe_int(tweet_metrics.get("reply_count")),
+            quote_count=self._safe_int(tweet_metrics.get("quote_count")),
+            view_count=self._safe_int(tweet_metrics.get("impression_count")),
+            user=SimpleNamespace(
+                screen_name=username,
+                followers_count=self._safe_int(user_metrics.get("followers_count")),
+            ),
+        )
+
+    def _build_official_query(self, keyword_query: str) -> str:
+        base = keyword_query.strip()
+        if not base:
+            return "-is:retweet -is:reply lang:en"
+        return f"({base}) -is:retweet -is:reply lang:en"
+
+    def _search_tweets_official(self, keyword_query: str) -> List[Any]:
+        if not self.tweepy_client:
+            return []
+
+        response = self.tweepy_client.search_recent_tweets(
+            query=self._build_official_query(keyword_query),
+            max_results=max(10, min(self.search_count, 100)),
+            expansions=["author_id"],
+            tweet_fields=[
+                "author_id",
+                "created_at",
+                "public_metrics",
+                "referenced_tweets",
+            ],
+            user_fields=["username", "public_metrics"],
+        )
+
+        if not response or not response.data:
+            return []
+
+        users_by_id: Dict[str, Any] = {}
+        includes = getattr(response, "includes", None)
+        if isinstance(includes, dict):
+            for user in includes.get("users", []) or []:
+                user_id = str(getattr(user, "id", "") or "").strip()
+                if user_id:
+                    users_by_id[user_id] = user
+
+        adapted: List[Any] = []
+        for tweet in response.data:
+            normalized = self._adapt_official_tweet(tweet, users_by_id)
+            if normalized:
+                adapted.append(normalized)
+        return adapted
+
     async def _get_trending_queries(self) -> List[str]:
         if not self.use_live_trends:
+            return []
+        if not self.client:
+            logger.info("Live trend lookup skipped because Twikit is unavailable.")
             return []
 
         seen = set()
@@ -501,11 +597,47 @@ class EngagementManager:
             query,
         )
 
-        tweets = await self.client.search_tweet(
-            query,
-            product=lane["product"],
-            count=self.search_count,
-        )
+        tweets: List[Any] = []
+        search_sources: List[str] = []
+        if self.prefer_official_search and self.tweepy_client:
+            search_sources.append("official")
+        if self.client:
+            search_sources.append("twikit")
+        if not self.prefer_official_search and self.tweepy_client:
+            search_sources.append("official")
+
+        if not search_sources:
+            logger.error("No search client available. Configure Tweepy or Twikit.")
+            return []
+
+        for source in search_sources:
+            try:
+                if source == "official":
+                    tweets = self._search_tweets_official(query)
+                else:
+                    tweets = await self.client.search_tweet(
+                        query,
+                        product=lane["product"],
+                        count=self.search_count,
+                    )
+                if tweets:
+                    logger.info(
+                        "Lane=%s source=%s fetched=%s tweets.",
+                        lane["name"],
+                        source,
+                        len(tweets),
+                    )
+                    break
+                logger.info("Lane=%s source=%s returned no tweets.", lane["name"], source)
+            except Exception as e:
+                if source == "official":
+                    error_text = str(e).lower()
+                    if "403" in error_text or "forbidden" in error_text:
+                        logger.warning(
+                            "Official API search is forbidden. Confirm app read permissions "
+                            "and account access tier support recent search."
+                        )
+                logger.warning("Lane=%s source=%s search failed: %s", lane["name"], source, e)
 
         if not tweets:
             return []
@@ -554,6 +686,9 @@ class EngagementManager:
                 logger.warning("Official API failed, falling back to Twikit: %s", e)
 
         if not success:
+            if not self.client:
+                logger.warning("Twikit fallback unavailable. Reply was not posted.")
+                return False
             await self.client.create_tweet(text=reply_text, reply_to=tweet.id)
             logger.info("Replied to @%s via Twikit.", handle)
             success = True
@@ -572,6 +707,9 @@ class EngagementManager:
                 logger.warning("Official API like failed, falling back to Twikit: %s", e)
 
         try:
+            if not self.client:
+                logger.warning("Twikit fallback unavailable. Like was not sent for tweet id=%s.", tweet_id)
+                return False
             await self.client.favorite_tweet(tweet_id)
             logger.info("Liked tweet from @%s via Twikit.", handle)
             return True

@@ -1,12 +1,12 @@
 # LynxTrades Twitter Automation
 
-A robust, hybrid Twitter/X automation bot designed for reliable high-performance. It combines the **Official X API** (via Tweepy) for safe, reliable posting and the **Twikit** library (UI automation) for advanced engagement features like searching and reading.
+A robust Twitter/X automation bot designed for reliable high-performance. It uses the **Official X API** (via Tweepy) for posting and engagement search/replies, with optional **Twikit** fallback for local/manual runs.
 
 ## Features
 
 - **Hybrid Architecture**:
   - **Posting**: Uses Official X API (v2) for 100% reliability.
-  - **Engagement**: Uses `twikit` to search and read tweets (bypassing expensive API tiers).
+  - **Engagement**: Uses Official X API search/replies/likes by default; Twikit is optional fallback.
 - **AI-Powered**: Uses **xAI Grok (Responses API)** for intelligent reply generation and persona management.
 - **Scheduled Posting**: Automatically posts queued content from `data/posts.json`.
 - **Dual-Lane Engagement Mode**:
@@ -56,13 +56,13 @@ Create a `.env` file (copy from `.env.example`) and fill in your keys:
 
 - `XAI_API_KEY`
 
-**Required for Engagement (Twikit):**
+**Optional for Engagement (Twikit fallback only):**
 
 - `TWITTER_COOKIES` (JSON string) OR `TWITTER_USERNAME`/`PASSWORD`
 
-### 3. Authentication (Twikit)
+### 3. Optional Authentication (Twikit)
 
-For engagement features, the bot needs to "log in" as a user. The most reliable method is to inject your browser cookies.
+Twikit is no longer required for CI engagement runs. If you still want local fallback via Twikit, inject your browser cookies.
 
 1. Populate `data/cookies.json` directly from your browser session cookies.
 2. OR set `TWITTER_COOKIES` in your environment / GitHub secrets.
@@ -104,17 +104,22 @@ Optional tuning via environment variables:
 - `ENGAGEMENT_MIN_ENGAGEMENT_OR_VIEWS` (default `20`): require at least this many total engagements (`likes + replies + reposts + quotes`) or views before engaging.
 - `ENGAGEMENT_REPLY_OPTION_COUNT` (default `1`): number of candidate replies generated before auto-picking.
 - `ENGAGEMENT_REPLY_MAX_CHARS` (default `180`): hard cap for generated reply length.
+- `ENGAGEMENT_PREFER_OFFICIAL_SEARCH` (default `true`): when `true`, search via official API before Twikit.
+- `ENGAGEMENT_DISABLE_TWIKIT` (default `false`): when `true`, disables Twikit entirely.
 - `XAI_TIMEOUT_SECONDS` (default `180`): HTTP timeout for each Grok request.
 - `XAI_API_BASE_URL` (default `https://api.x.ai/v1`): override xAI endpoint (useful for regional routing/proxies).
 - `XAI_DISABLE_ENV_PROXY` (default `false`): when `true`, ignores `HTTP_PROXY`/`HTTPS_PROXY` vars for Grok calls.
+- `PUBLISH_POST_MAX_ATTEMPTS` (default `4`): max attempts for posting a tweet before failing the run.
+- `PUBLISH_RETRY_BASE_SECONDS` (default `1.5`): exponential backoff base delay for retryable post errors.
+- `PUBLISH_RETRY_MAX_SECONDS` (default `20`): cap for retry delay between post attempts.
 
 ## Deployment (GitHub Actions)
 
 The repository is configured for GitHub Actions.
 
 1. **Secrets**: Go to Settings > Secrets and add:
-   - `TWITTER_COOKIES` (Run `python scripts/export_cookies.py` to get the value)
    - `X_API_KEY`... (All X credentials)
    - `XAI_API_KEY`
    - Engagement workflow is configured with `ENGAGEMENT_REPLY_OPTION_COUNT=1` for single-output replies.
+   - Engagement workflow defaults to `ENGAGEMENT_DISABLE_TWIKIT=true` to avoid Cloudflare blocking on GitHub runner IPs.
 2. **Persistence**: The workflow is configured to commit `data/posted_tracker.json` and `engagement_tracker.json` back to the repo, so your bot remembers what it has done.

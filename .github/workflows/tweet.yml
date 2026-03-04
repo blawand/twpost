@@ -39,6 +39,9 @@ jobs:
           X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
           X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
           XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+          PUBLISH_POST_MAX_ATTEMPTS: "4"
+          PUBLISH_RETRY_BASE_SECONDS: "1.5"
+          PUBLISH_RETRY_MAX_SECONDS: "20"
         run: python src/main.py
         
       - name: Commit updated tracker
