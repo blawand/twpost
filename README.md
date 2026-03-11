@@ -1,37 +1,44 @@
 # LynxTrades Twitter Automation
 
-A robust Twitter/X automation bot designed for reliable high-performance. It uses the **Official X API** (via Tweepy) for posting, and uses **Twikit** plus the **Official X API** together for engagement.
+A Twitter/X automation bot for the [@lynxtradesapp](https://x.com/lynxtradesapp) trading journal. Uses **cookie-based GraphQL posting** (via [twitter-cli](https://github.com/jackwener/twitter-cli)) for reliable tweet publishing, and a hybrid **Twikit + Official API + GraphQL** stack for AI-powered engagement.
 
 ## Features
 
-- **Hybrid Architecture**:
-  - **Posting**: Uses Official X API (v2).
-  - **Engagement**: Prefers Twikit for search and keeps the Official X API available for replies, likes, and fallback.
-- **AI-Powered**: Uses **xAI Grok (Responses API)** for intelligent reply generation and persona management.
+- **GraphQL Posting**: Cookie-based posting via Twitter's internal GraphQL API — bypasses the broken official API free tier.
+- **AI-Powered Engagement**: Uses **xAI Grok** to generate contextual replies to relevant trading conversations.
 - **Scheduled Posting**: Automatically posts queued content from `data/posts.json`.
-- **Dual-Lane Engagement Mode**:
-  - **Journal Intent Lane**: Targets high-intent trading journal/discipline conversations.
-  - **Broad Trending Lane**: Targets broader economics/business/trading topics and prioritizes posts with stronger engagement signals.
+- **Dual-Lane Engagement**:
+  - **Journal Intent Lane**: Targets trading journal, discipline, and psychology conversations.
+  - **Broad Trending Lane**: Targets economics, business, and market discussions with higher engagement signals.
 - **Persistence**: Tracks posted tweets and engagement history to avoid duplicates.
 
 ## Project Structure
 
 ```text
-twitter-bot/
-├── data/                # Data storage
-│   ├── posts.json       # Scheduled tweets DB
-│   ├── cookies.json     # Twikit authentication (Sensitive - Git Ignored)
-│   ├── posted_tracker.json  # History of posted IDs (Public - Git Tracked)
-│   └── engagement_tracker.json # History of replies (Public - Git Tracked)
+twpost/
+├── data/                    # Data storage
+│   ├── posts.json           # Scheduled tweets DB
+│   ├── cookies.json         # Twikit authentication (Git Ignored)
+│   ├── posted_tracker.json  # History of posted IDs
+│   └── engagement_tracker.json  # History of replies
 ├── scripts/
-│   ├── check_limits.py   # Check post length constraints
-│   ├── export_cookies.py # Export cookies for GitHub Secrets
-│   └── post_now.py       # Manual posting helper
-├── src/                 # Source code
-│   ├── main.py          # Entry point
-│   ├── core/            # Auth managers (Tweepy & Twikit)
-│   └── features/        # Business logic
-└── .env.example         # Template for environment variables
+│   ├── post_now.py          # Manual posting helper
+│   └── engage_now.py        # Manual engagement helper
+├── src/
+│   ├── main.py              # Entry point
+│   ├── core/
+│   │   ├── graphql_client_manager.py  # GraphQL posting client (twitter-cli)
+│   │   ├── client_manager.py          # Twikit client (engagement search)
+│   │   ├── tweepy_client_manager.py   # Official API client (fallback)
+│   │   ├── config_loader.py           # Settings loader
+│   │   └── llm_helper.py             # xAI Grok integration
+│   └── features/
+│       ├── publisher.py     # Tweet publishing logic
+│       └── engagement.py    # AI engagement logic
+├── .github/workflows/
+│   ├── tweet.yml            # Scheduled posting workflow
+│   └── engage.yml           # Engagement workflow
+└── .env                     # Environment variables (Git Ignored)
 ```
 
 ## Setup
@@ -44,97 +51,93 @@ pip install -r requirements.txt
 
 ### 2. Configure Environment
 
-Create a `.env` file (copy from `.env.example`) and fill in your keys:
+Create a `.env` file with these variables:
 
-**Required for Posting (Official API):**
+**Required for Posting (GraphQL — cookie-based):**
 
-- `X_API_KEY`, `X_API_SECRET`
-- `X_ACCESS_TOKEN`, `X_ACCESS_TOKEN_SECRET`
-- `X_BEARER_TOKEN`
+- `TWITTER_COOKIES` — JSON string of your browser cookies from x.com (must include `auth_token` and `ct0`)
 
-**Required for AI:**
+**Required for AI Engagement:**
 
-- `XAI_API_KEY`
+- `XAI_API_KEY` — xAI Grok API key
 
-**Required for Twikit Engagement Search:**
+**Optional — Official API (fallback for engagement):**
 
-- `TWITTER_COOKIES` (JSON string) OR `TWITTER_USERNAME`/`PASSWORD`
+- `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, `X_ACCESS_TOKEN_SECRET`, `X_BEARER_TOKEN`
 
-### 3. Twikit Authentication
+**Optional — Twikit (engagement search):**
 
-Twikit is the primary engagement search path in local runs and GitHub Actions. Inject your browser cookies or provide login credentials.
+- `TWITTER_USERNAME`, `TWITTER_PASSWORD`, `TWITTER_EMAIL`
 
-1. Populate `data/cookies.json` directly from your browser session cookies.
-2. OR set `TWITTER_COOKIES` in your environment / GitHub secrets.
-3. Optional: run `python scripts/export_cookies.py` to print the current local cookie JSON for secrets setup.
+### 3. Cookie Setup
+
+Extract your cookies from Chrome DevTools:
+
+1. Log in to x.com in Chrome
+2. Open DevTools (`F12`) → Application → Cookies → `https://x.com`
+3. Copy all cookie name/value pairs into a JSON string
+4. Set `TWITTER_COOKIES` in your `.env` (see `.env` for format)
 
 ## Usage
 
-### Run the Bot (Auto-Posting)
-
-Checks `data/posts.json` for the next scheduled tweet and posts it using the Official API.
+### Post a Tweet
 
 ```bash
-python src/main.py post "Your tweet text" [optional_image_path]
-# OR for automated runs:
+# Post next scheduled tweet from posts.json
+python scripts/post_now.py
+
+# Post custom text
+python scripts/post_now.py "Your tweet text"
+
+# Via main entrypoint
 python src/main.py publisher
+python src/main.py post "Your tweet text"
 ```
 
 ### Run Engagement (AI Reply)
 
-Searches for relevant tweets and replies using the AI persona.
-
 ```bash
 python src/main.py engage
-# terminal helper
+
+# With dry run (generates reply but doesn't post)
 python scripts/engage_now.py --dry-run
 ```
 
-For reliable local testing before pushing:
+### Engagement Tuning
 
-```bash
-copy .env.example .env
-python -m pip install -r requirements.txt
-python scripts/engage_now.py --dry-run
-```
+Key environment variables:
 
-Optional tuning via environment variables:
-
-- `ENGAGEMENT_GENERAL_WEIGHT` (default `0.45`): share of runs that prioritize the broad-trending lane first.
-- `ENGAGEMENT_SEARCH_COUNT` (default `15`): tweets fetched per lane query.
-- `ENGAGEMENT_TOP_POOL` (default `3`): top scored candidates sampled from.
-- `ENGAGEMENT_MAX_REPLIES` (default `1`): max replies per run.
-- `ENGAGEMENT_REQUIRE_FRESH_TWEETS` (default `true`): skip tweets when created-at is unavailable or too old.
-- `ENGAGEMENT_MAX_TWEET_AGE_MINUTES` (default `180`): max tweet age allowed for engagement.
-- `ENGAGEMENT_USE_TRENDS` (default `true`): use live X trends for the broad lane query source.
-- `ENGAGEMENT_DRY_RUN` (default `false`): when `true`, search and generate a reply but skip posting and liking.
-- `ENGAGEMENT_TREND_CATEGORIES` (default `trending,news`): trend categories to pull from (`trending`, `for-you`, `news`, `sports`, `entertainment`).
-- `ENGAGEMENT_TRENDS_COUNT` (default `20`): number of trends fetched per category.
-- `ENGAGEMENT_TREND_QUERIES` (default `6`): max relevant trend topics kept per run.
-- `ENGAGEMENT_EXCLUDED_HANDLES` (default `grok`): comma-separated handles to never reply to (supports values with or without `@`).
-- `ENGAGEMENT_MIN_ENGAGEMENT_OR_VIEWS` (default `20`): require at least this many total engagements (`likes + replies + reposts + quotes`) or views before engaging.
-- `ENGAGEMENT_REPLY_OPTION_COUNT` (default `1`): number of candidate replies generated before auto-picking.
-- `ENGAGEMENT_REPLY_MAX_CHARS` (default `180`): hard cap for generated reply length.
-- `ENGAGEMENT_PREFER_OFFICIAL_SEARCH` (default `true`): when `true`, search via official API before Twikit. Set this to `false` to force Twikit-first search.
-- `ENGAGEMENT_DISABLE_TWIKIT` (default `false`): when `true`, disables Twikit entirely.
-- `XAI_TIMEOUT_SECONDS` (default `180`): HTTP timeout for each Grok request.
-- `XAI_API_BASE_URL` (default `https://api.x.ai/v1`): override xAI endpoint (useful for regional routing/proxies).
-- `XAI_DISABLE_ENV_PROXY` (default `false`): when `true`, ignores `HTTP_PROXY`/`HTTPS_PROXY` vars for Grok calls.
-- `PUBLISH_POST_MAX_ATTEMPTS` (default `4`): max attempts for posting a tweet before failing the run.
-- `PUBLISH_RETRY_BASE_SECONDS` (default `1.5`): exponential backoff base delay for retryable post errors.
-- `PUBLISH_RETRY_MAX_SECONDS` (default `20`): cap for retry delay between post attempts.
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `ENGAGEMENT_MAX_REPLIES` | `1` | Max replies per run |
+| `ENGAGEMENT_SEARCH_COUNT` | `15` | Tweets fetched per search query |
+| `ENGAGEMENT_DRY_RUN` | `false` | Generate replies without posting |
+| `ENGAGEMENT_REQUIRE_FRESH_TWEETS` | `true` | Skip old tweets |
+| `ENGAGEMENT_MAX_TWEET_AGE_MINUTES` | `180` | Max tweet age for engagement |
+| `ENGAGEMENT_USE_TRENDS` | `true` | Use live X trends for broad lane |
+| `ENGAGEMENT_GENERAL_WEIGHT` | `0.45` | Weight for broad-trending lane |
+| `ENGAGEMENT_EXCLUDED_HANDLES` | `grok` | Handles to never reply to |
+| `ENGAGEMENT_MIN_ENGAGEMENT_OR_VIEWS` | `20` | Minimum engagement threshold |
+| `ENGAGEMENT_PREFER_OFFICIAL_SEARCH` | `true` | Prefer official API for search |
+| `ENGAGEMENT_DISABLE_TWIKIT` | `false` | Disable Twikit entirely |
+| `ENGAGEMENT_REPLY_MAX_CHARS` | `180` | Max reply character length |
+| `PUBLISH_POST_MAX_ATTEMPTS` | `4` | Max posting retry attempts |
 
 ## Deployment (GitHub Actions)
 
-The repository is configured for GitHub Actions.
+### Secrets Required
 
-1. **Secrets**: Go to Settings > Secrets and add:
-   - `X_API_KEY`... (All X credentials)
-   - `XAI_API_KEY`
-   - `TWITTER_COOKIES` or `TWITTER_USERNAME` / `TWITTER_PASSWORD` / `TWITTER_EMAIL`
-   - Engagement workflow is configured with `ENGAGEMENT_REPLY_OPTION_COUNT=1` for single-output replies.
-   - Engagement workflow now runs Twikit-first search. If GitHub-hosted runners hit Cloudflare again, move engagement runs to a local machine or self-hosted runner.
-2. **Persistence**: The workflow is configured to commit `data/posted_tracker.json` and `engagement_tracker.json` back to the repo, so your bot remembers what it has done.
+Go to Settings > Secrets and add:
 
+- `TWITTER_COOKIES` — **Required** for posting and engagement replies/likes
+- `XAI_API_KEY` — Required for AI engagement
+- `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, `X_ACCESS_TOKEN_SECRET`, `X_BEARER_TOKEN` — Optional fallback
+- `TWITTER_USERNAME`, `TWITTER_PASSWORD`, `TWITTER_EMAIL` — Optional for Twikit search
 
+### How It Works
 
+- **`tweet.yml`**: Runs 5x/day on a schedule. Posts the next tweet from `posts.json` using the GraphQL client and commits the updated tracker.
+- **`engage.yml`**: Runs every 20 minutes. Searches for relevant tweets, generates AI replies, and posts them.
+- Both workflows commit tracker files back to the repo for state persistence.
+
+> **Note**: Cookie-based auth tokens expire periodically. If posting starts failing, re-extract your cookies from the browser and update the `TWITTER_COOKIES` secret.

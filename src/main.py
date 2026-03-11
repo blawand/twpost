@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 
 from core.client_manager import TwikitClientManager
 from core.config_loader import ConfigLoader
+from core.graphql_client_manager import GraphQLClientManager
 from core.tweepy_client_manager import TweepyClientManager
 from features.engagement import EngagementManager
 from features.publisher import TwitterPublisher
@@ -91,28 +92,39 @@ def run():
             except Exception as e:
                 logger.warning("Official API client unavailable: %s", e)
 
-            if not twikit_client and not tweepy_client:
+            # Initialize GraphQL client for replies and likes
+            graphql_client = None
+            try:
+                graphql_manager = GraphQLClientManager()
+                graphql_manager.initialize_client()
+                graphql_client = graphql_manager.get_client()
+                logger.info("GraphQL client ready for engagement replies/likes.")
+            except Exception as e:
+                logger.warning("GraphQL client unavailable: %s", e)
+
+            if not twikit_client and not tweepy_client and not graphql_client:
                 raise RuntimeError(
-                    "No engagement client available. Configure official API credentials "
-                    "or provide valid Twikit cookies/credentials."
+                    "No engagement client available. Configure TWITTER_COOKIES, "
+                    "official API credentials, or Twikit cookies/credentials."
                 )
 
-            engagement = EngagementManager(twikit_client, config_loader, tweepy_client)
+            engagement = EngagementManager(
+                twikit_client, config_loader, tweepy_client, graphql_client
+            )
             await engagement.run()
 
         asyncio.run(run_engagement())
 
     elif command == "post":
-        client_manager = TweepyClientManager()
+        client_manager = GraphQLClientManager()
         try:
             client_manager.initialize_client()
-            client = client_manager.get_client()
-            api = client_manager.get_api()
+            graphql_client = client_manager.get_client()
         except Exception as e:
             logger.critical("Core initialization failed: %s", e)
             return
 
-        publisher = TwitterPublisher(client, api, config_loader)
+        publisher = TwitterPublisher(graphql_client, config_loader)
 
         if len(sys.argv) < 3:
             logger.error('Missing tweet text. Usage: python src/main.py post "Your tweet"')
@@ -122,16 +134,15 @@ def run():
         publisher.post_single(tweet_text, image_path)
 
     elif command == "publisher":
-        client_manager = TweepyClientManager()
+        client_manager = GraphQLClientManager()
         try:
             client_manager.initialize_client()
-            client = client_manager.get_client()
-            api = client_manager.get_api()
+            graphql_client = client_manager.get_client()
         except Exception as e:
             logger.critical("Core initialization failed: %s", e)
             return
 
-        publisher = TwitterPublisher(client, api, config_loader)
+        publisher = TwitterPublisher(graphql_client, config_loader)
         logger.info("Running Publisher Mode...")
         publisher.run()
 

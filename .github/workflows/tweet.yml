@@ -33,6 +33,9 @@ jobs:
           
       - name: Post next tweet
         env:
+          # Cookie-based auth for GraphQL posting
+          TWITTER_COOKIES: ${{ secrets.TWITTER_COOKIES }}
+          # Official API keys (fallback / legacy)
           X_API_KEY: ${{ secrets.X_API_KEY }}
           X_API_SECRET: ${{ secrets.X_API_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}

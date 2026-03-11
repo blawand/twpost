@@ -9,7 +9,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.append(str(PROJECT_ROOT / "src"))
 
 from core.config_loader import ConfigLoader
-from core.tweepy_client_manager import TweepyClientManager
+from core.graphql_client_manager import GraphQLClientManager
 from features.publisher import TwitterPublisher
 from utils.logger import setup_logger
 
@@ -21,14 +21,13 @@ def main():
     setup_logger()
     
     config_loader = ConfigLoader()
-    client_manager = TweepyClientManager()
+    client_manager = GraphQLClientManager()
     
     try:
         client_manager.initialize_client()
-        client = client_manager.get_client()
-        api = client_manager.get_api()
+        graphql_client = client_manager.get_client()
         
-        publisher = TwitterPublisher(client, api, config_loader)
+        publisher = TwitterPublisher(graphql_client, config_loader)
 
         if len(sys.argv) < 2:
             logger.info("No text provided. Fetching next scheduled tweet from posts.json...")

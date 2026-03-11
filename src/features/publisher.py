@@ -6,16 +6,16 @@ import random
 import time
 from pathlib import Path
 from datetime import datetime, timezone
-import tweepy
+
+from twitter_cli.client import TwitterClient
 
 logger = logging.getLogger(__name__)
 
 class TwitterPublisher:
-    """Manages publishing tweets using the official Tweepy library."""
+    """Manages publishing tweets using twitter-cli GraphQL client."""
     
-    def __init__(self, client: tweepy.Client, api: tweepy.API = None, config_loader=None):
+    def __init__(self, client: TwitterClient, config_loader=None):
         self.client = client
-        self.api = api  # For media uploads (v1.1)
         self.posts_file = Path("data/posts.json")
         self.tracker_file = Path("data/posted_tracker.json")
         self.config_loader = config_loader
@@ -47,16 +47,6 @@ class TwitterPublisher:
 
     @staticmethod
     def _is_retryable_post_error(error: Exception) -> bool:
-        status_code = getattr(error, "api_codes", None)
-        if status_code and any(code in {130, 131} for code in status_code):
-            return True
-
-        response = getattr(error, "response", None)
-        if response is not None:
-            code = getattr(response, "status_code", None)
-            if code in {429, 500, 502, 503, 504}:
-                return True
-
         text = str(error).lower()
         retry_tokens = [
             "503",
@@ -66,16 +56,19 @@ class TwitterPublisher:
             "connection reset",
             "temporarily unavailable",
             "too many requests",
+            "429",
+            "rate_limited",
         ]
         return any(token in text for token in retry_tokens)
 
-    def _create_tweet_with_retry(self, text: str, media_ids=None):
-        media_ids = media_ids if media_ids else None
+    def _create_tweet_with_retry(self, text: str):
+        """Post a tweet using twitter-cli GraphQL client with retry logic."""
         last_error = None
 
         for attempt in range(1, self.post_max_attempts + 1):
             try:
-                return self.client.create_tweet(text=text, media_ids=media_ids)
+                tweet_id = self.client.create_tweet(text=text)
+                return tweet_id
             except Exception as e:
                 last_error = e
                 if not self._is_retryable_post_error(e) or attempt >= self.post_max_attempts:
@@ -117,8 +110,8 @@ class TwitterPublisher:
             json.dump(data, f, indent=2, ensure_ascii=False)
 
     def run(self):
-        """Execute the publishing workflow (synchronous for Tweepy)."""
-        logger.info("Starting Publisher Workflow...")
+        """Execute the publishing workflow using GraphQL client."""
+        logger.info("Starting Publisher Workflow (GraphQL)...")
         
         posts_data = self.load_posts()
         if not posts_data:
@@ -140,28 +133,17 @@ class TwitterPublisher:
 
         logger.info("Preparing post #%s (%s)", post["id"], post["type"])
         
-        media_ids = []
-        if post.get("image") and self.api:
-            # Handle image path relative to root
-            image_path = Path(post["image"])
-            if image_path.exists():
-                try:
-                    # Use v1.1 API for media upload
-                    media = self.api.media_upload(filename=str(image_path))
-                    media_ids.append(media.media_id)
-                    logger.info("Uploaded image: %s", image_path)
-                except Exception as e:
-                    logger.error("Failed to upload image: %s", e)
-            else:
-                 logger.warning("Image not found: %s", image_path)
+        # Warn about images (not supported via GraphQL yet)
+        if post.get("image"):
+            logger.warning(
+                "Image '%s' will be SKIPPED — GraphQL posting does not support "
+                "media uploads yet. Posting text only.",
+                post["image"],
+            )
 
         try:
-            response = self._create_tweet_with_retry(
-                text=post["content"],
-                media_ids=media_ids,
-            )
+            tweet_id = self._create_tweet_with_retry(text=post["content"])
             
-            tweet_id = response.data['id']
             logger.info("Posted tweet #%s (Tweet ID: %s)", post["id"], tweet_id)
             
             # Update state
@@ -184,30 +166,20 @@ class TwitterPublisher:
             raise
 
     def post_single(self, text: str, image_path: str = None):
-        """Post a single tweet directly (synchronous)."""
+        """Post a single tweet directly."""
         logger.info("Preparing to post: %s...", text[:50])
         
-        media_ids = []
-        if image_path and self.api:
-            img = Path(image_path)
-            if img.exists():
-                try:
-                    media = self.api.media_upload(filename=str(img))
-                    media_ids.append(media.media_id)
-                    logger.info("Uploaded image: %s", image_path)
-                except Exception as e:
-                    logger.error("Failed to upload image: %s", e)
-            else:
-                 logger.warning("Image not found: %s", image_path)
+        if image_path:
+            logger.warning(
+                "Image '%s' will be SKIPPED — GraphQL posting does not support "
+                "media uploads yet. Posting text only.",
+                image_path,
+            )
 
         try:
-            response = self._create_tweet_with_retry(
-                text=text,
-                media_ids=media_ids,
-            )
-            tweet_id = response.data['id']
+            tweet_id = self._create_tweet_with_retry(text=text)
             logger.info("Successfully posted tweet: %s", tweet_id)
-            return response
+            return tweet_id
         except Exception as e:
             logger.error("Failed to post tweet after retries: %s", e)
             raise e

@@ -3,3 +3,5 @@ twikit
 tweepy
 python-dotenv
 requests
+twitter-cli
+curl_cffi

@@ -11,6 +11,7 @@ from typing import Any, Dict, List, Optional
 
 import tweepy
 from twikit import Client
+from twitter_cli.client import TwitterClient as GraphQLClient
 
 from core.llm_helper import LLMHelper
 
@@ -24,10 +25,12 @@ class EngagementManager:
         self,
         client: Optional[Client],
         config_loader,
-        tweepy_client: Optional[tweepy.Client] = None
+        tweepy_client: Optional[tweepy.Client] = None,
+        graphql_client: Optional[GraphQLClient] = None,
     ):
         self.client = client
         self.tweepy_client = tweepy_client
+        self.graphql_client = graphql_client
         self.config = config_loader.get_settings()
         self.llm = LLMHelper(self.config)
 
@@ -705,7 +708,20 @@ class EngagementManager:
     async def _post_reply(self, tweet: Any, reply_text: str, handle: str) -> bool:
         success = False
 
-        if self.tweepy_client:
+        # 1. Try GraphQL client first (cookie-based, bypasses 503 API issues)
+        if self.graphql_client and not success:
+            try:
+                self.graphql_client.create_tweet(
+                    text=reply_text,
+                    reply_to_id=str(tweet.id),
+                )
+                logger.info("Replied to @%s via GraphQL client.", handle)
+                success = True
+            except Exception as e:
+                logger.warning("GraphQL reply failed: %s", e)
+
+        # 2. Fallback to Tweepy (official API)
+        if self.tweepy_client and not success:
             try:
                 self.tweepy_client.create_tweet(
                     text=reply_text,
@@ -714,11 +730,12 @@ class EngagementManager:
                 logger.info("Replied to @%s via Official API.", handle)
                 success = True
             except Exception as e:
-                logger.warning("Official API failed, falling back to Twikit: %s", e)
+                logger.warning("Official API reply failed: %s", e)
 
+        # 3. Fallback to Twikit
         if not success:
             if not self.client:
-                logger.warning("Twikit fallback unavailable. Reply was not posted.")
+                logger.warning("No fallback client available. Reply was not posted.")
                 return False
             await self.client.create_tweet(text=reply_text, reply_to=tweet.id)
             logger.info("Replied to @%s via Twikit.", handle)
@@ -729,17 +746,28 @@ class EngagementManager:
     async def _like_tweet(self, tweet: Any, handle: str) -> bool:
         tweet_id = str(tweet.id)
 
+        # 1. Try GraphQL client first
+        if self.graphql_client:
+            try:
+                self.graphql_client.like_tweet(tweet_id)
+                logger.info("Liked tweet from @%s via GraphQL client.", handle)
+                return True
+            except Exception as e:
+                logger.warning("GraphQL like failed: %s", e)
+
+        # 2. Fallback to Tweepy
         if self.tweepy_client:
             try:
                 self.tweepy_client.like(tweet_id=tweet_id)
                 logger.info("Liked tweet from @%s via Official API.", handle)
                 return True
             except Exception as e:
-                logger.warning("Official API like failed, falling back to Twikit: %s", e)
+                logger.warning("Official API like failed: %s", e)
 
+        # 3. Fallback to Twikit
         try:
             if not self.client:
-                logger.warning("Twikit fallback unavailable. Like was not sent for tweet id=%s.", tweet_id)
+                logger.warning("No fallback client available. Like was not sent for tweet id=%s.", tweet_id)
                 return False
             await self.client.favorite_tweet(tweet_id)
             logger.info("Liked tweet from @%s via Twikit.", handle)
