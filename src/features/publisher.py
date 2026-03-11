@@ -97,7 +97,7 @@ class TwitterPublisher:
 
     def load_posts(self):
         if not self.posts_file.exists():
-            logger.error(f"❌ Posts file not found: {self.posts_file}")
+            logger.error("Posts file not found: %s", self.posts_file)
             return None
         with open(self.posts_file, "r", encoding="utf-8") as f:
             return json.load(f)
@@ -118,7 +118,7 @@ class TwitterPublisher:
 
     def run(self):
         """Execute the publishing workflow (synchronous for Tweepy)."""
-        logger.info("🚀 Starting Publisher Workflow...")
+        logger.info("Starting Publisher Workflow...")
         
         posts_data = self.load_posts()
         if not posts_data:
@@ -135,10 +135,10 @@ class TwitterPublisher:
                 break
         
         if not post:
-            logger.info("✅ All posts have been published!")
+            logger.info("All posts have been published.")
             return
 
-        logger.info(f"📝 Preparing post #{post['id']} ({post['type']})")
+        logger.info("Preparing post #%s (%s)", post["id"], post["type"])
         
         media_ids = []
         if post.get("image") and self.api:
@@ -149,11 +149,11 @@ class TwitterPublisher:
                     # Use v1.1 API for media upload
                     media = self.api.media_upload(filename=str(image_path))
                     media_ids.append(media.media_id)
-                    logger.info(f"✅ Uploaded image: {image_path}")
+                    logger.info("Uploaded image: %s", image_path)
                 except Exception as e:
-                    logger.error(f"⚠️ Failed to upload image: {e}")
+                    logger.error("Failed to upload image: %s", e)
             else:
-                 logger.warning(f"⚠️ Image not found: {image_path}")
+                 logger.warning("Image not found: %s", image_path)
 
         try:
             response = self._create_tweet_with_retry(
@@ -162,7 +162,7 @@ class TwitterPublisher:
             )
             
             tweet_id = response.data['id']
-            logger.info(f"✅ Posted tweet #{post['id']} (Tweet ID: {tweet_id})")
+            logger.info("Posted tweet #%s (Tweet ID: %s)", post["id"], tweet_id)
             
             # Update state
             tracker["posted_ids"].append(post["id"])
@@ -180,12 +180,12 @@ class TwitterPublisher:
             self.save_posts(posts_data)
             
         except Exception as e:
-            logger.error(f"❌ Failed to post tweet after retries: {e}")
+            logger.error("Failed to post tweet after retries: %s", e)
             raise
 
     def post_single(self, text: str, image_path: str = None):
         """Post a single tweet directly (synchronous)."""
-        logger.info(f"📝 Preparing to post: {text[:50]}...")
+        logger.info("Preparing to post: %s...", text[:50])
         
         media_ids = []
         if image_path and self.api:
@@ -194,11 +194,11 @@ class TwitterPublisher:
                 try:
                     media = self.api.media_upload(filename=str(img))
                     media_ids.append(media.media_id)
-                    logger.info(f"✅ Uploaded image: {image_path}")
+                    logger.info("Uploaded image: %s", image_path)
                 except Exception as e:
-                    logger.error(f"⚠️ Failed to upload image: {e}")
+                    logger.error("Failed to upload image: %s", e)
             else:
-                 logger.warning(f"⚠️ Image not found: {image_path}")
+                 logger.warning("Image not found: %s", image_path)
 
         try:
             response = self._create_tweet_with_retry(
@@ -206,8 +206,8 @@ class TwitterPublisher:
                 media_ids=media_ids,
             )
             tweet_id = response.data['id']
-            logger.info(f"✅ Successfully posted tweet: {tweet_id}")
+            logger.info("Successfully posted tweet: %s", tweet_id)
             return response
         except Exception as e:
-            logger.error(f"❌ Failed to post tweet after retries: {e}")
+            logger.error("Failed to post tweet after retries: %s", e)
             raise e

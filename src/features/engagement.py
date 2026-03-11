@@ -63,6 +63,7 @@ class EngagementManager:
             "ENGAGEMENT_PREFER_OFFICIAL_SEARCH",
             True,
         )
+        self.dry_run = self._read_bool_env("ENGAGEMENT_DRY_RUN", False)
 
         self.my_username = os.getenv("TWITTER_HANDLE", "lynxtradesapp").strip().lstrip("@")
         general_lane_weight = self._read_float_env("ENGAGEMENT_GENERAL_WEIGHT", 0.45)
@@ -178,6 +179,32 @@ class EngagementManager:
             if handle:
                 handles.add(handle)
         return handles
+
+    @staticmethod
+    def _is_network_access_error(error: Exception) -> bool:
+        text = str(error).lower()
+        tokens = [
+            "all connection attempts failed",
+            "failed to establish a new connection",
+            "winerror 10013",
+            "connection refused",
+            "temporary failure in name resolution",
+            "name or service not known",
+            "nodename nor servname provided",
+        ]
+        return any(token in text for token in tokens)
+
+    @staticmethod
+    def _is_official_search_forbidden(error: Exception) -> bool:
+        response = getattr(error, "response", None)
+        status_code = getattr(response, "status_code", None)
+        if status_code == 403:
+            return True
+
+        text = str(error).lower()
+        return "403 forbidden" in text or (
+            "twitter api v2 endpoints" in text and "project" in text
+        )
 
     def _load_tracker(self) -> set[str]:
         if os.path.exists(self.tracker_file):
@@ -631,11 +658,15 @@ class EngagementManager:
                 logger.info("Lane=%s source=%s returned no tweets.", lane["name"], source)
             except Exception as e:
                 if source == "official":
-                    error_text = str(e).lower()
-                    if "403" in error_text or "forbidden" in error_text:
+                    if self._is_official_search_forbidden(e):
                         logger.warning(
                             "Official API search is forbidden. Confirm app read permissions "
                             "and account access tier support recent search."
+                        )
+                    elif self._is_network_access_error(e):
+                        logger.warning(
+                            "Official API search could not reach X. Check local firewall, "
+                            "proxy, VPN, or outbound HTTPS access."
                         )
                 logger.warning("Lane=%s source=%s search failed: %s", lane["name"], source, e)
 
@@ -729,6 +760,7 @@ class EngagementManager:
             ",".join(f"@{handle}" for handle in sorted(self.excluded_handles)) or "none",
             self.min_engagement_or_views,
         )
+        logger.info("Dry run mode: %s", self.dry_run)
         replies_count = 0
 
         try:
@@ -780,6 +812,14 @@ class EngagementManager:
 
                 logger.info("Generated reply: %s", reply_text)
 
+                if self.dry_run:
+                    logger.info(
+                        "Dry run enabled. Skipping reply/like for tweet id=%s from @%s.",
+                        tweet.id,
+                        handle,
+                    )
+                    break
+
                 try:
                     success = await self._post_reply(tweet, reply_text, handle)
                     if success:
@@ -806,3 +846,4 @@ class EngagementManager:
             logger.error("Engagement loop failed: %s", e)
 
         logger.info("Engagement finished. Replied to %s tweets.", replies_count)
+

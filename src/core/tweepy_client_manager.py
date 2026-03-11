@@ -45,7 +45,7 @@ class TweepyClientManager:
         )
         self.api = tweepy.API(auth)
         
-        logger.info("✅ Tweepy client initialized with official X API credentials.")
+        logger.info("Tweepy client initialized with official X API credentials.")
         return self.client
 
     def get_client(self) -> tweepy.Client:

@@ -9,6 +9,24 @@ from core.config_loader import ConfigLoader
 # Define project root relative to this file's location (src/utils/logger.py)
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 
+
+class SafeStreamHandler(logging.StreamHandler):
+    """Stream handler that degrades unsupported console characters safely."""
+
+    def emit(self, record):
+        try:
+            msg = self.format(record)
+            stream = self.stream
+            encoding = getattr(stream, "encoding", None) or "utf-8"
+            safe_msg = msg.encode(encoding, errors="replace").decode(encoding, errors="replace")
+            stream.write(safe_msg + self.terminator)
+            self.flush()
+        except RecursionError:
+            raise
+        except Exception:
+            self.handleError(record)
+
+
 def setup_logger(config_loader: Optional[ConfigLoader] = None, logger_name: Optional[str] = None):
     """
     Sets up a logger (root logger by default) based on configuration.
@@ -47,7 +65,7 @@ def setup_logger(config_loader: Optional[ConfigLoader] = None, logger_name: Opti
         console_log_format = console_handler_config.get('format', default_log_format)
         console_log_level = getattr(logging, console_log_level_str, log_level)
 
-        console_handler = logging.StreamHandler(sys.stdout)
+        console_handler = SafeStreamHandler(sys.stdout)
         console_handler.setLevel(console_log_level)
         console_handler.setFormatter(logging.Formatter(console_log_format))
         logger.addHandler(console_handler)

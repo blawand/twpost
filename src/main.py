@@ -2,6 +2,7 @@ import asyncio
 import logging
 import os
 import sys
+from pathlib import Path
 
 from dotenv import load_dotenv
 
@@ -13,6 +14,8 @@ from features.publisher import TwitterPublisher
 from utils.logger import setup_logger
 
 logger = logging.getLogger(__name__)
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+DOTENV_PATH = PROJECT_ROOT / ".env"
 
 
 def _read_bool_env(name: str, default: bool = False) -> bool:
@@ -23,9 +26,27 @@ def _read_bool_env(name: str, default: bool = False) -> bool:
     return normalized in {"1", "true", "yes", "y", "on"}
 
 
+def _load_environment():
+    load_dotenv(dotenv_path=DOTENV_PATH, override=True)
+
+
+def _is_network_access_error(error: Exception) -> bool:
+    text = str(error).lower()
+    tokens = [
+        "all connection attempts failed",
+        "failed to establish a new connection",
+        "winerror 10013",
+        "connection refused",
+        "temporary failure in name resolution",
+        "name or service not known",
+        "nodename nor servname provided",
+    ]
+    return any(token in text for token in tokens)
+
+
 def run():
     # 1. Setup
-    load_dotenv()
+    _load_environment()
     setup_logger()
     logger.info("Twitter Automation AI starting...")
 
@@ -52,7 +73,14 @@ def run():
                     twikit_client = twikit_manager.get_client()
                     logger.info("Twikit client ready.")
                 except Exception as e:
-                    logger.warning("Twikit unavailable; continuing without it: %s", e)
+                    if _is_network_access_error(e):
+                        logger.warning(
+                            "Twikit unavailable due to network access failure. "
+                            "Check outbound HTTPS access to x.com: %s",
+                            e,
+                        )
+                    else:
+                        logger.warning("Twikit unavailable; continuing without it: %s", e)
 
             tweepy_client = None
             try:

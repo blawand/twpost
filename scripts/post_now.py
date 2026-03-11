@@ -5,7 +5,8 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 # Add src to path so we can import modules
-sys.path.append(str(Path(__file__).parent.parent / "src"))
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+sys.path.append(str(PROJECT_ROOT / "src"))
 
 from core.config_loader import ConfigLoader
 from core.tweepy_client_manager import TweepyClientManager
@@ -16,7 +17,7 @@ logger = logging.getLogger("PostNow")
 
 def main():
     # Setup
-    load_dotenv()
+    load_dotenv(dotenv_path=PROJECT_ROOT / ".env", override=True)
     setup_logger()
     
     config_loader = ConfigLoader()
@@ -30,15 +31,15 @@ def main():
         publisher = TwitterPublisher(client, api, config_loader)
 
         if len(sys.argv) < 2:
-            logger.info("🔄 No text provided. Fetching next scheduled tweet from posts.json...")
+            logger.info("No text provided. Fetching next scheduled tweet from posts.json...")
             publisher.run()
         else:
             tweet_text = sys.argv[1]
             image_path = sys.argv[2] if len(sys.argv) > 2 else None
             publisher.post_single(tweet_text, image_path)
-            
+             
     except Exception as e:
-        logger.error(f"❌ Failed to post: {e}")
+        logger.error("Failed to post: %s", e)
 
 if __name__ == "__main__":
     main()
