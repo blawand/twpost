@@ -8,26 +8,23 @@ from dotenv import load_dotenv
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.append(str(PROJECT_ROOT / "src"))
 
-from core.config_loader import ConfigLoader
-from core.graphql_client_manager import GraphQLClientManager
+from core.twitter_client import GraphQLClientManager
 from features.publisher import TwitterPublisher
 from utils.logger import setup_logger
 
 logger = logging.getLogger("PostNow")
 
 def main():
-    # Setup
     load_dotenv(dotenv_path=PROJECT_ROOT / ".env", override=True)
     setup_logger()
     
-    config_loader = ConfigLoader()
     client_manager = GraphQLClientManager()
     
     try:
         client_manager.initialize_client()
         graphql_client = client_manager.get_client()
         
-        publisher = TwitterPublisher(graphql_client, config_loader)
+        publisher = TwitterPublisher(graphql_client)
 
         if len(sys.argv) < 2:
             logger.info("No text provided. Fetching next scheduled tweet from posts.json...")

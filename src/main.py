@@ -6,10 +6,8 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-from core.client_manager import TwikitClientManager
-from core.config_loader import ConfigLoader
-from core.graphql_client_manager import GraphQLClientManager
-from core.tweepy_client_manager import TweepyClientManager
+from core.twikit_client import TwikitClientManager
+from core.twitter_client import GraphQLClientManager
 from features.engagement import EngagementManager
 from features.publisher import TwitterPublisher
 from utils.logger import setup_logger
@@ -46,14 +44,10 @@ def _is_network_access_error(error: Exception) -> bool:
 
 
 def run():
-    # 1. Setup
     _load_environment()
     setup_logger()
-    logger.info("Twitter Automation AI starting...")
+    logger.info("Twitter Automation starting...")
 
-    config_loader = ConfigLoader()
-
-    # 2. Determine mode and initialize client(s)
     command = "publisher"
     if len(sys.argv) > 1:
         command = sys.argv[1].lower()
@@ -75,42 +69,26 @@ def run():
                     logger.info("Twikit client ready.")
                 except Exception as e:
                     if _is_network_access_error(e):
-                        logger.warning(
-                            "Twikit unavailable due to network access failure. "
-                            "Check outbound HTTPS access to x.com: %s",
-                            e,
-                        )
+                        logger.warning("Twikit unavailable (network): %s", e)
                     else:
-                        logger.warning("Twikit unavailable; continuing without it: %s", e)
+                        logger.warning("Twikit unavailable: %s", e)
 
-            tweepy_client = None
-            try:
-                tweepy_manager = TweepyClientManager()
-                tweepy_manager.initialize_client()
-                tweepy_client = tweepy_manager.get_client()
-                logger.info("Official API client ready.")
-            except Exception as e:
-                logger.warning("Official API client unavailable: %s", e)
-
-            # Initialize GraphQL client for replies and likes
             graphql_client = None
             try:
                 graphql_manager = GraphQLClientManager()
                 graphql_manager.initialize_client()
                 graphql_client = graphql_manager.get_client()
-                logger.info("GraphQL client ready for engagement replies/likes.")
+                logger.info("GraphQL client ready.")
             except Exception as e:
                 logger.warning("GraphQL client unavailable: %s", e)
 
-            if not twikit_client and not tweepy_client and not graphql_client:
+            if not twikit_client and not graphql_client:
                 raise RuntimeError(
-                    "No engagement client available. Configure TWITTER_COOKIES, "
-                    "official API credentials, or Twikit cookies/credentials."
+                    "No engagement client available. Configure TWITTER_COOKIES "
+                    "or Twikit cookies/credentials."
                 )
 
-            engagement = EngagementManager(
-                twikit_client, config_loader, tweepy_client, graphql_client
-            )
+            engagement = EngagementManager(twikit_client, graphql_client)
             await engagement.run()
 
         asyncio.run(run_engagement())
@@ -124,7 +102,7 @@ def run():
             logger.critical("Core initialization failed: %s", e)
             return
 
-        publisher = TwitterPublisher(graphql_client, config_loader)
+        publisher = TwitterPublisher(graphql_client)
 
         if len(sys.argv) < 3:
             logger.error('Missing tweet text. Usage: python src/main.py post "Your tweet"')
@@ -142,7 +120,7 @@ def run():
             logger.critical("Core initialization failed: %s", e)
             return
 
-        publisher = TwitterPublisher(graphql_client, config_loader)
+        publisher = TwitterPublisher(graphql_client)
         logger.info("Running Publisher Mode...")
         publisher.run()
 

@@ -1,6 +1,5 @@
 # Core Bot Engine
 twikit
-tweepy
 python-dotenv
 requests
 twitter-cli

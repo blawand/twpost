@@ -9,11 +9,10 @@ from pathlib import Path
 from types import SimpleNamespace
 from typing import Any, Dict, List, Optional
 
-import tweepy
 from twikit import Client
 from twitter_cli.client import TwitterClient as GraphQLClient
 
-from core.llm_helper import LLMHelper
+from core.llm import LLMHelper
 
 logger = logging.getLogger(__name__)
 
@@ -23,16 +22,12 @@ class EngagementManager:
 
     def __init__(
         self,
-        client: Optional[Client],
-        config_loader,
-        tweepy_client: Optional[tweepy.Client] = None,
+        twikit_client: Optional[Client],
         graphql_client: Optional[GraphQLClient] = None,
     ):
-        self.client = client
-        self.tweepy_client = tweepy_client
+        self.client = twikit_client
         self.graphql_client = graphql_client
-        self.config = config_loader.get_settings()
-        self.llm = LLMHelper(self.config)
+        self.llm = LLMHelper()
 
         project_root = Path(__file__).resolve().parent.parent.parent
         self.tracker_file = project_root / "data" / "engagement_tracker.json"
@@ -46,8 +41,7 @@ class EngagementManager:
         self.top_candidate_pool = max(1, self._read_int_env("ENGAGEMENT_TOP_POOL", 3))
         self.require_fresh_tweets = self._read_bool_env("ENGAGEMENT_REQUIRE_FRESH_TWEETS", True)
         self.max_tweet_age_minutes = max(
-            5,
-            self._read_int_env("ENGAGEMENT_MAX_TWEET_AGE_MINUTES", 180),
+            5, self._read_int_env("ENGAGEMENT_MAX_TWEET_AGE_MINUTES", 180),
         )
         self.use_live_trends = self._read_bool_env("ENGAGEMENT_USE_TRENDS", True)
         self.trend_count = max(5, self._read_int_env("ENGAGEMENT_TRENDS_COUNT", 20))
@@ -56,15 +50,10 @@ class EngagementManager:
             os.getenv("ENGAGEMENT_TREND_CATEGORIES", "trending,news")
         )
         self.min_engagement_or_views = max(
-            0,
-            self._read_int_env("ENGAGEMENT_MIN_ENGAGEMENT_OR_VIEWS", 20),
+            0, self._read_int_env("ENGAGEMENT_MIN_ENGAGEMENT_OR_VIEWS", 20),
         )
         self.excluded_handles = self._parse_handle_set(
             os.getenv("ENGAGEMENT_EXCLUDED_HANDLES", "grok")
-        )
-        self.prefer_official_search = self._read_bool_env(
-            "ENGAGEMENT_PREFER_OFFICIAL_SEARCH",
-            True,
         )
         self.dry_run = self._read_bool_env("ENGAGEMENT_DRY_RUN", False)
 
@@ -78,15 +67,9 @@ class EngagementManager:
                 "weight": 1.0 - general_lane_weight,
                 "product": "Latest",
                 "keywords": [
-                    "trading journal",
-                    "trade journal",
-                    "journaling trades",
-                    "trading discipline",
-                    "revenge trading",
-                    "trading psychology",
-                    "risk management trading",
-                    "blown account",
-                    "trading plan",
+                    "trading journal", "trade journal", "journaling trades",
+                    "trading discipline", "revenge trading", "trading psychology",
+                    "risk management trading", "blown account", "trading plan",
                     "why i lost trading",
                 ],
             },
@@ -95,20 +78,10 @@ class EngagementManager:
                 "weight": general_lane_weight,
                 "product": "Top",
                 "keywords": [
-                    "inflation",
-                    "interest rates",
-                    "FOMC",
-                    "CPI",
-                    "S&P 500",
-                    "Nasdaq",
-                    "earnings season",
-                    "recession",
-                    "economic growth",
-                    "stock market",
-                    "trading strategy",
-                    "market sentiment",
-                    "business news",
-                    "small business",
+                    "inflation", "interest rates", "FOMC", "CPI",
+                    "S&P 500", "Nasdaq", "earnings season", "recession",
+                    "economic growth", "stock market", "trading strategy",
+                    "market sentiment", "business news", "small business",
                 ],
             },
         ]
@@ -124,6 +97,8 @@ class EngagementManager:
             "crypto", "bitcoin", "ethereum", "gold", "oil", "commodity",
             "tariff", "trade war"
         ]
+
+    # ── Env Helpers ──────────────────────────────────────────────
 
     @staticmethod
     def _read_int_env(name: str, default: int) -> int:
@@ -163,51 +138,24 @@ class EngagementManager:
     @staticmethod
     def _parse_trend_categories(raw: str) -> List[str]:
         valid = {"trending", "for-you", "news", "sports", "entertainment"}
-        categories = []
-        for item in raw.split(","):
-            category = item.strip().lower()
-            if not category:
-                continue
-            if category in valid:
-                categories.append(category)
-        if not categories:
-            return ["trending", "news"]
-        return categories
+        categories = [c.strip().lower() for c in raw.split(",") if c.strip().lower() in valid]
+        return categories or ["trending", "news"]
 
     @staticmethod
     def _parse_handle_set(raw: str) -> set[str]:
-        handles = set()
-        for item in raw.split(","):
-            handle = item.strip().lower().lstrip("@")
-            if handle:
-                handles.add(handle)
-        return handles
+        return {h.strip().lower().lstrip("@") for h in raw.split(",") if h.strip()}
 
     @staticmethod
     def _is_network_access_error(error: Exception) -> bool:
         text = str(error).lower()
         tokens = [
-            "all connection attempts failed",
-            "failed to establish a new connection",
-            "winerror 10013",
-            "connection refused",
-            "temporary failure in name resolution",
-            "name or service not known",
-            "nodename nor servname provided",
+            "all connection attempts failed", "failed to establish a new connection",
+            "winerror 10013", "connection refused", "temporary failure in name resolution",
+            "name or service not known", "nodename nor servname provided",
         ]
         return any(token in text for token in tokens)
 
-    @staticmethod
-    def _is_official_search_forbidden(error: Exception) -> bool:
-        response = getattr(error, "response", None)
-        status_code = getattr(response, "status_code", None)
-        if status_code == 403:
-            return True
-
-        text = str(error).lower()
-        return "403 forbidden" in text or (
-            "twitter api v2 endpoints" in text and "project" in text
-        )
+    # ── Tracker ──────────────────────────────────────────────────
 
     def _load_tracker(self) -> set[str]:
         if os.path.exists(self.tracker_file):
@@ -216,7 +164,6 @@ class EngagementManager:
                     data = json.load(f)
                 if isinstance(data, list):
                     return {str(item) for item in data}
-                logger.warning("engagement_tracker.json is not a list. Starting with empty tracker.")
             except Exception as e:
                 logger.error("Error loading engagement tracker: %s", e)
         return set()
@@ -229,15 +176,15 @@ class EngagementManager:
         except Exception as e:
             logger.error("Error saving engagement tracker: %s", e)
 
+    # ── Tweet Analysis ───────────────────────────────────────────
+
     @staticmethod
     def _safe_int(value: Any) -> int:
         if value is None:
             return 0
         if isinstance(value, bool):
             return int(value)
-        if isinstance(value, int):
-            return value
-        if isinstance(value, float):
+        if isinstance(value, (int, float)):
             return int(value)
 
         text = str(value).strip().replace(",", "")
@@ -248,12 +195,7 @@ class EngagementManager:
         suffix = text[-1].upper()
         if suffix in ("K", "M", "B"):
             text = text[:-1]
-            if suffix == "K":
-                multiplier = 1_000
-            elif suffix == "M":
-                multiplier = 1_000_000
-            elif suffix == "B":
-                multiplier = 1_000_000_000
+            multiplier = {"K": 1_000, "M": 1_000_000, "B": 1_000_000_000}[suffix]
 
         try:
             return int(float(text) * multiplier)
@@ -262,8 +204,8 @@ class EngagementManager:
 
     @staticmethod
     def _tweet_value(tweet: Any, field_names: List[str]) -> int:
-        for field_name in field_names:
-            value = getattr(tweet, field_name, None)
+        for name in field_names:
+            value = getattr(tweet, name, None)
             if value is not None:
                 return EngagementManager._safe_int(value)
         return 0
@@ -274,31 +216,28 @@ class EngagementManager:
         reply_count = self._tweet_value(tweet, ["reply_count"])
         quote_count = self._tweet_value(tweet, ["quote_count"])
         view_count = self._tweet_value(tweet, ["view_count"])
-        total_engagement = like_count + retweet_count + reply_count + quote_count
         return {
             "like_count": like_count,
             "retweet_count": retweet_count,
             "reply_count": reply_count,
             "quote_count": quote_count,
             "view_count": view_count,
-            "total_engagement": total_engagement,
+            "total_engagement": like_count + retweet_count + reply_count + quote_count,
         }
 
     @staticmethod
     def _parse_datetime(value: Any) -> Optional[datetime]:
         if value is None:
             return None
-
         if isinstance(value, datetime):
             dt = value
             if dt.tzinfo is None:
                 dt = dt.replace(tzinfo=timezone.utc)
             return dt.astimezone(timezone.utc)
-
         if isinstance(value, (int, float)):
             timestamp = float(value)
             if timestamp > 1_000_000_000_000:
-                timestamp = timestamp / 1000.0
+                timestamp /= 1000.0
             try:
                 return datetime.fromtimestamp(timestamp, tz=timezone.utc)
             except Exception:
@@ -307,7 +246,6 @@ class EngagementManager:
         raw = str(value).strip()
         if not raw:
             return None
-
         if raw.isdigit():
             return EngagementManager._parse_datetime(int(raw))
 
@@ -319,7 +257,6 @@ class EngagementManager:
             return dt.astimezone(timezone.utc)
         except ValueError:
             pass
-
         try:
             dt = parsedate_to_datetime(raw)
             if dt.tzinfo is None:
@@ -329,60 +266,40 @@ class EngagementManager:
             return None
 
     def _tweet_created_at(self, tweet: Any) -> Optional[datetime]:
-        field_names = [
-            "created_at_datetime",
-            "created_at",
-            "date",
-            "timestamp",
-            "time",
-        ]
-        for field_name in field_names:
-            dt = self._parse_datetime(getattr(tweet, field_name, None))
+        field_names = ["created_at_datetime", "created_at", "date", "timestamp", "time"]
+        for name in field_names:
+            dt = self._parse_datetime(getattr(tweet, name, None))
             if dt is not None:
                 return dt
-
         for attr in ("_data", "data"):
-            raw_payload = getattr(tweet, attr, None)
-            if isinstance(raw_payload, dict):
-                for field_name in field_names:
-                    dt = self._parse_datetime(raw_payload.get(field_name))
+            raw = getattr(tweet, attr, None)
+            if isinstance(raw, dict):
+                for name in field_names:
+                    dt = self._parse_datetime(raw.get(name))
                     if dt is not None:
                         return dt
-
         return None
 
     def _is_fresh_tweet(self, tweet: Any) -> bool:
         if not self.require_fresh_tweets:
             return True
-
         tweet_id = str(getattr(tweet, "id", "")).strip() or "unknown"
         created_at = self._tweet_created_at(tweet)
         if created_at is None:
-            logger.debug(
-                "Skipping tweet id=%s because created_at was unavailable and freshness is required.",
-                tweet_id,
-            )
+            logger.debug("Skipping tweet id=%s — no created_at available.", tweet_id)
             return False
-
-        age_minutes = (datetime.now(timezone.utc) - created_at).total_seconds() / 60.0
-        if age_minutes < 0:
-            age_minutes = 0.0
+        age_minutes = max(0, (datetime.now(timezone.utc) - created_at).total_seconds() / 60.0)
         if age_minutes > self.max_tweet_age_minutes:
-            logger.debug(
-                "Skipping stale tweet id=%s age=%.1f minutes (max=%s).",
-                tweet_id,
-                age_minutes,
-                self.max_tweet_age_minutes,
-            )
+            logger.debug("Skipping stale tweet id=%s age=%.1fm (max=%s).", tweet_id, age_minutes, self.max_tweet_age_minutes)
             return False
-
         return True
+
+    # ── Candidate Selection ──────────────────────────────────────
 
     def _pick_lane_order(self) -> List[Dict[str, Any]]:
         weights = [max(0.0, lane["weight"]) for lane in self.lanes]
         if sum(weights) <= 0:
             return self.lanes
-
         first_lane = random.choices(self.lanes, weights=weights, k=1)[0]
         remaining = [lane for lane in self.lanes if lane["name"] != first_lane["name"]]
         random.shuffle(remaining)
@@ -395,78 +312,42 @@ class EngagementManager:
 
         user = getattr(tweet, "user", None)
         handle = (getattr(user, "screen_name", "") or "").strip()
-        handle_lower = handle.lower()
-        if not handle:
+        if not handle or handle.lower() == self.my_username.lower():
             return False
-        if handle_lower == self.my_username.lower():
-            return False
-        if handle_lower in self.excluded_handles:
-            logger.debug("Skipping tweet id=%s from excluded handle @%s.", tweet_id, handle)
+        if handle.lower() in self.excluded_handles:
             return False
 
         text = (getattr(tweet, "text", "") or "").strip()
-        if len(text) < self.min_text_length:
+        if len(text) < self.min_text_length or text.startswith("RT @"):
             return False
-        if text.startswith("RT @"):
+        if getattr(tweet, "in_reply_to_status_id", None) is not None:
             return False
-
-        in_reply_to_status = getattr(tweet, "in_reply_to_status_id", None)
-        if in_reply_to_status is not None:
-            return False
-
         if not self._is_fresh_tweet(tweet):
             return False
-
         if self.min_engagement_or_views > 0:
-            social_proof = self._tweet_social_proof(tweet)
-            if (
-                max(social_proof["total_engagement"], social_proof["view_count"])
-                < self.min_engagement_or_views
-            ):
-                logger.debug(
-                    "Skipping low-social-proof tweet id=%s engagements=%s views=%s min=%s.",
-                    tweet_id,
-                    social_proof["total_engagement"],
-                    social_proof["view_count"],
-                    self.min_engagement_or_views,
-                )
+            sp = self._tweet_social_proof(tweet)
+            if max(sp["total_engagement"], sp["view_count"]) < self.min_engagement_or_views:
                 return False
-
         if text.count("@") > 3:
             return False
         return True
 
     def _score_tweet(self, tweet: Any, lane_name: str) -> float:
-        social_proof = self._tweet_social_proof(tweet)
-        like_count = social_proof["like_count"]
-        retweet_count = social_proof["retweet_count"]
-        reply_count = social_proof["reply_count"]
-        quote_count = social_proof["quote_count"]
-        view_count = social_proof["view_count"]
-
+        sp = self._tweet_social_proof(tweet)
         user = getattr(tweet, "user", None)
         follower_count = self._safe_int(getattr(user, "followers_count", 0)) if user else 0
-        text = (getattr(tweet, "text", "") or "").strip()
-        text_len = len(text)
-
-        virality_score = (
-            (like_count * 1.0)
-            + (retweet_count * 2.3)
-            + (reply_count * 2.0)
-            + (quote_count * 2.0)
-            + (view_count * 0.02)
-            + (follower_count * 0.001)
-        )
+        text_len = len((getattr(tweet, "text", "") or "").strip())
 
         if lane_name == "broad_trending":
-            return virality_score + (text_len * 0.05) + random.uniform(0.0, 2.0)
-
+            return (
+                sp["like_count"] + sp["retweet_count"] * 2.3 + sp["reply_count"] * 2.0
+                + sp["quote_count"] * 2.0 + sp["view_count"] * 0.02
+                + follower_count * 0.001 + text_len * 0.05 + random.uniform(0, 2)
+            )
         return (
-            (reply_count * 1.4)
-            + (like_count * 0.9)
-            + (retweet_count * 1.2)
-            + (follower_count * 0.0005)
-            + random.uniform(0.0, 1.0)
+            sp["reply_count"] * 1.4 + sp["like_count"] * 0.9
+            + sp["retweet_count"] * 1.2 + follower_count * 0.0005
+            + random.uniform(0, 1)
         )
 
     def _is_relevant_trend(self, trend_text: str) -> bool:
@@ -479,222 +360,10 @@ class EngagementManager:
             return True
         return False
 
-    @staticmethod
-    def _extract_reply_reference(tweet: Any) -> Optional[str]:
-        references = getattr(tweet, "referenced_tweets", None) or []
-        for reference in references:
-            ref_type = getattr(reference, "type", None)
-            ref_id = getattr(reference, "id", None)
-            if ref_type == "replied_to" and ref_id is not None:
-                return str(ref_id)
-            if isinstance(reference, dict):
-                if reference.get("type") == "replied_to" and reference.get("id") is not None:
-                    return str(reference["id"])
-        return None
-
-    def _adapt_official_tweet(
-        self,
-        tweet: Any,
-        users_by_id: Dict[str, Any],
-    ) -> Optional[Any]:
-        tweet_id = str(getattr(tweet, "id", "") or "").strip()
-        if not tweet_id:
-            return None
-
-        author_id = str(getattr(tweet, "author_id", "") or "").strip()
-        author = users_by_id.get(author_id)
-        username = (getattr(author, "username", "") or "").strip() if author else ""
-        if not username:
-            return None
-
-        user_metrics = getattr(author, "public_metrics", None) or {}
-        tweet_metrics = getattr(tweet, "public_metrics", None) or {}
-
-        return SimpleNamespace(
-            id=tweet_id,
-            text=(getattr(tweet, "text", "") or "").strip(),
-            created_at=getattr(tweet, "created_at", None),
-            in_reply_to_status_id=self._extract_reply_reference(tweet),
-            like_count=self._safe_int(tweet_metrics.get("like_count")),
-            retweet_count=self._safe_int(tweet_metrics.get("retweet_count")),
-            reply_count=self._safe_int(tweet_metrics.get("reply_count")),
-            quote_count=self._safe_int(tweet_metrics.get("quote_count")),
-            view_count=self._safe_int(tweet_metrics.get("impression_count")),
-            user=SimpleNamespace(
-                screen_name=username,
-                followers_count=self._safe_int(user_metrics.get("followers_count")),
-            ),
-        )
-
-    def _build_official_query(self, keyword_query: str) -> str:
-        base = keyword_query.strip()
-        if not base:
-            return "-is:retweet -is:reply lang:en"
-        return f"({base}) -is:retweet -is:reply lang:en"
-
-    def _search_tweets_official(self, keyword_query: str) -> List[Any]:
-        if not self.tweepy_client:
-            return []
-
-        response = self.tweepy_client.search_recent_tweets(
-            query=self._build_official_query(keyword_query),
-            max_results=max(10, min(self.search_count, 100)),
-            expansions=["author_id"],
-            tweet_fields=[
-                "author_id",
-                "created_at",
-                "public_metrics",
-                "referenced_tweets",
-            ],
-            user_fields=["username", "public_metrics"],
-        )
-
-        if not response or not response.data:
-            return []
-
-        users_by_id: Dict[str, Any] = {}
-        includes = getattr(response, "includes", None)
-        if isinstance(includes, dict):
-            for user in includes.get("users", []) or []:
-                user_id = str(getattr(user, "id", "") or "").strip()
-                if user_id:
-                    users_by_id[user_id] = user
-
-        adapted: List[Any] = []
-        for tweet in response.data:
-            normalized = self._adapt_official_tweet(tweet, users_by_id)
-            if normalized:
-                adapted.append(normalized)
-        return adapted
-
-    async def _get_trending_queries(self) -> List[str]:
-        if not self.use_live_trends:
-            return []
-        if not self.client:
-            logger.info("Live trend lookup skipped because Twikit is unavailable.")
-            return []
-
-        seen = set()
-        collected: List[str] = []
-
-        for category in self.trend_categories:
-            try:
-                trends = await self.client.get_trends(
-                    category=category,
-                    count=self.trend_count,
-                    retry=False,
-                )
-            except Exception as e:
-                logger.warning("Could not fetch %s trends: %s", category, e)
-                continue
-
-            for trend in trends:
-                name = str(getattr(trend, "name", "") or "").strip()
-                if not name:
-                    continue
-                key = name.lower()
-                if key in seen:
-                    continue
-                if not self._is_relevant_trend(name):
-                    continue
-                seen.add(key)
-                collected.append(name)
-                if len(collected) >= self.max_trend_queries:
-                    break
-
-            if len(collected) >= self.max_trend_queries:
-                break
-
-        if collected:
-            logger.info("Live trend queries: %s", ", ".join(collected))
-        else:
-            logger.info("No relevant live trends found for configured categories.")
-        return collected
-
-    async def _fetch_lane_candidates(self, lane: Dict[str, Any]) -> List[Dict[str, Any]]:
-        queries = list(lane["keywords"])
-
-        if lane["name"] == "broad_trending":
-            trend_queries = await self._get_trending_queries()
-            if trend_queries:
-                queries = trend_queries + queries
-
-        query = random.choice(queries)
-        logger.info(
-            "Lane=%s searching product=%s query='%s'",
-            lane["name"],
-            lane["product"],
-            query,
-        )
-
-        tweets: List[Any] = []
-        search_sources: List[str] = []
-        if self.prefer_official_search and self.tweepy_client:
-            search_sources.append("official")
-        if self.client:
-            search_sources.append("twikit")
-        if not self.prefer_official_search and self.tweepy_client:
-            search_sources.append("official")
-
-        if not search_sources:
-            logger.error("No search client available. Configure Tweepy or Twikit.")
-            return []
-
-        for source in search_sources:
-            try:
-                if source == "official":
-                    tweets = self._search_tweets_official(query)
-                else:
-                    tweets = await self.client.search_tweet(
-                        query,
-                        product=lane["product"],
-                        count=self.search_count,
-                    )
-                if tweets:
-                    logger.info(
-                        "Lane=%s source=%s fetched=%s tweets.",
-                        lane["name"],
-                        source,
-                        len(tweets),
-                    )
-                    break
-                logger.info("Lane=%s source=%s returned no tweets.", lane["name"], source)
-            except Exception as e:
-                if source == "official":
-                    if self._is_official_search_forbidden(e):
-                        logger.warning(
-                            "Official API search is forbidden. Confirm app read permissions "
-                            "and account access tier support recent search."
-                        )
-                    elif self._is_network_access_error(e):
-                        logger.warning(
-                            "Official API search could not reach X. Check local firewall, "
-                            "proxy, VPN, or outbound HTTPS access."
-                        )
-                logger.warning("Lane=%s source=%s search failed: %s", lane["name"], source, e)
-
-        if not tweets:
-            return []
-
-        candidates: List[Dict[str, Any]] = []
-        for tweet in tweets:
-            if not self._is_candidate(tweet):
-                continue
-            candidates.append(
-                {
-                    "tweet": tweet,
-                    "score": self._score_tweet(tweet, lane["name"]),
-                }
-            )
-
-        candidates.sort(key=lambda item: item["score"], reverse=True)
-        return candidates
-
     def _select_candidate(self, candidates: List[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
         if not candidates:
             return None
-
-        top = candidates[: self.top_candidate_pool]
+        top = candidates[:self.top_candidate_pool]
         weights = [max(0.1, item["score"]) for item in top]
         return random.choices(top, weights=weights, k=1)[0]
 
@@ -703,100 +372,123 @@ class EngagementManager:
         text = (text or "").strip()
         if len(text) <= max_length:
             return text
-        return text[: max_length - 3].rstrip() + "..."
+        return text[:max_length - 3].rstrip() + "..."
+
+    # ── Search ───────────────────────────────────────────────────
+
+    async def _get_trending_queries(self) -> List[str]:
+        if not self.use_live_trends or not self.client:
+            return []
+
+        seen = set()
+        collected: List[str] = []
+        for category in self.trend_categories:
+            try:
+                trends = await self.client.get_trends(category=category, count=self.trend_count, retry=False)
+            except Exception as e:
+                logger.warning("Could not fetch %s trends: %s", category, e)
+                continue
+            for trend in trends:
+                name = str(getattr(trend, "name", "") or "").strip()
+                if not name or name.lower() in seen or not self._is_relevant_trend(name):
+                    continue
+                seen.add(name.lower())
+                collected.append(name)
+                if len(collected) >= self.max_trend_queries:
+                    break
+            if len(collected) >= self.max_trend_queries:
+                break
+
+        if collected:
+            logger.info("Live trend queries: %s", ", ".join(collected))
+        return collected
+
+    async def _fetch_lane_candidates(self, lane: Dict[str, Any]) -> List[Dict[str, Any]]:
+        queries = list(lane["keywords"])
+        if lane["name"] == "broad_trending":
+            trend_queries = await self._get_trending_queries()
+            if trend_queries:
+                queries = trend_queries + queries
+
+        query = random.choice(queries)
+        logger.info("Lane=%s query='%s'", lane["name"], query)
+
+        tweets: List[Any] = []
+        if self.client:
+            try:
+                tweets = await self.client.search_tweet(query, product=lane["product"], count=self.search_count)
+                if tweets:
+                    logger.info("Lane=%s fetched=%s tweets via Twikit.", lane["name"], len(tweets))
+            except Exception as e:
+                logger.warning("Lane=%s Twikit search failed: %s", lane["name"], e)
+
+        if not tweets:
+            logger.info("Lane=%s no tweets found.", lane["name"])
+            return []
+
+        candidates = []
+        for tweet in tweets:
+            if self._is_candidate(tweet):
+                candidates.append({"tweet": tweet, "score": self._score_tweet(tweet, lane["name"])})
+        candidates.sort(key=lambda x: x["score"], reverse=True)
+        return candidates
+
+    # ── Reply & Like ─────────────────────────────────────────────
 
     async def _post_reply(self, tweet: Any, reply_text: str, handle: str) -> bool:
-        success = False
-
-        # 1. Try GraphQL client first (cookie-based, bypasses 503 API issues)
-        if self.graphql_client and not success:
+        # Try GraphQL client first
+        if self.graphql_client:
             try:
-                self.graphql_client.create_tweet(
-                    text=reply_text,
-                    reply_to_id=str(tweet.id),
-                )
-                logger.info("Replied to @%s via GraphQL client.", handle)
-                success = True
+                self.graphql_client.create_tweet(text=reply_text, reply_to_id=str(tweet.id))
+                logger.info("Replied to @%s via GraphQL.", handle)
+                return True
             except Exception as e:
                 logger.warning("GraphQL reply failed: %s", e)
 
-        # 2. Fallback to Tweepy (official API)
-        if self.tweepy_client and not success:
+        # Fallback to Twikit
+        if self.client:
             try:
-                self.tweepy_client.create_tweet(
-                    text=reply_text,
-                    in_reply_to_tweet_id=str(tweet.id),
-                )
-                logger.info("Replied to @%s via Official API.", handle)
-                success = True
+                await self.client.create_tweet(text=reply_text, reply_to=tweet.id)
+                logger.info("Replied to @%s via Twikit.", handle)
+                return True
             except Exception as e:
-                logger.warning("Official API reply failed: %s", e)
+                logger.warning("Twikit reply failed: %s", e)
 
-        # 3. Fallback to Twikit
-        if not success:
-            if not self.client:
-                logger.warning("No fallback client available. Reply was not posted.")
-                return False
-            await self.client.create_tweet(text=reply_text, reply_to=tweet.id)
-            logger.info("Replied to @%s via Twikit.", handle)
-            success = True
-
-        return success
+        logger.warning("No client available. Reply not posted.")
+        return False
 
     async def _like_tweet(self, tweet: Any, handle: str) -> bool:
         tweet_id = str(tweet.id)
 
-        # 1. Try GraphQL client first
         if self.graphql_client:
             try:
                 self.graphql_client.like_tweet(tweet_id)
-                logger.info("Liked tweet from @%s via GraphQL client.", handle)
+                logger.info("Liked tweet from @%s via GraphQL.", handle)
                 return True
             except Exception as e:
                 logger.warning("GraphQL like failed: %s", e)
 
-        # 2. Fallback to Tweepy
-        if self.tweepy_client:
+        if self.client:
             try:
-                self.tweepy_client.like(tweet_id=tweet_id)
-                logger.info("Liked tweet from @%s via Official API.", handle)
+                await self.client.favorite_tweet(tweet_id)
+                logger.info("Liked tweet from @%s via Twikit.", handle)
                 return True
             except Exception as e:
-                logger.warning("Official API like failed: %s", e)
+                logger.warning("Twikit like failed: %s", e)
 
-        # 3. Fallback to Twikit
-        try:
-            if not self.client:
-                logger.warning("No fallback client available. Like was not sent for tweet id=%s.", tweet_id)
-                return False
-            await self.client.favorite_tweet(tweet_id)
-            logger.info("Liked tweet from @%s via Twikit.", handle)
-            return True
-        except Exception as e:
-            logger.warning("Failed to like tweet id=%s: %s", tweet_id, e)
-            return False
+        logger.warning("Failed to like tweet id=%s — no client available.", tweet_id)
+        return False
+
+    # ── Main Loop ────────────────────────────────────────────────
 
     async def run(self):
         logger.info("Starting engagement run.")
-        logger.info(
-            "Freshness filter: enabled=%s max_age_minutes=%s",
-            self.require_fresh_tweets,
-            self.max_tweet_age_minutes,
-        )
-        logger.info(
-            "Candidate filters: excluded_handles=%s min_engagement_or_views=%s",
-            ",".join(f"@{handle}" for handle in sorted(self.excluded_handles)) or "none",
-            self.min_engagement_or_views,
-        )
-        logger.info("Dry run mode: %s", self.dry_run)
+        logger.info("Dry run: %s", self.dry_run)
         replies_count = 0
 
         try:
             lane_order = self._pick_lane_order()
-            logger.info(
-                "Lane order this run: %s",
-                ", ".join(lane["name"] for lane in lane_order),
-            )
+            logger.info("Lane order: %s", ", ".join(l["name"] for l in lane_order))
 
             for lane in lane_order:
                 if replies_count >= self.max_replies:
@@ -816,22 +508,15 @@ class EngagementManager:
                 user = getattr(tweet, "user", None)
                 handle = (getattr(user, "screen_name", "") or "").strip()
 
-                logger.info(
-                    "Selected lane=%s score=%.2f author=@%s text='%s'",
-                    lane["name"],
-                    selected["score"],
-                    handle,
-                    text[:80].replace("\n", " "),
-                )
+                logger.info("Selected lane=%s score=%.2f @%s: '%s'",
+                            lane["name"], selected["score"], handle, text[:80].replace("\n", " "))
 
                 delay = random.uniform(self.reply_delay_min, self.reply_delay_max)
                 logger.info("Sleeping %.1fs before reply.", delay)
                 await asyncio.sleep(delay)
 
                 reply_text = await self.llm.generate_reply(
-                    tweet_text=text,
-                    user_handle=handle,
-                    lane_name=lane["name"],
+                    tweet_text=text, user_handle=handle, lane_name=lane["name"],
                 )
                 reply_text = self._fit_reply_length(reply_text)
                 if not reply_text:
@@ -841,32 +526,21 @@ class EngagementManager:
                 logger.info("Generated reply: %s", reply_text)
 
                 if self.dry_run:
-                    logger.info(
-                        "Dry run enabled. Skipping reply/like for tweet id=%s from @%s.",
-                        tweet.id,
-                        handle,
-                    )
+                    logger.info("Dry run — skipping reply/like for tweet id=%s.", tweet.id)
                     break
 
                 try:
                     success = await self._post_reply(tweet, reply_text, handle)
                     if success:
-                        liked = await self._like_tweet(tweet, handle)
-                        if not liked:
-                            logger.warning(
-                                "Reply sent but like step failed for tweet id=%s.",
-                                tweet.id,
-                            )
+                        await self._like_tweet(tweet, handle)
                         self.replied_ids.add(str(tweet.id))
                         self._save_tracker()
                         replies_count += 1
-                        logger.info("One reply sent. Exiting run.")
+                        logger.info("Reply sent. Exiting run.")
                         break
                 except Exception as e:
-                    error_str = str(e)
-                    if "226" in error_str:
-                        logger.error("Blocked with error 226. Stopping engagement run.")
-                        logger.error("Try manual usage for a day, re-login, then retry.")
+                    if "226" in str(e):
+                        logger.error("Blocked with error 226. Stopping.")
                         return
                     logger.error("Failed to reply: %s", e)
 
@@ -874,4 +548,3 @@ class EngagementManager:
             logger.error("Engagement loop failed: %s", e)
 
         logger.info("Engagement finished. Replied to %s tweets.", replies_count)
-

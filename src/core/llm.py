@@ -14,7 +14,6 @@ logger = logging.getLogger(__name__)
 class LLMHelper:
     """Handles AI interactions using the xAI Grok Responses API — tuned for authenticity + creativity."""
 
-    # Expanded bans — catches most fabricated personal stories
     BANNED_PHRASE_SNIPPETS = (
         "totally agree", "100%", "couldn't agree more", "absolutely", "spot on",
         "insightful", "great point", "that's why journaling", "this is key",
@@ -24,18 +23,13 @@ class LLMHelper:
         "my account", "saved .*r", "blew .*eval", "finished next day",
     )
 
-    def __init__(self, settings):
-        self.settings = settings
+    def __init__(self):
         self.api_key = os.getenv("XAI_API_KEY")
         if not self.api_key:
             logger.error("XAI_API_KEY not found in environment variables.")
             raise ValueError("Missing XAI_API_KEY")
 
-        self.model_name = settings.get("twitter_automation", {}) \
-                                  .get("action_config", {}) \
-                                  .get("llm_settings_for_reply", {}) \
-                                  .get("model_name_override", "grok-4-1-fast-reasoning")
-
+        self.model_name = os.getenv("XAI_MODEL_NAME", "grok-4-1-fast-reasoning")
         self.api_base_url = os.getenv("XAI_API_BASE_URL", "https://api.x.ai/v1").rstrip("/")
         self.request_timeout_seconds = max(10, self._read_int_env("XAI_TIMEOUT_SECONDS", 180))
         self.disable_env_proxy = self._read_bool_env("XAI_DISABLE_ENV_PROXY", False)
@@ -94,7 +88,6 @@ Brand policy:
 - Never force it. Never use CTA language.
 """
 
-        # Load features.md (unchanged)
         try:
             project_root = Path(__file__).resolve().parent.parent.parent
             features_path = project_root / "features.md"
@@ -329,7 +322,6 @@ Brand policy:
         if any(phrase in lower for phrase in self.BANNED_PHRASE_SNIPPETS):
             return False
 
-        # Extra regex check for fabricated personal stories
         if re.search(r'(i|my|me) (blew|wiped|lost|chased|logged|saved|entered|finished|did).*?(account|eval|trade|setup|last week|once)', lower):
             return False
         if re.search(r'(blew|wiped|lost) .*?(account|eval|trade|setup)', lower):
@@ -353,22 +345,20 @@ Brand policy:
 
             score = (
                 option["hook_strength_1to5"] * 1.8 +
-                option["human_sounding_1to5"] * 3.2 +      # even stronger human bias
+                option["human_sounding_1to5"] * 3.2 +
                 option["specificity_1to5"] * 1.6 +
                 option["conversational_pull_1to5"] * 2.1
             )
 
-            # Creativity & naturalness bonuses
             if angle in ("contrarian", "sarcasm", "roast"):
                 score += 1.1
             if angle == "question":
-                score -= 0.3          # questions are now a penalty
+                score -= 0.3
             if 40 <= len(reply) <= 140:
                 score += 0.5
             if reply[0].islower() or "..." in reply or "–" in reply or "—" in reply:
                 score += 0.45
 
-            # Strong penalty for any fabricated-story language
             if re.search(r'(i|my|me) (blew|wiped|lost|chased|logged|saved|entered|finished|did).*?(account|eval|trade|setup|last week|once)', lower) or \
                re.search(r'(blew|wiped|lost) .*?(account|eval|trade|setup)', lower):
                 score -= 3.0
