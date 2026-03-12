@@ -6,12 +6,9 @@ import random
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
-from types import SimpleNamespace
 from typing import Any, Dict, List, Optional
 
-from twikit import Client
-from twitter_cli.client import TwitterClient as GraphQLClient
-
+from core.premium_client import PremiumTwitterClient
 from core.llm import LLMHelper
 
 logger = logging.getLogger(__name__)
@@ -20,13 +17,8 @@ logger = logging.getLogger(__name__)
 class EngagementManager:
     """Manages searching for tweets and replying using AI."""
 
-    def __init__(
-        self,
-        twikit_client: Optional[Client],
-        graphql_client: Optional[GraphQLClient] = None,
-    ):
-        self.client = twikit_client
-        self.graphql_client = graphql_client
+    def __init__(self, client: PremiumTwitterClient):
+        self.client = client
         self.llm = LLMHelper()
 
         project_root = Path(__file__).resolve().parent.parent.parent
@@ -142,22 +134,12 @@ class EngagementManager:
         return categories or ["trending", "news"]
 
     @staticmethod
-    def _parse_handle_set(raw: str) -> set[str]:
+    def _parse_handle_set(raw: str) -> set:
         return {h.strip().lower().lstrip("@") for h in raw.split(",") if h.strip()}
-
-    @staticmethod
-    def _is_network_access_error(error: Exception) -> bool:
-        text = str(error).lower()
-        tokens = [
-            "all connection attempts failed", "failed to establish a new connection",
-            "winerror 10013", "connection refused", "temporary failure in name resolution",
-            "name or service not known", "nodename nor servname provided",
-        ]
-        return any(token in text for token in tokens)
 
     # ── Tracker ──────────────────────────────────────────────────
 
-    def _load_tracker(self) -> set[str]:
+    def _load_tracker(self) -> set:
         if os.path.exists(self.tracker_file):
             try:
                 with open(self.tracker_file, "r", encoding="utf-8") as f:
@@ -178,55 +160,20 @@ class EngagementManager:
 
     # ── Tweet Analysis ───────────────────────────────────────────
 
-    @staticmethod
-    def _safe_int(value: Any) -> int:
-        if value is None:
-            return 0
-        if isinstance(value, bool):
-            return int(value)
-        if isinstance(value, (int, float)):
-            return int(value)
-
-        text = str(value).strip().replace(",", "")
-        if not text:
-            return 0
-
-        multiplier = 1
-        suffix = text[-1].upper()
-        if suffix in ("K", "M", "B"):
-            text = text[:-1]
-            multiplier = {"K": 1_000, "M": 1_000_000, "B": 1_000_000_000}[suffix]
-
-        try:
-            return int(float(text) * multiplier)
-        except ValueError:
-            return 0
-
-    @staticmethod
-    def _tweet_value(tweet: Any, field_names: List[str]) -> int:
-        for name in field_names:
-            value = getattr(tweet, name, None)
-            if value is not None:
-                return EngagementManager._safe_int(value)
-        return 0
-
-    def _tweet_social_proof(self, tweet: Any) -> Dict[str, int]:
-        like_count = self._tweet_value(tweet, ["favorite_count", "like_count"])
-        retweet_count = self._tweet_value(tweet, ["retweet_count"])
-        reply_count = self._tweet_value(tweet, ["reply_count"])
-        quote_count = self._tweet_value(tweet, ["quote_count"])
-        view_count = self._tweet_value(tweet, ["view_count"])
+    def _tweet_social_proof(self, tweet) -> Dict[str, int]:
+        """Extract engagement metrics from a twitter-cli Tweet object."""
+        m = tweet.metrics
         return {
-            "like_count": like_count,
-            "retweet_count": retweet_count,
-            "reply_count": reply_count,
-            "quote_count": quote_count,
-            "view_count": view_count,
-            "total_engagement": like_count + retweet_count + reply_count + quote_count,
+            "like_count": m.likes,
+            "retweet_count": m.retweets,
+            "reply_count": m.replies,
+            "quote_count": m.quotes,
+            "view_count": m.views,
+            "total_engagement": m.likes + m.retweets + m.replies + m.quotes,
         }
 
     @staticmethod
-    def _parse_datetime(value: Any) -> Optional[datetime]:
+    def _parse_datetime(value) -> Optional[datetime]:
         if value is None:
             return None
         if isinstance(value, datetime):
@@ -234,20 +181,10 @@ class EngagementManager:
             if dt.tzinfo is None:
                 dt = dt.replace(tzinfo=timezone.utc)
             return dt.astimezone(timezone.utc)
-        if isinstance(value, (int, float)):
-            timestamp = float(value)
-            if timestamp > 1_000_000_000_000:
-                timestamp /= 1000.0
-            try:
-                return datetime.fromtimestamp(timestamp, tz=timezone.utc)
-            except Exception:
-                return None
 
         raw = str(value).strip()
         if not raw:
             return None
-        if raw.isdigit():
-            return EngagementManager._parse_datetime(int(raw))
 
         normalized = raw.replace("Z", "+00:00")
         try:
@@ -265,32 +202,16 @@ class EngagementManager:
         except Exception:
             return None
 
-    def _tweet_created_at(self, tweet: Any) -> Optional[datetime]:
-        field_names = ["created_at_datetime", "created_at", "date", "timestamp", "time"]
-        for name in field_names:
-            dt = self._parse_datetime(getattr(tweet, name, None))
-            if dt is not None:
-                return dt
-        for attr in ("_data", "data"):
-            raw = getattr(tweet, attr, None)
-            if isinstance(raw, dict):
-                for name in field_names:
-                    dt = self._parse_datetime(raw.get(name))
-                    if dt is not None:
-                        return dt
-        return None
-
-    def _is_fresh_tweet(self, tweet: Any) -> bool:
+    def _is_fresh_tweet(self, tweet) -> bool:
         if not self.require_fresh_tweets:
             return True
-        tweet_id = str(getattr(tweet, "id", "")).strip() or "unknown"
-        created_at = self._tweet_created_at(tweet)
+        created_at = self._parse_datetime(tweet.created_at)
         if created_at is None:
-            logger.debug("Skipping tweet id=%s — no created_at available.", tweet_id)
+            logger.debug("Skipping tweet id=%s — no created_at available.", tweet.id)
             return False
         age_minutes = max(0, (datetime.now(timezone.utc) - created_at).total_seconds() / 60.0)
         if age_minutes > self.max_tweet_age_minutes:
-            logger.debug("Skipping stale tweet id=%s age=%.1fm (max=%s).", tweet_id, age_minutes, self.max_tweet_age_minutes)
+            logger.debug("Skipping stale tweet id=%s age=%.1fm (max=%s).", tweet.id, age_minutes, self.max_tweet_age_minutes)
             return False
         return True
 
@@ -305,22 +226,21 @@ class EngagementManager:
         random.shuffle(remaining)
         return [first_lane] + remaining
 
-    def _is_candidate(self, tweet: Any) -> bool:
-        tweet_id = str(getattr(tweet, "id", "")).strip()
+    def _is_candidate(self, tweet) -> bool:
+        tweet_id = str(tweet.id).strip()
         if not tweet_id or tweet_id in self.replied_ids:
             return False
 
-        user = getattr(tweet, "user", None)
-        handle = (getattr(user, "screen_name", "") or "").strip()
+        handle = tweet.author.screen_name
         if not handle or handle.lower() == self.my_username.lower():
             return False
         if handle.lower() in self.excluded_handles:
             return False
 
-        text = (getattr(tweet, "text", "") or "").strip()
+        text = (tweet.text or "").strip()
         if len(text) < self.min_text_length or text.startswith("RT @"):
             return False
-        if getattr(tweet, "in_reply_to_status_id", None) is not None:
+        if tweet.is_retweet:
             return False
         if not self._is_fresh_tweet(tweet):
             return False
@@ -332,21 +252,19 @@ class EngagementManager:
             return False
         return True
 
-    def _score_tweet(self, tweet: Any, lane_name: str) -> float:
+    def _score_tweet(self, tweet, lane_name: str) -> float:
         sp = self._tweet_social_proof(tweet)
-        user = getattr(tweet, "user", None)
-        follower_count = self._safe_int(getattr(user, "followers_count", 0)) if user else 0
-        text_len = len((getattr(tweet, "text", "") or "").strip())
+        text_len = len((tweet.text or "").strip())
 
         if lane_name == "broad_trending":
             return (
                 sp["like_count"] + sp["retweet_count"] * 2.3 + sp["reply_count"] * 2.0
                 + sp["quote_count"] * 2.0 + sp["view_count"] * 0.02
-                + follower_count * 0.001 + text_len * 0.05 + random.uniform(0, 2)
+                + text_len * 0.05 + random.uniform(0, 2)
             )
         return (
             sp["reply_count"] * 1.4 + sp["like_count"] * 0.9
-            + sp["retweet_count"] * 1.2 + follower_count * 0.0005
+            + sp["retweet_count"] * 1.2
             + random.uniform(0, 1)
         )
 
@@ -374,17 +292,17 @@ class EngagementManager:
             return text
         return text[:max_length - 3].rstrip() + "..."
 
-    # ── Search ───────────────────────────────────────────────────
+    # ── Search & Trends ──────────────────────────────────────────
 
-    async def _get_trending_queries(self) -> List[str]:
-        if not self.use_live_trends or not self.client:
+    def _get_trending_queries(self) -> List[str]:
+        if not self.use_live_trends:
             return []
 
         seen = set()
         collected: List[str] = []
         for category in self.trend_categories:
             try:
-                trends = await self.client.get_trends(category=category, count=self.trend_count, retry=False)
+                trends = self.client.get_trends(category=category, count=self.trend_count)
             except Exception as e:
                 logger.warning("Could not fetch %s trends: %s", category, e)
                 continue
@@ -403,24 +321,23 @@ class EngagementManager:
             logger.info("Live trend queries: %s", ", ".join(collected))
         return collected
 
-    async def _fetch_lane_candidates(self, lane: Dict[str, Any]) -> List[Dict[str, Any]]:
+    def _fetch_lane_candidates(self, lane: Dict[str, Any]) -> List[Dict[str, Any]]:
         queries = list(lane["keywords"])
         if lane["name"] == "broad_trending":
-            trend_queries = await self._get_trending_queries()
+            trend_queries = self._get_trending_queries()
             if trend_queries:
                 queries = trend_queries + queries
 
         query = random.choice(queries)
         logger.info("Lane=%s query='%s'", lane["name"], query)
 
-        tweets: List[Any] = []
-        if self.client:
-            try:
-                tweets = await self.client.search_tweet(query, product=lane["product"], count=self.search_count)
-                if tweets:
-                    logger.info("Lane=%s fetched=%s tweets via Twikit.", lane["name"], len(tweets))
-            except Exception as e:
-                logger.warning("Lane=%s Twikit search failed: %s", lane["name"], e)
+        tweets = []
+        try:
+            tweets = self.client.fetch_search(query, count=self.search_count, product=lane["product"])
+            if tweets:
+                logger.info("Lane=%s fetched=%s tweets.", lane["name"], len(tweets))
+        except Exception as e:
+            logger.warning("Lane=%s search failed: %s", lane["name"], e)
 
         if not tweets:
             logger.info("Lane=%s no tweets found.", lane["name"])
@@ -435,49 +352,23 @@ class EngagementManager:
 
     # ── Reply & Like ─────────────────────────────────────────────
 
-    async def _post_reply(self, tweet: Any, reply_text: str, handle: str) -> bool:
-        # Try GraphQL client first
-        if self.graphql_client:
-            try:
-                self.graphql_client.create_tweet(text=reply_text, reply_to_id=str(tweet.id))
-                logger.info("Replied to @%s via GraphQL.", handle)
-                return True
-            except Exception as e:
-                logger.warning("GraphQL reply failed: %s", e)
+    def _post_reply(self, tweet_id: str, reply_text: str, handle: str) -> bool:
+        try:
+            self.client.create_tweet(text=reply_text, reply_to_id=tweet_id)
+            logger.info("Replied to @%s.", handle)
+            return True
+        except Exception as e:
+            logger.warning("Reply failed: %s", e)
+            return False
 
-        # Fallback to Twikit
-        if self.client:
-            try:
-                await self.client.create_tweet(text=reply_text, reply_to=tweet.id)
-                logger.info("Replied to @%s via Twikit.", handle)
-                return True
-            except Exception as e:
-                logger.warning("Twikit reply failed: %s", e)
-
-        logger.warning("No client available. Reply not posted.")
-        return False
-
-    async def _like_tweet(self, tweet: Any, handle: str) -> bool:
-        tweet_id = str(tweet.id)
-
-        if self.graphql_client:
-            try:
-                self.graphql_client.like_tweet(tweet_id)
-                logger.info("Liked tweet from @%s via GraphQL.", handle)
-                return True
-            except Exception as e:
-                logger.warning("GraphQL like failed: %s", e)
-
-        if self.client:
-            try:
-                await self.client.favorite_tweet(tweet_id)
-                logger.info("Liked tweet from @%s via Twikit.", handle)
-                return True
-            except Exception as e:
-                logger.warning("Twikit like failed: %s", e)
-
-        logger.warning("Failed to like tweet id=%s — no client available.", tweet_id)
-        return False
+    def _like_tweet(self, tweet_id: str, handle: str) -> bool:
+        try:
+            self.client.like_tweet(tweet_id)
+            logger.info("Liked tweet from @%s.", handle)
+            return True
+        except Exception as e:
+            logger.warning("Like failed: %s", e)
+            return False
 
     # ── Main Loop ────────────────────────────────────────────────
 
@@ -494,7 +385,7 @@ class EngagementManager:
                 if replies_count >= self.max_replies:
                     break
 
-                candidates = await self._fetch_lane_candidates(lane)
+                candidates = self._fetch_lane_candidates(lane)
                 if not candidates:
                     logger.info("Lane=%s had no valid candidates.", lane["name"])
                     continue
@@ -504,9 +395,8 @@ class EngagementManager:
                     continue
 
                 tweet = selected["tweet"]
-                text = (getattr(tweet, "text", "") or "").strip()
-                user = getattr(tweet, "user", None)
-                handle = (getattr(user, "screen_name", "") or "").strip()
+                text = (tweet.text or "").strip()
+                handle = tweet.author.screen_name
 
                 logger.info("Selected lane=%s score=%.2f @%s: '%s'",
                             lane["name"], selected["score"], handle, text[:80].replace("\n", " "))
@@ -530,9 +420,9 @@ class EngagementManager:
                     break
 
                 try:
-                    success = await self._post_reply(tweet, reply_text, handle)
+                    success = self._post_reply(str(tweet.id), reply_text, handle)
                     if success:
-                        await self._like_tweet(tweet, handle)
+                        self._like_tweet(str(tweet.id), handle)
                         self.replied_ids.add(str(tweet.id))
                         self._save_tracker()
                         replies_count += 1

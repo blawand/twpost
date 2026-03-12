@@ -1,7 +1,7 @@
-from .twikit_client import TwikitClientManager
+from .premium_client import PremiumTwitterClient
 from .llm import LLMHelper
 
 __all__ = [
-    "TwikitClientManager",
+    "PremiumTwitterClient",
     "LLMHelper",
 ]

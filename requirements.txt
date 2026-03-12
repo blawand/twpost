@@ -1,6 +1,5 @@
-# Core Bot Engine
-twikit
-python-dotenv
-requests
+# Core
 twitter-cli
 curl_cffi
+python-dotenv
+requests

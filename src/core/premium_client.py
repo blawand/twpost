@@ -4,13 +4,18 @@ import json
 import logging
 import mimetypes
 import os
+from types import SimpleNamespace
 
 from twitter_cli.client import TwitterClient, _get_cffi_session
 from twitter_cli.exceptions import TwitterAPIError
-from twitter_cli.graphql import FEATURES
+from twitter_cli.graphql import FALLBACK_QUERY_IDS, FEATURES
 from twitter_cli.parser import _deep_get
 
 logger = logging.getLogger(__name__)
+
+# Register CreateNoteTweet query ID so twitter-cli's _graphql_post can resolve it.
+# If this goes stale, _graphql_post will auto-refresh from live JS bundles.
+FALLBACK_QUERY_IDS.setdefault("CreateNoteTweet", "iCUB42lIfXf9qPKctjE5rQ")
 
 # Feature flags required for CreateNoteTweet (long-form tweets)
 NOTE_TWEET_FEATURES = {
@@ -42,7 +47,46 @@ NOTE_TWEET_FEATURES = {
 
 
 class PremiumTwitterClient(TwitterClient):
-    """Extends TwitterClient with long tweet (notetweet) and media upload support."""
+    """Extends TwitterClient with long tweets, media upload, and trends."""
+
+    # ── Initialization ──────────────────────────────────────────
+
+    @classmethod
+    def from_env(cls):
+        """Create a PremiumTwitterClient from environment variables."""
+        auth_token = os.getenv("TWITTER_AUTH_TOKEN", "").strip()
+        ct0 = os.getenv("TWITTER_CT0", "").strip()
+        cookie_string = None
+
+        cookies_json = os.getenv("TWITTER_COOKIES", "").strip().strip("'\"")
+        if cookies_json:
+            try:
+                cookies = json.loads(cookies_json)
+                if not auth_token:
+                    auth_token = cookies.get("auth_token", "")
+                if not ct0:
+                    ct0 = cookies.get("ct0", "")
+                cookie_string = "; ".join(
+                    f"{k}={v}" for k, v in cookies.items()
+                )
+            except json.JSONDecodeError as e:
+                logger.warning("Failed to parse TWITTER_COOKIES JSON: %s", e)
+
+        if not auth_token or not ct0:
+            raise ValueError(
+                "Missing auth_token or ct0! Set TWITTER_AUTH_TOKEN + TWITTER_CT0 "
+                "in .env, or provide them inside the TWITTER_COOKIES JSON."
+            )
+
+        client = cls(
+            auth_token=auth_token,
+            ct0=ct0,
+            cookie_string=cookie_string,
+        )
+        logger.info("PremiumTwitterClient initialized.")
+        return client
+
+    # ── Media Upload ────────────────────────────────────────────
 
     def upload_media(self, file_path):
         """Upload a media file (image) to Twitter. Returns the media_id string.
@@ -113,6 +157,8 @@ class PremiumTwitterClient(TwitterClient):
         self._write_delay()
         return media_id
 
+    # ── Tweet Creation (with long tweet + media support) ────────
+
     def create_tweet(self, text, reply_to_id=None, media_ids=None):
         """Post a new tweet. Returns the new tweet ID.
 
@@ -157,3 +203,53 @@ class PremiumTwitterClient(TwitterClient):
             if result:
                 return result.get("rest_id", "")
             raise TwitterAPIError(0, "Failed to create tweet")
+
+    # ── Trends ──────────────────────────────────────────────────
+
+    def get_trends(self, category="trending", count=20):
+        """Fetch trending topics from Twitter's guide API.
+
+        Returns a list of SimpleNamespace objects with a 'name' attribute.
+
+        Parameters
+        ----------
+        category : str
+            One of 'trending', 'news', 'sports', 'entertainment'.
+        count : int
+            Number of trends to fetch.
+        """
+        tab_id = category.lower()
+        if tab_id in ("news", "sports", "entertainment"):
+            tab_id += "_unified"
+
+        url = "https://x.com/i/api/2/guide.json"
+        params = {
+            "count": str(count),
+            "include_page_configuration": "true",
+            "initial_tab_id": tab_id,
+        }
+        query_string = "&".join(f"{k}={v}" for k, v in params.items())
+        full_url = f"{url}?{query_string}"
+
+        data = self._api_get(full_url)
+
+        trends = []
+        try:
+            # Navigate the guide response to find trend entries
+            timeline = _deep_get(data, "timeline", "instructions") or []
+            for instruction in timeline:
+                entries = instruction.get("addEntries", {}).get("entries", [])
+                for entry in entries:
+                    entry_id = entry.get("entryId", "")
+                    prefix = "trends" if category == "trending" else "Guide"
+                    if not entry_id.startswith(prefix):
+                        continue
+                    items = _deep_get(entry, "content", "timelineModule", "items") or []
+                    for item in items:
+                        trend_info = _deep_get(item, "item", "content", "trend")
+                        if trend_info and "name" in trend_info:
+                            trends.append(SimpleNamespace(name=trend_info["name"]))
+        except Exception as e:
+            logger.warning("Failed to parse trends: %s", e)
+
+        return trends

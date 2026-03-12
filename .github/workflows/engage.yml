@@ -2,7 +2,6 @@ name: Twitter Engagement
 
 on:
   schedule:
-    # Run every 20 minutes
     - cron: '*/20 * * * *'
   workflow_dispatch:
 
@@ -26,32 +25,16 @@ jobs:
 
       - name: Run Engagement Loop
         env:
-          # Twikit credentials/session for search and fallback posting
-          TWITTER_USERNAME: ${{ secrets.TWITTER_USERNAME }}
-          TWITTER_PASSWORD: ${{ secrets.TWITTER_PASSWORD }}
-          TWITTER_EMAIL: ${{ secrets.TWITTER_EMAIL }}
           TWITTER_COOKIES: ${{ secrets.TWITTER_COOKIES }}
-
           XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
           ENGAGEMENT_REPLY_OPTION_COUNT: "1"
-          ENGAGEMENT_DISABLE_TWIKIT: "false"
-          ENGAGEMENT_PREFER_OFFICIAL_SEARCH: "false"
-          ENGAGEMENT_USE_TRENDS: "false"
-
-          # Official X API credentials (replies, likes, fallback search)
-          X_API_KEY: ${{ secrets.X_API_KEY }}
-          X_API_SECRET: ${{ secrets.X_API_SECRET }}
-          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
-          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
-          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
-
+          ENGAGEMENT_USE_TRENDS: "true"
         run: python src/main.py engage
 
       - name: Commit updated engagement tracker
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          # Check if file exists before trying to commit
           if [ -f data/engagement_tracker.json ]; then
             git add data/engagement_tracker.json
             git diff --staged --quiet || git commit -m "Update engagement tracker [skip ci]"
