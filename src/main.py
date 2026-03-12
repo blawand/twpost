@@ -48,7 +48,10 @@ def run():
             return
         tweet_text = sys.argv[2]
         image_path = sys.argv[3] if len(sys.argv) > 3 else None
-        publisher.post_single(tweet_text, image_path)
+        if image_path is None:
+            publisher.post_single(tweet_text)
+        else:
+            publisher.post_single(tweet_text, image_path)
 
     elif command == "publisher":
         publisher = TwitterPublisher(client)

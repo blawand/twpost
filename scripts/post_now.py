@@ -28,7 +28,10 @@ def main():
         else:
             tweet_text = sys.argv[1]
             image_path = sys.argv[2] if len(sys.argv) > 2 else None
-            publisher.post_single(tweet_text, image_path)
+            if image_path is None:
+                publisher.post_single(tweet_text)
+            else:
+                publisher.post_single(tweet_text, image_path)
 
     except Exception as e:
         logger.error("Failed to post: %s", e)

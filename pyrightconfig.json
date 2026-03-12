@@ -1,0 +1,10 @@
+{
+  "include": ["src", "scripts"],
+  "pythonVersion": "3.11",
+  "executionEnvironments": [
+    {
+      "root": ".",
+      "extraPaths": ["src"]
+    }
+  ]
+}

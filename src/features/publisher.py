@@ -6,6 +6,7 @@ import random
 import time
 from pathlib import Path
 from datetime import datetime, timezone
+from typing import Any, Dict, List, Optional
 
 from core.premium_client import PremiumTwitterClient
 
@@ -56,7 +57,7 @@ class TwitterPublisher:
 
     def _upload_media_with_retry(self, image_path: str) -> str:
         """Upload media with retry logic. Returns media_id string."""
-        last_error = None
+        last_error: Optional[Exception] = None
 
         for attempt in range(1, self.post_max_attempts + 1):
             try:
@@ -76,12 +77,14 @@ class TwitterPublisher:
                 )
                 time.sleep(delay)
 
-        if last_error:
+        if last_error is not None:
             raise last_error
 
-    def _create_tweet_with_retry(self, text: str, media_ids: list = None):
+        raise RuntimeError("Media upload retry loop exited without returning a media ID.")
+
+    def _create_tweet_with_retry(self, text: str, media_ids: Optional[List[str]] = None) -> str:
         """Post a tweet with retry logic. Supports media_ids and long tweets (auto)."""
-        last_error = None
+        last_error: Optional[Exception] = None
 
         for attempt in range(1, self.post_max_attempts + 1):
             try:
@@ -99,31 +102,33 @@ class TwitterPublisher:
                 )
                 time.sleep(delay)
 
-        if last_error:
+        if last_error is not None:
             raise last_error
 
-    def load_posts(self):
+        raise RuntimeError("Tweet retry loop exited without returning a tweet ID.")
+
+    def load_posts(self) -> Optional[Dict[str, Any]]:
         if not self.posts_file.exists():
             logger.error("Posts file not found: %s", self.posts_file)
             return None
         with open(self.posts_file, "r", encoding="utf-8") as f:
             return json.load(f)
 
-    def load_tracker(self):
+    def load_tracker(self) -> Dict[str, Any]:
         if self.tracker_file.exists():
             with open(self.tracker_file, "r", encoding="utf-8") as f:
                 return json.load(f)
         return {"posted_ids": [], "last_posted_at": None, "total_posted": 0}
 
-    def save_tracker(self, tracker):
+    def save_tracker(self, tracker: Dict[str, Any]) -> None:
         with open(self.tracker_file, "w", encoding="utf-8") as f:
             json.dump(tracker, f, indent=2)
 
-    def save_posts(self, data):
+    def save_posts(self, data: Dict[str, Any]) -> None:
         with open(self.posts_file, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
 
-    def run(self):
+    def run(self) -> None:
         """Post the next unposted tweet from posts.json."""
         logger.info("Starting Publisher Workflow...")
         
@@ -146,7 +151,7 @@ class TwitterPublisher:
 
         logger.info("Preparing post #%s (%s)", post["id"], post["type"])
 
-        media_ids = None
+        media_ids: Optional[List[str]] = None
         if post.get("image"):
             image_path = post["image"]
             if os.path.isfile(image_path):
@@ -180,11 +185,11 @@ class TwitterPublisher:
             logger.error("Failed to post tweet after retries: %s", e)
             raise
 
-    def post_single(self, text: str, image_path: str = None):
+    def post_single(self, text: str, image_path: Optional[str] = None) -> str:
         """Post a single tweet directly. Supports long tweets and image uploads."""
         logger.info("Preparing to post: %s...", text[:50])
 
-        media_ids = None
+        media_ids: Optional[List[str]] = None
         if image_path:
             if os.path.isfile(image_path):
                 logger.info("Uploading image: %s", image_path)
