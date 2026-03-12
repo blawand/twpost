@@ -1814,9 +1814,9 @@
       "type": "feature",
       "content": "Risk rules that keep you honest:\n\n→ Daily loss limit: $500\n→ Weekly loss limit: $1,500\n→ Max position size: 100 shares\n→ Max trades per day: 5\n→ Trading hours: 9:30am - 11:00am\n\nSet them once.\nSee exactly when you break them.\n\nBecause discipline is easier when the data is staring back at you.\n\nAnd it will stare. Uncomfortably.",
       "image": "images/risk-management.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-12T19:08:27.604432+00:00",
+      "tweet_id": "2032171865314378170"
     },
     {
       "id": 197,

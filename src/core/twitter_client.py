@@ -3,9 +3,14 @@ import json
 import logging
 import os
 
-from twitter_cli.client import TwitterClient
+from twitter_cli.graphql import FALLBACK_QUERY_IDS
+from core.premium_client import PremiumTwitterClient
 
 logger = logging.getLogger(__name__)
+
+# Register CreateNoteTweet query ID so twitter-cli's _graphql_post can resolve it.
+# If this goes stale, _graphql_post will auto-refresh from live JS bundles.
+FALLBACK_QUERY_IDS.setdefault("CreateNoteTweet", "iCUB42lIfXf9qPKctjE5rQ")
 
 
 class GraphQLClientManager:
@@ -14,7 +19,7 @@ class GraphQLClientManager:
     def __init__(self):
         self.client = None
 
-    def initialize_client(self) -> TwitterClient:
+    def initialize_client(self) -> PremiumTwitterClient:
         """Initialize the GraphQL client from environment cookies."""
         
         # Parse auth_token and ct0 from TWITTER_COOKIES JSON or standalone env vars
@@ -44,7 +49,7 @@ class GraphQLClientManager:
                 "in .env, or provide them inside the TWITTER_COOKIES JSON."
             )
 
-        self.client = TwitterClient(
+        self.client = PremiumTwitterClient(
             auth_token=auth_token,
             ct0=ct0,
             cookie_string=cookie_string,
@@ -52,7 +57,7 @@ class GraphQLClientManager:
         logger.info("GraphQL client initialized with cookie-based auth.")
         return self.client
 
-    def get_client(self) -> TwitterClient:
+    def get_client(self) -> PremiumTwitterClient:
         if not self.client:
             raise RuntimeError("Client not initialized! Call initialize_client() first.")
         return self.client

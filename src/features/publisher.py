@@ -7,14 +7,14 @@ import time
 from pathlib import Path
 from datetime import datetime, timezone
 
-from twitter_cli.client import TwitterClient
+from core.premium_client import PremiumTwitterClient
 
 logger = logging.getLogger(__name__)
 
 class TwitterPublisher:
     """Manages publishing tweets using twitter-cli GraphQL client."""
     
-    def __init__(self, client: TwitterClient):
+    def __init__(self, client: PremiumTwitterClient):
         self.client = client
         self.posts_file = Path("data/posts.json")
         self.tracker_file = Path("data/posted_tracker.json")
@@ -54,13 +54,38 @@ class TwitterPublisher:
         ]
         return any(token in text for token in retry_tokens)
 
-    def _create_tweet_with_retry(self, text: str):
-        """Post a tweet with retry logic."""
+    def _upload_media_with_retry(self, image_path: str) -> str:
+        """Upload media with retry logic. Returns media_id string."""
         last_error = None
 
         for attempt in range(1, self.post_max_attempts + 1):
             try:
-                return self.client.create_tweet(text=text)
+                media_id = self.client.upload_media(image_path)
+                logger.info("Media uploaded successfully: media_id=%s", media_id)
+                return media_id
+            except Exception as e:
+                last_error = e
+                if not self._is_retryable_post_error(e) or attempt >= self.post_max_attempts:
+                    raise
+
+                delay = min(self.retry_max_seconds, self.retry_base_seconds * (2 ** (attempt - 1)))
+                delay *= random.uniform(0.85, 1.25)
+                logger.warning(
+                    "Media upload attempt %s/%s failed: %s. Retrying in %.1fs.",
+                    attempt, self.post_max_attempts, e, delay,
+                )
+                time.sleep(delay)
+
+        if last_error:
+            raise last_error
+
+    def _create_tweet_with_retry(self, text: str, media_ids: list = None):
+        """Post a tweet with retry logic. Supports media_ids and long tweets (auto)."""
+        last_error = None
+
+        for attempt in range(1, self.post_max_attempts + 1):
+            try:
+                return self.client.create_tweet(text=text, media_ids=media_ids)
             except Exception as e:
                 last_error = e
                 if not self._is_retryable_post_error(e) or attempt >= self.post_max_attempts:
@@ -120,12 +145,22 @@ class TwitterPublisher:
             return
 
         logger.info("Preparing post #%s (%s)", post["id"], post["type"])
-        
+
+        media_ids = None
         if post.get("image"):
-            logger.warning("Image '%s' skipped — media uploads not yet supported.", post["image"])
+            image_path = post["image"]
+            if os.path.isfile(image_path):
+                logger.info("Uploading image: %s", image_path)
+                try:
+                    media_id = self._upload_media_with_retry(image_path)
+                    media_ids = [media_id]
+                except Exception as e:
+                    logger.error("Failed to upload image '%s': %s. Posting without image.", image_path, e)
+            else:
+                logger.warning("Image file not found: %s. Posting without image.", image_path)
 
         try:
-            tweet_id = self._create_tweet_with_retry(text=post["content"])
+            tweet_id = self._create_tweet_with_retry(text=post["content"], media_ids=media_ids)
             logger.info("Posted tweet #%s (Tweet ID: %s)", post["id"], tweet_id)
             
             tracker["posted_ids"].append(post["id"])
@@ -146,14 +181,21 @@ class TwitterPublisher:
             raise
 
     def post_single(self, text: str, image_path: str = None):
-        """Post a single tweet directly."""
+        """Post a single tweet directly. Supports long tweets and image uploads."""
         logger.info("Preparing to post: %s...", text[:50])
-        
+
+        media_ids = None
         if image_path:
-            logger.warning("Image '%s' skipped — media uploads not yet supported.", image_path)
+            if os.path.isfile(image_path):
+                logger.info("Uploading image: %s", image_path)
+                media_id = self._upload_media_with_retry(image_path)
+                media_ids = [media_id]
+            else:
+                logger.error("Image file not found: %s", image_path)
+                raise FileNotFoundError("Image file not found: %s" % image_path)
 
         try:
-            tweet_id = self._create_tweet_with_retry(text=text)
+            tweet_id = self._create_tweet_with_retry(text=text, media_ids=media_ids)
             logger.info("Successfully posted tweet: %s", tweet_id)
             return tweet_id
         except Exception as e:
