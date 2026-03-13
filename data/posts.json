@@ -1841,9 +1841,9 @@
       "type": "lifestyle",
       "content": "Sunday scaries for traders:\n\n\"Did I learn anything last week or am I about to repeat every mistake?\"",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-13T13:40:16.130819+00:00",
+      "tweet_id": "2032451669762400733"
     },
     {
       "id": 200,
