@@ -1850,9 +1850,9 @@
       "type": "feature",
       "content": "Real market data on every trade.\n\nActual candles from when you traded.\nEntry markers at your exact fill price.\nExit markers where you closed.\nHigh/low of the position highlighted.\n\nNo guessing. No memory. No \"I think I entered around here.\"\n\nJust the chart showing exactly what happened.\n\nReview with data, not feelings.",
       "image": "images/trade_details.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-13T16:35:29.949052+00:00",
+      "tweet_id": "2032495759296262550"
     },
     {
       "id": 201,
