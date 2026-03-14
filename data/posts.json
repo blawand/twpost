@@ -1904,9 +1904,9 @@
       "type": "engagement",
       "content": "Stocks, options, futures, forex, or crypto?\n\nWhat's your main market and why?",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-14T19:49:34.456227+00:00",
+      "tweet_id": "2032906991371432445"
     },
     {
       "id": 207,
