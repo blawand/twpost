@@ -1913,9 +1913,9 @@
       "type": "lifestyle",
       "content": "A walk between trades has saved me thousands.\n\nFresh air. Fresh perspective. The chart looks completely different when you're not spiraling.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-14T23:26:54.919205+00:00",
+      "tweet_id": "2032961686655963375"
     },
     {
       "id": 208,
