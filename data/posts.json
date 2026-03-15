@@ -1958,9 +1958,9 @@
       "type": "feature",
       "content": "Failed a prop firm phase? Reset the account?\n\nTrack it all:\n→ Date of reset\n→ Reason for failure\n→ P&L at time of fail\n→ Rules violated\n→ Emotional state that week\n\nLearn from every attempt.\n\nThe traders who eventually get funded aren't the ones who never fail.\nThey're the ones who stop repeating the same failure.",
       "image": "images/analytics_monthly.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-15T23:27:52.471525+00:00",
+      "tweet_id": "2033324320102273082"
     },
     {
       "id": 213,
