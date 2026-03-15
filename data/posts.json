@@ -1922,9 +1922,9 @@
       "type": "feature",
       "content": "Smart autofill that remembers your last trade on each symbol.\n\nTraded AAPL calls last week? Next time you type AAPL:\n→ Strike: prefilled\n→ Contracts: prefilled\n→ Side: prefilled\n→ Expired dates: auto-skipped\n\nBecause spending 2 minutes filling out forms after every trade is why most people quit journaling.\n\nMake it fast or it won't get done.",
       "image": "images/notes_link.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-15T04:54:40.306945+00:00",
+      "tweet_id": "2033044175583621484"
     },
     {
       "id": 209,
