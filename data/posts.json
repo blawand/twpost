@@ -1976,9 +1976,9 @@
       "type": "engagement",
       "content": "How long before trading \"clicked\" for you?\n\nMonths? Years? Still waiting?\n\nBe honest — nobody gets this right quickly.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-16T13:59:25.435528+00:00",
+      "tweet_id": "2033543647396806760"
     },
     {
       "id": 215,
