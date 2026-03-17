@@ -2030,9 +2030,9 @@
       "type": "feature",
       "content": "80/20 split? 90/10? Different split per account?\n\nProfit split tracking for funded accounts so you always know what's actually yours.\n\nBecause \"I think I made money this month\" isn't a business plan.",
       "image": "images/report_main.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-17T17:00:12.829136+00:00",
+      "tweet_id": "2033951535801995629"
     },
     {
       "id": 221,
