@@ -2066,9 +2066,9 @@
       "type": "feature",
       "content": "Win rate is a vanity metric.\n\nYour real edge lives in risk-adjusted returns.\n\nA 40% win rate with 3:1 reward-to-risk crushes a 70% win rate with 0.5:1.\n\nThe metrics that actually matter:\n→ Expectancy per trade\n→ Profit factor\n→ Sharpe ratio\n→ Average R-multiple\n→ Max drawdown duration\n\nAll calculated automatically.\n\nKnow your real edge, not your ego's version of it.",
       "image": "images/analytics_performance.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-18T20:00:42.797761+00:00",
+      "tweet_id": "2034359349422821673"
     },
     {
       "id": 225,
