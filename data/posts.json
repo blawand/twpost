@@ -2166,9 +2166,9 @@
       "type": "humor",
       "content": "Portfolio up 2%: \"Let me calculate my annual returns.\"\n\nPortfolio down 2%: \"It's just one day. Long-term vision.\"",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-20T23:27:46.925122+00:00",
+      "tweet_id": "2035136237351444676"
     },
     {
       "id": 236,
