@@ -2193,9 +2193,9 @@
       "type": "engagement",
       "content": "One asset class. Forever. You can only pick one.\n\nWhat are you choosing and why?",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-21T16:23:54.699212+00:00",
+      "tweet_id": "2035391950564864297"
     },
     {
       "id": 239,
