@@ -2211,9 +2211,9 @@
       "type": "feature",
       "content": "Your dashboard should give you everything at a glance.\n\nTop row: Today's P&L. Win rate. Open positions.\nMiddle: Equity curve. Calendar heatmap.\nBottom: Recent trades. Rule compliance.\n\nNot buried in menus.\nNot hidden behind clicks.\nNot spread across 5 different tabs.\n\nJust the data you need, the moment you open the app.\n\nBecause a dashboard you have to dig through isn't a dashboard. It's a maze.",
       "image": "images/dashboard.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-21T23:23:32.502096+00:00",
+      "tweet_id": "2035497556818735583"
     },
     {
       "id": 241,
