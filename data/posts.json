@@ -2175,9 +2175,9 @@
       "type": "feature",
       "content": "Symbol performance tracking.\n\nWhich tickers do you actually trade well?\n\nSome traders are great at TSLA and terrible at AMZN. The data shows this clearly — but only if you track it.\n\nStick to your winners.",
       "image": "images/insights_details.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-21T04:17:16.110668+00:00",
+      "tweet_id": "2035209082248835365"
     },
     {
       "id": 237,
