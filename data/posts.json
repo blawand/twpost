@@ -2238,9 +2238,9 @@
       "type": "feature",
       "content": "Prop firm challenge tracking that actually works:\n\n→ Trailing drawdown monitoring (real-time)\n→ EOD vs. intraday rule support\n→ Minimum trading day counters\n→ Consistency rule tracking\n→ Profit target distance\n→ Rule violation alerts\n\nBecause failing a challenge on a technicality is worse than failing on a bad trade.\n\nAnd it happens more than you think.\n\nKnow your numbers. Always.",
       "image": "images/report_sub.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-22T16:24:47.747398+00:00",
+      "tweet_id": "2035754564658311636"
     },
     {
       "id": 244,
