@@ -2220,9 +2220,9 @@
       "type": "feature",
       "content": "Options traders — stop manually tagging your strategies.\n\nLog the legs. The journal identifies the structure automatically.\n\n→ Vertical spreads\n→ Iron condors\n→ Iron butterflies\n→ Calendar spreads\n→ Straddles\n→ Strangles\n→ Diagonals\n\n10+ strategy templates detected from your entries.\n\nBecause typing \"iron condor\" 200 times a year is not how you want to spend your trading career.",
       "image": "images/tradeform-executions.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-22T04:32:31.611741+00:00",
+      "tweet_id": "2035575309093814714"
     },
     {
       "id": 242,
