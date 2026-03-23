@@ -2292,9 +2292,9 @@
       "type": "feature",
       "content": "Monte Carlo simulation: stress-test your edge.\n\nTake your actual trade data.\nRun 10,000 random simulations.\nSee the full range of possible outcomes.\n\n→ Best case scenario\n→ Worst case scenario\n→ Expected outcome\n→ 95th percentile drawdown\n→ Probability of hitting your target\n→ Risk of ruin percentage\n\nBecause \"I think my strategy works\" isn't a risk management plan.\n\nProbability is.",
       "image": "images/montecarlo.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-23T20:03:31.820129+00:00",
+      "tweet_id": "2036171990864978221"
     },
     {
       "id": 250,
