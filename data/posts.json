@@ -2265,9 +2265,9 @@
       "type": "feature",
       "content": "Smart Symbol Autofill remembers your last trade on each ticker.\n\nContracts, strike, side — all populated. Skips expired dates for options.\n\nLogging a trade takes seconds, not minutes. That's why you'll actually do it.",
       "image": "images/tradeform.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-23T04:41:07.558808+00:00",
+      "tweet_id": "2035939863325732919"
     },
     {
       "id": 247,
