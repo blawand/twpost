@@ -2319,9 +2319,9 @@
       "type": "feature",
       "content": "Review your trades from anywhere.\n\nOn the treadmill. On the couch. Waiting in line. At the airport.\n\nFull analytics. Full journaling. Full chart views.\nResponsive on any device.\n\nBecause your weekly review shouldn't require being chained to your desk.\n\nSaturday morning, coffee, phone, 15 minutes.\nThat's all a good review takes when the tools work.",
       "image": "images/weekly-review.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-24T13:56:39.203155+00:00",
+      "tweet_id": "2036442058802479596"
     },
     {
       "id": 253,
