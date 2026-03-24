@@ -2346,9 +2346,9 @@
       "type": "humor",
       "content": "When my stop loss gets hit and the price immediately reverses to my target:\n\n\"I'm convinced the market can see my orders specifically.\"",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-24T23:30:56.359465+00:00",
+      "tweet_id": "2036586582585860410"
     },
     {
       "id": 256,
