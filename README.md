@@ -1,10 +1,10 @@
 # LynxTrades Twitter Automation
 
-A Twitter/X automation bot for [@lynxtradesapp](https://x.com/lynxtradesapp). Uses cookie-based GraphQL via [twitter-cli](https://github.com/jackwener/twitter-cli) for all Twitter operations — posting, search, engagement, and trends.
+A Twitter/X automation bot for [@lynxtradesapp](https://x.com/lynxtradesapp). It uses cookie-backed GraphQL via [twitter-cli](https://github.com/jackwener/twitter-cli) for posting, search, engagement, and trends.
 
 ## Features
 
-- **Long Tweet Support**: Twitter Premium notetweet support for tweets >280 characters
+- **Long Tweet Support**: Twitter Premium notetweet support for tweets longer than 280 characters
 - **Image Uploads**: Attach images to tweets via chunked media upload
 - **AI-Powered Engagement**: Uses xAI Grok to generate contextual replies to relevant trading conversations
 - **Scheduled Posting**: Automatically posts queued content from `data/posts.json`
@@ -12,33 +12,33 @@ A Twitter/X automation bot for [@lynxtradesapp](https://x.com/lynxtradesapp). Us
   - **Journal Intent Lane**: Targets trading journal, discipline, and psychology conversations
   - **Broad Trending Lane**: Targets economics, business, and market discussions with live trends
 - **Persistence**: Tracks posted tweets and engagement history to avoid duplicates
-- **Auto-Refreshing Query IDs**: twitter-cli automatically refreshes stale GraphQL query IDs from live JS bundles
+- **Auto-Refreshing Query IDs**: `twitter-cli` refreshes stale GraphQL query IDs from live JS bundles
 
 ## Project Structure
 
 ```text
 twpost/
-├── data/                    # Data storage
-│   ├── posts.json           # Scheduled tweets
-│   ├── posted_tracker.json  # Post history
-│   └── engagement_tracker.json  # Reply history
-├── scripts/
-│   ├── post_now.py          # Manual posting
-│   └── engage_now.py        # Manual engagement
-├── src/
-│   ├── main.py              # Entry point
-│   ├── core/
-│   │   ├── premium_client.py  # Extended twitter-cli client (long tweets, media, trends)
-│   │   └── llm.py             # xAI Grok integration
-│   ├── features/
-│   │   ├── publisher.py     # Tweet publishing logic
-│   │   └── engagement.py    # AI engagement logic
-│   └── utils/
-│       └── logger.py        # Logging setup
-├── .github/workflows/
-│   ├── tweet.yml            # Scheduled posting workflow
-│   └── engage.yml           # Engagement workflow
-└── .env                     # Environment variables (Git Ignored)
+|-- data/                         # Data storage
+|   |-- posts.json                # Scheduled tweets
+|   |-- posted_tracker.json       # Post history
+|   `-- engagement_tracker.json   # Reply history
+|-- scripts/
+|   |-- post_now.py               # Manual posting
+|   `-- engage_now.py             # Manual engagement
+|-- src/
+|   |-- main.py                   # Entry point
+|   |-- core/
+|   |   |-- premium_client.py     # Extended twitter-cli client
+|   |   `-- llm.py                # xAI Grok integration
+|   |-- features/
+|   |   |-- publisher.py          # Tweet publishing logic
+|   |   `-- engagement.py         # AI engagement logic
+|   `-- utils/
+|       `-- logger.py             # Logging setup
+|-- .github/workflows/
+|   |-- tweet.yml                 # Scheduled posting workflow
+|   `-- engage.yml                # Engagement workflow
+`-- .env                          # Environment variables (git ignored)
 ```
 
 ## Setup
@@ -55,18 +55,21 @@ Create a `.env` file:
 
 **Required for Posting:**
 
-- `TWITTER_COOKIES` — JSON string of your browser cookies from x.com (must include `auth_token` and `ct0`)
+- `TWITTER_AUTH` - Single JSON secret. Recommended format: `{"auth_token":"...","ct0":"..."}`
 
 **Required for AI Engagement:**
 
-- `XAI_API_KEY` — xAI Grok API key
+- `XAI_API_KEY` - xAI Grok API key
 
 ### 3. Cookie Setup
 
-1. Log in to x.com in Chrome
-2. Open DevTools (`F12`) > Application > Cookies > `https://x.com`
-3. Copy all cookie name/value pairs into a JSON string
-4. Set `TWITTER_COOKIES` in your `.env`
+1. Log in to `x.com` in Chrome.
+2. Open DevTools (`F12`) > Application > Cookies > `https://x.com`.
+3. Copy only `auth_token` and `ct0`.
+4. Set them in `.env` as `TWITTER_AUTH={"auth_token":"...","ct0":"..."}`.
+5. Do not include `__cf_bm`, `att`, `gt`, or similar short-lived cookies.
+
+The client ignores extra cookie fields if you include them, but storing them still creates confusion and makes manual refreshes noisier.
 
 ## Usage
 
@@ -88,12 +91,12 @@ python src/main.py post "Your tweet text"
 python src/main.py post "Your tweet text" path/to/image.jpg
 ```
 
-### Run Engagement (AI Reply)
+### Run Engagement
 
 ```bash
 python src/main.py engage
 
-# With dry run (generates reply but doesn't post)
+# With dry run (generates reply but does not post)
 python scripts/engage_now.py --dry-run
 ```
 
@@ -117,13 +120,13 @@ python scripts/engage_now.py --dry-run
 
 ### Secrets Required
 
-- `TWITTER_COOKIES` — Required for all operations
-- `XAI_API_KEY` — Required for AI engagement
+- `TWITTER_AUTH` - Required for posting and engagement
+- `XAI_API_KEY` - Required for AI engagement
 
 ### How It Works
 
-- **`tweet.yml`**: Runs 5x/day on a schedule. Posts the next tweet from `posts.json` and commits the updated tracker.
-- **`engage.yml`**: Runs every 20 minutes. Searches for relevant tweets, generates AI replies, and posts them.
+- **`tweet.yml`**: Runs 5 times per day, posts the next tweet from `posts.json`, and commits the updated tracker.
+- **`engage.yml`**: Runs every 10 minutes, searches for relevant tweets, generates AI replies, and posts them.
 - Both workflows commit tracker files back to the repo for state persistence.
 
-> **Note**: Cookie-based auth tokens expire periodically. If posting starts failing, re-extract your cookies from the browser and update the `TWITTER_COOKIES` secret.
+> **Note**: Browser sessions do not last forever. Using only `auth_token` and `ct0` reduces churn, but X can still invalidate the session. If you need long-term stability, move to official API/OAuth flows wherever the required posting features are available.

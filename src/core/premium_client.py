@@ -51,37 +51,57 @@ class PremiumTwitterClient(TwitterClient):
 
     # ── Initialization ──────────────────────────────────────────
 
+    @staticmethod
+    def _load_auth_payload():
+        """Load the preferred single-secret auth payload, with legacy fallback."""
+        raw_value = os.getenv("TWITTER_AUTH", "").strip().strip("'\"")
+        source_name = "TWITTER_AUTH"
+        if not raw_value:
+            raw_value = os.getenv("TWITTER_COOKIES", "").strip().strip("'\"")
+            source_name = "TWITTER_COOKIES"
+        if not raw_value:
+            return None, None
+
+        try:
+            payload = json.loads(raw_value)
+        except json.JSONDecodeError as e:
+            logger.warning("Failed to parse %s JSON: %s", source_name, e)
+            return None, source_name
+
+        if not isinstance(payload, dict):
+            logger.warning("%s must be a JSON object.", source_name)
+            return None, source_name
+
+        return payload, source_name
+
     @classmethod
     def from_env(cls):
         """Create a PremiumTwitterClient from environment variables."""
         auth_token = os.getenv("TWITTER_AUTH_TOKEN", "").strip()
         ct0 = os.getenv("TWITTER_CT0", "").strip()
-        cookie_string = None
 
-        cookies_json = os.getenv("TWITTER_COOKIES", "").strip().strip("'\"")
-        if cookies_json:
-            try:
-                cookies = json.loads(cookies_json)
-                if not auth_token:
-                    auth_token = cookies.get("auth_token", "")
-                if not ct0:
-                    ct0 = cookies.get("ct0", "")
-                cookie_string = "; ".join(
-                    f"{k}={v}" for k, v in cookies.items()
+        auth_payload, payload_source = cls._load_auth_payload()
+        if auth_payload:
+            if not auth_token:
+                auth_token = (auth_payload.get("auth_token") or "").strip()
+            if not ct0:
+                ct0 = (auth_payload.get("ct0") or "").strip()
+            if any(key not in {"auth_token", "ct0"} for key in auth_payload):
+                logger.info(
+                    "%s contains short-lived browser cookies or extra fields; using only auth_token and ct0.",
+                    payload_source,
                 )
-            except json.JSONDecodeError as e:
-                logger.warning("Failed to parse TWITTER_COOKIES JSON: %s", e)
 
         if not auth_token or not ct0:
             raise ValueError(
-                "Missing auth_token or ct0! Set TWITTER_AUTH_TOKEN + TWITTER_CT0 "
-                "in .env, or provide them inside the TWITTER_COOKIES JSON."
+                "Missing auth_token or ct0! Set TWITTER_AUTH with a JSON object "
+                'like {"auth_token":"...","ct0":"..."}, or use the legacy '
+                "TWITTER_COOKIES / TWITTER_AUTH_TOKEN / TWITTER_CT0 variables."
             )
 
         client = cls(
             auth_token=auth_token,
             ct0=ct0,
-            cookie_string=cookie_string,
         )
         logger.info("PremiumTwitterClient initialized.")
         return client
@@ -131,10 +151,10 @@ class PremiumTwitterClient(TwitterClient):
 
         from curl_cffi import CurlMime
         mime = CurlMime()
-        mime.addpart(name="command", data="APPEND")
-        mime.addpart(name="media_id", data=media_id)
-        mime.addpart(name="segment_index", data="0")
-        mime.addpart(name="media_data", data=base64.b64encode(file_data).decode("ascii"))
+        mime.addpart(name="command", data=b"APPEND")
+        mime.addpart(name="media_id", data=media_id.encode())
+        mime.addpart(name="segment_index", data=b"0")
+        mime.addpart(name="media_data", data=base64.b64encode(file_data))
 
         resp = session.post(upload_url, headers=append_headers, multipart=mime, timeout=60)
         if resp.status_code >= 400:

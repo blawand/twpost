@@ -25,7 +25,7 @@ jobs:
 
       - name: Run Engagement Loop
         env:
-          TWITTER_COOKIES: ${{ secrets.TWITTER_COOKIES }}
+          TWITTER_AUTH: ${{ secrets.TWITTER_AUTH }}
           XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
           ENGAGEMENT_REPLY_OPTION_COUNT: "1"
           ENGAGEMENT_USE_TRENDS: "true"

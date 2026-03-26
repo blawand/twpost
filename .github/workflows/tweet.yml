@@ -29,7 +29,7 @@ jobs:
 
       - name: Post next tweet
         env:
-          TWITTER_COOKIES: ${{ secrets.TWITTER_COOKIES }}
+          TWITTER_AUTH: ${{ secrets.TWITTER_AUTH }}
           PUBLISH_POST_MAX_ATTEMPTS: "4"
           PUBLISH_RETRY_BASE_SECONDS: "1.5"
           PUBLISH_RETRY_MAX_SECONDS: "20"
