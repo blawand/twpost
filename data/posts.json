@@ -2057,27 +2057,27 @@
       "type": "lifestyle",
       "content": "The best trading days often feel boring.\n\nYou waited. You executed. You left.\n\nNo drama. No hero plays. Just green.\n\nBoring is profitable.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-18T16:55:32.077969+00:00",
+      "tweet_id": "2034312750935965718"
     },
     {
       "id": 224,
       "type": "feature",
       "content": "Win rate is a vanity metric.\n\nYour real edge lives in risk-adjusted returns.\n\nA 40% win rate with 3:1 reward-to-risk crushes a 70% win rate with 0.5:1.\n\nThe metrics that actually matter:\n→ Expectancy per trade\n→ Profit factor\n→ Sharpe ratio\n→ Average R-multiple\n→ Max drawdown duration\n\nAll calculated automatically.\n\nKnow your real edge, not your ego's version of it.",
       "image": "images/analytics_performance.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-18T20:00:42.797761+00:00",
+      "tweet_id": "2034359349422821673"
     },
     {
       "id": 225,
       "type": "psychology",
       "content": "You can't control the market.\n\nYou can control your size, your stop, and your reaction.\n\nThat's it. That's the whole game.\n\nEverything else is noise.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null,
+      "posted": true,
+      "posted_at": "2026-03-18T23:29:32.428178+00:00",
+      "tweet_id": "2034411903347261602",
       "original_content": "You can't control the market.\n\nYou can control:\n- Your size\n- Your stop\n- Your reaction\n\nFocus there."
     },
     {
@@ -2085,270 +2085,270 @@
       "type": "tip",
       "content": "If you're wrong, be wrong small.\n\nIf you're right, be right big.\n\nThat's the whole game. Everything else is details.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-19T04:34:05.809234+00:00",
+      "tweet_id": "2034488547973959920"
     },
     {
       "id": 227,
       "type": "humor",
       "content": "\"I'm not revenge trading.\"\n\n— everyone who is absolutely, definitely revenge trading",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-19T13:48:33.104142+00:00",
+      "tweet_id": "2034628075019980988"
     },
     {
       "id": 228,
       "type": "feature",
       "content": "Max trades per day. Max trades per week. Max daily loss.\n\nOvertrading is the quiet account killer.\n\nThe pattern:\n→ Day starts well\n→ You get confident\n→ \"One more trade\"\n→ It goes wrong\n→ \"One more to make it back\"\n→ Day is red\n\nSet the limits. Track when you break them.\nFix the pattern before it becomes a habit.\n\nYour future self will thank you for the guardrails.",
       "image": "images/insights_main.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-19T16:53:33.863445+00:00",
+      "tweet_id": "2034674637448134824"
     },
     {
       "id": 229,
       "type": "insight",
       "content": "A trading journal is a mirror.\n\nMost people don't like what they see.\n\nThat's exactly why it works.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-19T20:01:42.500117+00:00",
+      "tweet_id": "2034721989748039823"
     },
     {
       "id": 230,
       "type": "engagement",
       "content": "Best piece of trading advice you've ever received?\n\nDrop it below. Someone reading this needs to hear it today.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-19T23:28:31.459126+00:00",
+      "tweet_id": "2034774035499032977"
     },
     {
       "id": 231,
       "type": "lifestyle",
       "content": "Sleep > that overnight position.\n\nSeriously. Close it and rest.\n\nA good night's sleep is worth more than whatever that position might do by morning.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-20T04:25:43.592599+00:00",
+      "tweet_id": "2034848822502085024"
     },
     {
       "id": 232,
       "type": "feature",
       "content": "Hourly performance breakdown.\n\nSee exactly which hours make you money and which hours bleed you dry.\n\n9:30-10:00 → +$3,200\n10:00-11:00 → +$1,800\n11:00-12:00 → -$400\n12:00-1:00 → -$1,100\n1:00-2:00 → -$600\n2:00-3:00 → +$200\n3:00-4:00 → +$900\n\nMost traders have 2-3 profitable hours per day.\n\nFind yours. Trade those. Ignore the rest.",
       "image": "images/insights_period.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-20T13:40:35.482955+00:00",
+      "tweet_id": "2034988459488694756"
     },
     {
       "id": 233,
       "type": "psychology",
       "content": "The urge to \"get back\" after a loss is your ego talking.\n\nYour ego doesn't know how to trade. It knows how to revenge trade.\n\nListen to your plan instead.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-20T16:37:58.978593+00:00",
+      "tweet_id": "2035033106122420244"
     },
     {
       "id": 234,
       "type": "tip",
       "content": "Scale out, not all out.\n\nLock some profit. Let the rest ride.\n\nYou'll sleep better and still catch the extended moves.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-20T19:58:04.199784+00:00",
+      "tweet_id": "2035083460214214836"
     },
     {
       "id": 235,
       "type": "humor",
       "content": "Portfolio up 2%: \"Let me calculate my annual returns.\"\n\nPortfolio down 2%: \"It's just one day. Long-term vision.\"",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-20T23:27:46.925122+00:00",
+      "tweet_id": "2035136237351444676"
     },
     {
       "id": 236,
       "type": "feature",
       "content": "Symbol performance tracking.\n\nWhich tickers do you actually trade well?\n\nSome traders are great at TSLA and terrible at AMZN. The data shows this clearly — but only if you track it.\n\nStick to your winners.",
       "image": "images/insights_details.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-21T04:17:16.110668+00:00",
+      "tweet_id": "2035209082248835365"
     },
     {
       "id": 237,
       "type": "insight",
       "content": "The first hour is for professionals.\nThe lunch hour is for waiting.\nThe last hour is for power moves.\n\nKnow your session. Trade accordingly.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-21T13:25:29.631202+00:00",
+      "tweet_id": "2035347051970527669"
     },
     {
       "id": 238,
       "type": "engagement",
       "content": "One asset class. Forever. You can only pick one.\n\nWhat are you choosing and why?",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-21T16:23:54.699212+00:00",
+      "tweet_id": "2035391950564864297"
     },
     {
       "id": 239,
       "type": "lifestyle",
       "content": "The market teaches humility.\n\nIf you're not humble yet, keep trading. It's coming.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-21T19:47:19.502277+00:00",
+      "tweet_id": "2035443139897328066"
     },
     {
       "id": 240,
       "type": "feature",
       "content": "Your dashboard should give you everything at a glance.\n\nTop row: Today's P&L. Win rate. Open positions.\nMiddle: Equity curve. Calendar heatmap.\nBottom: Recent trades. Rule compliance.\n\nNot buried in menus.\nNot hidden behind clicks.\nNot spread across 5 different tabs.\n\nJust the data you need, the moment you open the app.\n\nBecause a dashboard you have to dig through isn't a dashboard. It's a maze.",
       "image": "images/dashboard.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-21T23:23:32.502096+00:00",
+      "tweet_id": "2035497556818735583"
     },
     {
       "id": 241,
       "type": "feature",
       "content": "Options traders — stop manually tagging your strategies.\n\nLog the legs. The journal identifies the structure automatically.\n\n→ Vertical spreads\n→ Iron condors\n→ Iron butterflies\n→ Calendar spreads\n→ Straddles\n→ Strangles\n→ Diagonals\n\n10+ strategy templates detected from your entries.\n\nBecause typing \"iron condor\" 200 times a year is not how you want to spend your trading career.",
       "image": "images/tradeform-executions.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-22T04:32:31.611741+00:00",
+      "tweet_id": "2035575309093814714"
     },
     {
       "id": 242,
       "type": "psychology",
       "content": "The market doesn't pay you for being smart.\n\nIt pays you for being patient and disciplined.\n\nPlenty of smart traders are broke. Very few patient ones are.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-22T13:26:44.888456+00:00",
+      "tweet_id": "2035709757512712388"
     },
     {
       "id": 243,
       "type": "feature",
       "content": "Prop firm challenge tracking that actually works:\n\n→ Trailing drawdown monitoring (real-time)\n→ EOD vs. intraday rule support\n→ Minimum trading day counters\n→ Consistency rule tracking\n→ Profit target distance\n→ Rule violation alerts\n\nBecause failing a challenge on a technicality is worse than failing on a bad trade.\n\nAnd it happens more than you think.\n\nKnow your numbers. Always.",
       "image": "images/report_sub.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-22T16:24:47.747398+00:00",
+      "tweet_id": "2035754564658311636"
     },
     {
       "id": 244,
       "type": "humor",
       "content": "My strategy during backtesting: flawless.\n\nMy strategy with real money: what strategy?",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-22T19:48:32.217098+00:00",
+      "tweet_id": "2035805839034908941"
     },
     {
       "id": 245,
       "type": "tip",
       "content": "Scale out at 2R. Let the rest ride at breakeven stop.\n\nYou locked profit. You eliminated risk. You're still in the trade.\n\nThis one adjustment changed my trading more than any indicator ever did.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-22T23:26:42.396573+00:00",
+      "tweet_id": "2035860742335832484"
     },
     {
       "id": 246,
       "type": "feature",
       "content": "Smart Symbol Autofill remembers your last trade on each ticker.\n\nContracts, strike, side — all populated. Skips expired dates for options.\n\nLogging a trade takes seconds, not minutes. That's why you'll actually do it.",
       "image": "images/tradeform.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-23T04:41:07.558808+00:00",
+      "tweet_id": "2035939863325732919"
     },
     {
       "id": 247,
       "type": "psychology",
       "content": "Red days are just the cost of doing business.\n\nYou can't run a store without paying rent.\nYou can't trade without taking losses.\n\nThe question isn't \"will I have red days?\" It's \"can I keep them small?\"",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-23T13:55:19.791208+00:00",
+      "tweet_id": "2036079331349557590"
     },
     {
       "id": 248,
       "type": "engagement",
       "content": "Fill in the blank:\n\nMy biggest \"aha\" moment in trading was when I realized _________.\n\n(The best answers always sound obvious in hindsight.)",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-23T16:53:36.310469+00:00",
+      "tweet_id": "2036124204974961132"
     },
     {
       "id": 249,
       "type": "feature",
       "content": "Monte Carlo simulation: stress-test your edge.\n\nTake your actual trade data.\nRun 10,000 random simulations.\nSee the full range of possible outcomes.\n\n→ Best case scenario\n→ Worst case scenario\n→ Expected outcome\n→ 95th percentile drawdown\n→ Probability of hitting your target\n→ Risk of ruin percentage\n\nBecause \"I think my strategy works\" isn't a risk management plan.\n\nProbability is.",
       "image": "images/montecarlo.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-23T20:03:31.820129+00:00",
+      "tweet_id": "2036171990864978221"
     },
     {
       "id": 250,
       "type": "lifestyle",
       "content": "If you're exhausted and eating trash, don't expect peak decision-making during power hour.\n\nA healthy body supports a clear mind. Trading performance starts away from the screen.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-23T23:31:19.257124+00:00",
+      "tweet_id": "2036224293948842315"
     },
     {
       "id": 251,
       "type": "insight",
       "content": "Small losses are your friends.\n\nThey keep you from large losses.\n\nThe only dangerous loss is the one you refuse to take.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-24T04:30:50.984647+00:00",
+      "tweet_id": "2036299662693675495"
     },
     {
       "id": 252,
       "type": "feature",
       "content": "Review your trades from anywhere.\n\nOn the treadmill. On the couch. Waiting in line. At the airport.\n\nFull analytics. Full journaling. Full chart views.\nResponsive on any device.\n\nBecause your weekly review shouldn't require being chained to your desk.\n\nSaturday morning, coffee, phone, 15 minutes.\nThat's all a good review takes when the tools work.",
       "image": "images/weekly-review.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-24T13:56:39.203155+00:00",
+      "tweet_id": "2036442058802479596"
     },
     {
       "id": 253,
       "type": "psychology",
       "content": "Your ego is the only thing standing between you and a clean stop loss.\n\nAdmit you were wrong. Take the loss. Move on.\n\nThe market doesn't care about your feelings. Your account does.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-24T16:56:02.974104+00:00",
+      "tweet_id": "2036487206294913240"
     },
     {
       "id": 254,
       "type": "tip",
       "content": "Pick 2-3 setups. Master them. Ignore everything else.\n\nTrying to catch every move is the fastest way to blow your capital and your confidence.",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-24T20:03:45.378083+00:00",
+      "tweet_id": "2036534445201645959"
     },
     {
       "id": 255,
       "type": "humor",
       "content": "When my stop loss gets hit and the price immediately reverses to my target:\n\n\"I'm convinced the market can see my orders specifically.\"",
       "image": null,
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-24T23:30:56.359465+00:00",
+      "tweet_id": "2036586582585860410"
     },
     {
       "id": 256,
