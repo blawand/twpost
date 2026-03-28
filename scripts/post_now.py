@@ -15,7 +15,7 @@ from utils.logger import setup_logger
 logger = logging.getLogger("PostNow")
 
 def main():
-    load_dotenv(dotenv_path=PROJECT_ROOT / ".env", override=True)
+    load_dotenv(dotenv_path=PROJECT_ROOT / ".env", override=False)
     setup_logger()
 
     try:

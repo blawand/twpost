@@ -17,7 +17,7 @@ logger = logging.getLogger("EngageNow")
 
 
 def main():
-    load_dotenv(dotenv_path=PROJECT_ROOT / ".env", override=True)
+    load_dotenv(dotenv_path=PROJECT_ROOT / ".env", override=False)
     setup_logger()
 
     if "--dry-run" in sys.argv:

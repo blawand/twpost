@@ -16,7 +16,9 @@ DOTENV_PATH = PROJECT_ROOT / ".env"
 
 
 def run():
-    load_dotenv(dotenv_path=DOTENV_PATH, override=True)
+    # Let real environment variables (for example GitHub Actions secrets)
+    # take precedence over local .env values.
+    load_dotenv(dotenv_path=DOTENV_PATH, override=False)
     setup_logger()
     logger.info("Twitter Automation starting...")
 

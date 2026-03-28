@@ -54,13 +54,22 @@ class PremiumTwitterClient(TwitterClient):
     @staticmethod
     def _load_auth_payload():
         """Load the preferred single-secret auth payload, with legacy fallback."""
-        raw_value = os.getenv("TWITTER_AUTH", "").strip().strip("'\"")
+        raw_value = os.getenv("TWITTER_AUTH", "").strip()
         source_name = "TWITTER_AUTH"
         if not raw_value:
-            raw_value = os.getenv("TWITTER_COOKIES", "").strip().strip("'\"")
+            raw_value = os.getenv("TWITTER_COOKIES", "").strip()
             source_name = "TWITTER_COOKIES"
         if not raw_value:
             return None, None
+
+        # Accept both the recommended raw JSON value and an accidental
+        # KEY=VALUE paste from .env / GitHub UI.
+        if "=" in raw_value:
+            maybe_name, maybe_value = raw_value.split("=", 1)
+            if maybe_name.strip() in {"TWITTER_AUTH", "TWITTER_COOKIES"}:
+                raw_value = maybe_value.strip()
+
+        raw_value = raw_value.strip("'\"")
 
         try:
             payload = json.loads(raw_value)
