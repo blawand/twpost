@@ -114,34 +114,43 @@ class TwitterPublisher:
         with open(self.posts_file, "r", encoding="utf-8") as f:
             return json.load(f)
 
-    def load_tracker(self) -> Dict[str, Any]:
+    def load_tracker(self, posts_data: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         if self.tracker_file.exists():
             with open(self.tracker_file, "r", encoding="utf-8") as f:
                 return json.load(f)
-        return {"posted_ids": [], "last_posted_at": None, "total_posted": 0}
+
+        posted_ids: List[Any] = []
+        if posts_data:
+            posted_ids = [post["id"] for post in posts_data.get("posts", []) if post.get("posted")]
+            if posted_ids:
+                logger.warning(
+                    "Tracker file missing. Bootstrapping posted_ids from posts.json metadata."
+                )
+
+        return {
+            "posted_ids": posted_ids,
+            "last_posted_at": None,
+            "total_posted": len(posted_ids),
+        }
 
     def save_tracker(self, tracker: Dict[str, Any]) -> None:
         with open(self.tracker_file, "w", encoding="utf-8") as f:
             json.dump(tracker, f, indent=2)
 
-    def save_posts(self, data: Dict[str, Any]) -> None:
-        with open(self.posts_file, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
-
     def run(self) -> None:
-        """Post the next unposted tweet from posts.json."""
+        """Post the next unpublished tweet using posted_tracker.json as state."""
         logger.info("Starting Publisher Workflow...")
         
         posts_data = self.load_posts()
         if not posts_data:
             return
         
-        tracker = self.load_tracker()
+        tracker = self.load_tracker(posts_data)
         posted_ids = set(tracker.get("posted_ids", []))
         
         post = None
         for p in posts_data["posts"]:
-            if p["id"] not in posted_ids and not p.get("posted", False):
+            if p["id"] not in posted_ids:
                 post = p
                 break
         
@@ -168,19 +177,12 @@ class TwitterPublisher:
             tweet_id = self._create_tweet_with_retry(text=post["content"], media_ids=media_ids)
             logger.info("Posted tweet #%s (Tweet ID: %s)", post["id"], tweet_id)
             
-            tracker["posted_ids"].append(post["id"])
+            if post["id"] not in posted_ids:
+                tracker["posted_ids"].append(post["id"])
             tracker["last_posted_at"] = datetime.now(timezone.utc).isoformat()
             tracker["total_posted"] = len(tracker["posted_ids"])
             self.save_tracker(tracker)
-            
-            for p in posts_data["posts"]:
-                if p["id"] == post["id"]:
-                    p["posted"] = True
-                    p["posted_at"] = datetime.now(timezone.utc).isoformat()
-                    p["tweet_id"] = str(tweet_id)
-                    break
-            self.save_posts(posts_data)
-            
+             
         except Exception as e:
             logger.error("Failed to post tweet after retries: %s", e)
             raise

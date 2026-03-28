@@ -1,5 +1,9 @@
 name: Twitter Engagement
 
+concurrency:
+  group: twpost-master-state
+  cancel-in-progress: false
+
 on:
   schedule:
     - cron: '*/10 * * * *'
@@ -36,10 +40,10 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           if [ -f data/engagement_tracker.json ]; then
+            git pull --rebase --autostash origin master
             git add data/engagement_tracker.json
             git diff --staged --quiet || git commit -m "Update engagement tracker [skip ci]"
-            git pull --rebase --autostash origin master || true
-            git push || true
+            git push
           else
              echo "Warning: data/engagement_tracker.json not found, skipping commit."
           fi
