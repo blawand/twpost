@@ -2355,9 +2355,9 @@
       "type": "feature",
       "content": "Strategy-level analytics that reveal your actual edge:\n\n→ Win rate per setup type\n→ Average R-multiple per strategy\n→ Performance by time of day\n→ Performance by day of week\n→ Performance by market session\n→ Average hold time per strategy\n\nFind what works. Scale it.\nFind what doesn't. Cut it.\n\nYour P&L is an average of all your strategies.\nMake sure the bad ones aren't dragging down the good ones.",
       "image": "images/insights_setup.png",
-      "posted": false,
-      "posted_at": null,
-      "tweet_id": null
+      "posted": true,
+      "posted_at": "2026-03-28T16:28:29.708196+00:00",
+      "tweet_id": "2037929815802515887"
     },
     {
       "id": 257,
