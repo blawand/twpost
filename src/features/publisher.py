@@ -158,7 +158,7 @@ class TwitterPublisher:
             logger.info("All posts have been published.")
             return
 
-        logger.info("Preparing post #%s (%s)", post["id"], post["type"])
+        logger.info("Preparing post #%s (%s)", post["id"], post.get("type", "post"))
 
         media_ids: Optional[List[str]] = None
         if post.get("image"):

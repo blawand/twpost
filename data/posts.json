@@ -1704,6 +1704,1306 @@
       "id": 340,
       "content": "Your trading data deserves better than a spreadsheet.\n\nAnalytics that find your edge.\nSimulations that stress-test it.\nJournaling that makes you stick to it.\nCalendar views that reveal your patterns.\nRisk tools that keep you alive.\n\nStop guessing. Start knowing.\n\nYour future P&L is a function of how well you understand your past trades.\n\nThe tools exist. The data is waiting.\nThe only question is whether you'll use them.",
       "image": "images/product-shot.png"
+    },
+    {
+      "id": 341,
+      "content": "Meet Onyx.\n\nAn AI trading coach built into your journal. Not a chatbot. Not a generic assistant.\n\nA sharp, data-driven analyst that knows your trades, your patterns, your mistakes, and your edge.\n\nAsk it anything about your performance. It pulls from your actual data — win rates, P&L by setup, emotional patterns, time-of-day analysis, risk metrics.\n\nNo fluff. No generic advice. Just specific, numbers-backed insights from someone (something?) that has seen every trade you have ever taken.\n\nThe best trading coach is the one that never forgets a single trade.",
+      "image": "images/onyx-chat.png"
+    },
+    {
+      "id": 342,
+      "content": "The most expensive trade is the one you take to \"make back\" what you just lost.\n\nYou already know this.\n\nBut do you track it?",
+      "image": null
+    },
+    {
+      "id": 343,
+      "content": "Tired of manually logging every trade?\n\nConnect your broker. Your trades sync automatically.\n\n50+ brokers supported:\n→ Robinhood, Schwab, Fidelity, IBKR, Webull\n→ Pepperstone, IC Markets, FxPro\n→ FTMO, The5ers, TopStep\n→ MetaTrader 4 and MetaTrader 5 (any broker)\n→ Coinbase, Binance, Kraken\n\nStocks. Options. Futures. Forex. Crypto.\n\nOne click to connect. Every trade logged. Zero manual entry.",
+      "image": "images/broker-connect.png"
+    },
+    {
+      "id": 344,
+      "content": "What broker do you use for trading?\n\nGenuinely curious what the split looks like in 2026.",
+      "image": null
+    },
+    {
+      "id": 345,
+      "content": "You just took 2 losses in 20 minutes.\n\nYour journal flags it: \"Revenge trading pattern detected.\"\n\nNot a popup you dismiss. A real-time alert with context — what you lost, how fast, and a recommendation to step away.\n\nThe best risk management happens before the next trade, not after.",
+      "image": "images/onyx-alert.png"
+    },
+    {
+      "id": 346,
+      "content": "Got flagged for revenge trading by my own journal.\n\nIt was right.",
+      "image": null
+    },
+    {
+      "id": 347,
+      "content": "Everything you get with Pro:\n\n→ Monte Carlo simulation (up to 10,000 runs)\n→ What-If scenario testing\n→ Best Times Heatmap (5min to 1hr resolution)\n→ MAE/MFE efficiency analysis\n→ Return distribution with skewness and kurtosis\n→ Kelly Criterion position sizing\n→ Capital preservation and Risk of Ruin\n→ Benchmark Alpha vs SPY\n→ AI trading coach (200 messages/day)\n→ AI pre-trade suggestions and warnings\n→ AI performance reviews\n→ AI journal coaching\n→ Personalized market news feed\n→ Real-time risk alerts\n→ Daily AI brief\n→ Broker auto-sync (50+ brokers)\n→ AI-powered CSV import\n→ Unlimited accounts\n→ 1 GB storage\n\nAll for less than one losing trade.",
+      "image": "images/analytics_advanced.png"
+    },
+    {
+      "id": 348,
+      "content": "Refer a trader who goes Pro. Get $7.50 off your next bill.\n\nRefer two. Your month is basically free.\n\nCredits stack with no cap. The math is simple.",
+      "image": "images/referral-page.png"
+    },
+    {
+      "id": 349,
+      "content": "What if your next 500 trades played out randomly based on your actual stats?\n\nMonte Carlo simulation runs thousands of possible futures using your real win rate, average win, and average loss.\n\nTurn on compounding mode to see how position sizing scales with your equity curve.\n\nExclude your top 5% of winners to stress test whether your edge survives without outliers.\n\nThe question isn't \"will I be profitable?\" It's \"how many ways could I blow up?\"",
+      "image": "images/simulation_monte.png"
+    },
+    {
+      "id": 350,
+      "content": "Your worst week reveals your real strategy.\n\nAnyone can follow rules on green days. The ones who survive follow them on red days too.",
+      "image": null
+    },
+    {
+      "id": 351,
+      "content": "Quick actions change based on where you are in the app.\n\nOn your dashboard? Onyx suggests questions about your daily P&L and open positions.\n\nIn analytics? It suggests questions about your best setups and worst hours.\n\nReviewing a trade? It suggests questions about that specific symbol and your history with it.\n\nContext-aware AI. Not a one-size-fits-all chatbot.",
+      "image": "images/onyx-chat.png"
+    },
+    {
+      "id": 352,
+      "content": "If your broker runs on MetaTrader 4 or MetaTrader 5, you can connect it directly.\n\n17 brokers verified out of the box:\n→ XM, Exness, IC Markets, FTMO\n→ Pepperstone, OANDA, Admirals\n→ HFM, FBS, Tickmill, RoboForex\n→ Axi, AvaTrade, FP Markets\n→ ThinkMarkets, The5ers, TopStep\n\nPlus any MT4/MT5-compatible broker or prop firm.\n\nForex traders and prop firm traders — this one is for you.",
+      "image": "images/broker-metatrader.png"
+    },
+    {
+      "id": 353,
+      "content": "Would you trust an AI that has seen every single trade you have taken to review your performance?\n\nWhat if it cited specific numbers, dates, and setups?",
+      "image": null
+    },
+    {
+      "id": 354,
+      "content": "Most traders think about win rate and profit factor.\n\nAlmost nobody thinks about the shape of their return distribution.\n\nSkewness tells you if your P&L curve is healthy:\n→ Positive skew = small losses, large wins (good)\n→ Negative skew = small wins, catastrophic losses (dangerous)\n\nKurtosis tells you about fat tails:\n→ High kurtosis = extreme outlier events are more likely than you think\n\nIf your distribution has negative skew and high kurtosis, you are one bad week away from significant damage.\n\nKnowing your numbers is not the same as understanding their shape.",
+      "image": "images/return-distribution.png"
+    },
+    {
+      "id": 355,
+      "content": "Stages of connecting your broker to your journal:\n\n1. \"I'll just enter trades manually\"\n2. Forgets to log 3 trades\n3. \"Maybe I should connect my broker\"\n4. Connects broker\n5. Finds 47 trades you \"forgot\" to journal\n6. Silence",
+      "image": null
+    },
+    {
+      "id": 356,
+      "content": "Your market news feed is not generic.\n\nIt looks at what you actually trade — your top symbols, your asset classes — and pulls relevant financial news.\n\nEach article gets an AI summary and a \"Why this matters\" section specific to your portfolio.\n\nNo noise. No crypto spam when you trade futures. No macro headlines when you need earnings data.\n\nJust the news that affects your positions.",
+      "image": "images/news-feed.png"
+    },
+    {
+      "id": 357,
+      "content": "Boredom is the most underrated expensive emotion in trading.\n\nNot fear. Not greed.\n\nBoredom makes you take trades that don't exist.",
+      "image": null
+    },
+    {
+      "id": 358,
+      "content": "Every morning, before you trade, your dashboard shows an AI-generated brief.\n\nA short summary of yesterday's performance.\nOne key insight based on your recent patterns.\nOne actionable suggestion for today.\n\nAll under 50 words each. Takes 10 seconds to read.\n\nThe best pre-market routine is one you actually do.",
+      "image": "images/onyx-daily-brief.png"
+    },
+    {
+      "id": 359,
+      "content": "Robinhood. Schwab. Fidelity. Interactive Brokers. Webull. E*Trade. Questrade. Trading212. DEGIRO. tastytrade. Coinbase. Binance.\n\n30 brokers through one connection.\n\nIf you trade stocks, options, or crypto — your trades can sync automatically.\n\nNo CSV. No manual entry. No excuses for not journaling.",
+      "image": "images/broker-snaptrade.png"
+    },
+    {
+      "id": 360,
+      "content": "Manual trade entry is a habit killer.\n\nYou skip one trade. Then two. Then you stop journaling for a week.\n\nBy the time you come back, you have no idea what happened.\n\nAutomate the entry. Focus on the review.",
+      "image": null
+    },
+    {
+      "id": 361,
+      "content": "Before you enter a trade, your AI coach already has an opinion.\n\nBased on your history with that symbol:\n→ Suggested setups that have worked before\n→ Warnings based on recent losses (\"Your last 3 TSLA shorts lost an average of $240\")\n→ A pre-trade thesis template you can customize\n\nIt is not telling you what to trade. It is telling you what your own data says about this trade.",
+      "image": "images/onyx-suggestions.png"
+    },
+    {
+      "id": 362,
+      "content": "What is the first thing you check on your trading dashboard each morning?",
+      "image": null
+    },
+    {
+      "id": 363,
+      "content": "How many consecutive losses can you survive before ruin?\n\nCapital preservation metrics answer this with math, not feelings:\n\n→ Survival buffer: exact number of max-size losses until your account is done\n→ Drawdown probability: statistical likelihood of hitting 10%, 20%, 50% drawdowns\n→ Streak analysis: probability of a losing streak of X trades\n\nIf your survival buffer is under 15, you are sizing too large. Period.",
+      "image": "images/capital-preservation.png"
+    },
+    {
+      "id": 364,
+      "content": "\"AI trading tools are just hype.\"\n\nIf the AI is making trade decisions for you — yes, probably.\n\nIf the AI is analyzing 200 of your past trades, finding that you lose money on Fridays after 2pm, and telling you to stop trading Fridays after 2pm?\n\nThat is not hype. That is a pattern you would have missed for another 6 months.",
+      "image": null
+    },
+    {
+      "id": 365,
+      "content": "Prop firm traders: your challenge progress lives on your dashboard now.\n\nProfit target with percentage and progress bar.\nDrawdown usage with real-time tracking.\nTrading days counter toward the minimum requirement.\n\nColor-coded: green when safe, amber when close, red when critical.\n\nNo more switching to your prop firm portal to check where you stand.",
+      "image": "images/propfirm-dashboard.png"
+    },
+    {
+      "id": 366,
+      "content": "Patience and stubbornness look the same from the outside.\n\nThe difference is whether your data supports the position.",
+      "image": null
+    },
+    {
+      "id": 367,
+      "content": "3 consecutive losses with a negative emotion tag?\n\nThat is not a bad streak. That is tilt.\n\nYour journal detects it automatically and shows a banner:\n→ What happened (specific trades, P&L, timeline)\n→ A personalized recommendation under 50 words\n→ One button to open your AI coach for deeper analysis\n\nThe alert shows up before your next trade. Not after the damage is done.",
+      "image": "images/risk-alerts-banner.png"
+    },
+    {
+      "id": 368,
+      "content": "Staring at an empty journal entry after a trade?\n\nYour AI journal coach gives you 3 options:\n\n→ Suggest Prompts: 3-5 questions specific to this trade (\"Why did you hold through the pullback at $142?\")\n→ Draft Analysis: A post-trade analysis with placeholders for your input\n→ Help Me Reflect: Follow-up questions based on what you have already written\n\nThe text inserts directly into your editor. Edit it, expand it, make it yours.",
+      "image": "images/onyx-journal-coach.png"
+    },
+    {
+      "id": 369,
+      "content": "My P&L before journaling: \"I think I'm doing okay.\"\n\nMy P&L after journaling: \"I am objectively terrible on Fridays and need to stop trading after 1pm.\"",
+      "image": null
+    },
+    {
+      "id": 370,
+      "content": "Forex traders on cTrader — 10 brokers supported:\n\n→ Pepperstone\n→ IC Markets\n→ FxPro\n→ Axi\n→ FP Markets\n→ RoboForex\n→ OctaFX\n→ Skilling\n→ Tradeview\n→ Errante\n\nConnect via OAuth. Trades sync automatically. Lot sizes, pip values, everything calculated correctly.",
+      "image": null
+    },
+    {
+      "id": 371,
+      "content": "How to actually use Monte Carlo simulation:\n\n1. Run 1,000 simulations over your next 200 trades\n2. Look at the 5th percentile path — that is your realistic worst case\n3. Turn on \"Exclude top 5% winners\" — if your edge disappears, your strategy depends on outliers\n4. Switch to compounding mode — see if position sizing amplifies your drawdowns\n5. Set your Risk of Ruin threshold to 50% — check the probability\n\nIf more than 5% of simulations hit ruin, your sizing is wrong.\n\nThe simulation does not predict the future. It stress-tests your present.",
+      "image": "images/simulation_equity.png"
+    },
+    {
+      "id": 372,
+      "content": "Trade EURUSD in a USD account? Your P&L converts automatically.\n\nTrade gold in a GBP account? Same thing.\n\nHistorical FX rates for the exact exit date. No manual math. No spreadsheet formulas.\n\nEvery currency pair the European Central Bank tracks is supported.",
+      "image": "images/multicurrency-trade.png"
+    },
+    {
+      "id": 373,
+      "content": "Free plan:\n✓ Unlimited trades\n✓ Unlimited journaling\n✓ Standard analytics dashboard\n✓ Unlimited playbooks\n✓ Calendar views\n✓ Reports and data export\n✓ 2 accounts\n✓ 50 MB storage\n\nPro plan:\n✓ Everything above, plus:\n✓ 50+ broker auto-sync\n✓ Monte Carlo and What-If simulations\n✓ Advanced analytics (heatmaps, efficiency, Kelly, Alpha)\n✓ AI trading coach (200 messages/day)\n✓ AI pre-trade suggestions\n✓ AI performance reviews\n✓ AI journal coaching\n✓ Market news feed\n✓ Risk alerts\n✓ Daily AI brief\n✓ Running P&L analysis\n✓ AI CSV import\n✓ Unlimited accounts\n✓ 1 GB storage\n\nThe free plan is not a trial. It is a full trading journal.\n\nPro is for traders who want an unfair advantage.",
+      "image": null
+    },
+    {
+      "id": 374,
+      "content": "How many trading accounts do you actively manage?\n\nRetail, prop firm, paper — all of them.",
+      "image": null
+    },
+    {
+      "id": 375,
+      "content": "Your AI performance review is not a summary.\n\nIt is a structured report with mandated sections:\n→ Executive Summary\n→ Key Wins (what worked and why)\n→ Key Concerns (what is hurting you)\n→ Emotional Pattern Analysis\n→ Actionable Recommendations\n\nEvery claim backed by your actual trade data. Specific symbols. Specific dates. Specific P&L numbers.\n\nIt streams in real-time. You can cancel mid-generation if you have seen enough.\n\nThe report caches permanently. Generate it once, reference it forever.",
+      "image": "images/onyx-review.png"
+    },
+    {
+      "id": 376,
+      "content": "The market rewards boredom.\n\nThe traders making consistent money are not excited. They are not stressed. They are not refreshing their P&L every 30 seconds.\n\nThey are bored. Because they have a system. And they trust it.",
+      "image": null
+    },
+    {
+      "id": 377,
+      "content": "Your account balance is not just a number anymore.\n\nFull transaction ledger:\n→ Deposits with dates and descriptions\n→ Withdrawals tracked\n→ Transfers between accounts (linked on both sides)\n→ Running balance after every transaction\n\nKnow exactly where your capital went. Not just how your trades performed.",
+      "image": "images/transaction-ledger.png"
+    },
+    {
+      "id": 378,
+      "content": "Know a trader who needs a journal?\n\nRefer them. If they go Pro, you get $7.50 credit.\n\nCredits stack forever. No cap.",
+      "image": null
+    },
+    {
+      "id": 379,
+      "content": "What if you cut your losers 10% sooner?\n\nWhat if your win rate dropped to 40%?\n\nWhat if you missed 1 out of every 5 trades?\n\nThe What-If sandbox lets you tweak any variable — win rate, average win, average loss, position size, fees — and see the impact on your equity curve instantly.\n\nStop wondering. Start testing.",
+      "image": "images/whatif.png"
+    },
+    {
+      "id": 380,
+      "content": "\"Broker sync loses trades.\"\n\nNo. Broker sync finds the trades you forgot to log.\n\nThe ones you skipped because you were frustrated. The ones you closed too fast to journal. The ones from last Thursday you cannot remember.\n\nSync misses nothing. Your memory does.",
+      "image": null
+    },
+    {
+      "id": 381,
+      "content": "Connected my Robinhood account. Synced instantly.\n\nFound 12 trades from last month I never logged.\n\n3 of them were winners I completely forgot about.\n\nTurns out my win rate was 6% higher than I thought. My confidence was the problem, not my strategy.",
+      "image": null
+    },
+    {
+      "id": 382,
+      "content": "You have taken 8 trades today. Your daily limit is 5.\n\nOvertrading alert triggered.\n\nNot a generic warning. A specific message based on your rules, your count, and what usually happens when you overtrade.\n\nThe alert appears on your screen before you can open the trade form.",
+      "image": "images/onyx-alert.png"
+    },
+    {
+      "id": 383,
+      "content": "The Best Times Heatmap shows your P&L by hour and day of week.\n\nPick your resolution: 5 minute, 15 minute, 30 minute, or 1 hour intervals.\n\nToggle between Net P&L and Win Rate views.\n\nGreen cells are your Golden Hours — when you make money consistently.\nRed cells are your Loss Zones — when you should not be trading.\n\nMost traders have 2-3 hours that generate 80% of their profits. The rest is noise.\n\nFind your hours. Trade only those. Watch your expectancy climb.",
+      "image": "images/best-times-heatmap.png"
+    },
+    {
+      "id": 384,
+      "content": "Discipline is not a personality trait.\n\nIt is a skill you build by reviewing what happens when you break your rules.\n\nTrack the violations. Measure the cost. The data does the convincing.",
+      "image": null
+    },
+    {
+      "id": 385,
+      "content": "You can embed YouTube videos directly in your journal notes.\n\nRecord your screen during a trade. Upload it. Embed it in your post-trade review.\n\nRewatch your exact thought process 3 months later.",
+      "image": "images/youtube-embed-note.png"
+    },
+    {
+      "id": 386,
+      "content": "My weekly review routine with AI:\n\n1. Open the AI coach on Sunday night (2 min)\n2. Ask: \"What were my biggest mistakes this week?\" (30 sec)\n3. Read the response — it cites specific trades, dates, P&L (1 min)\n4. Ask: \"Which setup performed best?\" (30 sec)\n5. Generate a full performance review for the week (2 min)\n6. Write 3 sentences in my journal about what to change next week (2 min)\n\n8 minutes. Every week. Compounding improvement.",
+      "image": null
+    },
+    {
+      "id": 387,
+      "content": "Asked Onyx: \"When should I stop trading?\"\n\nResponse: \"Your data shows a sharp decline in win rate after 11:30 AM ET. Your average loss between 11:30 AM and 2 PM is 2.3x larger than your morning average loss. Consider ending your session at 11:30 AM.\"\n\nChecked the data. It was right.\n\nSometimes the best trade is closing the laptop.",
+      "image": null
+    },
+    {
+      "id": 388,
+      "content": "Prop firm challenge phases tracked automatically:\n\n→ Evaluation Phase 1, 2, 3\n→ Funded status\n→ Failed with reason tracking\n→ Reset events with history\n\nPhase start and end dates. Only trades within the current phase count toward your targets.\n\nFTMO, The5ers, TopStep, Funded Trader, MyForexFunds, Apex — presets built in. Or configure any firm manually.",
+      "image": "images/propfirm-dashboard.png"
+    },
+    {
+      "id": 389,
+      "content": "Connected my broker to my journal.\n\nFound 47 trades I \"forgot\" to log.\n\nMy win rate went from \"pretty good I think\" to \"43%.\"",
+      "image": null
+    },
+    {
+      "id": 390,
+      "content": "The Kelly Criterion tells you the mathematically optimal position size to maximize long-term growth.\n\nBased on your actual win rate and reward-to-risk ratio:\n→ Kelly Fraction: the exact percentage of capital to risk\n→ Edge Quality: is your strategy actually profitable per trade?\n→ Sizing Recommendation: specific advice on whether to size up or down\n\nMost traders either size too large (risking ruin) or too small (leaving growth on the table).\n\nThe math already knows the answer. You just have to look at it.",
+      "image": "images/kelly-criterion.png"
+    },
+    {
+      "id": 391,
+      "content": "Lost my trading spreadsheet to a corrupted file once.\n\n4 months of data. Gone.\n\nNow my journal backs up automatically. Full JSON export any time I want. CSV export for trades.\n\nYour data should never depend on a single file on your desktop.",
+      "image": null
+    },
+    {
+      "id": 392,
+      "content": "Upload a CSV from any broker. AI figures out the columns, maps the fields, and flags duplicates before importing.\n\nNo templates. No formatting requirements. It just works.",
+      "image": "images/csv-import.png"
+    },
+    {
+      "id": 393,
+      "content": "Spreadsheet journal:\n→ Manual entry for every trade\n→ Formulas break when you add rows\n→ No charts unless you build them\n→ No emotion tracking\n→ No setup performance\n→ Corrupts randomly\n→ Looks like a tax form\n\nActual trading journal:\n→ Broker auto-sync or quick manual entry\n→ 50+ analytics calculated automatically\n→ Equity curves, heatmaps, calendars\n→ Emotion and mistake tracking with P&L correlation\n→ Setup win rates updated in real-time\n→ AI coach that knows your history\n→ Cloud-backed with export any time\n\nSpreadsheets are for budgets. Not for trading.",
+      "image": "images/product-shot.png"
+    },
+    {
+      "id": 394,
+      "content": "Cutting winners short is not a discipline problem.\n\nIt is a fear problem.\n\nYou are afraid the profit will disappear. So you grab it early.\n\nTrack your MFE — Maximum Favorable Excursion. It shows you how much further your winners went after you exited.\n\nWhen you see the number, the fear becomes data. And data you can fix.",
+      "image": null
+    },
+    {
+      "id": 395,
+      "content": "Are you beating the S&P 500?\n\nBenchmark Alpha compares your actual trading returns against SPY.\n\n→ Alpha: your excess return above the market\n→ Beta: how correlated you are with the market\n→ Information Ratio: your skill relative to the risk you take\n→ Treynor Ratio: return per unit of market risk\n\nIf your alpha is negative, a passive index fund is outperforming your active trading.\n\nHarsh but important.",
+      "image": "images/benchmark-alpha.png"
+    },
+    {
+      "id": 396,
+      "content": "Prop firm traders — what is the best piece of advice you would give someone starting their first challenge?",
+      "image": null
+    },
+    {
+      "id": 397,
+      "content": "In-app notifications now. Promo announcements, system updates, referral rewards, milestone achievements.\n\nReal-time. Color-coded. One click to dismiss or act.\n\nNever miss an update without checking your email.",
+      "image": "images/notification-bell.png"
+    },
+    {
+      "id": 398,
+      "content": "Your market news feed does not just show articles.\n\nEach one gets:\n→ An AI-written summary (3 lines max)\n→ A \"Why this matters\" section tied to your portfolio\n→ Ticker chips for mentioned symbols\n→ A color-coded category badge\n\nFiltered by what you actually trade. Updated every 2 hours.\n\nRelevant news without the noise.",
+      "image": "images/news-feed.png"
+    },
+    {
+      "id": 399,
+      "content": "4 browser tabs open:\n→ Broker platform\n→ Charting software\n→ Spreadsheet journal\n→ News aggregator\n\nOr one trading journal that does all of it.\n\nCharts with real market data. Broker sync. AI news feed. Built-in analytics.\n\nSimplify.",
+      "image": null
+    },
+    {
+      "id": 400,
+      "content": "Onyx does not sugarcoat.\n\n\"Your AAPL trades have a 31% win rate over the last 60 days. Your average loss is 1.8x your average win. Consider removing AAPL from your watchlist until conditions change.\"\n\nNo encouragement. No \"keep trying.\" Just what the data says and what to do about it.\n\nThat is the point.",
+      "image": null
+    },
+    {
+      "id": 401,
+      "content": "You are down $400 today. Your daily loss limit is $500.\n\nAlert triggered: \"Daily loss limit approaching. You have used 80% of your daily risk budget. Onyx recommends reducing position size or stopping for the day.\"\n\nThe rule exists because you set it. The alert exists because you will forget it.",
+      "image": "images/risk-alerts-banner.png"
+    },
+    {
+      "id": 402,
+      "content": "3 trades that ruin a good week:\n\n1. The \"one more trade\" after hitting your daily target\n2. The revenge trade after lunch\n3. The oversized position because \"this one is different\"\n\nTrack all three. Measure how much they cost you per month.\n\nThe number will make you stop.",
+      "image": null
+    },
+    {
+      "id": 403,
+      "content": "Prop firm drawdown types explained:\n\n→ Static: fixed from your initial balance. You start with $100K, max drawdown is $10K, your floor is $90K forever.\n\n→ Trailing: follows your highest balance. Hit $105K and your floor moves to $95K.\n\n→ EOD Trailing: same as trailing but only updates at end of day. Intraday spikes do not move the floor.\n\nKnowing which type your firm uses changes how you size every single trade.\n\nYour journal tracks all three. Set it once, monitor it always.",
+      "image": null
+    },
+    {
+      "id": 404,
+      "content": "If you could only track ONE metric for the rest of your trading career, what would it be?\n\nWin rate? Profit factor? R-multiple? Expectancy? Max drawdown?\n\nDrop your answer.",
+      "image": null
+    },
+    {
+      "id": 405,
+      "content": "Your exit timing might be costing you more than your entry timing.\n\nMAE (Maximum Adverse Excursion): the worst point during a trade before you closed it.\nMFE (Maximum Favorable Excursion): the best point during a trade before you closed it.\n\nThe scatter plot shows every trade as a dot — pain on one axis, potential on the other.\n\n→ Harvest Rate: what % of the move did you actually capture?\n→ Leave-on-Table: how much profit did you miss by exiting early?\n→ Pain Tolerance: are you sitting through 3R drawdowns for 1R gains?\n\nMost traders focus on finding better entries. The real edge is in better exits.",
+      "image": "images/efficiency-analysis.png"
+    },
+    {
+      "id": 406,
+      "content": "Three ways to get trades into your journal:\n\n1. Manual entry (60 seconds per trade)\n2. Broker auto-sync (zero seconds per trade)\n3. CSV import with AI mapping (30 seconds for 100 trades)\n\nThe best method is the one that makes you actually journal.",
+      "image": null
+    },
+    {
+      "id": 407,
+      "content": "Onyx adapts to where you are in the app.\n\nDashboard: \"How am I doing this week?\"\nAnalytics: \"What is my worst performing setup?\"\nTrade detail: \"What is my history with NVDA calls?\"\nJournal: \"Help me reflect on this trade.\"\n\nSuggested questions change with context. You just click.",
+      "image": null
+    },
+    {
+      "id": 408,
+      "content": "\"You need 200 trades before analytics matter.\"\n\nNo.\n\nAfter 20 trades you can see which setups are losing money.\nAfter 50 you can see time-of-day patterns.\nAfter 100 you can run meaningful simulations.\n\nWaiting for statistical perfection is just another excuse not to review your trades.",
+      "image": null
+    },
+    {
+      "id": 409,
+      "content": "Gold. Silver. Platinum.\n\nSpot metals supported with real chart data from Twelve Data.\n\n24/7 market hours. Correct lot sizes (100 oz for gold, 5000 oz for silver). Automatic P&L calculation.\n\nCommodity traders are not an afterthought.",
+      "image": "images/commodity-trade.png"
+    },
+    {
+      "id": 410,
+      "content": "The setup you skip because it \"does not feel right\" is statistically your most profitable one.\n\nYou would know that if you tracked it.",
+      "image": null
+    },
+    {
+      "id": 411,
+      "content": "I upgraded for the simulations.\n\nStayed for the AI coach that told me my Wednesday afternoon trades were costing me $1,200 per month.\n\nSome data you only find when something is looking at all of it at once.",
+      "image": null
+    },
+    {
+      "id": 412,
+      "content": "Pre-market routine with AI:\n\n1. Check the Daily Brief widget (10 seconds)\n   → Yesterday's summary, key insight, one suggestion\n\n2. Ask Onyx: \"Any setups I should watch today?\" (30 seconds)\n   → Gets suggestions based on recent winners and market conditions\n\n3. Review open positions (1 minute)\n   → Live P&L, unrealized gains/losses across all accounts\n\n4. Scan your news feed (2 minutes)\n   → AI-curated articles for your traded symbols\n\n5. Set your risk rules for the day (30 seconds)\n   → Max trades, max loss, trading hours\n\nUnder 5 minutes. Fully data-driven. No guessing what to focus on.",
+      "image": null
+    },
+    {
+      "id": 413,
+      "content": "Portfolio up 2% in a week:\n\"I should write a course.\"\n\nPortfolio down 2% the next week:\n\"Maybe I should take that course.\"",
+      "image": null
+    },
+    {
+      "id": 414,
+      "content": "Brokers that sync automatically:\n\nStocks and Options:\n→ Robinhood, Schwab, Fidelity, IBKR, Webull, E*Trade, tastytrade, Public, Questrade, Trading212, DEGIRO, Vanguard, Moomoo\n\nForex and CFDs:\n→ Pepperstone, IC Markets, FxPro, Axi, FP Markets\n\nCrypto:\n→ Coinbase, Binance, Kraken\n\nProp Firms:\n→ FTMO, The5ers, TopStep (via MetaTrader)\n\nIf your broker is not on the list, CSV import handles the rest.",
+      "image": "images/broker-connect.png"
+    },
+    {
+      "id": 415,
+      "content": "What is the probability you blow up in the next 100 trades?\n\nRisk of Ruin calculates it based on your actual stats.\n\nSet your threshold: 25%, 50%, 75%, or 90% account drawdown.\n\nThe simulation tells you the exact probability of hitting that level.\n\nIf the number scares you, your position sizing needs work.",
+      "image": "images/montecarlo.png"
+    },
+    {
+      "id": 416,
+      "content": "The best traders feel bored during their best weeks.\n\nNo big wins to celebrate.\nNo big losses to recover from.\nJust consistent, small, slightly boring profits.\n\nThat is the goal.",
+      "image": null
+    },
+    {
+      "id": 417,
+      "content": "I traded for 6 months before I knew my actual win rate.\n\nSix months.\n\nI thought it was around 55%. It was 38%.\n\nThe math was working because my winners were 3x my losers. But I had no idea until I tracked it.\n\nYou cannot improve what you do not measure.",
+      "image": null
+    },
+    {
+      "id": 418,
+      "content": "Two referrals who go Pro.\n\nThat is $15 in credits.\n\nYour monthly subscription: $15.\n\nThe math works.",
+      "image": null
+    },
+    {
+      "id": 419,
+      "content": "How much of the move did you capture?\n\nEfficiency analysis answers this for every trade:\n\n→ Your entry was here\n→ The best possible exit was here\n→ Your actual exit was here\n→ You captured 47% of the available move\n\nRepeat across 100 trades. Find where you consistently leave money on the table.\n\nBetter exits compound faster than better entries.",
+      "image": "images/efficiency-analysis.png"
+    },
+    {
+      "id": 420,
+      "content": "What is the longest losing streak you have survived?\n\nAnd what kept you from blowing up?",
+      "image": null
+    },
+    {
+      "id": 421,
+      "content": "Stuck staring at an empty journal entry?\n\nHit \"Help Me Reflect.\"\n\nOnyx reads what you have already written and asks 3-4 follow-up questions based on the content:\n\n\"You mentioned feeling anxious before entry. What specifically triggered that?\"\n\"Your target was 2R but you exited at 0.8R. What changed?\"\n\nThe questions insert into your editor. Answer them. Delete the ones that do not apply.\n\nJournaling is hard when you do not know what to write. It is easy when someone asks the right questions.",
+      "image": "images/onyx-journal-coach.png"
+    },
+    {
+      "id": 422,
+      "content": "Consistency beats intensity.\n\n5 trades per day with a system beats 20 trades per day without one.\n\n3 journal entries per week beats a 10-page review you do once a month.\n\nSmall, repeatable, boring. That is how you compound.",
+      "image": null
+    },
+    {
+      "id": 423,
+      "content": "MetaTrader traders — the full broker list:\n\nXM. Exness. IC Markets. FTMO. Pepperstone. OANDA. Admirals. HFM. FBS. Tickmill. RoboForex. Axi. AvaTrade. FP Markets. ThinkMarkets. The5ers. TopStep.\n\nPlus any MT4/MT5-compatible broker or prop firm not on this list.\n\nIf it runs on MetaTrader, it connects.",
+      "image": "images/broker-metatrader.png"
+    },
+    {
+      "id": 424,
+      "content": "\"Free tools are always worse.\"\n\nFree plan:\n→ Unlimited trades\n→ Unlimited journaling\n→ Full standard analytics\n→ Unlimited playbooks\n→ Calendar views\n→ Reports\n→ Data export\n\nThe free plan is not a demo. It is a complete trading journal that most traders would pay for.\n\nFree does not mean limited. It means accessible.",
+      "image": null
+    },
+    {
+      "id": 425,
+      "content": "Replay your trades candle by candle.\n\nNot a recording. A simulation built from real market data.\n\nWatch the price unfold. See when your entry and exit markers appear. Adjust speed from 0.1x to 10x.\n\nThe candles animate with intra-bar movement. Your decisions play out in real time.\n\nThe best way to learn from a trade is to relive it without the emotion.",
+      "image": "images/replay-poster.jpg"
+    },
+    {
+      "id": 426,
+      "content": "Spreadsheet after 1 month: works fine.\nSpreadsheet after 3 months: formulas getting complex.\nSpreadsheet after 6 months: takes 10 minutes to load, something is broken, you stopped updating it 2 weeks ago.\n\nTrading journal after 6 months: 50+ metrics calculated instantly, equity curve shows your progress, AI coach knows your entire history.",
+      "image": null
+    },
+    {
+      "id": 427,
+      "content": "Drop your broker below.\n\nI will tell you if it auto-syncs.",
+      "image": null
+    },
+    {
+      "id": 428,
+      "content": "See your unrealized P&L across all open positions. One number. Real-time.\n\nNo switching between broker tabs. No mental math.\n\nThe dashboard shows what your portfolio is doing right now. Not what it did yesterday.",
+      "image": "images/live-pnl-dashboard.png"
+    },
+    {
+      "id": 429,
+      "content": "A stop loss is not a suggestion.\n\nIt is a contract you make with yourself before the trade starts.\n\nThe traders who move their stops are the same traders who wonder why they have a negative expectancy.",
+      "image": null
+    },
+    {
+      "id": 430,
+      "content": "A trader connected 3 broker accounts in under 5 minutes.\n\nRetail account on Schwab. Prop firm on FTMO via MetaTrader. Crypto on Coinbase.\n\nAll trades flowing into one journal. One analytics dashboard. One equity curve.\n\nThat is what multi-account support actually looks like.",
+      "image": null
+    },
+    {
+      "id": 431,
+      "content": "The AI insight summary on your analytics page gives you a 3-4 sentence narrative of your top patterns, strengths, and areas to improve.\n\nNo charts to interpret. No tables to scan.\n\nJust: here is what your data says, in plain English.",
+      "image": null
+    },
+    {
+      "id": 432,
+      "content": "What separates guessing from knowing:\n\n→ Guessing: \"I think my best setup is the morning gap fill.\"\n→ Knowing: \"My morning gap fill has a 67% win rate with an average R-multiple of 2.1 over 43 trades.\"\n\n→ Guessing: \"I should probably trade less on Fridays.\"\n→ Knowing: \"My Friday P&L is -$3,200 over the last 3 months. My Monday P&L is +$5,100.\"\n\n→ Guessing: \"My risk management is fine.\"\n→ Knowing: \"I have a 12% probability of hitting a 30% drawdown in the next 200 trades.\"\n\nThe data exists. The tools exist. The only question is whether you will use them.",
+      "image": "images/analytics_advanced.png"
+    },
+    {
+      "id": 433,
+      "content": "Open the What-If sandbox.\n\nSlider 1: move your average loss down by 10%.\n\nYour equity curve shifts up. Your max drawdown drops. Your profit factor jumps.\n\nThat is the impact of cutting losers slightly sooner.\n\nNo theory. No guesswork. Just the math of your own trades with one variable changed.",
+      "image": "images/simulation_sliders.png"
+    },
+    {
+      "id": 434,
+      "content": "The market tests your conviction exactly at the point where giving up seems rational.\n\nThe traders who survive are the ones who know the difference between \"this is not working\" and \"this has not worked yet.\"\n\nYour journal helps you tell the difference. The data is either there or it is not.",
+      "image": null
+    },
+    {
+      "id": 435,
+      "content": "Prop firm dashboard at a glance:\n\n→ Profit target: 7.2% of 10% (green progress bar)\n→ Max drawdown: 3.1% of 10% used (green)\n→ Daily loss: 1.8% of 5% used (amber)\n→ Trading days: 6 of 10 minimum (green)\n\nPhase-aware. Only counts trades within your current evaluation phase.\n\nNo mental math. No logging into the prop firm portal. Just look at your dashboard.",
+      "image": "images/propfirm-dashboard.png"
+    },
+    {
+      "id": 436,
+      "content": "Other trading journals charge you to see your own data.\n\n\"Free plan: 5 trades per month.\"\n\"Upgrade to view analytics.\"\n\"Pay to export your history.\"\n\nYour data is your data. You should not need a subscription to access it.",
+      "image": null
+    },
+    {
+      "id": 437,
+      "content": "Connected my broker to my journal.\n\nImmediately regret seeing my actual P&L.\n\nBut at least now I know.",
+      "image": null
+    },
+    {
+      "id": 438,
+      "content": "Everything Onyx does:\n\n→ Answers questions about your trading data in natural language\n→ Gives pre-trade suggestions based on your history with that symbol\n→ Warns you about patterns that have cost you money\n→ Generates structured performance reviews with specific data\n→ Curates financial news for the symbols you trade\n→ Detects revenge trading, tilt, overtrading, and daily loss limits in real-time\n→ Coaches your journaling with prompts and reflection questions\n→ Delivers a daily brief before you start trading\n→ Provides insight summaries on your analytics page\n\nOne AI. Every part of the app. All based on your actual trades.\n\nNot a gimmick bolted on. A coach built in.",
+      "image": "images/onyx-chat.png"
+    },
+    {
+      "id": 439,
+      "content": "Trade forex in a GBP account. Trade US stocks in a EUR account. Trade crypto in a CAD account.\n\nP&L converts automatically using the historical FX rate from your trade date.\n\nNo manual conversion. No rounding errors. Just accurate numbers.",
+      "image": null
+    },
+    {
+      "id": 440,
+      "content": "What you get for free. Forever.\n\nUnlimited trades. Unlimited journaling. Standard analytics with 50+ metrics. Unlimited playbooks. Calendar heatmaps. Reports. CSV and JSON export. 2 accounts. 50 MB storage.\n\nWhat you get with Pro. For less than one losing trade per month.\n\nBroker auto-sync with 50+ brokers. Monte Carlo and What-If simulations. Best Times Heatmaps. MAE/MFE efficiency analysis. Return distribution. Kelly Criterion. Capital preservation. Benchmark Alpha. AI trading coach. Pre-trade suggestions. Performance reviews. Journal coaching. Market news feed. Risk alerts. Daily briefs. Running P&L. AI CSV import. Unlimited accounts. 1 GB storage.\n\nThe free plan is a full trading journal.\n\nPro is for traders who want every edge they can get.",
+      "image": "images/product-shot.png"
+    },
+    {
+      "id": 441,
+      "content": "The difference between a 40% win rate and a 60% win rate is not skill.\n\nIt is knowing which setups to stop taking.\n\nTrack every setup separately. Kill the ones that lose. Double down on the ones that win.\n\nThe edge is in the editing, not the trading.",
+      "image": null
+    },
+    {
+      "id": 442,
+      "content": "Your AI coach remembers what you forget.\n\nThat one AMZN put spread from 3 weeks ago? It knows.\nYour average hold time on losing trades? Calculated.\nThe emotion you logged on your worst day? Cross-referenced with your P&L.\n\nYou have 200 trades. You remember maybe 20.\n\nOnyx remembers all of them.",
+      "image": "images/onyx-chat.png"
+    },
+    {
+      "id": 443,
+      "content": "Name a trading mistake you keep repeating.\n\nNo judgment. Just curious how common it is.",
+      "image": null
+    },
+    {
+      "id": 444,
+      "content": "Iron condors. Vertical spreads. Straddles. Butterflies. Calendar spreads.\n\n10+ multi-leg options strategies with automatic detection.\n\nAdd your legs. The journal identifies the strategy. Tracks net debit or credit. Calculates P&L across the entire position.\n\nOptions traders deserve a journal that understands options.",
+      "image": "images/tradeform.png"
+    },
+    {
+      "id": 445,
+      "content": "You do not rise to the level of your goals.\n\nYou fall to the level of your systems.\n\nA journal is a system. A review process is a system. Risk rules are a system.\n\nBuild the system. The results follow.",
+      "image": null
+    },
+    {
+      "id": 446,
+      "content": "Your broker just synced 23 new trades.\n\nEach one already has:\n→ Entry and exit prices\n→ Quantity and side\n→ Commission and fees\n→ P&L calculated\n→ Timestamps\n\nAll you need to add: your notes, emotions, and what you learned.\n\nThe tedious part is automated. The valuable part is yours.",
+      "image": "images/broker-snaptrade.png"
+    },
+    {
+      "id": 447,
+      "content": "How do you handle a trade that hits your stop loss but then reverses?\n\nDo you re-enter? Walk away? Journal it and move on?",
+      "image": null
+    },
+    {
+      "id": 448,
+      "content": "Scaled into a position 3 times. Scaled out twice.\n\nYour journal tracks every single execution:\n→ Entry 1: 100 shares at $142.50\n→ Entry 2: 50 shares at $141.80\n→ Entry 3: 50 shares at $141.20\n→ Exit 1: 100 shares at $144.00\n→ Exit 2: 100 shares at $145.30\n\nAll visualized on your price chart with markers. Average entry calculated. P&L per execution available.\n\nReal trading is messy. Your journal handles it.",
+      "image": "images/tradeform-executions.png"
+    },
+    {
+      "id": 449,
+      "content": "The worst time to set your risk rules is during a trade.\n\nThe best time is Sunday night, when the market is closed and your emotions are neutral.\n\nSet them once. Let the alerts enforce them.",
+      "image": null
+    },
+    {
+      "id": 450,
+      "content": "Onyx found something in your data you missed.\n\n\"Your trades with a confidence rating above 7 have a 72% win rate. Your trades with a confidence rating below 4 have a 29% win rate. Consider passing on trades where your pre-trade confidence is low.\"\n\nYou have been logging confidence on every trade. You just never analyzed it.\n\nThe AI did.",
+      "image": null
+    },
+    {
+      "id": 451,
+      "content": "Year heatmap.\n\nEvery day of the year. Color-coded by P&L.\n\nGreen squares: profitable days.\nRed squares: losing days.\nDark green: your best days.\nDark red: your worst.\n\nOne glance tells you more than a spreadsheet ever could.\n\nPatterns jump off the screen. Streaks become obvious. Seasonal trends appear.",
+      "image": "images/calendar_year.png"
+    },
+    {
+      "id": 452,
+      "content": "\"I don't have time to journal.\"\n\nYou have time to scroll Twitter for 20 minutes.\n\nJournaling one trade takes 60 seconds. Reviewing your week takes 8 minutes.\n\nYou have time. You just have not made it a priority yet.",
+      "image": null
+    },
+    {
+      "id": 453,
+      "content": "What percentage of your trades do you actually journal?\n\nBe honest.",
+      "image": null
+    },
+    {
+      "id": 454,
+      "content": "Your emotions have a P&L.\n\nTrades logged as \"confident\": +$4,200 this month.\nTrades logged as \"anxious\": -$1,800 this month.\nTrades logged as \"frustrated\": -$3,100 this month.\n\nEmotion tracking is not soft. It is the hardest data you will ever face.",
+      "image": "images/emotions.png"
+    },
+    {
+      "id": 455,
+      "content": "The traders who blow up do not blow up because of one bad trade.\n\nThey blow up because of what they do after one bad trade.\n\nTrack the sequence. Not just the trade.",
+      "image": null
+    },
+    {
+      "id": 456,
+      "content": "Pepperstone. IC Markets. FxPro. Axi. FP Markets.\n\nForex traders on cTrader — connect via OAuth, trades sync automatically.\n\nLot sizes calculated correctly. Pip values accurate. Multi-currency P&L conversion built in.\n\nNo more copying trade confirmations into a spreadsheet.",
+      "image": null
+    },
+    {
+      "id": 457,
+      "content": "Pre-trade checklist:\n\n☐ Does this match one of my setups?\n☐ Is the R:R at least 2:1?\n☐ Am I within my daily trade limit?\n☐ Is my position size correct?\n☐ Am I trading within my best hours?\n☐ Am I emotionally neutral?\n\nCustomize your own. It shows up every time you enter a trade.\n\nThe checklist does not prevent bad trades. It makes you pause before taking them.",
+      "image": "images/risk-management.png"
+    },
+    {
+      "id": 458,
+      "content": "\"My strategy works, I just need more discipline.\"\n\nHave you verified that with data? Or is that a feeling?\n\nRun a simulation. Check your win rate by setup. Look at your P&L by time of day.\n\nSometimes the strategy does not work. Discipline is not the problem.",
+      "image": null
+    },
+    {
+      "id": 459,
+      "content": "The scariest chart in trading is your own equity curve.\n\nBecause it does not lie.\n\nEvery spike is a win you remember. Every dip is a mistake you forgot. The trend is your actual skill, stripped of narrative.\n\nLook at it weekly. It will keep you honest.",
+      "image": "images/equity-curve.png"
+    },
+    {
+      "id": 460,
+      "content": "Onyx does not give generic advice.\n\nIt will not tell you to \"manage your risk\" or \"stick to your plan.\"\n\nIt will tell you that your TSLA calls have a 28% win rate, your average loss on them is $380, and you have taken 14 of them in the last 30 days.\n\nSpecific. Actionable. Based on your trades.",
+      "image": null
+    },
+    {
+      "id": 461,
+      "content": "Do you review your trades daily, weekly, or monthly?\n\nOr... never?",
+      "image": null
+    },
+    {
+      "id": 462,
+      "content": "Position sizing calculator built in.\n\n→ Enter your account size\n→ Enter your entry price\n→ Enter your stop loss\n→ Set your risk (% or fixed $)\n\nOutput: exact number of shares, planned risk in dollars, R-multiple, total position value.\n\nBuying power shortfall detection included.\n\nNo external calculator needed. No mental math. No \"I'll just round up.\"",
+      "image": "images/position-calc.png"
+    },
+    {
+      "id": 463,
+      "content": "The best trade you will ever make is the one you did not take.\n\nThe one that did not match your setup. The one where the R:R was wrong. The one you almost forced because you were bored.\n\nPatience has a P&L. You just cannot see it on your equity curve.",
+      "image": null
+    },
+    {
+      "id": 464,
+      "content": "Every trade gets a real candlestick chart with actual market data.\n\nNot a static image. An interactive chart.\n\n→ Zoom and pan\n→ Entry markers (blue arrows)\n→ Exit markers (purple arrows)\n→ Stop loss line (red dotted)\n→ Take profit line (green dotted)\n→ Volume overlay\n→ Auto-fit to your trade's timeframe\n\nYour trade in context. Every time.",
+      "image": "images/trade_chart.png"
+    },
+    {
+      "id": 465,
+      "content": "Mistakes have categories:\n\n1. Entry Mistake\n2. Exit Mistake\n3. Position Sizing\n4. Wrong Timing\n5. Emotional Decision\n6. Rule Violation\n7. Technical Error\n8. Trade Management\n9. Other\n\nSeverity levels: Low, Medium, High, Critical.\n\nEach mistake tracks:\n→ Dollar impact\n→ Frequency count\n→ Prevention tips you write for yourself\n\nThe prevention tips show up on your trade detail page. Your future self reads them before making the same mistake.",
+      "image": null
+    },
+    {
+      "id": 466,
+      "content": "\"I know what I did wrong.\"\n\nDo you? Or do you know what you did wrong today?\n\nWithout a journal, you remember the last 3 mistakes. With a journal, you see the pattern across 100 trades.\n\nOne is a feeling. The other is a diagnosis.",
+      "image": null
+    },
+    {
+      "id": 467,
+      "content": "Your news feed just updated.\n\n3 articles about NVDA earnings. 1 about Fed rate expectations. 2 about the sector you trade most.\n\nEach one summarized in 3 lines with a \"Why this matters to you\" section.\n\nNo doom scrolling. No irrelevant headlines. Just what moves your positions.",
+      "image": "images/news-feed.png"
+    },
+    {
+      "id": 468,
+      "content": "Every trader has a number they are afraid to calculate.\n\nFor some it is their actual win rate.\nFor others it is how much commissions have cost them.\nFor most it is their max drawdown.\n\nCalculate it anyway. The number does not get smaller by ignoring it.",
+      "image": null
+    },
+    {
+      "id": 469,
+      "content": "What is ONE habit that improved your trading more than anything else?",
+      "image": null
+    },
+    {
+      "id": 470,
+      "content": "Prop firm traders: your drawdown is being tracked in real-time.\n\nStatic drawdown? Your floor is fixed.\nTrailing drawdown? It updates with your high watermark.\nEOD trailing? Intraday spikes ignored.\n\nThe dashboard knows which type your firm uses. It calculates accordingly.\n\nOne wrong assumption about your drawdown type can end a challenge. Do not guess.",
+      "image": "images/propfirm-dashboard.png"
+    },
+    {
+      "id": 471,
+      "content": "You lost money 3 days in a row.\n\nThat is not a losing streak. That is Tuesday through Thursday.\n\nThe question is not \"why did I lose?\" The question is \"did I follow my rules while losing?\"\n\nBecause if you did, the math will take care of the rest.",
+      "image": null
+    },
+    {
+      "id": 472,
+      "content": "Onyx just generated your weekly performance review.\n\nExecutive Summary: \"Net P&L of +$1,240 across 23 trades. Win rate of 61%, up from 54% last week. Profit factor improved to 2.1.\"\n\nKey Concern: \"3 of your 9 losses were on AAPL puts entered after 2pm. Consider avoiding afternoon entries on this symbol.\"\n\nRecommendation: \"Your morning gap fills accounted for 78% of weekly profit. Allocate more capital to this setup.\"\n\nAll generated. All specific. All from your data.",
+      "image": "images/onyx-review.png"
+    },
+    {
+      "id": 473,
+      "content": "The gap between knowing and doing is a journal entry.\n\nYou know you should not revenge trade. Write about the last time you did.\nYou know you should cut losers. Write about the one you held too long.\nYou know your best setup. Write about why you keep skipping it.\n\nKnowledge without reflection is just trivia.",
+      "image": null
+    },
+    {
+      "id": 474,
+      "content": "Smart symbol autofill.\n\nType a symbol you have traded before. The form fills in:\n→ Contracts\n→ Strike price\n→ Side\n→ Last used quantities\n\nIt skips expired dates automatically.\n\nIf you trade the same symbols regularly, entry takes seconds, not minutes.",
+      "image": "images/tradeform.png"
+    },
+    {
+      "id": 475,
+      "content": "My best month and my worst month had the same number of trades.\n\nThe difference was which trades I took, not how many.\n\nQuality over quantity is a cliche until you see it in your own data.",
+      "image": null
+    },
+    {
+      "id": 476,
+      "content": "How many setups do you actively trade?\n\n1? 3? 10?\n\nMost profitable traders I know use 2-3 setups max.",
+      "image": null
+    },
+    {
+      "id": 477,
+      "content": "Setup validation on every trade.\n\nYou linked a setup with a 15-minute timeframe. But your trade lasted 3 hours.\n\nAmber warning: timeframe mismatch.\n\nYou linked a setup for stocks. But this trade is a futures contract.\n\nAmber warning: market mismatch.\n\nEntry conditions show as checkboxes. Exit conditions too. All persisted.\n\nYour setup is a hypothesis. The validation tells you if you actually followed it.",
+      "image": "images/trade-detail.png"
+    },
+    {
+      "id": 478,
+      "content": "I revenge traded on a Tuesday.\n\nLost $800 in 45 minutes.\n\nWrote about it in my journal that night. Read it the following Tuesday before market open.\n\nDid not revenge trade.\n\nThat journal entry paid for itself 10 times over.",
+      "image": null
+    },
+    {
+      "id": 479,
+      "content": "Futures traders:\n\n→ Contracts traded\n→ Point value (e.g., $50 for ES, $20 for NQ)\n→ Tick value and tick size\n→ Expiration date\n→ P&L calculated with correct multipliers\n→ Real chart data from Twelve Data\n→ Auto symbol normalization (USTEC → QQQ, US500 → SPY)\n\nFutures P&L is not just price difference times quantity. The journal does the math right.",
+      "image": null
+    },
+    {
+      "id": 480,
+      "content": "Your trading calendar does not just show green and red days.\n\nIt shows intensity.\n\nLight green: small win.\nDark green: great day.\nLight red: small loss.\nDark red: terrible day.\n\n5 intensity levels. GitHub-style heatmap. Year, month, week, or day view.\n\nClick any day to see every trade.",
+      "image": "images/calendar-full.png"
+    },
+    {
+      "id": 481,
+      "content": "\"I will start journaling when I am profitable.\"\n\nYou will not become profitable until you start journaling.\n\nThis is the paradox every serious trader figures out eventually.",
+      "image": null
+    },
+    {
+      "id": 482,
+      "content": "The Running P&L chart shows the exact path your trade took from entry to exit.\n\nNot just the result. The journey.\n\n→ When did you hit max pain (MAE)?\n→ When did you hit max potential (MFE)?\n→ How much of the move did you capture?\n→ How long were you underwater?\n\nThe result tells you if you won. The path tells you if you traded well.",
+      "image": "images/running-pnl.png"
+    },
+    {
+      "id": 483,
+      "content": "Do you track your commissions?\n\nA trader with 500 trades per year at $1.50 per trade is paying $750/year in commissions.\n\nAt $5 per trade, that is $2,500.\n\nYour journal tracks total commissions paid. The number might surprise you.",
+      "image": null
+    },
+    {
+      "id": 484,
+      "content": "Onyx catches patterns humans miss.\n\nNot because it is smarter. Because it does not forget.\n\nYou remember your last 5 trades. Onyx cross-references your last 500.\n\nThat one losing streak in March? It noticed the same emotional pattern happening again right now.",
+      "image": "images/onyx-chat.png"
+    },
+    {
+      "id": 485,
+      "content": "Every trade you take is a data point.\n\nEvery data point tells a story.\n\nThe problem is that most traders only read the last chapter.\n\nYour journal reads the whole book.",
+      "image": null
+    },
+    {
+      "id": 486,
+      "content": "Global search across everything.\n\n→ Type a symbol: see every trade, setup, and note related to it\n→ Type a setup name: jump to its performance stats\n→ Type a page name: navigate instantly\n→ Keyboard shortcut to open\n\nNo clicking through menus. No scrolling through tables. Just search and go.",
+      "image": "images/command_palette.png"
+    },
+    {
+      "id": 487,
+      "content": "The hardest part of trading is not the analysis.\n\nIt is sitting on your hands when there is no trade to take.\n\nThe market is open 6.5 hours. Your edge might exist for 2 of them.\n\nThe other 4.5 hours are where most losses happen.",
+      "image": null
+    },
+    {
+      "id": 488,
+      "content": "What is the most expensive lesson trading has taught you?",
+      "image": null
+    },
+    {
+      "id": 489,
+      "content": "Full data backup. One click.\n\nJSON export includes everything:\n→ Trades\n→ Notes\n→ Accounts\n→ Setups\n→ Mistakes\n→ Tags\n→ Risk rules\n→ Risk profile\n\nVersioned file. Restore any time.\n\nYour trading data belongs to you. Always.",
+      "image": "images/export.png"
+    },
+    {
+      "id": 490,
+      "content": "Onyx asked me a question I had never thought about:\n\n\"Your average win on trades held less than 30 minutes is $120. Your average win on trades held 1-4 hours is $340. Why are you closing early?\"\n\nI did not have an answer.\n\nThat was the answer.",
+      "image": null
+    },
+    {
+      "id": 491,
+      "content": "Your worst day last month cost you how much?\n\nDo you know the exact number?\n\nBecause your journal does. And it also knows what setup you were trading, what emotion you logged, and what time of day it happened.\n\nThe exact number is where improvement starts.",
+      "image": null
+    },
+    {
+      "id": 492,
+      "content": "Bulk actions on trades.\n\nSelect 15 trades. Delete them all.\n\nOr select one trade and duplicate it for quick entry of a similar position.\n\nSmall features that save real time.",
+      "image": null
+    },
+    {
+      "id": 493,
+      "content": "Every prop firm challenge has different rules.\n\nMinimum trading days. Maximum days to complete. Consistency rules. News trading restrictions. Weekend holding rules. Overnight holding rules.\n\nYour journal tracks all of them. Per account. Per phase.\n\nOne dashboard. Every rule. No surprises.",
+      "image": null
+    },
+    {
+      "id": 494,
+      "content": "FOMO is not an emotion.\n\nIt is a signal that you do not trust your own process.\n\nBecause if you trusted your process, missing one trade would not matter. The next one is coming.\n\nThe only traders who feel FOMO are the ones without a system.",
+      "image": null
+    },
+    {
+      "id": 495,
+      "content": "Simulated trade replay at 0.1x speed.\n\nWatch every candle form slowly. See the market build up to your entry. Watch your position move tick by tick.\n\nAt 10x speed, the same trade takes 15 seconds.\n\nYou pick the speed. The lesson stays the same.\n\nRelive the trade without the adrenaline. That is when you learn.",
+      "image": "images/replay-poster.jpg"
+    },
+    {
+      "id": 496,
+      "content": "Risk rules are reminders, not enforcement.\n\nYou set them. They show up during trade entry. You decide whether to follow them.\n\nMax 3 trades per day. Max $500 daily loss. No trading before 9:45 AM. No trading after 3:30 PM.\n\nThe journal does not block you. It reminds you. Because the person who set those rules was thinking clearly. The person about to break them might not be.",
+      "image": null
+    },
+    {
+      "id": 497,
+      "content": "Ask Onyx: \"What is my biggest leak?\"\n\nIt scans your trades. Finds the pattern that costs you the most money. Tells you exactly what it is, how much it has cost, and what to do about it.\n\nOne question. One answer. One fix that could change your month.",
+      "image": "images/onyx-chat.png"
+    },
+    {
+      "id": 498,
+      "content": "Profitable traders do not have fewer losing trades.\n\nThey have smaller ones.",
+      "image": null
+    },
+    {
+      "id": 499,
+      "content": "Do you trade better in the morning or the afternoon?\n\nDo not guess. Actually check.",
+      "image": null
+    },
+    {
+      "id": 500,
+      "content": "Half the battle is getting trades into your journal.\n\nThe other half is reviewing them.\n\nBroker sync solves the first half. AI solves the second.\n\nThat leaves you with the part that actually matters: deciding what to change.",
+      "image": null
+    },
+    {
+      "id": 501,
+      "content": "Tags let you slice your data any way you want.\n\n→ Tag trades by catalyst: \"earnings\", \"fed meeting\", \"breakout\"\n→ Tag by strategy: \"scalp\", \"swing\", \"gap fill\"\n→ Tag by market condition: \"trending\", \"choppy\", \"low volume\"\n\n15 colors. Custom names. Usage counts.\n\nFilter your analytics by any tag. Find edges you did not know existed.",
+      "image": null
+    },
+    {
+      "id": 502,
+      "content": "Asked Onyx: \"Am I overtrading?\"\n\nResponse: \"You averaged 4.2 trades per day last month. On days with 5+ trades, your net P&L was -$180 per day. On days with 3 or fewer trades, your net P&L was +$290 per day. Yes, you are overtrading.\"\n\nI set my daily limit to 3.",
+      "image": null
+    },
+    {
+      "id": 503,
+      "content": "The journal is not where you record what happened.\n\nIt is where you decide what happens next.\n\nEvery review is a decision. Every pattern is a choice. Every metric is a compass.\n\nThe traders who treat their journal as a to-do list outperform the ones who treat it as a diary.",
+      "image": null
+    },
+    {
+      "id": 504,
+      "content": "Your Sharpe Ratio: risk-adjusted return.\nYour Sortino Ratio: downside risk-adjusted return.\nYour Calmar Ratio: return divided by max drawdown.\n\nThree numbers. Three different angles on the same question:\n\nIs my return worth the risk I am taking?\n\nIf you only look at P&L, you are only seeing half the picture.",
+      "image": "images/analytics_performance.png"
+    },
+    {
+      "id": 505,
+      "content": "The best time to start journaling was your first trade.\n\nThe second best time is your next trade.",
+      "image": null
+    },
+    {
+      "id": 506,
+      "content": "You connected your Schwab account.\n\n3 months of trades imported. 187 trades total.\n\nAnalytics populated instantly:\n→ Win rate: 52%\n→ Profit factor: 1.4\n→ Best setup: morning gap fill (68% win rate)\n→ Worst hour: 2-3 PM (23% win rate)\n→ Most profitable symbol: NVDA (+$2,800)\n→ Biggest leak: oversized positions on Fridays (-$1,900)\n\n3 months of data. 5 minutes to connect. Insights you would have missed for another 3 months.",
+      "image": "images/analytics_main.png"
+    },
+    {
+      "id": 507,
+      "content": "How many times have you said \"I will never do that again\" and then done it again within a week?",
+      "image": null
+    },
+    {
+      "id": 508,
+      "content": "Weekly review template built in:\n\n→ Pre-Market Notes: sentiment, key levels, trade ideas\n→ Trading Session: what you did and why\n→ Post-Market Review: P&L, observations, surprises\n→ Lessons Learned: what to carry forward\n\nOpen the template. Fill in the blanks. Done in 10 minutes.\n\nThe structure removes the friction. The habit builds the edge.",
+      "image": "images/notes.png"
+    },
+    {
+      "id": 509,
+      "content": "Most traders quit journaling because it feels like homework.\n\nBroker sync removes the data entry.\nAI removes the blank page problem.\nTemplates remove the \"what do I write\" problem.\n\nWhat is left is the actual thinking. The 2 minutes that make you better.\n\nEverything else is automated.",
+      "image": null
+    },
+    {
+      "id": 510,
+      "content": "Trades where I logged \"confident\" as my emotion: 64% win rate.\n\nTrades where I logged \"anxious\": 31% win rate.\n\nThe emotion did not cause the result. But it predicted it.\n\nThat pattern took 150 trades to become visible. My journal found it. I never would have.",
+      "image": "images/emotions.png"
+    },
+    {
+      "id": 511,
+      "content": "Your account colors are not just aesthetic.\n\n8 colors. One per account. So when you glance at your dashboard, you instantly know which account each metric belongs to.\n\nRetail in blue. Prop firm in orange. Paper trading in gray.\n\nSmall detail. Big clarity.",
+      "image": null
+    },
+    {
+      "id": 512,
+      "content": "\"How do I know if my strategy actually has an edge?\"\n\nKelly Criterion.\n\nIf the Kelly fraction is positive, your strategy has a mathematical edge.\nIf it is negative, you are gambling.\nIf it is above 25%, you probably have a real edge but should still use half-Kelly for safety.\n\nOne number. One answer.",
+      "image": "images/kelly-criterion.png"
+    },
+    {
+      "id": 513,
+      "content": "The most common mistake in trading is not a bad entry.\n\nIt is taking a trade that does not match any setup.\n\nTrack how many of your trades are \"off-plan.\" Calculate their P&L separately.\n\nThe number will convince you faster than any book.",
+      "image": null
+    },
+    {
+      "id": 514,
+      "content": "What is your risk per trade?\n\n1%? 2%? 5%? \"It depends\"?\n\nIf the answer is \"it depends\" without clear rules for when it depends, that is the first thing to fix.",
+      "image": null
+    },
+    {
+      "id": 515,
+      "content": "Dashboard widgets you can rearrange:\n\n→ Overview cards (P&L, win rate, profit factor, trade count)\n→ Prop firm status header\n→ Equity curve\n→ Mini calendar heatmap\n→ Open positions\n→ Recent trades\n→ Recent notes\n→ Top performing symbols\n→ Risk overview\n→ AI daily brief\n→ AI insight summary\n\nDrag and drop. Show or hide. Your dashboard, your layout.\n\nThe metrics you care about, front and center.",
+      "image": "images/dashboard.png"
+    },
+    {
+      "id": 516,
+      "content": "\"I had a great week but I do not know why.\"\n\nThat is the most dangerous sentence in trading.\n\nBecause if you cannot replicate it, it was luck. And luck runs out.\n\nA journal turns luck into a repeatable process. Or it tells you it was luck. Both are valuable.",
+      "image": null
+    },
+    {
+      "id": 517,
+      "content": "Onyx daily brief this morning:\n\nSummary: \"Yesterday you took 4 trades, 3 winners for a net +$380. Your best entry was the AAPL gap fill at 9:42 AM.\"\n\nInsight: \"You have won 7 of your last 8 morning trades. Your afternoon trades this week are 1 for 5.\"\n\nSuggestion: \"Focus on morning setups today. Skip afternoon entries unless conviction is high.\"\n\n10 seconds to read. Already better prepared than 90% of traders.",
+      "image": "images/onyx-daily-brief.png"
+    },
+    {
+      "id": 518,
+      "content": "A journal without review is just a logbook.\n\nA logbook without analysis is just data.\n\nData without action is just noise.\n\nThe value is in the loop: log → review → analyze → change → log again.",
+      "image": null
+    },
+    {
+      "id": 519,
+      "content": "What is the one thing you wish you had tracked from your very first trade?",
+      "image": null
+    },
+    {
+      "id": 520,
+      "content": "FTMO challenge tracker:\n\n→ Phase 1: 10% profit target, 5% daily loss limit, 10% max drawdown\n→ Minimum 10 trading days\n→ Maximum 30 calendar days\n→ Consistency rule tracking\n\nAll preconfigured. Select FTMO as your prop firm, pick your account size, start trading.\n\nDashboard updates after every trade. Progress bars move in real time.\n\nFocus on trading. Let the journal track the rules.",
+      "image": "images/propfirm-dashboard.png"
+    },
+    {
+      "id": 521,
+      "content": "The traders who survive their first year all have one thing in common.\n\nThey review their losses more carefully than their wins.\n\nWins feel good but teach little. Losses hurt but teach everything.",
+      "image": null
+    },
+    {
+      "id": 522,
+      "content": "Monte Carlo says I have a 3% chance of a 40% drawdown over my next 300 trades.\n\nThat means 3 out of 100 parallel universes, I lose almost half my account.\n\nIs 3% acceptable? That depends on my account size, my risk tolerance, and how I sleep at night.\n\nBut at least now I know the number. Before, I was just hoping.",
+      "image": "images/simulation_percentile.png"
+    },
+    {
+      "id": 523,
+      "content": "Every losing trade has a lesson. But only if you write it down.\n\nOtherwise it is just a loss.",
+      "image": null
+    },
+    {
+      "id": 524,
+      "content": "Your profit factor is the single best number to evaluate your system.\n\nGross profit divided by gross loss.\n\nAbove 1.0: you make more than you lose.\nAbove 1.5: you have a real edge.\nAbove 2.0: your system is strong.\nAbove 3.0: either you are excellent or your sample size is too small.\n\nOne number. Cuts through everything.",
+      "image": null
+    },
+    {
+      "id": 525,
+      "content": "Onyx journal coach just suggested these prompts after my losing trade:\n\n\"What was your thesis at entry, and at what point did the market invalidate it?\"\n\"You held for 47 minutes past your stop. What were you waiting for?\"\n\"Your last 3 losses on SPY puts were all afternoon entries. Is there a pattern here?\"\n\nEach question specific to my trade. Each one harder than the last.\n\nThat is the kind of journaling that changes behavior.",
+      "image": null
+    },
+    {
+      "id": 526,
+      "content": "Transfer $5,000 from your retail account to your prop firm account.\n\nBoth sides of the transfer logged. Balances updated automatically. Full audit trail.\n\nKnow where every dollar went.",
+      "image": "images/transaction-ledger.png"
+    },
+    {
+      "id": 527,
+      "content": "Comparison:\n\nTrader A: 70% win rate, 1:1 risk-reward.\nTrader B: 40% win rate, 3:1 risk-reward.\n\nTrader A feels better. Trader B makes more money.\n\nYour journal shows both numbers. So you stop optimizing for feelings and start optimizing for profit.",
+      "image": null
+    },
+    {
+      "id": 528,
+      "content": "Do you perform better on days you journal before the market opens?\n\nI do. And I did not know that until I checked.",
+      "image": null
+    },
+    {
+      "id": 529,
+      "content": "AI-powered CSV import supports every broker format.\n\nUpload your file. AI detects the columns. Maps them to trade fields. Flags duplicates.\n\nSwitching brokers? Import your entire history in one upload.\n\nNo data left behind.",
+      "image": "images/csv-import.png"
+    },
+    {
+      "id": 530,
+      "content": "Your R-multiple is the truth about your trade management.\n\nTargeted 3R. Got stopped out at -1R. That is a -1R trade.\nTargeted 3R. Closed at 1.5R because you got scared. That is a 1.5R trade.\nTargeted 3R. Let it run to 4R. That is a 4R trade.\n\nAverage R-multiple across 100 trades tells you if your execution matches your plan.\n\nIf your average R is under 1, your exits are the problem. Not your entries.",
+      "image": null
+    },
+    {
+      "id": 531,
+      "content": "How long does your average winning trade last?\n\nHow long does your average losing trade last?\n\nIf your losers last longer than your winners, you are holding losers too long.\n\nThe journal calculates both. Automatically.",
+      "image": null
+    },
+    {
+      "id": 532,
+      "content": "Note linking: one journal entry, multiple trades.\n\nWrote a pre-market plan? Link it to every trade you took that day.\n\nWrote a post-trade review? Link it to the specific trades discussed.\n\nLinked notes merge content and screenshots intelligently. No duplicates.\n\nYour journal entries and your trades are connected. Not separate files in separate folders.",
+      "image": "images/notes_link.png"
+    },
+    {
+      "id": 533,
+      "content": "The market does not care about your thesis.\n\nBut your journal should.\n\nWrite the thesis before the trade. Compare it to what actually happened after. The gap between expectation and reality is where all learning lives.",
+      "image": null
+    },
+    {
+      "id": 534,
+      "content": "IBKR. Webull. E*Trade. Questrade. Trading212. DEGIRO. tastytrade. Public. Vanguard. Moomoo. Schwab. Fidelity. Robinhood.\n\nZerodha. Stake. CommSec. AJ Bell. Chase. Empower. TD Direct.\n\nBux. Upstox. Wells Fargo. Binance. Coinbase. Kraken.\n\n30 brokers. One connection. Every trade synced.\n\nIf you use it, we probably support it.",
+      "image": "images/broker-connect.png"
+    },
+    {
+      "id": 535,
+      "content": "The Monte Carlo cone of uncertainty.\n\n5th percentile: your realistic worst case.\n25th percentile: your below-average scenario.\n75th percentile: your above-average scenario.\n95th percentile: your best case.\n\nYour actual future will be somewhere inside the cone.\n\nThe width of the cone tells you how much variance your system has. A narrow cone means consistency. A wide cone means chaos.\n\nWhich do you have?",
+      "image": "images/simulation_percentile.png"
+    },
+    {
+      "id": 536,
+      "content": "You do not need a perfect journal entry.\n\nYou need a consistent one.\n\n3 sentences after every trade is better than a 500-word essay once a month.\n\nLower the bar. Raise the frequency.",
+      "image": null
+    },
+    {
+      "id": 537,
+      "content": "Have you ever taken a trade and immediately known it was wrong?\n\nWhat did you do?",
+      "image": null
+    },
+    {
+      "id": 538,
+      "content": "Onyx integrates everywhere.\n\nDashboard widget: daily brief.\nAnalytics page: insight summary.\nTrade entry form: pre-trade suggestions.\nTrade detail: historical context.\nJournal editor: coaching prompts.\nRisk system: real-time alerts.\nReports tab: full performance reviews.\nNews tab: curated market feed.\n\nNot a separate tool. A layer across the entire app.",
+      "image": null
+    },
+    {
+      "id": 539,
+      "content": "The best traders I know do not look at their P&L during the trading day.\n\nThey look at it after the close. In their journal. With context.\n\nBecause a number without context is either a dopamine hit or a panic attack. Neither helps you trade better tomorrow.",
+      "image": null
+    },
+    {
+      "id": 540,
+      "content": "Your analytics dashboard has 17 specialized views.\n\nPerformance metrics. Equity curve. Drawdown chart. Cumulative P&L. Monthly performance. Symbol analysis. Top performers. Setup analysis. Asset breakdown. Emotion analysis. Mistake analysis. Rule compliance. Time analysis. Trading insights. Journal insights. Goals tracking. Comparison tools.\n\nPlus advanced analytics if you want to go deeper.\n\nThe data is there. The question is which view gives you the insight you need right now.",
+      "image": "images/analytics_main.png"
+    },
+    {
+      "id": 541,
+      "content": "Most traders optimize for win rate.\n\nThe best traders optimize for expectancy.\n\nExpectancy = (Win Rate × Avg Win) - (Loss Rate × Avg Loss)\n\nA 35% win rate with 4:1 reward-to-risk has higher expectancy than a 65% win rate with 0.8:1.\n\nYour journal calculates expectancy automatically. Check it before you chase win rate.",
+      "image": null
+    },
+    {
+      "id": 542,
+      "content": "Rich text editor for journal notes.\n\n→ Bold, italic, underline, strikethrough\n→ Headings (H1, H2, H3)\n→ Bulleted and numbered lists\n→ Links with dialog editor\n→ Timestamp button\n→ YouTube video embeds\n→ Image and video attachments\n\nYour journal is not a text box. It is a document.",
+      "image": "images/notes_text.png"
+    },
+    {
+      "id": 543,
+      "content": "What separates a good week from a bad week for you?\n\nIs it the P&L? The number of trades? How well you followed your rules?\n\nDefine it. Then measure it.",
+      "image": null
+    },
+    {
+      "id": 544,
+      "content": "Pin your most important journal notes.\n\nThat pre-trade checklist you wrote after your worst loss? Pin it.\nThe rules you wrote during your best month? Pin it.\nThe post-mortem from the trade that changed your approach? Pin it.\n\nPinned notes live at the top. Always visible. Always accessible.\n\nYour future self will thank you.",
+      "image": null
+    },
+    {
+      "id": 545,
+      "content": "Report generation.\n\nOne click. Full trading report with charts and metrics.\n\nEquity curve. Monthly P&L. Win rate breakdown. Setup analysis. Risk metrics.\n\nExportable. Shareable. Professional.\n\nWhether you need it for your own review or to show a mentor, the report is ready.",
+      "image": "images/report_main.png"
+    },
+    {
+      "id": 546,
+      "content": "The 3 metrics that matter more than win rate:\n\n1. Profit Factor: are you making more than you lose?\n2. Expectancy: what is your average profit per trade?\n3. Max Drawdown: how much can you lose before recovering?\n\nWin rate is the metric beginners obsess over. These three are the ones that keep you in the game.",
+      "image": null
+    },
+    {
+      "id": 547,
+      "content": "Onyx just flagged a pattern:\n\n\"You have taken 5 trades on TSLA in the last 7 days. 4 were losses. Total P&L: -$920. Your 30-day win rate on TSLA is 22%. This is your worst-performing symbol this month.\"\n\nSometimes you need someone (something) to tell you what you already know but keep ignoring.",
+      "image": null
+    },
+    {
+      "id": 548,
+      "content": "Your data is portable.\n\nCSV export for trades. Full JSON backup for everything.\n\nSwitch platforms any time. Your history goes with you.\n\nWe do not hold your data hostage.",
+      "image": null
+    },
+    {
+      "id": 549,
+      "content": "How many of your losing trades followed your rules exactly?\n\nIf most of them did, your system works. The losses are just variance.\n\nIf most of them did not, your system might be fine. Your execution is the problem.\n\nThe journal tells you which one it is.",
+      "image": null
+    },
+    {
+      "id": 550,
+      "content": "Multi-asset performance breakdown.\n\nStocks: 58% win rate, +$4,200\nOptions: 42% win rate, +$1,800\nFutures: 65% win rate, -$200\nForex: 51% win rate, +$600\n\nTabbed view. Long vs Short breakdown. ROI and R-multiple per asset. Top ticker per class.\n\nIf you trade multiple asset classes, you need to know which ones are actually making you money.",
+      "image": "images/multi-asset.png"
+    },
+    {
+      "id": 551,
+      "content": "Confession: I used to think journaling was a waste of time.\n\nI traded for a year without tracking anything. I thought I was doing fine.\n\nThen I tracked one month. Just one.\n\nMy \"fine\" was a -4% return with a 37% win rate and a profit factor of 0.8.\n\nI was not fine. I was slowly bleeding.\n\nThe journal did not fix my trading. It showed me what needed fixing.",
+      "image": null
+    },
+    {
+      "id": 552,
+      "content": "Automation for the boring parts:\n→ Broker sync logs your trades\n→ AI imports your CSVs\n→ Smart autofill pre-fills your trade form\n→ Auto SL/TP calculates risk levels\n→ Templates structure your journal\n→ AI coaches your reflections\n→ Alerts monitor your rules\n\nManual effort for the valuable parts:\n→ Reviewing your data\n→ Writing your thesis\n→ Making the decision to change\n\nAutomate what you can. Think about what matters.",
+      "image": null
+    },
+    {
+      "id": 553,
+      "content": "What is your pre-trade routine?\n\nDo you have one, or do you just... open the chart and start clicking?",
+      "image": null
+    },
+    {
+      "id": 554,
+      "content": "Options traders: your multi-leg strategies are tracked correctly.\n\nIron condor? 4 legs tracked individually. Net credit calculated. P&L unified across the position.\n\nVertical spread? 2 legs. Strategy auto-detected based on configuration.\n\nThe journal identifies the strategy from your legs. You do not need to label it.\n\nDrilling into each leg shows individual entry/exit, strike, expiration, and P&L.",
+      "image": "images/trade-detail.png"
+    },
+    {
+      "id": 555,
+      "content": "The gap between where you are and where you want to be is measured in journal entries.\n\nNot in trades. Not in screen time. Not in indicators.\n\nIn honest, specific, data-backed reflections on what happened and why.",
+      "image": null
+    },
+    {
+      "id": 556,
+      "content": "Consecutive wins: 8.\nConsecutive losses: 5.\n\nStreaks are normal. Your journal tracks them.\n\nThe question is not whether streaks happen. It is what you do differently during them.\n\nDo you size up after wins? Do you revenge trade after losses? Do you change your process?\n\nThe streak itself is noise. Your reaction to it is signal.",
+      "image": "images/streak-calendar.png"
+    },
+    {
+      "id": 557,
+      "content": "What is one rule you set for yourself that you actually follow consistently?",
+      "image": null
+    },
+    {
+      "id": 558,
+      "content": "Onyx reads your journal entries too.\n\nHit \"Help Me Reflect\" after writing your post-trade notes.\n\nIt reads what you wrote and asks follow-up questions:\n\n\"You wrote 'I should have waited for confirmation.' What confirmation signal were you looking for?\"\n\n\"You mentioned cutting the trade early. Your MFE shows the trade went 2.4R above your exit. How would you handle this differently?\"\n\nYour journal gets deeper because the AI pushes you past surface-level reflection.",
+      "image": null
+    },
+    {
+      "id": 559,
+      "content": "The market does not owe you a trade every day.\n\nSome days the best trade is no trade.\n\nYour journal should have empty days. That means you had the discipline to wait.\n\nEmpty days are not wasted days. They are profitable days with zero risk.",
+      "image": null
+    },
+    {
+      "id": 560,
+      "content": "Trade cards or trade table. Your choice.\n\nTable view: sortable columns, pagination, custom column visibility. Data-dense.\n\nCard view: visual cards for quick scanning. Image-friendly.\n\nSwitch between them any time. Both support the same filters.\n\nSome traders think in tables. Some think in cards. The journal supports both.",
+      "image": "images/tradetable.png"
+    },
+    {
+      "id": 561,
+      "content": "Your average holding time matters more than you think.\n\nIf your average winner is held for 2 hours and your average loser is held for 4 hours, you are giving your losers twice the runway.\n\nFlip that ratio and your P&L changes.",
+      "image": null
+    },
+    {
+      "id": 562,
+      "content": "Setup analysis shows which strategies actually work.\n\nMorning Gap Fill: 62% win rate, +$3,400, 28 trades\nBreakout Continuation: 45% win rate, +$1,200, 19 trades\nReversal at Support: 38% win rate, -$800, 15 trades\n\nThe reversal setup felt good. The data says it is losing money.\n\nKill it or fix it. But stop running it blindly.",
+      "image": "images/analytics_stats.png"
+    },
+    {
+      "id": 563,
+      "content": "Honest question: what would you change about your trading if you had perfect data on every trade you have ever taken?",
+      "image": null
+    },
+    {
+      "id": 564,
+      "content": "Free users get 3 lifetime messages with Onyx.\n\nEnough to ask your biggest question and get a real, data-backed answer.\n\n\"What is my biggest weakness?\"\n\"Which setup should I focus on?\"\n\"When should I stop trading each day?\"\n\nPick your question carefully. The answer might change your approach.",
+      "image": null
+    },
+    {
+      "id": 565,
+      "content": "Archive old accounts to declutter your dashboard.\n\nFinished a prop firm challenge? Archive it.\nStopped using a broker? Archive it.\nPaper trading account from 6 months ago? Archive it.\n\nArchived accounts keep all their data. Restore them any time.\n\nClean dashboard. Full history preserved.",
+      "image": null
+    },
+    {
+      "id": 566,
+      "content": "What if I told you that your 3 worst trades this month all happened between 1pm and 2pm?\n\nWould you keep trading that hour?\n\nThe heatmap shows exactly when you make and lose money. By hour. By day. By 5-minute interval if you want.\n\nStop trading your loss zones. It is the easiest edge you will ever find.",
+      "image": "images/best-times-heatmap.png"
+    },
+    {
+      "id": 567,
+      "content": "I stopped trading on Fridays.\n\nNot because of a theory. Because my data showed I was net negative on Fridays for 4 consecutive months.\n\nThat one decision saved me roughly $600/month.\n\nNo new strategy. No new indicator. Just subtraction.",
+      "image": null
+    },
+    {
+      "id": 568,
+      "content": "Your journal does not make you a better trader.\n\nYour journal shows you how to become one.\n\nThe difference is action. Knowing your worst hour means nothing if you keep trading it.",
+      "image": null
+    },
+    {
+      "id": 569,
+      "content": "What is the first metric you look at after a trading day?",
+      "image": null
+    },
+    {
+      "id": 570,
+      "content": "Prop firm scaling:\n\n→ Scaling target and multiplier configured per account\n→ Profit split percentage (e.g., 80/20)\n→ Phase progression tracking\n\nGet funded. Scale up. Track every phase of the journey.\n\nFrom evaluation to funded to scaling — one journal, one dashboard, one history.",
+      "image": null
+    },
+    {
+      "id": 571,
+      "content": "Two traders. Same strategy. Same market.\n\nTrader A journals every trade. Reviews weekly. Adjusts monthly.\nTrader B trades on feel. Reviews never. Changes randomly.\n\nAfter 6 months, Trader A has refined the strategy 24 times.\nTrader B is running the same broken version from day one.\n\nCompounding applies to improvement too.",
+      "image": null
+    },
+    {
+      "id": 572,
+      "content": "Your trade detail page shows everything:\n\n→ Entry/exit prices and timestamps\n→ P&L (gross and net)\n→ Holding time\n→ R-multiple achieved\n→ Commission and fees\n→ Interactive candlestick chart with real data\n→ Entry and exit markers\n→ SL/TP lines\n→ Linked setups with validation\n→ Linked mistakes with prevention tips\n→ Linked notes\n→ Risk rule checklist completion\n→ Emotion and confidence logged\n\nEvery trade is a case study. The detail page gives you every angle.",
+      "image": "images/tradedetail.png"
+    },
+    {
+      "id": 573,
+      "content": "The hardest part of trading is admitting that the problem is you.\n\nNot the market. Not the broker. Not the setup.\n\nYou.\n\nThe journal does not judge. It just shows you the evidence.",
+      "image": null
+    },
+    {
+      "id": 574,
+      "content": "Asked Onyx: \"Compare my long trades vs my short trades.\"\n\nResponse: \"Your long trades have a 58% win rate with an average R of 1.4. Your short trades have a 39% win rate with an average R of 0.7. Shorts account for 62% of your total losses this quarter. Consider reducing short exposure or only shorting your highest-conviction setups.\"\n\nI had a bias and did not know it.",
+      "image": null
+    },
+    {
+      "id": 575,
+      "content": "You do not need more indicators.\n\nYou need more data about yourself.\n\nThe market has infinite variables. You only have a few.\n\nOptimize the ones you control.",
+      "image": null
+    },
+    {
+      "id": 576,
+      "content": "Forex pairs with automatic P&L calculation:\n\n→ Standard pairs: 100,000 units per lot\n→ JPY pairs: adjusted pip size (0.01)\n→ Gold (XAUUSD): 100 troy oz per lot\n→ Silver (XAGUSD): 5,000 troy oz per lot\n→ Oil: 1,000 barrels per lot\n\nCorrect contract sizes. Correct quote currencies. Correct everything.\n\nNo more wrong P&L because you forgot the multiplier.",
+      "image": null
+    },
+    {
+      "id": 577,
+      "content": "Your best and worst performing symbols on your dashboard.\n\nTop 5 winners. Top 5 losers. P&L and win rate for each.\n\nNo digging through analytics. No filtering. Just a quick glance at what is working and what is not.\n\nThe dashboard should answer your biggest questions in under 5 seconds.",
+      "image": "images/dashboard.png"
+    },
+    {
+      "id": 578,
+      "content": "Some weeks I do not trade at all.\n\nMy journal shows those weeks as empty.\n\nI used to feel guilty about them. Now I see them as the most disciplined weeks I have.",
+      "image": null
+    },
+    {
+      "id": 579,
+      "content": "Does your trading improve during the week or decline?\n\nMonday performance vs Friday performance.\n\nMost traders are sharper early in the week. By Friday they are tired, overtrading, or forcing setups.\n\nThe data will show you your pattern.",
+      "image": null
+    },
+    {
+      "id": 580,
+      "content": "What-If scenario:\n\nTake your current stats. Remove your bottom 3 trades.\n\nHow much does your equity curve change?\n\nIf removing 3 trades dramatically changes your result, your system depends on avoiding mistakes, not finding winners.\n\nThat is a different (and harder) optimization problem. But at least you know where to focus.",
+      "image": "images/whatif.png"
+    },
+    {
+      "id": 581,
+      "content": "Referral credits apply automatically to your next Stripe invoice.\n\nNo codes to enter. No support tickets. No waiting.\n\nRefer → they subscribe → you get credited → your bill drops.\n\nSimple.",
+      "image": null
+    },
+    {
+      "id": 582,
+      "content": "I track 3 things on every trade:\n\n1. Did I follow my setup?\n2. What was my emotion at entry?\n3. What would I do differently?\n\nTakes 30 seconds. Creates months of data.\n\nThe insight compounds. The habit is tiny.",
+      "image": null
+    },
+    {
+      "id": 583,
+      "content": "Alert: \"You have taken 2 losses in the last 18 minutes. Both were on the same symbol. This matches a revenge trading pattern from your history. Average cost of past revenge sequences: $470. Recommendation: close your charts for 30 minutes.\"\n\nSpecific. Historical. Actionable.\n\nNot \"be careful.\" That helps nobody.",
+      "image": "images/risk-alerts-banner.png"
+    },
+    {
+      "id": 584,
+      "content": "The setup that works is boring.\n\nThe setup that is exciting is usually wrong.\n\nExcitement means uncertainty. Boredom means repetition. Repetition means edge.\n\nTrack which setups feel boring. Those are probably your best ones.",
+      "image": null
+    },
+    {
+      "id": 585,
+      "content": "Do you track your trades differently on green days vs red days?\n\nBecause most traders journal thoroughly after wins and skip it after losses.\n\nThe losses are where the lessons are. Journal those harder.",
+      "image": null
+    },
+    {
+      "id": 586,
+      "content": "Account types supported:\n\n→ Cash\n→ Margin\n→ IRA/Retirement\n→ Paper Trading\n→ Prop Firm (8 presets)\n→ Custom\n\nEach with its own balance, currency, color, and analytics.\n\nOne journal. Every account type. All in one place.",
+      "image": null
+    },
+    {
+      "id": 587,
+      "content": "Recovery Factor: how much profit you make per dollar of max drawdown.\n\nA recovery factor of 3 means you have earned 3x your worst drawdown.\n\nAnything below 1 means you have not yet recovered from your worst period.\n\nThis number tells you how resilient your system is. Not how profitable — how survivable.",
+      "image": null
+    },
+    {
+      "id": 588,
+      "content": "The best thing about broker sync is not the automation.\n\nIt is the honesty.\n\nWhen you log manually, you skip the bad trades. You round the numbers. You \"forget\" the revenge trade.\n\nBroker sync logs everything. Including the trades you wish did not happen.\n\nThat is where the growth is.",
+      "image": null
+    },
+    {
+      "id": 589,
+      "content": "Monthly performance chart.\n\nGreen bar: profitable month.\nRed bar: losing month.\n\n12 bars. One year. The trend is either up, down, or sideways.\n\nIf you cannot see clear improvement month over month, something needs to change.\n\nThe chart makes it obvious. Uncomfortably obvious.",
+      "image": "images/analytics_monthly.png"
+    },
+    {
+      "id": 590,
+      "content": "What would your trading look like if you only traded your top 2 setups?\n\nNo random entries. No \"this looks good.\" Just the setups with the best historical performance.\n\nFilter your analytics by setup. Look at the numbers. Imagine removing everything else.\n\nThe answer might surprise you.",
+      "image": null
+    },
+    {
+      "id": 591,
+      "content": "Onyx does not forget your worst trade.\n\nThat is a feature, not a bug.\n\nBecause the worst trade usually teaches the best lesson. And the lesson only sticks if you review it.\n\nAsk Onyx about your biggest loss. Let it remind you what happened, why it happened, and what you said you would change.\n\nThen check if you actually changed it.",
+      "image": null
+    },
+    {
+      "id": 592,
+      "content": "Week view on the calendar:\n\nMonday: 3 trades, +$420\nTuesday: 2 trades, -$180\nWednesday: 0 trades (good discipline)\nThursday: 4 trades, +$310\nFriday: 1 trade, -$50\n\nWeekly total: +$500, 10 trades, 60% win rate.\n\nOne glance. Full context. Click any day for trade details.",
+      "image": "images/calendar_month.png"
+    },
+    {
+      "id": 593,
+      "content": "The worst thing about trading is that the feedback loop is slow.\n\nYou cannot tell if a strategy works after 5 trades. Or 10. Or even 20.\n\nA journal accelerates the feedback loop. Not by making the data arrive faster, but by making you look at it sooner.\n\n50 trades reviewed is worth more than 200 trades ignored.",
+      "image": null
+    },
+    {
+      "id": 594,
+      "content": "How long did it take you to find your edge?\n\nStill looking?",
+      "image": null
+    },
+    {
+      "id": 595,
+      "content": "Auto SL/TP calculation.\n\nSet your default risk per asset class. Or set risk per setup.\n\nWhen you enter a trade, stop loss and take profit levels calculate automatically based on your preferences.\n\nManual override always available. But the defaults save time and enforce consistency.\n\nThe best risk management is the kind that happens without thinking.",
+      "image": null
+    },
+    {
+      "id": 596,
+      "content": "Your trading insights page finds patterns automatically.\n\nBased on your data, the system generates observations:\n\n\"Your win rate drops 15% on trades entered in the last 30 minutes of the session.\"\n\"Trades with a confidence rating above 7 outperform by 2.3x.\"\n\"Your average loss increases 40% on days with more than 4 trades.\"\n\nYou did not ask for these. The system found them.\n\nInsights you would have missed for months.",
+      "image": "images/insights_main.png"
+    },
+    {
+      "id": 597,
+      "content": "Support requests go straight from settings to our review queue.\n\nBug report, feature request, question — pick a type, describe the issue.\n\nYour device info (browser, screen size, current page) is captured automatically for context.\n\nNo email chain. No ticket system. Just tell us what you need.",
+      "image": null
+    },
+    {
+      "id": 598,
+      "content": "The traders who track their mistakes improve faster than the traders who track their wins.\n\nWins confirm what you already know. Mistakes reveal what you need to learn.\n\nTrack both. Review the mistakes twice.",
+      "image": null
+    },
+    {
+      "id": 599,
+      "content": "Your trading data tells a story.\n\nThe question is whether you are reading it.\n\nEvery trade is a sentence. Every week is a paragraph. Every month is a chapter.\n\nThe journal is the book. The AI is the editor. You are the author.\n\nWrite a better story.",
+      "image": null
+    },
+    {
+      "id": 600,
+      "content": "Everything in one place.\n\nEvery trade. Every journal entry. Every setup. Every mistake. Every emotion. Every metric.\n\nBroker sync to get the data in. AI to help you understand it. Simulations to test your future. Alerts to protect your present.\n\nFree forever for the basics. Pro for the edge.\n\nStop guessing. Start knowing.",
+      "image": "images/product-shot.png"
     }
   ]
 }

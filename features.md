@@ -6,7 +6,7 @@ LynxTrades is a comprehensive trading journal application designed for serious t
 
 ---
 
-## 🏦 Account Management
+## Account Management
 
 ### Multi-Account Support
 
@@ -17,6 +17,17 @@ LynxTrades is a comprehensive trading journal application designed for serious t
 - **Primary Account**: Designate one account as primary for quick access
 - **Balance Tracking**: Track initial and current balance with historical entries
 - **Account Status**: Active, Inactive, or Closed status management
+
+### Account Balance & Transactions
+
+Manage account funds with a full transaction ledger:
+
+- **Deposits**: Record funds added to the account
+- **Withdrawals**: Record funds removed from the account
+- **Transfers**: Move funds between accounts (linked on both sides)
+- **Transaction History**: Paginated ledger of all deposits, withdrawals, and transfers with date, description, and running balance
+- **Delete Transactions**: Remove erroneous entries with automatic balance recalculation
+- **Balance Auto-Sync**: Account `currentBalance` is automatically updated after each transaction
 
 ### Account Archive & Limits
 
@@ -78,7 +89,7 @@ One of LynxTrades' most unique features is comprehensive prop firm account suppo
 
 ---
 
-## 📊 Trade Logging
+## Trade Logging
 
 ### Supported Asset Classes
 
@@ -194,10 +205,12 @@ Import trades from any broker with intelligent parsing:
 - **AI Trade Extraction**: Uses AI to parse and map columns to trade fields
 - **Duplicate Detection**: Warns about potential duplicate trades before import
 - **Multi-Format Support**: Works with various broker export formats
+- **Unified Normalizer**: Broker imports (via SnapTrade) use the same trade normalizer as CSV imports for consistent data quality
+- **Instrument-Aware P&L**: Futures and forex trades are automatically calculated with correct point values, lot sizes, and contract multipliers
 
 ---
 
-## 📉 Trade Price Chart with Real Market Data
+## Trade Price Chart with Real Market Data
 
 ### Real Market Data Integration
 
@@ -272,7 +285,7 @@ Unlock advanced intra-trade insights and live tracking:
 
 ---
 
-## 📔 Journaling System
+## Journaling System
 
 ### Note Types (Folders)
 
@@ -322,6 +335,7 @@ Built-in templates for common journal types:
   - Links with dialog editor
   - Toolbar with formatting options
   - Timestamp button
+  - **YouTube Video Embed**: Embed YouTube videos directly in notes via a dedicated dialog with live preview (supports youtube.com, youtu.be, and embed URL formats)
 - **Multi-Trade Linking**: Link a single note to multiple trades
 - **Pin Notes**: Pin important notes for quick access
 - **Media Attachments**: Add images and videos (with subscription limits)
@@ -332,7 +346,7 @@ Built-in templates for common journal types:
 
 ---
 
-## 📈 Analytics & Performance
+## Analytics & Performance
 
 ### Core Trading Metrics
 
@@ -504,7 +518,7 @@ Interactive strategy lab to test hypothetical changes to your system.
 
 ---
 
-## 📅 Calendar Views
+## Calendar Views
 
 ### Multiple View Modes
 
@@ -523,7 +537,7 @@ Interactive strategy lab to test hypothetical changes to your system.
 
 ---
 
-## ⚠️ Risk Management
+## Risk Management
 
 ### Risk Rules (User-Defined Reminders)
 
@@ -566,7 +580,7 @@ Risk rules serve as personal trading guidelines and reminders. They are displaye
 
 ---
 
-## 🎯 Trading Setups
+## Trading Setups
 
 ### Setup Definition
 
@@ -594,7 +608,7 @@ When viewing a trade linked to a setup:
 
 ---
 
-## ❌ Mistake Tracking
+## Mistake Tracking
 
 ### Mistake Categories (9 types)
 
@@ -626,7 +640,7 @@ When viewing a trade linked to a setup:
 
 ---
 
-## 🏷️ Tagging System
+## Tagging System
 
 ### Tag Configuration
 
@@ -647,7 +661,7 @@ When viewing a trade linked to a setup:
 
 ---
 
-## 🔍 Global Search & Filtering
+## Global Search & Filtering
 
 ### Global Search Categories
 
@@ -687,7 +701,7 @@ Full-text search across **10+ trade fields**:
 
 ---
 
-## 📊 Charts & Visualization
+## Charts & Visualization
 
 ### Chart Types (14 specialized charts)
 
@@ -718,7 +732,7 @@ Full-text search across **10+ trade fields**:
 
 ---
 
-## 🎨 Customization & Settings
+## Customization & Settings
 
 ### Appearance Settings
 
@@ -751,7 +765,7 @@ Full-text search across **10+ trade fields**:
 
 ---
 
-## 💾 Data Management
+## Data Management
 
 ### Export Capabilities
 
@@ -823,7 +837,7 @@ Tabbed panel showing contextual information:
 
 ---
 
-## 🔐 Authentication & Security
+## Authentication & Security
 
 ### Auth Methods
 
@@ -847,7 +861,7 @@ Tabbed panel showing contextual information:
 
 ---
 
-## 💳 Subscription Tiers
+## Subscription Tiers
 
 ### Free Tier ($0 forever)
 
@@ -862,7 +876,7 @@ Tabbed panel showing contextual information:
 
 Unlock the full power of LynxTrades with institutional-grade tools:
 
-- **Broker Integration & Manual Sync**: Connect your brokerage accounts (TD Ameritrade, Interactive Brokers, Alpaca, Webull, and 15+ more via SnapTrade) and manually sync trades on demand. Max 2 broker connections.
+- **Broker Integration & Manual Sync**: Connect your brokerage accounts (50+ supported brokers via SnapTrade, cTrader, and MetaTrader 4/5) and manually sync trades on demand. Max 2 broker connections.
 - **Simulation Studio**: Monte Carlo modeling, Risk of Ruin, and interactive What-If scenario testing.
 - **Advanced Analytics**: Best Times Heatmaps (5m to 1h), Efficiency Analysis (MAE/MFE), Return Skewness, and Alpha Benchmarking.
 - **Running P&L Analysis**: Global "Live P&L" dashboard stat and deep dive into every trade with intra-day price tracking and excursion metrics.
@@ -881,7 +895,7 @@ Unlock the full power of LynxTrades with institutional-grade tools:
 
 ---
 
-## 🚀 Onboarding Experience
+## Onboarding Experience
 
 ### Onboarding Flow
 
@@ -917,7 +931,7 @@ Interactive tour with 5 guided steps:
 
 ---
 
-## 📱 Dashboard
+## Dashboard
 
 ### Dashboard Widgets (13 components)
 
@@ -943,7 +957,7 @@ Interactive tour with 5 guided steps:
 
 ---
 
-## 📝 Landing Page
+## Landing Page
 
 ### Marketing Components
 
@@ -963,17 +977,263 @@ Interactive tour with 5 guided steps:
 
 ---
 
-## 🛡️ Admin Area
+## Admin Area
 
 ### Admin Dashboard
 
 - Protected route accessible only to whitelisted email addresses
 - Guarded by `AdminRoute` component that checks user email against an allow-list
 - Non-admin users are redirected to the home page
+- **Tabbed Interface**: Dashboard, Promotions, Referrals, and Notifications tabs
+- **Prefetched Data**: All tab data is fetched once at the page level and piped to child tabs for fast switching
+
+### Promotions Tab (Admin)
+
+Manage social media promotion campaigns that reward users with free Pro access:
+
+- **Add Promotions**: Track user submissions from Twitter/TikTok with post URL and email
+- **Review Queue**: Approve or reject pending promotion submissions
+- **Grant Pro Access**: One-click grant of time-limited Pro access to promoters
+- **Active Users**: View all users currently on promotional Pro access with expiry dates
+- **Stats Dashboard**: Total promos granted, active promo users, and pending count
+- **Email Autocomplete**: Suggests registered users when entering email addresses
+
+### Referrals Tab (Admin)
+
+Monitor the referral program across all users:
+
+- **Referral List**: Full history of referrer → referred user pairs with status (signed_up, subscribed)
+- **Conversion Tracking**: See which referrals converted to paid subscribers
+- **Reward Status**: Track whether credit rewards have been applied
+- **Stats Dashboard**: Total sign-ups, conversions, conversion rate, and total credits issued
+
+### Notifications Tab (Admin)
+
+Send in-app notifications and marketing emails to users:
+
+#### In-App Notifications
+
+- **Send to All Users**: Broadcast system-wide notifications
+- **Notification Types**: Promo, System, Referral, Milestone
+- **Action URLs**: Optional deep-link button within the notification
+- **History View**: All sent notifications with read count, dismiss rate, and recipient count
+- **Delete Notifications**: Remove sent notifications from all users
+
+#### Email Marketing
+
+- **HTML Email Templates**: Pre-built templates for:
+  - Testimonial Campaign (share on social media for free Pro)
+  - Referral Announcement (introduce referral program)
+  - Pro Granted / Pro Expired lifecycle emails
+- **Live Preview**: Real-time HTML preview of the email before sending
+- **Send to All / Test**: Send to all users or test with a single email address
+- **Custom Subject Lines**: Editable subject per campaign
+- **Unsubscribe Support**: All marketing emails include an unsubscribe link; users can opt out from `/unsubscribe`
 
 ---
 
-## 🔧 Technical Architecture
+## Notification System
+
+### Notification Bell
+
+Real-time in-app notification center accessible from the header:
+
+- **Unread Badge**: Shows count of unread notifications (max "9+")
+- **Dropdown Panel**: Click to view all notifications in a scrollable panel
+- **Notification Types** (with distinct icons and colors):
+  - 🎺 **Promo** (indigo): Promotional announcements
+  - ℹ️ **System** (gray): System updates and platform news
+  - 🎁 **Referral** (green): Referral sign-ups and rewards
+  - 🏆 **Milestone** (amber): Achievement notifications
+- **Mark as Read**: Click a notification to mark it as read and expand details
+- **Mark All Read**: One-click button to mark all notifications as read
+- **Dismiss / Clear All**: Remove individual notifications or clear all at once
+- **Action Links**: Deep-link buttons to relevant pages (e.g., "View →")
+- **Real-Time Updates**: Powered by Firestore real-time listener (notifications appear instantly)
+- **Relative Timestamps**: Shows "2 hours ago", "3 days ago", etc.
+
+---
+
+## Referral Program
+
+Users can earn billing credits by referring other traders:
+
+- **Unique Referral Code**: Each user gets a personal referral code at sign-up
+- **Referral Link**: Shareable link (`lynxtrades.com/?ref=CODE`) displayed in Settings
+- **Copy to Clipboard**: One-click copy button with confirmation animation
+- **Share on X (Twitter)**: Pre-composed tweet with referral link
+- **Credit Rewards**: Earn $7.50 credit for each referred user who upgrades to Pro
+- **Stacking Credits**: Credits stack with no cap — refer as many users as you want
+- **Auto-Apply**: Credits are automatically applied to the next Stripe invoice
+- **Stats Display**: Shows total referral count and total credits earned
+- **How It Works**: Expandable explainer section in Settings
+
+---
+
+## Onyx AI Trading Coach
+
+Onyx is a named AI character -- a sharp, data-driven lynx -- that serves as the platform's built-in trading coach. Powered by DeepSeek v4-flash, Onyx appears across the entire application. Free users get 3 lifetime chat messages; Pro users get 200 messages per day shared across all AI endpoints.
+
+### Personality & Tone
+
+- Professional and direct, like a senior trading coach
+- Data-first: always cites specific numbers, percentages, symbols, dates, and P&L
+- Constructively honest -- never sugarcoats, but pairs criticism with actionable next steps
+- Concise: 2-4 paragraphs max
+- Third person: "Onyx found..." or states data directly
+- No emojis in any analysis
+
+### Avatar & Animation System
+
+Eight `.webp` portrait images with state-driven rendering:
+
+- **Idle** (default): Neutral, attentive expression -- shown everywhere at rest
+- **Thinking** (3-frame cycle): Eyes shift left, right, forward at 400ms per frame (~1.2s loop) -- shown while waiting for API responses
+- **Speaking**: Mouth slightly open, engaged -- shown while streaming response text
+- **Happy**: Slight smile, relaxed ears -- reserved for future positive analysis results
+- **Alert**: Ears perked, wide eyes -- shown on risk alert banners
+- **Wink**: One eye closed, smirk -- shown in journal coach, upgrade prompts
+
+All images preloaded into browser cache on first import. SVG gradient fallback if images fail to load. Four sizes: sm (20px), md (32px), lg (48px), xl (80px).
+
+### Chat Panel
+
+- **Desktop**: 380px right-side drawer with backdrop overlay
+- **Mobile**: Full-screen overlay
+- **Empty state**: Large Onyx avatar (80px) + "Ask Onyx anything" + description
+- **Message flow**: User bubble (right, primary) -> thinking animation -> streamed response bubble (left, gray with primary left-border) -> pulsing cursor during streaming
+- **Markdown support**: Headings (## / ###), bullet/numbered lists, bold text, paragraph spacing
+- **Quick action chips**: Context-aware per route (dashboard, analytics, trades, notes, calendar) in a horizontally scrollable row with gradient fade hint
+- **Input**: Auto-growing textarea (max 128px), Enter to send, Shift+Enter for newline, Escape closes
+- **Usage indicator**: Shows remaining free messages when <= 3; replaces input with upgrade prompt when exhausted
+- **Panel header**: Avatar + "Onyx" label + trade count + Clear button + Close button
+- **Conversation history**: Capped at 20 messages (FIFO) via Zustand store
+
+### Trade Assistant (Pro)
+
+Expandable panel in the trade entry form:
+
+- **Non-Pro**: Locked teaser: "Onyx has suggestions for this trade" with Pro badge
+- **Pro collapsed**: Clickable header with avatar + chevron
+- **Pro expanded** (on symbol entry): Three sections:
+  - **Suggested Setups**: Pill buttons with hover tooltip reasons based on historical performance
+  - **Warnings**: Amber boxes referencing specific trade history (e.g., "Your last 3 TSLA shorts lost an average of $240")
+  - **Pre-Trade Thesis**: Italic blockquote template the trader can customize
+- Cached 5 minutes per symbol/setup/emotion combination
+
+### Performance Review (Pro)
+
+Generated on-demand from the Reports tab:
+
+- **Streaming**: Real-time with pulsing cursor, cancelable mid-stream
+- **Mandated sections**: Executive Summary, Key Wins, Key Concerns, Emotional Pattern Analysis, Actionable Recommendations
+- **Cached**: Permanently per period key in Firestore
+- **Footer**: "Generated by Onyx -- AI analysis may not reflect all market conditions"
+
+### Market News Feed (Pro)
+
+Full-width tab in Analytics with a 5-stage data pipeline:
+
+1. Derive top symbols and asset class from user's trade history
+2. Brave Search News API queries in parallel (up to 8 results per query, past week)
+3. Deduplicate by URL, extract Open Graph images (5s timeout each)
+4. DeepSeek analyzes each article: personalized summary, "Why this matters" reason, category, ticker symbols
+5. Cache in Firestore (2-hour TTL)
+
+**Article cards**: OG image (gradient fallback), source favicon + domain, relative time, color-coded category badge (Your Symbols/Macro/Sector/Earnings/General), clickable title, AI summary (3-line clamp), "Why this matters" blockquote, ticker chips. Responsive grid: 1/2/3 columns. Category filter pills. Refresh button + "Updated X min ago" timestamp. React Query with 30-minute stale time.
+
+### Risk Alerts
+
+Client-side pattern detection:
+
+- **Daily Loss Limit**: Net P&L exceeds configured threshold
+- **Overtrading**: Trade count reaches configured maximum
+- **Revenge Trading**: 2+ losses within 20 minutes
+- **Tilt**: 3+ consecutive losses with negative emotion tag
+- **Pattern Deviation**: Reserved for future use
+
+AI generates a personalized alert under 50 words (temperature 0.2, max 200 tokens) -- direct, references specific data, ends with recommendation. Banner styling: critical (rose/red, ShieldAlert) or warning (amber, AlertTriangle). Each shows avatar in alert state + message + "Open Onyx" button + dismiss.
+
+### Journal Coach (Pro)
+
+Floating popover in journal editor with three actions:
+
+- **Suggest Prompts**: 3-5 trade-specific journaling questions referencing actual data
+- **Draft Analysis**: Post-trade analysis in second person with bracketed placeholders
+- **Help Me Reflect**: 3-4 follow-up questions based on current journal entry
+
+Generated text inserts directly into the editor on success.
+
+### Daily Brief (Pro, Dashboard Widget)
+
+- Requests JSON with `summary`, `insight`, `suggestion` (each under 50 words)
+- Renders: summary paragraph + "Key Insight" highlighted box + "Suggestion" box
+- Session-cached by date (fetches once per browser session per day)
+- Non-Pro: blurred skeleton with upgrade overlay
+
+### Insight Summary (Pro, Analytics Widget)
+
+- 3-4 sentence narrative of top trading patterns, strengths, and improvements
+- "Dive deeper with Onyx" link opens the chat panel
+- Non-Pro: blurred skeleton with upgrade overlay
+
+### Upgrade Prompts
+
+Two variants for Pro-gated features:
+
+- **Panel input**: Lock icon + remaining messages counter + "Upgrade to Pro" gradient button -> /pricing
+- **Blurred overlay**: Backdrop-blur over content + winking avatar + "Unlock full Onyx insights" + Upgrade button -> /pricing
+
+### Context & Data Pipeline
+
+Every AI call includes rich trader context:
+
+- **Trading Profile** (2,500 token budget): Top symbols with win rate & P&L, asset distribution, top setups, emotional patterns, time patterns (best/worst days/hours), top mistakes by cost, full performance metrics (win rate, profit factor, expectancy, Sharpe, Sortino, max drawdown)
+- **Trade Context** (4,000 token budget): Up to 50 serialized trades with entity extraction from user queries (symbols, emotions, date references)
+- **Insight Context**: Top 10 platform-generated insights with severity, description, and recommendations
+
+### API Endpoints
+
+| Endpoint | Access                            | Streaming | Max Tokens | Temperature | Cache                 |
+| -------- | --------------------------------- | --------- | ---------- | ----------- | --------------------- |
+| chat     | Free (3 lifetime) + Pro (200/day) | SSE       | 2,048      | 0.4         | None                  |
+| suggest  | Pro only                          | No        | 1,024      | 0.4         | Client 5 min          |
+| review   | Pro only                          | SSE       | 4,096      | 0.4         | Firestore (permanent) |
+| news     | Pro only                          | No        | 2,048      | 0.3         | Firestore (2 hours)   |
+| alert    | Pro only                          | No        | 200        | 0.2         | None                  |
+| journal  | Pro only                          | No        | 1,024      | 0.4         | None                  |
+
+---
+
+## Price Conversion & Instrument Config
+
+### Automatic FX Rate Conversion
+
+When a trade's instrument is priced in a different currency than the account currency, LynxTrades automatically converts P&L:
+
+- **Historical Rates**: Fetches the FX rate for the trade's exit date (via frankfurter.app API)
+- **Session Cache**: Rates are cached in-memory to avoid redundant API calls
+- **Transparent Display**: The P&L preview on the trade form shows both the raw P&L and the converted amount with the applicable rate
+- **Broad Currency Support**: Works with any currency pair supported by the European Central Bank
+
+### Instrument Configuration System
+
+Accurate P&L calculations for forex, metals, and commodities with a comprehensive config system:
+
+- **Symbol Auto-Detection**: Automatically identifies instrument type from the symbol (e.g., XAUUSD → Gold, EURUSD → Forex)
+- **Contract Size Mapping**: Correct lot sizes for each instrument:
+  - Gold (XAUUSD): 100 troy ounces per lot
+  - Silver (XAGUSD): 5,000 troy ounces per lot
+  - Standard Forex: 100,000 units per lot
+  - JPY Pairs: 100,000 units with 0.01 pip size
+  - Oil (WTI/Brent): 1,000 barrels per lot
+- **Quote Currency Detection**: Determines the P&L output currency for each instrument type
+- **Metal Detection**: Special handling for precious metals (gold, silver)
+- **JPY Pair Detection**: Adjusted pip size for yen-denominated pairs
+
+---
+
+## Technical Architecture
 
 ### Frontend Stack
 
@@ -999,8 +1259,90 @@ Interactive tour with 5 guided steps:
 
 - **Alpaca Markets API**: US stock and options price data
 - **Twelve Data API**: Forex, cryptocurrency, futures, and commodity price data
-- **SnapTrade API**: Brokerage account connections and trade sync (15+ brokers)
+- **SnapTrade API**: Brokerage account connections and trade sync for stocks, options, and crypto (30 brokers)
+- **cTrader Open API**: Forex and CFD broker connections via OAuth (10+ brokers)
+- **MetaTrader 4/5**: Direct MT4/MT5 broker and prop firm connections via self-hosted VPS (17+ brokers)
 - **Stripe**: Subscription billing
+- **Frankfurter API**: Free historical FX rate data (backed by European Central Bank) for cross-currency P&L conversion
+- **DeepSeek API**: AI model for Onyx trading coach (v4-flash), CSV trade normalization (v4-pro), and support auto-replies
+- **Brave Search API**: Financial news search for the Onyx market news feed
+- **Resend**: Transactional and marketing email delivery
+
+### Supported Brokers
+
+LynxTrades supports automatic trade syncing from 50+ brokers across three integrations:
+
+#### Stocks, Options & Crypto (via SnapTrade) — 30 brokers
+
+| Broker              | Website                |
+| ------------------- | ---------------------- |
+| Wealthsimple        | wealthsimple.com       |
+| Robinhood           | robinhood.com          |
+| Fidelity            | fidelity.com           |
+| Schwab              | schwab.com             |
+| Webull US           | webull.com             |
+| Webull Canada       | webull.ca              |
+| Trading212          | trading212.com         |
+| Trading212 Practice | trading212.com         |
+| DEGIRO              | degiro.com             |
+| E\*Trade            | etrade.com             |
+| Questrade           | questrade.com          |
+| Interactive Brokers | interactivebrokers.com |
+| Alpaca Paper        | alpaca.markets         |
+| Public              | public.com             |
+| tastytrade          | tastytrade.com         |
+| Zerodha             | zerodha.com            |
+| Stake Australia     | hellostake.com         |
+| Coinbase            | coinbase.com           |
+| CommSec             | commsec.com.au         |
+| Vanguard US         | vanguard.com           |
+| Binance             | binance.com            |
+| Kraken              | kraken.com             |
+| Bux                 | getbux.com             |
+| AJ Bell             | ajbell.com             |
+| Chase               | chase.com              |
+| Empower             | empower.com            |
+| Moomoo              | moomoo.com             |
+| TD Direct Investing | td.com                 |
+| Upstox              | upstox.com             |
+| Wells Fargo         | wellsfargo.com         |
+
+#### Forex & CFDs (via cTrader) — 10 brokers
+
+| Broker      | Website              |
+| ----------- | -------------------- |
+| Pepperstone | pepperstone.com      |
+| IC Markets  | icmarkets.com        |
+| FxPro       | fxpro.com            |
+| Axi         | axi.com              |
+| FP Markets  | fpmarkets.com        |
+| RoboForex   | roboforex.com        |
+| OctaFX      | octafx.com           |
+| Skilling    | skilling.com         |
+| Tradeview   | tradeviewmarkets.com |
+| Errante     | errante.com          |
+
+#### MetaTrader 4/5 (direct connection) — 17 brokers + all MT4/MT5-compatible brokers & prop firms
+
+| Broker       | Website            |
+| ------------ | ------------------ |
+| XM           | xm.com             |
+| Exness       | exness.com         |
+| IC Markets   | icmarkets.com      |
+| FTMO         | ftmo.com           |
+| Pepperstone  | pepperstone.com    |
+| OANDA        | oanda.com          |
+| Admirals     | admiralmarkets.com |
+| HFM          | hfm.com            |
+| FBS          | fbs.com            |
+| Tickmill     | tickmill.com       |
+| RoboForex    | roboforex.com      |
+| Axi          | axi.com            |
+| AvaTrade     | avatrade.com       |
+| FP Markets   | fpmarkets.com      |
+| ThinkMarkets | thinkmarkets.com   |
+| The5ers      | the5ers.com        |
+| TopStep      | topstep.com        |
 
 ### Code Organization
 
@@ -1011,10 +1353,11 @@ Interactive tour with 5 guided steps:
 - Service layer for data operations
 - Store layer with Zustand for state
 - Lazy loading for analytics components
+- Cloud Functions for admin-only operations (notifications, promotions, referrals, email, SnapTrade sync)
 
 ---
 
-## 🌟 What Makes LynxTrades Unique
+## What Makes LynxTrades Unique
 
 1. **Simulated Trade Replay**: Watch your trades unfold in real-time with animated candle-by-candle playback - a premium feature for reviewing entries and exits
 
@@ -1043,3 +1386,15 @@ Interactive tour with 5 guided steps:
 13. **Setup Validation**: Setups validate timeframe and market type against actual trade data with visual feedback
 
 14. **AI-Powered Import**: Upload CSV exports from any broker and AI automatically maps and imports your trades
+
+15. **In-App Notifications**: Real-time notification bell with promo, system, referral, and milestone categories — never miss an update
+
+16. **Referral Program**: Earn stacking $7.50 credits for each referred Pro subscriber, auto-applied to your next invoice
+
+17. **YouTube Embeds in Notes**: Embed YouTube videos directly into journal entries for video-based trade reviews
+
+18. **Automatic Price Conversion**: Trades in instruments priced in a different currency than your account are automatically converted using historical FX rates
+
+19. **Account Transaction Ledger**: Full deposit, withdrawal, and transfer history with automatic balance reconciliation
+
+20. **Onyx AI Trading Coach**: Named AI character (a lynx) with animated avatar, conversational chat panel, pre-trade suggestions, streamed performance reviews, personalized market news, real-time risk alerts, journal coaching, and daily briefs -- all powered by DeepSeek with rich trader context
