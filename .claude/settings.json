@@ -1,0 +1,23 @@
+{
+  "model": "claude-opus-4-6",
+  "permissions": {
+    "allow": [
+      "Bash(*)",
+      "Edit(*)",
+      "Write(*)",
+      "Read(*)",
+      "Glob(*)",
+      "Grep(*)",
+      "Agent(*)",
+      "WebFetch(*)",
+      "WebSearch(*)",
+      "NotebookEdit(*)",
+      "TodoWrite(*)",
+      "Skill(*)",
+      "ToolSearch(*)",
+      "PowerShell(*)",
+      "Monitor(*)"
+    ],
+    "defaultMode": "bypassPermissions"
+  }
+}
