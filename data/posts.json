@@ -1728,7 +1728,7 @@
     {
       "id": 345,
       "content": "You just took 2 losses in 20 minutes.\n\nYour journal flags it: \"Revenge trading pattern detected.\"\n\nNot a popup you dismiss. A real-time alert with context — what you lost, how fast, and a recommendation to step away.\n\nThe best risk management happens before the next trade, not after.",
-      "image": "images/onyx-alert.png"
+      "image": null
     },
     {
       "id": 346,
@@ -1828,7 +1828,7 @@
     {
       "id": 365,
       "content": "Prop firm traders: your challenge progress lives on your dashboard now.\n\nProfit target with percentage and progress bar.\nDrawdown usage with real-time tracking.\nTrading days counter toward the minimum requirement.\n\nColor-coded: green when safe, amber when close, red when critical.\n\nNo more switching to your prop firm portal to check where you stand.",
-      "image": "images/propfirm-dashboard.png"
+      "image": null
     },
     {
       "id": 366,
@@ -1838,7 +1838,7 @@
     {
       "id": 367,
       "content": "3 consecutive losses with a negative emotion tag?\n\nThat is not a bad streak. That is tilt.\n\nYour journal detects it automatically and shows a banner:\n→ What happened (specific trades, P&L, timeline)\n→ A personalized recommendation under 50 words\n→ One button to open your AI coach for deeper analysis\n\nThe alert shows up before your next trade. Not after the damage is done.",
-      "image": "images/risk-alerts-banner.png"
+      "image": null
     },
     {
       "id": 368,
@@ -1863,7 +1863,7 @@
     {
       "id": 372,
       "content": "Trade EURUSD in a USD account? Your P&L converts automatically.\n\nTrade gold in a GBP account? Same thing.\n\nHistorical FX rates for the exact exit date. No manual math. No spreadsheet formulas.\n\nEvery currency pair the European Central Bank tracks is supported.",
-      "image": "images/multicurrency-trade.png"
+      "image": null
     },
     {
       "id": 373,
@@ -1913,7 +1913,7 @@
     {
       "id": 382,
       "content": "You have taken 8 trades today. Your daily limit is 5.\n\nOvertrading alert triggered.\n\nNot a generic warning. A specific message based on your rules, your count, and what usually happens when you overtrade.\n\nThe alert appears on your screen before you can open the trade form.",
-      "image": "images/onyx-alert.png"
+      "image": null
     },
     {
       "id": 383,
@@ -1943,7 +1943,7 @@
     {
       "id": 388,
       "content": "Prop firm challenge phases tracked automatically:\n\n→ Evaluation Phase 1, 2, 3\n→ Funded status\n→ Failed with reason tracking\n→ Reset events with history\n\nPhase start and end dates. Only trades within the current phase count toward your targets.\n\nFTMO, The5ers, TopStep, Funded Trader, MyForexFunds, Apex — presets built in. Or configure any firm manually.",
-      "image": "images/propfirm-dashboard.png"
+      "image": null
     },
     {
       "id": 389,
@@ -1988,7 +1988,7 @@
     {
       "id": 397,
       "content": "In-app notifications now. Promo announcements, system updates, referral rewards, milestone achievements.\n\nReal-time. Color-coded. One click to dismiss or act.\n\nNever miss an update without checking your email.",
-      "image": "images/notification-bell.png"
+      "image": null
     },
     {
       "id": 398,
@@ -2008,7 +2008,7 @@
     {
       "id": 401,
       "content": "You are down $400 today. Your daily loss limit is $500.\n\nAlert triggered: \"Daily loss limit approaching. You have used 80% of your daily risk budget. Onyx recommends reducing position size or stopping for the day.\"\n\nThe rule exists because you set it. The alert exists because you will forget it.",
-      "image": "images/risk-alerts-banner.png"
+      "image": null
     },
     {
       "id": 402,
@@ -2048,7 +2048,7 @@
     {
       "id": 409,
       "content": "Gold. Silver. Platinum.\n\nSpot metals supported with real chart data from Twelve Data.\n\n24/7 market hours. Correct lot sizes (100 oz for gold, 5000 oz for silver). Automatic P&L calculation.\n\nCommodity traders are not an afterthought.",
-      "image": "images/commodity-trade.png"
+      "image": null
     },
     {
       "id": 410,
@@ -2178,7 +2178,7 @@
     {
       "id": 435,
       "content": "Prop firm dashboard at a glance:\n\n→ Profit target: 7.2% of 10% (green progress bar)\n→ Max drawdown: 3.1% of 10% used (green)\n→ Daily loss: 1.8% of 5% used (amber)\n→ Trading days: 6 of 10 minimum (green)\n\nPhase-aware. Only counts trades within your current evaluation phase.\n\nNo mental math. No logging into the prop firm portal. Just look at your dashboard.",
-      "image": "images/propfirm-dashboard.png"
+      "image": null
     },
     {
       "id": 436,
@@ -2353,7 +2353,7 @@
     {
       "id": 470,
       "content": "Prop firm traders: your drawdown is being tracked in real-time.\n\nStatic drawdown? Your floor is fixed.\nTrailing drawdown? It updates with your high watermark.\nEOD trailing? Intraday spikes ignored.\n\nThe dashboard knows which type your firm uses. It calculates accordingly.\n\nOne wrong assumption about your drawdown type can end a challenge. Do not guess.",
-      "image": "images/propfirm-dashboard.png"
+      "image": null
     },
     {
       "id": 471,
@@ -2603,7 +2603,7 @@
     {
       "id": 520,
       "content": "FTMO challenge tracker:\n\n→ Phase 1: 10% profit target, 5% daily loss limit, 10% max drawdown\n→ Minimum 10 trading days\n→ Maximum 30 calendar days\n→ Consistency rule tracking\n\nAll preconfigured. Select FTMO as your prop firm, pick your account size, start trading.\n\nDashboard updates after every trade. Progress bars move in real time.\n\nFocus on trading. Let the journal track the rules.",
-      "image": "images/propfirm-dashboard.png"
+      "image": null
     },
     {
       "id": 521,
@@ -2918,7 +2918,7 @@
     {
       "id": 583,
       "content": "Alert: \"You have taken 2 losses in the last 18 minutes. Both were on the same symbol. This matches a revenge trading pattern from your history. Average cost of past revenge sequences: $470. Recommendation: close your charts for 30 minutes.\"\n\nSpecific. Historical. Actionable.\n\nNot \"be careful.\" That helps nobody.",
-      "image": "images/risk-alerts-banner.png"
+      "image": null
     },
     {
       "id": 584,
