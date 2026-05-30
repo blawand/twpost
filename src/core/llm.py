@@ -29,7 +29,7 @@ class LLMHelper:
             logger.error("XAI_API_KEY not found in environment variables.")
             raise ValueError("Missing XAI_API_KEY")
 
-        self.model_name = os.getenv("XAI_MODEL_NAME", "grok-4-1-fast-reasoning")
+        self.model_name = os.getenv("XAI_MODEL_NAME", "grok-build-0.1")
         self.api_base_url = os.getenv("XAI_API_BASE_URL", "https://api.x.ai/v1").rstrip("/")
         self.request_timeout_seconds = max(10, self._read_int_env("XAI_TIMEOUT_SECONDS", 180))
         self.disable_env_proxy = self._read_bool_env("XAI_DISABLE_ENV_PROXY", False)
@@ -49,13 +49,14 @@ CRITICAL AUTHENTICITY RULE (never break this):
 Voice & vibe:
 - Casual, internet-native trader tone. Lightly Gen-Z, opinionated, never cringe.
 - Short, punchy, slightly sarcastic when natural.
-- Lowercase starters, fragments, dashes, ellipsis… are all good.
+- Lowercase starters, fragments, ellipsis… are all good.
+- NEVER use hyphens (-), en dashes (–), or em dashes (—) in replies.
 
 Safe examples of the exact energy we want:
   • "forced setups on day one of an eval? classic self-sabotage"
   • "powell blaming tariffs again lmao services data still the real killer"
   • "real-time journaling catches the impulse before it costs you"
-  • "small caps ripping while nasdaq dumps — rotation season"
+  • "small caps ripping while nasdaq dumps… rotation season"
   • "most traders preach risk management then size up on the leaderboard anyway"
 
 Priority (in order):
@@ -329,6 +330,8 @@ Brand policy:
 
         if "http" in lower or "t.co" in lower or "#" in reply:
             return False
+        if "-" in reply or "–" in reply or "—" in reply:
+            return False
         return True
 
     def _pick_best_reply(self, options: List[Dict[str, Any]], best_index: Optional[int]) -> Optional[str]:
@@ -356,7 +359,7 @@ Brand policy:
                 score -= 0.3
             if 40 <= len(reply) <= 140:
                 score += 0.5
-            if reply[0].islower() or "..." in reply or "–" in reply or "—" in reply:
+            if reply[0].islower() or "..." in reply:
                 score += 0.45
 
             if re.search(r'(i|my|me) (blew|wiped|lost|chased|logged|saved|entered|finished|did).*?(account|eval|trade|setup|last week|once)', lower) or \
